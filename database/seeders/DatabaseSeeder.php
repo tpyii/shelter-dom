@@ -13,6 +13,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // User::factory(10)->create();
+        for ($i = 0; $i < 10; $i++) {
+            $this->call([
+                AnimalTypeSeeder::class,
+                InoculationSeeder::class,
+                DiseaseSeeder::class,
+            ]);
+        }
+
+        for ($i = 0; $i < 10; $i++) {
+            $this->call([
+                BreedSeeder::class,
+            ]);
+        }
+
+        for ($i = 0; $i < 20; $i++) {
+            $this->call([
+                AnimalSeeder::class,
+                ImageSeeder::class,
+            ]);
+        }
+
+        for ($i = 0; $i < 20; $i++) {
+            $this->call([
+                InoculationAnimalSeeder::class,
+                DiseaseAnimalSeeder::class,
+                AnimalImagesSeeder::class,
+            ]);
+        }
     }
 }

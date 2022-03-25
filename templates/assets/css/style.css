@@ -1,0 +1,340 @@
+/**
+ *  1. Variables
+ *  2. Defaults
+ *  3. Buttons
+ *  4. Typography
+ *  5. Lists
+ *  6. Logo
+ *  7. Links
+ *  8. Cards
+ */
+
+/* 1. Variables */
+
+:root {
+  --font-family-arial: Arial, sans-serif;
+  --font-family-georgia: Georgia, serif;
+  --color-dark-s: #CDCDCD;
+  --color-dark-m: #B2B2B2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4C4C4C;
+  --color-dark-3xl: #292929;
+  --color-light-s: #FAFAFA;
+  --color-light-l: #CDCDCD;
+  --color-primary: #F1CDB3;
+  --color-primary-light: #FDDCC4;
+}
+
+a,
+button {
+  outline: none;
+}
+
+/* 2. Defaults */
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-dark-3xl);
+}
+
+body {
+  font-family: var(--font-family-arial);
+  font-size: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+}
+
+/* 3. Buttons */
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+  padding: 13px 43px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 100px;
+  box-sizing: border-box;
+  font-family: var(--font-family-georgia);
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+  transition: all 0.2s ease-out;
+}
+
+.button:disabled,
+.button:disabled:hover {
+  border-color: var(--color-dark-s);
+  background-color: transparent;
+  color: var(--color-dark-s);
+  cursor: not-allowed;
+}
+
+.button:disabled svg * {
+  fill: var(--color-dark-s);
+}
+
+.button-primary:hover,
+.button.active:hover {
+  border-color: var(--color-primary-light);
+  background-color: var(--color-primary-light);
+}
+
+.button-secondary {
+  border-color: var(--color-primary-light);
+  background-color: transparent;
+}
+
+.button-secondary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.button-circle {
+  padding: 0;
+  width: 52px;
+  height: 52px;
+}
+
+.button-paginator {
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  padding: 0;
+}
+
+.button:active,
+.button:focus,
+.button-primary,
+.button.active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+/* 4. Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  color: var(--color-dark-l);
+}
+
+h2 {
+  font-size: 44px;
+}
+
+h3 {
+  font-size: 35px;
+  letter-spacing: 0.06em;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+p {
+  color: var(--color-dark-xl);
+}
+
+small {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--color-dark-m);
+}
+
+/*  5. Lists  */
+
+.list {
+  padding-left: 15px;
+  list-style: none;
+  font-family: 'Georgia';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+
+.list-item {
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.list-item::before {
+  content: '';
+  padding: 2px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*  6. Logo  */
+
+.logo-title {
+  font-family: var(--font-family-georgia);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
+.logo-subtitle {
+  font-family: var(--font-family-arial);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: var(--color-dark-3xl);
+}
+
+.background-dark .logo-title,
+.background-dark .logo-title:hover {
+  color: var(--color-primary);
+}
+
+.background-dark .logo-subtitle {
+  color: #FFFFFF;
+}
+
+/*  7. Links */
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-dark-l);
+}
+
+a:hover,
+a.active {
+  color: var(--color-dark-3xl);
+}
+
+a:active,
+a:focus {
+  color: var(--color-dark-l);
+}
+
+a:active::after,
+a:focus::after,
+a.active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+.background-dark a {
+  color: var(--color-light-l);
+}
+
+.background-dark a:hover,
+.background-dark a:active::after,
+.background-dark a:focus::after,
+.background-dark a.active {
+  color: var(--color-light-s);
+}
+
+/*  8. Cards  */
+
+.card {
+  border-radius: 9px;
+  overflow: hidden;
+  background: var(--color-light-s);
+}
+
+.card:hover .card-content {
+  background-color: #FFFFFF;
+}
+
+.card img {
+  object-fit: contain;
+  width: 100%;
+  height: 270px;
+}
+
+.card-content {
+  padding: 30px;
+  transition: all 0.2s ease-out;
+}
+
+.card.active {
+  max-width: 900px;
+  max-height: 500px;
+  height: auto;
+}
+
+.card.active img {
+  max-width: 500px;
+  height: auto;
+}
+
+.card.active .card-content {
+  padding: 50px 20px 20px;
+  overflow-y: auto;
+}
+
+.card.active .card-content * {
+  color: #000000;
+}
+
+@media (max-width: 992px) {
+  .card.active img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card.active {
+    max-height: 350px;
+  }
+
+  .card.active img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 575px) {
+  .card.active {
+    max-height: initial;
+    height: 90vh;
+    overflow-y: auto;
+  }
+
+  .card.active .card-content {
+    overflow-y: visible;
+  }
+
+  .card.active img {
+    max-width: 100%;
+  }
+}

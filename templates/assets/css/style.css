@@ -9,6 +9,7 @@
  *  8. Cards
  *  9. Modal
  *  10. Navbar
+ *  11. Welcome
  */
 
 /* 1. Variables */
@@ -23,6 +24,7 @@
   --color-dark-3xl: #292929;
   --color-light-s: #FAFAFA;
   --color-light-l: #CDCDCD;
+  --color-light-xl: #FFFFFF;
   --color-primary: #F1CDB3;
   --color-primary-light: #FDDCC4;
 }
@@ -226,7 +228,7 @@ small {
 }
 
 .background-dark .logo-subtitle {
-  color: #FFFFFF;
+  color: var(--color-light-xl);
 }
 
 /*  7. Links */
@@ -279,7 +281,7 @@ a.active::after {
 }
 
 .card:hover .card-content {
-  background-color: #FFFFFF;
+  background-color: var(--color-light-xl);
 }
 
 .card img {
@@ -410,6 +412,7 @@ a.active::after {
 .navbar {
   position: relative;
   padding: 30px 0;
+  z-index: 1;
 }
 
 .navbar-burger {
@@ -474,5 +477,36 @@ a.active::after {
 
   .background-dark .navbar-burger > div {
     background-color: var(--color-primary);
+  }
+}
+
+/*  11. Welcome  */
+
+.welcome {
+  transform: translateY(-120px);
+  min-height: 100vh;
+  background: url(../patterns/noise_transparent@2x.png), 
+              radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+              #211F20;
+}
+
+.welcome h2 {
+  color: var(--color-light-xl);
+  max-width: 310px;
+  margin-bottom: 45px;
+}
+
+.welcome p {
+  color: var(--color-dark-s);
+  margin-bottom: 55px;
+}
+
+.welcome img {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+  .welcome {
+    padding-top: 135px;
   }
 }

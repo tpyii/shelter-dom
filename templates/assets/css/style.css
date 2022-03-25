@@ -10,6 +10,7 @@
  *  9. Modal
  *  10. Navbar
  *  11. Welcome
+ *  12. About
  */
 
 /* 1. Variables */
@@ -47,6 +48,16 @@ body {
   font-weight: 400;
   font-size: 15px;
   line-height: 160%;
+}
+
+.section {
+  padding: 80px 0 100px;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 45px 0;
+  }
 }
 
 /* 3. Buttons */
@@ -509,4 +520,10 @@ a.active::after {
   .welcome {
     padding-top: 135px;
   }
+}
+
+/*  12. About  */
+
+.about {
+  max-width: 850px;
 }

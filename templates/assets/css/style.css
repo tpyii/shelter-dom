@@ -13,6 +13,7 @@
  *  12. About
  *  13. Help
  *  14. Donate
+ *  15. Footer
  */
 
 /* 1. Variables */
@@ -552,7 +553,7 @@ a.active::after {
   margin-bottom: 60px;
 }
 
-/*  14. Donata  */
+/*  14. Donate  */
 
 .donate {
   max-width: 890px;
@@ -562,4 +563,40 @@ a.active::after {
 .donate-content {
   max-width: 380px;
   margin: 0 auto;
+}
+
+/*  15. Footer  */
+
+.footer {
+  padding: 60px 0;
+  background: url(../patterns/noise_transparent@2x.png), 
+              radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
+              #211F20;
+}
+
+.footer h3 {
+  color: var(--color-light-xl);
+  margin-bottom: 40px;
+}
+
+.footer h4 {
+  color: var(--color-primary);
+  margin-bottom: 40px;
+}
+
+.footer h4:last-child {
+  margin-bottom: 0;
+}
+
+.footer img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(60px);
+}
+
+@media (max-width: 767px) {
+  .footer img {
+    position: static;
+  }
 }

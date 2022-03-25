@@ -14,6 +14,7 @@
  *  13. Help
  *  14. Donate
  *  15. Footer
+ *  16. Slider
  */
 
 /* 1. Variables */
@@ -59,6 +60,7 @@ img {
 
 .section {
   padding: 80px 0 100px;
+  overflow: hidden;
 }
 
 .section-light {
@@ -297,6 +299,9 @@ a.active::after {
 /*  8. Cards  */
 
 .card {
+  max-width: 270px;
+  margin: 0 auto;
+  border: none;
   border-radius: 9px;
   overflow: hidden;
   background: var(--color-light-s);
@@ -599,4 +604,25 @@ a.active::after {
   .footer img {
     position: static;
   }
+}
+
+/*  16. Slider  */
+
+.slider {
+  overflow: visible;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.slider-button-next {
+  right: 0;
+}
+
+.slider-button-prev {
+  left: 0;
 }

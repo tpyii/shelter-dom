@@ -11,6 +11,8 @@
  *  10. Navbar
  *  11. Welcome
  *  12. About
+ *  13. Help
+ *  14. Donate
  */
 
 /* 1. Variables */
@@ -24,7 +26,7 @@
   --color-dark-xl: #4C4C4C;
   --color-dark-3xl: #292929;
   --color-light-s: #FAFAFA;
-  --color-light-l: #CDCDCD;
+  --color-light-l: #F6F6F6;
   --color-light-xl: #FFFFFF;
   --color-primary: #F1CDB3;
   --color-primary-light: #FDDCC4;
@@ -50,8 +52,16 @@ body {
   line-height: 160%;
 }
 
+img {
+  max-width: 100%;
+}
+
 .section {
   padding: 80px 0 100px;
+}
+
+.section-light {
+  background-color: var(--color-light-l);
 }
 
 @media (max-width: 767px) {
@@ -273,7 +283,7 @@ a.active::after {
 }
 
 .background-dark a {
-  color: var(--color-light-l);
+  color: var(--color-dark-s);
 }
 
 .background-dark a:hover,
@@ -512,10 +522,6 @@ a.active::after {
   margin-bottom: 55px;
 }
 
-.welcome img {
-  max-width: 100%;
-}
-
 @media (max-width: 767px) {
   .welcome {
     padding-top: 135px;
@@ -544,4 +550,16 @@ a.active::after {
 .help-item {
   text-align: center;
   margin-bottom: 60px;
+}
+
+/*  14. Donata  */
+
+.donate {
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+.donate-content {
+  max-width: 380px;
+  margin: 0 auto;
 }

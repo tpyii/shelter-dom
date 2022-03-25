@@ -9,19 +9,33 @@ class CatalogController extends Controller
 {
     public function index()
     {
-        $catalog = $this->getCatalog();
+        $catalog = Animal::query()->leftJoin(
+            'animal_types', 'animals.type_id', '=', 'animal_types.id'
+        )->leftJoin(
+            'breeds', 'animals.breed_id', '=', 'breeds.id'
+        )->select(
+            Animal::$joinAvailableFields
+        )->get();
 
         return view('catalog.index', [
             'catalog' => $catalog
         ]);
     }
 
-    public function show($id)
+    public function show(int $id)
     {
-        $catalogItem = $this->getCatalogItemById($id);
+        $catalogItem = Animal::query()->leftJoin(
+            'animal_types', 'animals.type_id', '=', 'animal_types.id'
+        )->leftJoin(
+            'breeds', 'animals.breed_id', '=', 'breeds.id'
+        )->where(
+            'animals.id', $id
+        )->select(
+            Animal::$joinAvailableFields
+        )->get();
 
         return view('catalog.show', [
-            'catalogItem' => $catalogItem[0]
+            'catalogItem' => $catalogItem
         ]);
     }
 }

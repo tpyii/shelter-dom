@@ -15,7 +15,18 @@ class Animal extends Model
         'type_id',
         'breed_id',
         'description',
-        'birthday_at'
+        'birthday_at',
+        'treatment_of_parasites'
+    ];
+
+    public static $joinAvailableFields = [
+        'animals.id',
+        'animals.name',
+        'animals.description',
+        'animals.birthday_at',
+        'animals.treatment_of_parasites',
+        'animal_types.name AS type_name',
+        'breeds.name AS breeds_name'
     ];
 
     protected $table = 'animals';
@@ -25,6 +36,7 @@ class Animal extends Model
         'type_id',
         'breed_id',
         'description',
-        'birthday_at'
+        'birthday_at',
+        'treatment_of_parasites'
     ];
 }

@@ -39,4 +39,20 @@ class Animal extends Model
         'birthday_at',
         'treatment_of_parasites'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(AnimalImage::class);
+    }
+
+    public function disease()
+    {
+        return $this->hasMany(AnimalDisease::class);
+    }
+
+    public function inoculation()
+    {
+        return $this->hasMany(AnimalInoculation::class);
+    }
 }
+

@@ -20,4 +20,9 @@ class AnimalDisease extends Model
         'disease_id',
         'animal_id',
     ];
+
+    public function animal()
+    {
+        return $this->belongsTo(Animal::class);
+    }
 }

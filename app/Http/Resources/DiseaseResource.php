@@ -2,9 +2,10 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Disease;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class AnimalDiseaseResource extends JsonResource
+class DiseaseResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -14,8 +15,9 @@ class AnimalDiseaseResource extends JsonResource
      */
     public function toArray($request)
     {
-        return  [
-            'disease_id' => $this->disease_id
+        return [
+            'id' => $this->disease_id,
+            'name' => Disease::find($this->disease_id)->name
         ];
     }
 }

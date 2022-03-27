@@ -20,4 +20,9 @@ class AnimalImage extends Model
         'img_id',
         'animal_id',
     ];
+
+    public function animal()
+    {
+        return $this->belongsTo(Animal::class);
+    }
 }

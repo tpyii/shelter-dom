@@ -18,8 +18,8 @@ class AnimalResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'type' => Type::find($this->type_id)->name,
-            'breed' => Breed::find($this->breed_id)->name,
+            'type' => $this->type->name,
+            'breed' => $this->breed->name,
             'name' => $this->name,
             'description' => $this->description,
             'treatment_of_parasites' => $this->treatment_of_parasites,

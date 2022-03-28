@@ -2,40 +2,85 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AnimalResource;
 use App\Models\Animal;
 use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $catalog = Animal::query()->leftJoin(
-            'animal_types', 'animals.type_id', '=', 'animal_types.id'
-        )->leftJoin(
-            'breeds', 'animals.breed_id', '=', 'breeds.id'
-        )->select(
-            Animal::$joinAvailableFields
-        )->get();
-
-        return view('catalog.index', [
-            'catalog' => $catalog
-        ]);
+        return AnimalResource::collection(Animal::all());
     }
 
-    public function show(int $id)
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-        $catalogItem = Animal::query()->leftJoin(
-            'animal_types', 'animals.type_id', '=', 'animal_types.id'
-        )->leftJoin(
-            'breeds', 'animals.breed_id', '=', 'breeds.id'
-        )->where(
-            'animals.id', $id
-        )->select(
-            Animal::$joinAvailableFields
-        )->get();
+        //
+    }
 
-        return view('catalog.show', [
-            'catalogItem' => $catalogItem
-        ]);
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Animal $animal
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Animal $animal)
+    {
+        return new AnimalResource($animal);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

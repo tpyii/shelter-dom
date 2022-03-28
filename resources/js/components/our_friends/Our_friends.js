@@ -15,6 +15,7 @@ export const Our_friends = () => {
     ];
     return (
         <div className='container' style={{background :'#F6F6F6'}}>
+            <h3 className="mb-5 text-center">Our friends who<br/>are looking for a house</h3>
             <Carousel breakPoints={breakPoints}>
                 <Item className='d-flex justify-content-around'>
 

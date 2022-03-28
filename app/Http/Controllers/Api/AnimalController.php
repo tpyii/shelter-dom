@@ -1,11 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AnimalStoreRequest;
+use App\Http\Resources\AnimalResource;
+use App\Models\Animal;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
-class CatalogController extends Controller
+class AnimalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +19,7 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return AnimalResource::collection(Animal::all());
     }
 
     /**
@@ -33,9 +28,10 @@ class CatalogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnimalStoreRequest $request)
     {
-        //
+        $crested_animal = Animal::create($request->validated());
+        return new AnimalResource($crested_animal);
     }
 
     /**
@@ -44,20 +40,9 @@ class CatalogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Animal $animal)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return new AnimalResource($animal);
     }
 
     /**
@@ -67,9 +52,11 @@ class CatalogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AnimalStoreRequest $request, Animal $animal)
     {
-        //
+        $animal->update($request->validated());
+
+        return $animal;
     }
 
     /**
@@ -78,8 +65,9 @@ class CatalogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Animal $animal)
     {
-        //
+        $animal->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

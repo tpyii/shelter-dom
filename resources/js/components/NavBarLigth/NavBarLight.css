@@ -1,0 +1,152 @@
+/*  10. Navbar  */
+
+.navbar {
+    position: relative;
+    padding: 30px 0;
+    z-index: 1;
+}
+
+.navbar-burger {
+    display: none !important;
+    width: 30px;
+    height: 22px;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+.nav-item {
+    margin-left: 35px;
+}
+
+@media (max-width: 767px) {
+    .navbar.active .navbar-logo {
+        z-index: 2;
+    }
+
+    .navbar-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        width: 100%;
+        height: 100vh;
+        padding-top: 120px;
+        z-index: 1;
+        /*background: #292929;*/
+        transition: transform 0.2s ease-out;
+    }
+
+    .navbar-content-container {
+        padding-top: 100px;
+        overflow-y: auto;
+    }
+
+    .navbar.active .navbar-content {
+        transform: translateX(0);
+    }
+
+    .nav-item {
+        margin-bottom: 50px;
+        margin-left: 0;
+        font-size: 32px;
+    }
+
+    .navbar-burger {
+        display: flex !important;
+    }
+
+    .navbar.active .navbar-burger {
+        transform: rotate(90deg);
+    }
+
+    .navbar-burger > div {
+        height: 2px;
+        background-color: #545454;
+        transition: background-color 0.2s ease-out;
+    }
+
+    .background-darkl .navbar-burger > div {
+        background-color: #FFFFFF;
+    }
+}
+
+/*  7. Links */
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #545454;
+}
+
+a:hover,
+a.active {
+    color: #292929;
+}
+
+a:active,
+a:focus {
+    color: #545454;
+}
+
+a:active::after,
+a:focus::after,
+a.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #F1CDB3;
+}
+
+.background-darkl a {
+    color: #545454;
+}
+
+.background-darkl a:hover,
+.background-darkl a:active::after,
+.background-darkl a:focus::after,
+.background-darkl a.active {
+    color: #292929;;
+}
+
+/*6. Logo  */
+
+.logo-titlel {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: var(--font-family-georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    /*color: #545454;*/
+    transition: color 0.2s ease-out;
+}
+
+.cozy_light{
+    color: #545454;
+}
+
+.logo-subtitlel {
+    font-family: var(--font-family-arial);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #292929;
+    transition: color 0.2s ease-out;
+}
+
+.background-darkl .logo-title,
+.background-darkl .logo-title:hover {
+    color: #F1CDB3;
+}
+
+.background-darkl .logo-subtitle {
+    color: #FFFFFF;
+}

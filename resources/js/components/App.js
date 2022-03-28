@@ -1,19 +1,16 @@
-import {Header} from './header_component/Header'
-import {Footer} from './footer_component/Footer'
-import {About} from './about_component/About'
-import {Our_friends} from './our_friends/Our_friends'
-import {Help} from './help_shelter_component/Help'
-import {Donation} from './donation_component/Donation'
+import {Main} from './main_page/Main'
+import {OurPets} from './our_pets/OurPets'
+import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import '../../../templates/assets/css/style.css'
 
 const App = () => {
     return (
         <div>
-            <Header/>
-            <About/>
-            <Our_friends/>
-            <Help/>
-            <Donation/>
-            <Footer/>
+            <Routes>
+                <Route path='/' element={<Main/>}/>
+                <Route path='/our_pets' element={<OurPets/>}/>
+            </Routes>
+
         </div>
     )
 }

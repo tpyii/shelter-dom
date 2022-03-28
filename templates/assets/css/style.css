@@ -599,9 +599,15 @@ a.active::after {
   transform: translateY(60px);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .footer img {
     position: static;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer > .container {
+    max-width: 320px;
   }
 }
 

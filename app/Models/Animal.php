@@ -54,5 +54,15 @@ class Animal extends Model
     {
         return $this->hasMany(AnimalInoculation::class);
     }
+
+    public function breed()
+    {
+        return $this->belongsTo(Breed::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
 

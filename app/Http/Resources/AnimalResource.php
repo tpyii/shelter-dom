@@ -2,8 +2,8 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Breed;
-use App\Models\Type;
+//use App\Models\Breed;
+//use App\Models\AnimalType;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class AnimalResource extends JsonResource

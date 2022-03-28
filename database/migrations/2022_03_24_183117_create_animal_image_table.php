@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInoculationAnimalTable extends Migration
+class CreateAnimalImageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateInoculationAnimalTable extends Migration
      */
     public function up()
     {
-        Schema::create('inoculation_animal', function (Blueprint $table) {
-            $table->unsignedBigInteger('inoculation_id');
+        Schema::create('animal_image', function (Blueprint $table) {
+            $table->unsignedBigInteger('image_id');
             $table->unsignedBigInteger('animal_id');
 
-            $table->foreign('inoculation_id')->references('id')->on('inoculations');
-            $table->foreign('animal_id')->references('id')->on('animals');
+            $table->foreign('image_id')->references('id')->on('images');
+            $table->foreign('animal_id')->references('id')->on('animals')->onDelete('cascade');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateInoculationAnimalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inoculation_animal');
+        Schema::dropIfExists('animal_image');
     }
 }

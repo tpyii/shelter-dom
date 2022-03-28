@@ -16,8 +16,8 @@ class ImagesResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->img_id,
-            'path' => Image::find($this->img_id)->path
+            'id' => $this->image_id,
+            'path' => Image::find($this->image_id)->path
         ];
     }
 }

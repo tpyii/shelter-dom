@@ -16,7 +16,7 @@ class AnimalTypeSeeder extends Seeder
      */
     public function run(){
         $this->faker = Faker::create();
-        DB::table('animal_types')->insert([
+        DB::table('animal_type')->insert([
             'name' =>$this->faker->lastName,
             'created_at'=>$this->faker->dateTime,
             'updated_at'=>$this->faker->dateTime

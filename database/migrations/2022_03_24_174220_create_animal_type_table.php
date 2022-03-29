@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnimalTypesTable extends Migration
+class CreateAnimalTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAnimalTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('animal_types', function (Blueprint $table) {
+        Schema::create('animal_type', function (Blueprint $table) {
             $table->id();
             $table->string('name')->index();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateAnimalTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_types');
+        Schema::dropIfExists('animal_type');
     }
 }

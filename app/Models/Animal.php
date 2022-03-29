@@ -25,11 +25,11 @@ class Animal extends Model
         'animals.description',
         'animals.birthday_at',
         'animals.treatment_of_parasites',
-        'animal_types.name AS type_name',
+        'animal_type.name AS type_name',
         'breeds.name AS breeds_name'
     ];
 
-    protected $table = 'animals';
+//    protected $table = 'animals';
 
     protected $fillable = [
         'name',
@@ -62,7 +62,7 @@ class Animal extends Model
 
     public function type()
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(AnimalType::class);
     }
 }
 

@@ -18,7 +18,7 @@ class Animal extends Model
         'birthday_at',
         'treatment_of_parasites'
     ];
-    
+
     protected $fillable = [
         'name',
         'type_id',
@@ -30,27 +30,27 @@ class Animal extends Model
 
     public function images()
     {
-        return $this->belongsTo(AnimalImage::class);
+        return $this->hasMany(AnimalImage::class);
     }
 
     public function disease()
     {
-        return $this->belongsToMany(AnimalDisease::class);
+        return $this->hasMany(AnimalDisease::class);
     }
 
     public function inoculation()
     {
-        return $this->belongsToMany(AnimalInoculation::class);
+        return $this->hasMany(AnimalInoculation::class);
     }
 
     public function breed()
     {
-        return $this->hasMany(Breed::class);
+        return $this->belongsTo(Breed::class);
     }
 
     public function type()
     {
-        return $this->hasMany(AnimalType::class);
+        return $this->belongsTo(AnimalType::class);
     }
 }
 

@@ -3,7 +3,7 @@
     Types create
   </x-slot>
 
-<form method="post" action="{{ route('admin.types.store')}}">
+<form method="post" action="{{ route('admin.animal_types.store')}}">
     @csrf
     <input type="text" id="name" name="name" value="{{ old('name') }}">
     <button type="submit">Сохранить</button>

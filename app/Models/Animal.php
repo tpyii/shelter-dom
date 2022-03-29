@@ -19,18 +19,6 @@ class Animal extends Model
         'treatment_of_parasites'
     ];
 
-    public static $joinAvailableFields = [
-        'animals.id',
-        'animals.name',
-        'animals.description',
-        'animals.birthday_at',
-        'animals.treatment_of_parasites',
-        'animal_type.name AS type_name',
-        'breeds.name AS breeds_name'
-    ];
-
-//    protected $table = 'animals';
-
     protected $fillable = [
         'name',
         'type_id',

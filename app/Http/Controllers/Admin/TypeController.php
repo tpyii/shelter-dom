@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Type;
+use App\Models\AnimalType;
 use Illuminate\Http\Request;
 
 class TypeController extends Controller
@@ -15,10 +15,10 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
+        $types = AnimalType::all();
 
-        return view('admin.types.index', [
-            'types' => $types
+        return view('admin.animal_types.index', [
+            'animal_types' => $types
         ]);
     }
 
@@ -29,7 +29,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('admin.types.create');
+        return view('admin.animal_types.create');
     }
 
     /**
@@ -42,10 +42,10 @@ class TypeController extends Controller
     {
         $data = $request->only('name');
 
-        $created = Type::create($data);
+        $created = AnimalType::create($data);
 
         if($created) {
-            return redirect()->route('admin.types.index')
+            return redirect()->route('admin.animal_types.index')
                 ->with('success', 'Запись успешно добавлена');
         }
 
@@ -67,13 +67,13 @@ class TypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param Type $type
+     * @param AnimalType $animal_type
      * @return \Illuminate\Http\Response
      */
-    public function edit(Type $type)
+    public function edit(AnimalType $animal_type)
     {
-        return view('admin.types.edit', [
-            'type' => $type
+        return view('admin.animal_types.edit', [
+            'animal_type' => $animal_type
         ]);
     }
 
@@ -81,17 +81,17 @@ class TypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param Type $type
+     * @param AnimalType $animal_type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Type $type)
+    public function update(Request $request, AnimalType $animal_type)
     {
         $data = $request->only('name');
 
-        $updated = $type->fill($data)->save();
+        $updated = $animal_type->fill($data)->save();
 
         if($updated) {
-            return redirect()->route('admin.types.index')
+            return redirect()->route('admin.animal_types.index')
                 ->with('success', 'Запись успешно изменена');
         }
 
@@ -102,15 +102,15 @@ class TypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param Type $type
+     * @param AnimalType $animal_type
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Type $type)
+    public function destroy(AnimalType $animal_type)
     {
-        $deleted = $type->delete();
+        $deleted = $animal_type->delete();
 
         if ($deleted) {
-            return redirect()->route('admin.types.index')
+            return redirect()->route('admin.animal_types.index')
                 ->with('success', 'Запись успешно удалена');
         }
 

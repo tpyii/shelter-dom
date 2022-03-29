@@ -7,8 +7,8 @@
     @csrf
     <label for="type_id">Тип</label>
     <select id="type_id" name="type_id">
-        @foreach($types as $typesItem)
-            <option value="{{ $typesItem->id }}" @if(old('type_id') === $typesItem->id) selected @endif>{{ $typesItem->name }}</option>
+        @foreach($animal_types as $animal_typesItem)
+            <option value="{{ $animal_typesItem->id }}" @if(old('type_id') === $animal_typesItem->id) selected @endif>{{ $animal_typesItem->name }}</option>
         @endforeach
     </select>
     <input type="text" id="name" name="name" value="{{ old('name') }}">

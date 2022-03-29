@@ -13,7 +13,7 @@ class CreateAnimalTypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('animal_type', function (Blueprint $table) {
+        Schema::create('animal_types', function (Blueprint $table) {
             $table->id();
             $table->string('name')->index();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateAnimalTypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_type');
+        Schema::dropIfExists('animal_types');
     }
 }

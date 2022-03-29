@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnimalController AS AdminAnimalController;
 use App\Http\Controllers\Admin\BreedController AS AdminBreedController;
 use App\Http\Controllers\Admin\DiseaseController AS AdminDiseaseController;
 use App\Http\Controllers\Admin\InoculationController AS AdminInoculationController;
@@ -37,4 +38,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
     Route::resource('/types', AdminTypeController::class);
     Route::resource('/diseases', AdminDiseaseController::class);
     Route::resource('/inoculations', AdminInoculationController::class);
+    Route::resource('/animals', AdminAnimalController::class);
 });

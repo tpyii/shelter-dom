@@ -6,7 +6,7 @@ use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class InoculationAnimalSeeder extends Seeder
+class AnimalInoculationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,7 +16,7 @@ class InoculationAnimalSeeder extends Seeder
     public function run()
     {
         $this->faker = Faker::create();
-        DB::table('inoculation_animal')->insert([
+        DB::table('animal_inoculation')->insert([
             'inoculation_id' =>rand(1,10),
             'animal_id' =>rand(1,10),
         ]);

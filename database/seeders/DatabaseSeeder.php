@@ -36,8 +36,8 @@ class DatabaseSeeder extends Seeder
 
         for ($i = 0; $i < 20; $i++) {
             $this->call([
-                InoculationAnimalSeeder::class,
-                DiseaseAnimalSeeder::class,
+                AnimalInoculationSeeder::class,
+                AnimalDiseaseSeeder::class,
                 AnimalImagesSeeder::class,
             ]);
         }

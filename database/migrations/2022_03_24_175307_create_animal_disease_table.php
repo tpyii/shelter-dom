@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnimalImagesTable extends Migration
+class CreateAnimalDiseaseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAnimalImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('animal_images', function (Blueprint $table) {
-            $table->unsignedBigInteger('img_id');
+        Schema::create('animal_disease', function (Blueprint $table) {
+            $table->unsignedBigInteger('disease_id');
             $table->unsignedBigInteger('animal_id');
 
-            $table->foreign('img_id')->references('id')->on('images');
-            $table->foreign('animal_id')->references('id')->on('animals');
+            $table->foreign('disease_id')->references('id')->on('diseases');
+            $table->foreign('animal_id')->references('id')->on('animals')->onDelete('cascade');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateAnimalImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animal_images');
+        Schema::dropIfExists('animal_disease');
     }
 }

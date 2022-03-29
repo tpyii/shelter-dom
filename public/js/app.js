@@ -10910,7 +10910,7 @@ const ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
 
 const SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file|sms):|[^#&/:?]*(?:[#/?]|$))/i;
 /**
- * A pattern that matches safe data URLs. Only matches image, video and audio types.
+ * A pattern that matches safe data URLs. Only matches image, video and audio animal_types.
  *
  * Shoutout to Angular https://github.com/angular/angular/blob/12.2.x/packages/core/src/sanitization/url_sanitizer.ts
  */
@@ -14080,7 +14080,7 @@ if (true) {
   (function() {
 'use strict';
 
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// The Symbol used to tag the ReactElement-like animal_types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var hasSymbol = typeof Symbol === 'function' && Symbol.for;
 var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
@@ -14723,7 +14723,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
   /** Used to access faster Node.js helpers. */
   var nodeUtil = (function() {
     try {
-      // Use `util.types` for Node.js 10+.
+      // Use `util.animal_types` for Node.js 10+.
       var types = freeModule && freeModule.require && freeModule.require('util').types;
 
       if (types) {
@@ -27749,7 +27749,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
      * inherited enumerable string keyed properties of source objects into the
      * destination object. Source properties that resolve to `undefined` are
      * skipped if a destination value exists. Array and plain object properties
-     * are merged recursively. Other objects and value types are overridden by
+     * are merged recursively. Other objects and value animal_types are overridden by
      * assignment. Source objects are applied from left to right. Subsequent
      * sources overwrite property assignments of previous sources.
      *
@@ -31786,7 +31786,7 @@ process.umask = function() { return 0; };
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!***************************************************!*\
-  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  !*** ./node_modules/prop-animal_types/checkPropTypes.js ***!
   \***************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -31846,7 +31846,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
           if (typeof typeSpecs[typeSpecName] !== 'function') {
             var err = Error(
               (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
-              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
+              'it must be a function, usually from the `prop-animal_types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' +
               'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.'
             );
             err.name = 'Invariant Violation';
@@ -31900,7 +31900,7 @@ module.exports = checkPropTypes;
 
 /***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
 /*!************************************************************!*\
-  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  !*** ./node_modules/prop-animal_types/factoryWithTypeCheckers.js ***!
   \************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -32086,9 +32086,9 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
       if (secret !== ReactPropTypesSecret) {
         if (throwOnDirectAccess) {
-          // New behavior only for users of `prop-types` package
+          // New behavior only for users of `prop-animal_types` package
           var err = new Error(
-            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Calling PropTypes validators directly is not supported by the `prop-animal_types` package. ' +
             'Use `PropTypes.checkPropTypes()` to call them. ' +
             'Read more at http://fb.me/use-check-prop-types'
           );
@@ -32105,7 +32105,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
             printWarning(
               'You are manually calling a React.PropTypes validation ' +
               'function for the `' + propFullName + '` prop on `' + componentName + '`. This is deprecated ' +
-              'and will throw in the standalone `prop-types` package. ' +
+              'and will throw in the standalone `prop-animal_types` package. ' +
               'You may be seeing this warning due to a third-party PropTypes ' +
               'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
             );
@@ -32320,7 +32320,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
   function invalidValidatorError(componentName, location, propFullName, key, type) {
     return new PropTypeError(
       (componentName || 'React class') + ': ' + location + ' type `' + propFullName + '.' + key + '` is invalid; ' +
-      'it must be a function, usually from the `prop-types` package, but received `' + type + '`.'
+      'it must be a function, usually from the `prop-animal_types` package, but received `' + type + '`.'
     );
   }
 
@@ -32467,7 +32467,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     return propType;
   }
 
-  // This handles more types than `getPropType`. Only used for error messages.
+  // This handles more animal_types than `getPropType`. Only used for error messages.
   // See `createPrimitiveTypeChecker`.
   function getPreciseType(propValue) {
     if (typeof propValue === 'undefined' || propValue === null) {
@@ -32521,7 +32521,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 /***/ "./node_modules/prop-types/index.js":
 /*!******************************************!*\
-  !*** ./node_modules/prop-types/index.js ***!
+  !*** ./node_modules/prop-animal_types/index.js ***!
   \******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -32535,7 +32535,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 if (true) {
   var ReactIs = __webpack_require__(/*! react-is */ "./node_modules/prop-types/node_modules/react-is/index.js");
 
-  // By explicitly using `prop-types` you are opting into new development behavior.
+  // By explicitly using `prop-animal_types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
   module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ "./node_modules/prop-types/factoryWithTypeCheckers.js")(ReactIs.isElement, throwOnDirectAccess);
@@ -32546,7 +32546,7 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*************************************************************!*\
-  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  !*** ./node_modules/prop-animal_types/lib/ReactPropTypesSecret.js ***!
   \*************************************************************/
 /***/ ((module) => {
 
@@ -32569,7 +32569,7 @@ module.exports = ReactPropTypesSecret;
 
 /***/ "./node_modules/prop-types/lib/has.js":
 /*!********************************************!*\
-  !*** ./node_modules/prop-types/lib/has.js ***!
+  !*** ./node_modules/prop-animal_types/lib/has.js ***!
   \********************************************/
 /***/ ((module) => {
 
@@ -32580,7 +32580,7 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 
 /***/ "./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************************************!*\
-  !*** ./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js ***!
+  !*** ./node_modules/prop-animal_types/node_modules/react-is/cjs/react-is.development.js ***!
   \***********************************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
@@ -32602,7 +32602,7 @@ if (true) {
   (function() {
 'use strict';
 
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// The Symbol used to tag the ReactElement-like animal_types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var hasSymbol = typeof Symbol === 'function' && Symbol.for;
 var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
@@ -32772,7 +32772,7 @@ exports.typeOf = typeOf;
 
 /***/ "./node_modules/prop-types/node_modules/react-is/index.js":
 /*!****************************************************************!*\
-  !*** ./node_modules/prop-types/node_modules/react-is/index.js ***!
+  !*** ./node_modules/prop-animal_types/node_modules/react-is/index.js ***!
   \****************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -33483,7 +33483,7 @@ function setValueForProperty(node, name, value, isCustomComponentTag) {
 // ATTENTION
 // When adding new symbols to this file,
 // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// The Symbol used to tag the ReactElement-like animal_types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var REACT_ELEMENT_TYPE = 0xeac7;
 var REACT_PORTAL_TYPE = 0xeaca;
@@ -34082,7 +34082,7 @@ function getIsRendering() {
   }
 }
 
-// Flow does not allow string concatenation of most non-string types. To work
+// Flow does not allow string concatenation of most non-string animal_types. To work
 // around this limitation, we use an opaque type that can only be obtained by
 // passing the value through getToStringValue first.
 function toString(value) {
@@ -34496,7 +34496,7 @@ function updateNamedCousins(rootNode, props) {
       updateWrapper(otherNode, otherProps);
     }
   }
-} // In Chrome, assigning defaultValue to certain input types triggers input validation.
+} // In Chrome, assigning defaultValue to certain input animal_types triggers input validation.
 // For number inputs, the display value loses trailing decimal points. For email inputs,
 // Chrome raises "The specified value <x> is not a valid email address".
 //
@@ -36321,7 +36321,7 @@ var validateProperty$1 = function () {};
       warnedProperties$1[name] = true;
       return true;
     } // Now that we've validated casing, do not validate
-    // data types for reserved props
+    // data animal_types for reserved props
 
 
     if (isReserved) {
@@ -37850,7 +37850,7 @@ var continuousPairsForSimpleEventPlugin = ['abort', 'abort', ANIMATION_END, 'ani
  */
 
 function registerSimplePluginEventsAndSetTheirPriorities(eventTypes, priority) {
-  // As the event types are in pairs of two, we need to iterate
+  // As the event animal_types are in pairs of two, we need to iterate
   // through in twos. The events are in pairs of two to save code
   // and improve init perf of processing this array, as it will
   // result in far fewer object allocations and property accesses
@@ -39489,7 +39489,7 @@ function isKeypressCommand(nativeEvent) {
   !(nativeEvent.ctrlKey && nativeEvent.altKey);
 }
 /**
- * Translate native top level events into event types.
+ * Translate native top level events into event animal_types.
  */
 
 
@@ -39677,7 +39677,7 @@ function getNativeBeforeInputChars(domEventName, nativeEvent) {
       return chars;
 
     default:
-      // For other native event types, do nothing.
+      // For other native event animal_types, do nothing.
       return null;
   }
 }
@@ -39727,7 +39727,7 @@ function getFallbackBeforeInputChars(domEventName, nativeEvent) {
        *   `input` event will occur.
        */
       if (!isKeypressCommand(nativeEvent)) {
-        // IE fires the `keypress` event when a user types an emoji via
+        // IE fires the `keypress` event when a user animal_types an emoji via
         // Touch keyboard of Windows.  In such a case, the `char` property
         // holds an emoji character like `\uD83D\uDE0A`.  Because its length
         // is 2, the property `which` does not represent an emoji correctly.
@@ -39799,7 +39799,7 @@ function extractBeforeInputEvent(dispatchQueue, domEventName, targetInst, native
  *
  * This plugin is also responsible for emitting `composition` events, thus
  * allowing us to share composition fallback code for both `beforeInput` and
- * `composition` event types.
+ * `composition` event animal_types.
  */
 
 
@@ -40156,7 +40156,7 @@ function extractEvents$2(dispatchQueue, domEventName, targetInst, nativeEvent, n
     return;
   }
 
-  var win; // TODO: why is this nullable in the types but we read from it?
+  var win; // TODO: why is this nullable in the animal_types but we read from it?
 
   if (nativeEventTarget.window === nativeEventTarget) {
     // `nativeEventTarget` is probably a window object.
@@ -40581,7 +40581,7 @@ function getActiveElementDeep() {
  */
 
 /**
- * @hasSelectionCapabilities: we get the element types that support selection
+ * @hasSelectionCapabilities: we get the element animal_types that support selection
  * from https://html.spec.whatwg.org/#do-not-apply, looking at `selectionStart`
  * and `selectionEnd` rows.
  */
@@ -43103,7 +43103,7 @@ function removeChildFromContainer(container, child) {
   }
 }
 function hideInstance(instance) {
-  // TODO: Does this work for all element types? What about MathML? Should we
+  // TODO: Does this work for all element animal_types? What about MathML? Should we
   // pass host context to this method?
   instance = instance;
   var style = instance.style;
@@ -43531,7 +43531,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, element) {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
           if (typeof typeSpecs[typeSpecName] !== 'function') {
-            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-animal_types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
             err.name = 'Invariant Violation';
             throw err;
           }
@@ -44637,7 +44637,7 @@ function readContext(context, observedBits) {
   }
 
   if (lastContextWithAllBitsObserved === context) ; else if (observedBits === false || observedBits === 0) ; else {
-    var resolvedObservedBits; // Avoid deopting on observable arguments or heterogeneous types.
+    var resolvedObservedBits; // Avoid deopting on observable arguments or heterogeneous animal_types.
 
     if (typeof observedBits !== 'number' || observedBits === MAX_SIGNED_31_BIT_INT) {
       // Observe all updates.
@@ -46896,7 +46896,7 @@ function ChildReconciler(shouldTrackSideEffects) {
 
     if (isUnkeyedTopLevelFragment) {
       newChild = newChild.props.children;
-    } // Handle object types
+    } // Handle object animal_types
 
 
     var isObject = typeof newChild === 'object' && newChild !== null;
@@ -46936,7 +46936,7 @@ function ChildReconciler(shouldTrackSideEffects) {
 
     if (typeof newChild === 'undefined' && !isUnkeyedTopLevelFragment) {
       // If the new child is undefined, and the return fiber is a composite
-      // component, throw an error. If Fiber return types are disabled,
+      // component, throw an error. If Fiber return animal_types are disabled,
       // we already threw above.
       switch (returnFiber.tag) {
         case ClassComponent:
@@ -47757,7 +47757,7 @@ function renderWithHooks(current, workInProgress, Component, props, secondArg, n
   // didScheduleRenderPhaseUpdate = false;
   // TODO Warn if no hooks are used at all during mount, then some are used during update.
   // Currently we will identify the update render as a mount because memoizedState === null.
-  // This is tricky because it's valid for certain types of components (e.g. React.lazy)
+  // This is tricky because it's valid for certain animal_types of components (e.g. React.lazy)
   // Using memoizedState to differentiate between mount/update only works if at least one stateful hook is used.
   // Non-stateful hooks (e.g. context) don't get added to memoizedState,
   // so memoizedState would be null during updates and mounts.
@@ -47986,7 +47986,7 @@ function createFunctionComponentUpdateQueue() {
 }
 
 function basicStateReducer(state, action) {
-  // $FlowFixMe: Flow doesn't like mixed types
+  // $FlowFixMe: Flow doesn't like mixed animal_types
   return typeof action === 'function' ? action(state) : action;
 }
 
@@ -48417,7 +48417,7 @@ function mountState(initialState) {
   var hook = mountWorkInProgressHook();
 
   if (typeof initialState === 'function') {
-    // $FlowFixMe: Flow doesn't like mixed types
+    // $FlowFixMe: Flow doesn't like mixed animal_types
     initialState = initialState();
   }
 
@@ -53313,7 +53313,7 @@ function commitBeforeMutationLifeCycles(current, finishedWork) {
     case HostText:
     case HostPortal:
     case IncompleteClassComponent:
-      // Nothing to do for these component types
+      // Nothing to do for these component animal_types
       return;
   }
 
@@ -57112,7 +57112,7 @@ function isCompatibleFamilyForHotReloading(fiber, element) {
     }
 
     var prevType = fiber.elementType;
-    var nextType = element.type; // If we got here, we know types aren't === equal.
+    var nextType = element.type; // If we got here, we know animal_types aren't === equal.
 
     var needsCompareFamilies = false;
     var $$typeofNextType = typeof nextType === 'object' && nextType !== null ? nextType.$$typeof : null;
@@ -57169,13 +57169,13 @@ function isCompatibleFamilyForHotReloading(fiber, element) {
 
       default:
         return false;
-    } // Check if both types have a family and it's the same one.
+    } // Check if both animal_types have a family and it's the same one.
 
 
     if (needsCompareFamilies) {
       // Note: memo() and forwardRef() we'll compare outer rather than inner type.
       // This means both of them need to be registered to preserve state.
-      // If we unwrapped and compared the inner types for wrappers instead,
+      // If we unwrapped and compared the inner animal_types for wrappers instead,
       // then we would risk falsely saying two separate memo(Foo)
       // calls are equivalent because they wrap the same Foo function.
       var prevFamily = resolveFamily(prevType);
@@ -58613,7 +58613,7 @@ function injectIntoDevTools(devToolsConfig) {
     scheduleRoot:  scheduleRoot ,
     setRefreshHandler:  setRefreshHandler ,
     // Enables DevTools to append owner stacks to error messages in DEV mode.
-    getCurrentFiber:  getCurrentFiberForDevTools 
+    getCurrentFiber:  getCurrentFiberForDevTools
   });
 }
 
@@ -58970,7 +58970,7 @@ var didWarnAboutUnstableCreatePortal = false;
   if (typeof Map !== 'function' || // $FlowIssue Flow incorrectly thinks Map has no prototype
   Map.prototype == null || typeof Map.prototype.forEach !== 'function' || typeof Set !== 'function' || // $FlowIssue Flow incorrectly thinks Set has no prototype
   Set.prototype == null || typeof Set.prototype.clear !== 'function' || typeof Set.prototype.forEach !== 'function') {
-    error('React depends on Map and Set built-in types. Make sure that you load a ' + 'polyfill in older browsers. https://reactjs.org/link/react-polyfills');
+    error('React depends on Map and Set built-in animal_types. Make sure that you load a ' + 'polyfill in older browsers. https://reactjs.org/link/react-polyfills');
   }
 }
 
@@ -59111,7 +59111,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-animal_types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_swipeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-swipeable */ "./node_modules/react-swipeable/es/index.js");
@@ -61196,7 +61196,7 @@ if (true) {
 // ATTENTION
 // When adding new symbols to this file,
 // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// The Symbol used to tag the ReactElement-like animal_types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var REACT_ELEMENT_TYPE = 0xeac7;
 var REACT_PORTAL_TYPE = 0xeaca;
@@ -61436,7 +61436,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-animal_types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -61568,9 +61568,9 @@ Only.propTypes = {
   /** When true, children will rendered as is  */
   when: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool.isRequired),
 
-  /** Determines how "react-only-when" should hide the child element 
+  /** Determines how "react-only-when" should hide the child element
    * "withNull": Will not render the child
-   * "withDisplay": Will render the child with display:none  
+   * "withDisplay": Will render the child with display:none
    * "withVisibility": Will render the child with visibility:hidden
    * "withCss": Will render the child with a CSS class (you can pass it a custom className prop)
   */
@@ -63042,7 +63042,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "useSwipeable": () => (/* binding */ useSwipeable)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-animal_types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -63423,7 +63423,7 @@ var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-as
 // ATTENTION
 // When adding new symbols to this file,
 // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// The Symbol used to tag the ReactElement-like animal_types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var REACT_ELEMENT_TYPE = 0xeac7;
 var REACT_PORTAL_TYPE = 0xeaca;
@@ -63997,7 +63997,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, element) {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
           if (typeof typeSpecs[typeSpecName] !== 'function') {
-            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-animal_types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
             err.name = 'Invariant Violation';
             throw err;
           }
@@ -64657,7 +64657,7 @@ var ReactVersion = '17.0.2';
 // ATTENTION
 // When adding new symbols to this file,
 // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// The Symbol used to tag the ReactElement-like animal_types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var REACT_ELEMENT_TYPE = 0xeac7;
 var REACT_PORTAL_TYPE = 0xeaca;
@@ -66544,7 +66544,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, element) {
           // This is intentionally an invariant that gets caught. It's the same
           // behavior as without this statement except with a better message.
           if (typeof typeSpecs[typeSpecName] !== 'function') {
-            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
+            var err = Error((componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' + 'it must be a function, usually from the `prop-animal_types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.' + 'This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.');
             err.name = 'Invariant Violation';
             throw err;
           }
@@ -69160,7 +69160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./NavBarLight.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css");
 
-            
+
 
 var options = {};
 
@@ -69190,7 +69190,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./style.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./templates/assets/css/style.css");
 
-            
+
 
 var options = {};
 
@@ -69561,7 +69561,7 @@ function _extends() {
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -69575,20 +69575,20 @@ function _extends() {
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
@@ -69621,7 +69621,7 @@ function _extends() {
 /******/ 			return result;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -69633,7 +69633,7 @@ function _extends() {
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -69645,7 +69645,7 @@ function _extends() {
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -69657,12 +69657,12 @@ function _extends() {
 /******/ 			}
 /******/ 		})();
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -69673,7 +69673,7 @@ function _extends() {
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -69682,11 +69682,11 @@ function _extends() {
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
-/******/ 		
+/******/
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
@@ -69694,19 +69694,19 @@ function _extends() {
 /******/ 			"/js/app": 0,
 /******/ 			"css/app": 0
 /******/ 		};
-/******/ 		
+/******/
 /******/ 		// no chunk on demand loading
-/******/ 		
+/******/
 /******/ 		// no prefetching
-/******/ 		
+/******/
 /******/ 		// no preloaded
-/******/ 		
+/******/
 /******/ 		// no HMR
-/******/ 		
+/******/
 /******/ 		// no HMR manifest
-/******/ 		
+/******/
 /******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
+/******/
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
 /******/ 			var [chunkIds, moreModules, runtime] = data;
@@ -69731,20 +69731,20 @@ function _extends() {
 /******/ 			}
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
-/******/ 		
+/******/
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
-/******/ 	
+/******/
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+/******/
 /******/ })()
 ;

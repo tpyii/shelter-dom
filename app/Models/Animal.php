@@ -18,19 +18,7 @@ class Animal extends Model
         'birthday_at',
         'treatment_of_parasites'
     ];
-
-    public static $joinAvailableFields = [
-        'animals.id',
-        'animals.name',
-        'animals.description',
-        'animals.birthday_at',
-        'animals.treatment_of_parasites',
-        'animal_type.name AS type_name',
-        'breeds.name AS breeds_name'
-    ];
-
-//    protected $table = 'animals';
-
+    
     protected $fillable = [
         'name',
         'type_id',
@@ -42,27 +30,27 @@ class Animal extends Model
 
     public function images()
     {
-        return $this->hasMany(AnimalImage::class);
+        return $this->belongsTo(AnimalImage::class);
     }
 
     public function disease()
     {
-        return $this->hasMany(AnimalDisease::class);
+        return $this->belongsToMany(AnimalDisease::class);
     }
 
     public function inoculation()
     {
-        return $this->hasMany(AnimalInoculation::class);
+        return $this->belongsToMany(AnimalInoculation::class);
     }
 
     public function breed()
     {
-        return $this->belongsTo(Breed::class);
+        return $this->hasMany(Breed::class);
     }
 
     public function type()
     {
-        return $this->belongsTo(AnimalType::class);
+        return $this->hasMany(AnimalType::class);
     }
 }
 

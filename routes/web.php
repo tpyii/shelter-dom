@@ -35,7 +35,7 @@ Route::get('/catalog/{id}', [CatalogController::class, 'show'])
  */
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
     Route::resource('/breeds', AdminBreedController::class);
-    Route::resource('/types', AdminTypeController::class);
+    Route::resource('/animal_types', AdminTypeController::class);
     Route::resource('/diseases', AdminDiseaseController::class);
     Route::resource('/inoculations', AdminInoculationController::class);
     Route::resource('/animals', AdminAnimalController::class);

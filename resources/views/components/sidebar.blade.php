@@ -14,9 +14,9 @@
       </li>
       @endif
 
-      @if (Route::has('admin.types.index'))
+      @if (Route::has('admin.animal_types.index'))
       <li class="nav-item">
-        <a class="nav-link @if (request()->routeIs('admin.types.*')) active @endif" href="{{ route('admin.types.index') }}">Types</a>
+        <a class="nav-link @if (request()->routeIs('admin.animal_types.*')) active @endif" href="{{ route('admin.animal_types.index') }}">Types</a>
       </li>
       @endif
 

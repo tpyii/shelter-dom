@@ -4,7 +4,7 @@
   </x-slot>
 
   <x-slot name="toolbar">
-    @if (Route::has('admin.types.create'))
+    @if (Route::has('admin.animal_types.create'))
       <a href="{{ route('admin.animal_types.create') }}" class="btn btn-sm btn-outline-success">Create</a>
     @endif
   </x-slot>

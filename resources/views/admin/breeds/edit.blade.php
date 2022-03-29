@@ -1,3 +1,8 @@
+<x-layout>
+  <x-slot name="title">
+    Breeds edit
+  </x-slot>
+
 <form method="post" action="{{ route('admin.breeds.update', ['breed' => $breed->id])}}">
     @csrf
     @method('put')
@@ -10,3 +15,4 @@
     <input type="text" id="name" name="name" value="{{ $breed->name }}">
     <button type="submit">Сохранить</button>
 </form>
+</x-layout>

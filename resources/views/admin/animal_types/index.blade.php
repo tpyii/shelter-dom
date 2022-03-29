@@ -1,3 +1,14 @@
+<x-layout>
+  <x-slot name="title">
+    Types
+  </x-slot>
+
+  <x-slot name="toolbar">
+    @if (Route::has('admin.types.create'))
+      <a href="{{ route('admin.types.create') }}" class="btn btn-sm btn-outline-success">Create</a>
+    @endif
+  </x-slot>
+
 @foreach($types as $typesItem)
     <p>{{$typesItem->id}}</p>
     <p>{{$typesItem->name}}</p>
@@ -9,4 +20,4 @@
     </form>
     <hr>
 @endforeach
-<a href="{{route('admin.types.create')}}">Создать</a>
+</x-layout>

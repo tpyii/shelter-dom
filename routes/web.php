@@ -33,8 +33,9 @@ Route::get('/catalog/{id}', [CatalogController::class, 'show'])
  * Тут все роуты для андминки
  */
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
+    Route::view('/', 'admin.dashboard')->name('dashboard');
     Route::resource('/breeds', AdminBreedController::class);
-    Route::resource('/types', AdminTypeController::class);
+    Route::resource('/animal_types', AdminTypeController::class);
     Route::resource('/diseases', AdminDiseaseController::class);
     Route::resource('/inoculations', AdminInoculationController::class);
 });

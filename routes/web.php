@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BreedController AS AdminBreedController;
 use App\Http\Controllers\Admin\DiseaseController AS AdminDiseaseController;
+use App\Http\Controllers\Admin\InoculationController AS AdminInoculationController;
 use App\Http\Controllers\Admin\TypeController AS AdminTypeController;
 use App\Http\Controllers\CatalogController;
 use Illuminate\Support\Facades\Route;
@@ -35,4 +36,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
     Route::resource('/breeds', AdminBreedController::class);
     Route::resource('/types', AdminTypeController::class);
     Route::resource('/diseases', AdminDiseaseController::class);
+    Route::resource('/inoculations', AdminInoculationController::class);
 });

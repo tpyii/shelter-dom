@@ -11,10 +11,12 @@ class Breed extends Model
 
     public static $availabeFiedls = [
         'id',
+        'type_id',
         'name'
     ];
 
     protected $fillable = [
+        'type_id',
         'name'
     ];
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDiseaseAnimalTable extends Migration
+class CreateAnimalInoculationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateDiseaseAnimalTable extends Migration
      */
     public function up()
     {
-        Schema::create('disease_animal', function (Blueprint $table) {
-            $table->unsignedBigInteger('disease_id');
+        Schema::create('animal_inoculation', function (Blueprint $table) {
+            $table->unsignedBigInteger('inoculation_id');
             $table->unsignedBigInteger('animal_id');
 
-            $table->foreign('disease_id')->references('id')->on('diseases');
+            $table->foreign('inoculation_id')->references('id')->on('inoculations');
             $table->foreign('animal_id')->references('id')->on('animals');
         });
     }
@@ -29,6 +29,6 @@ class CreateDiseaseAnimalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('disease_animal');
+        Schema::dropIfExists('animal_inoculation');
     }
 }

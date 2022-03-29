@@ -10,14 +10,14 @@ class AnimalImage extends Model
     use HasFactory;
 
     public static $availableFields = [
-        'img_id',
+        'image_id',
         'animal_id',
     ];
 
-    protected $table = 'animal_images';
+    protected $table = 'animal_image';
 
     protected $fillable = [
-        'img_id',
+        'image_id',
         'animal_id',
     ];
 

@@ -14,7 +14,7 @@ class AddForeignKeysToBreedsTable extends Migration
     public function up()
     {
         Schema::table('breeds', function (Blueprint $table) {
-            $table->foreign('type_id')->references('id')->on('animal_types');
+            $table->foreign('type_id')->references('id')->on('animal_type')->onDelete('cascade');
         });
     }
 
@@ -26,7 +26,7 @@ class AddForeignKeysToBreedsTable extends Migration
     public function down()
     {
         Schema::table('breeds', function (Blueprint $table) {
-            $table->dropForeign('animals_breed_id_foreign');
+            $table->dropForeign('animal_breed_id_foreign');
         });
     }
 }

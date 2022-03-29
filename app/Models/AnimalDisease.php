@@ -14,7 +14,7 @@ class AnimalDisease extends Model
         'animal_id',
     ];
 
-    protected $table = 'disease_animal';
+    protected $table = 'animal_disease';
 
     protected $fillable = [
         'disease_id',

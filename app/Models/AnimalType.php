@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class AnimalType extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Type extends Model
         'name'
     ];
 
-    protected $table = 'animal_types';
+    protected $table = 'animal_type';
 
     protected $fillable = [
         'name'

@@ -15,12 +15,13 @@
 
   <x-form method="POST" action="{{ route('admin.breeds.update', $breed]) }}">
     @method('PUT')
-    <label for="type_id">Тип</label>
+    <x-label for="type_id">Тип</x-label>
     <select id="type_id" name="type_id">
         @foreach($animal_types as $animal_typesItem)
             <option value="{{ $animal_typesItem->id }}" @if($breed->type_id === $animal_typesItem->id) selected @endif>{{ $animal_typesItem->name }}</option>
         @endforeach
     </select>
+    <x-label for="name">Name</x-label>
     <input type="text" id="name" name="name" value="{{ $breed->name }}">
     <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
   </x-form>

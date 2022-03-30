@@ -16,8 +16,8 @@ class DiseaseResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->disease_id,
-            'name' => Disease::find($this->disease_id)->name
+            'id' => $this->id,
+            'name' => $this->name
         ];
     }
 }

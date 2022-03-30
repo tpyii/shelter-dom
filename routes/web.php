@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DiseaseController AS AdminDiseaseController;
 use App\Http\Controllers\Admin\InoculationController AS AdminInoculationController;
 use App\Http\Controllers\Admin\TypeController AS AdminTypeController;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\TestImgUploadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,4 +41,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
     Route::resource('/diseases', AdminDiseaseController::class);
     Route::resource('/inoculations', AdminInoculationController::class);
     Route::resource('/animals', AdminAnimalController::class);
+    Route::resource('/img', TestImgUploadController::class);
 });
+
+
+// Тестовый роут для картинок
+//Route::resource('/img', \App\Http\Controllers\TestImgUploadController::class);

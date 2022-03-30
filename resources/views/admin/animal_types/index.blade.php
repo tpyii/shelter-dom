@@ -9,6 +9,12 @@
     @endif
   </x-slot>
 
+  @if (session('success'))
+    <x-alert type="success">
+      {{ session('success') }}
+    </x-alert>
+  @endif
+
 @foreach($animal_types as $animal_typesItem)
     <p>{{$animal_typesItem->id}}</p>
     <p>{{$animal_typesItem->name}}</p>

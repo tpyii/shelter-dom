@@ -9,6 +9,12 @@
     @endif
   </x-slot>
 
+  @if (session('success'))
+    <x-alert type="success">
+      {{ session('success') }}
+    </x-alert>
+  @endif
+
 @foreach($breeds as $breedsItem)
     <p>{{$breedsItem->id}}</p>
     <p>{{$animal_type::find($breedsItem->type_id)->name}}</p>

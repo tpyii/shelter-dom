@@ -23,7 +23,7 @@
     <form method="post" action="{{ route('admin.breeds.destroy', ['breed' => $breedsItem->id])}}">
         @csrf
         @method('delete')
-        <button type="submit">Удалить</button>
+        <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
     </form>
     <hr>
 @endforeach

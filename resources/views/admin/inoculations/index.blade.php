@@ -22,7 +22,7 @@
     <form method="post" action="{{ route('admin.inoculations.destroy', ['inoculation' => $inoculationsItem->id])}}">
         @csrf
         @method('delete')
-        <button type="submit">Удалить</button>
+        <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
     </form>
     <hr>
 @endforeach

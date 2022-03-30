@@ -15,15 +15,25 @@
     </x-alert>
   @endif
 
+  <x-table>
+    <x-slot name="header">
+      <th>#</th>
+      <th>Name</th>
+      <th></th>
+    </x-slot>
 @foreach($inoculations as $inoculationsItem)
-    <p>{{$inoculationsItem->id}}</p>
-    <p>{{$inoculationsItem->name}}</p>
+      <tr>
+        <td>{{$inoculationsItem->id}}</td>
+        <td>{{$inoculationsItem->name}}</td>
+        <td>
     <a href="{{ route('admin.inoculations.edit', ['inoculation' => $inoculationsItem->id]) }}">Редактировать</a>
     <form method="post" action="{{ route('admin.inoculations.destroy', ['inoculation' => $inoculationsItem->id])}}">
         @csrf
         @method('delete')
         <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
     </form>
-    <hr>
+        </td>
+      </tr>
 @endforeach
+  </x-table>
 </x-layout>

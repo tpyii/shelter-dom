@@ -15,16 +15,27 @@
     </x-alert>
   @endif
 
+  <x-table>
+    <x-slot name="header">
+      <th>#</th>
+      <th>Type</th>
+      <th>Breed</th>
+      <th></th>
+    </x-slot>
 @foreach($breeds as $breedsItem)
-    <p>{{$breedsItem->id}}</p>
-    <p>{{$animal_type::find($breedsItem->type_id)->name}}</p>
-    <p>{{$breedsItem->name}}</p>
+      <tr>
+        <td>{{$breedsItem->id}}</td>
+        <td>{{$animal_type::find($breedsItem->type_id)->name}}</td>
+        <td>{{$breedsItem->name}}</td>
+        <td>
     <a href="{{ route('admin.breeds.edit', ['breed' => $breedsItem->id]) }}">Редактировать</a>
     <form method="post" action="{{ route('admin.breeds.destroy', ['breed' => $breedsItem->id])}}">
         @csrf
         @method('delete')
         <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
     </form>
-    <hr>
+        </td>
+      </tr>
 @endforeach
+  </x-table>
 </x-layout>

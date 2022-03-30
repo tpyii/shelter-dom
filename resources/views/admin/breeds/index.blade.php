@@ -29,11 +29,10 @@
         <td>{{$breedsItem->name}}</td>
         <td>
     <a href="{{ route('admin.breeds.edit', ['breed' => $breedsItem->id]) }}">Редактировать</a>
-    <form method="post" action="{{ route('admin.breeds.destroy', ['breed' => $breedsItem->id])}}">
-        @csrf
-        @method('delete')
+    <x-form method="POST" action="{{ route('admin.breeds.destroy', $breedsItem) }}">
+        @method('DELETE')
         <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
-    </form>
+    </x-form>
         </td>
       </tr>
 @endforeach

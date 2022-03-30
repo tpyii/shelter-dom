@@ -9,16 +9,32 @@
     @endif
   </x-slot>
 
+  @if (session('success'))
+    <x-alert type="success">
+      {{ session('success') }}
+    </x-alert>
+  @endif
+
+  <x-table>
+    <x-slot name="header">
+      <th>#</th>
+      <th>Type</th>
+      <th>Breed</th>
+      <th></th>
+    </x-slot>
 @foreach($breeds as $breedsItem)
-    <p>{{$breedsItem->id}}</p>
-    <p>{{$animal_type::find($breedsItem->type_id)->name}}</p>
-    <p>{{$breedsItem->name}}</p>
+      <tr>
+        <td>{{$breedsItem->id}}</td>
+        <td>{{$animal_type::find($breedsItem->type_id)->name}}</td>
+        <td>{{$breedsItem->name}}</td>
+        <td>
     <a href="{{ route('admin.breeds.edit', ['breed' => $breedsItem->id]) }}">Редактировать</a>
-    <form method="post" action="{{ route('admin.breeds.destroy', ['breed' => $breedsItem->id])}}">
-        @csrf
-        @method('delete')
-        <button type="submit">Удалить</button>
-    </form>
-    <hr>
+    <x-form method="POST" action="{{ route('admin.breeds.destroy', $breedsItem) }}">
+        @method('DELETE')
+        <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
+    </x-form>
+        </td>
+      </tr>
 @endforeach
+  </x-table>
 </x-layout>

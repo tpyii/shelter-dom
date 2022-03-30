@@ -13,7 +13,7 @@
     </x-alert>
   @endif
 
-  <x-form method="POST" action="{{ route('admin.breeds.update', $breed]) }}">
+  <x-form method="POST" action="{{ route('admin.breeds.update', $breed) }}">
     @method('PUT')
     <div class="mb-3">
     <x-label for="type_id">Тип</x-label>

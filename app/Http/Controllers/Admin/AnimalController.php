@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Animal;
 use App\Models\AnimalDisease;
 use App\Models\AnimalInoculation;
+use App\Models\AnimalType;
 use App\Models\Breed;
 use App\Models\Disease;
 use App\Models\Inoculation;
@@ -23,10 +24,9 @@ class AnimalController extends Controller
     {
         $animals = Animal::all();
 
-
         return view('admin.animals.index', [
             'animals' => $animals
-       ]);
+        ]);
     }
 
     /**
@@ -36,13 +36,23 @@ class AnimalController extends Controller
      */
     public function create()
     {
+        $breeds = Breed::all();
+        $animal_types = AnimalType::all();
+        $diseases = Disease::all();
+        $inoculations = Inoculation::all();
 
+        return view('admin.animals.create', [
+            'breeds' => $breeds,
+            'animal_types' => $animal_types,
+            'diseases' => $diseases,
+            'inoculations' => $inoculations
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,7 +63,7 @@ class AnimalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,19 +74,40 @@ class AnimalController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param Animal $animal
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Animal $animal)
     {
-        //
+        $breeds = Breed::all();
+        $animal_types = AnimalType::all();
+        $diseases = Disease::all();
+        $inoculations = Inoculation::all();
+
+        foreach ($animal->disease AS $diseaseItem){
+            $diseases_array[] = $diseaseItem->id;
+        }
+
+        foreach ($animal->inoculation AS $inoculationItem){
+            $inoculations_array[] = $inoculationItem->id;
+        }
+
+        return view('admin.animals.edit', [
+            'animal' => $animal,
+            'breeds' => $breeds,
+            'animal_types' => $animal_types,
+            'diseases' => $diseases,
+            'diseases_array' => $diseases_array,
+            'inoculations' => $inoculations,
+            'inoculations_array' => $inoculations_array
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -87,7 +118,7 @@ class AnimalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

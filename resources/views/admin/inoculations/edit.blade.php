@@ -13,10 +13,9 @@
     </x-alert>
   @endif
 
-<form method="post" action="{{ route('admin.inoculations.update', ['inoculation' => $inoculation->id])}}">
-    @csrf
-    @method('put')
+  <x-form method="POST" action="{{ route('admin.inoculations.update', $inoculation) }}">
+    @method('PUT')
     <input type="text" id="name" name="name" value="{{ $inoculation->name }}">
     <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
-</form>
+  </x-form>
 </x-layout>

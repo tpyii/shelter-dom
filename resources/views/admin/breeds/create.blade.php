@@ -13,8 +13,7 @@
     </x-alert>
   @endif
 
-<form method="post" action="{{ route('admin.breeds.store')}}">
-    @csrf
+  <x-form method="POST" action="{{ route('admin.breeds.store') }}">
     <label for="type_id">Тип</label>
     <select id="type_id" name="type_id">
         @foreach($animal_types as $animal_typesItem)
@@ -23,5 +22,5 @@
     </select>
     <input type="text" id="name" name="name" value="{{ old('name') }}">
     <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
-</form>
+  </x-form>
 </x-layout>

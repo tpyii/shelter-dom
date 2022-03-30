@@ -23,5 +23,10 @@
         @endforeach
     </div>
     <a href="{{route('admin.animals.edit', ['animal' => $animalsItem])}}">Редактировать</a>
+    <form method="post" action="{{ route('admin.animals.destroy', ['animal' => $animalsItem])}}">
+        @csrf
+        @method('delete')
+        <button type="submit">Удалить</button>
+    </form>
     <hr>
 @endforeach

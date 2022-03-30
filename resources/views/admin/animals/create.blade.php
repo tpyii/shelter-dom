@@ -1,4 +1,4 @@
-<form method="post" action="{{ route('admin.animals.store')}}">
+<form method="post" action="{{ route('admin.animals.store')}}" enctype="multipart/form-data">
     @csrf
     <label for="type_id">Тип</label>
     <select id="type_id" name="type_id">
@@ -8,8 +8,8 @@
         @endforeach
     </select>
     <br>
-    <label for="type_id">Порода</label>
-    <select id="type_id" name="type_id">
+    <label for="breed_id">Порода</label>
+    <select id="breed_id" name="breed_id">
         @foreach($breeds as $breedsItem)
             <option value="{{ $breedsItem->id }}"
                     @if(old('breed_id') === $breedsItem->id) selected @endif>{{ $breedsItem->name }}</option>
@@ -19,6 +19,10 @@
     <label for="name">Имя</label>
     <input type="text" id="name" name="name" value="{{ old('name') }}">
     <br>
+    <label for="description">Описание</label>
+    <br>
+    <textarea name="description" id="description" cols="30" rows="10">{{old('description')}}</textarea>
+    <br>
     <label for="treatment_of_parasites">Паразиты</label>
     <input type="radio" name="treatment_of_parasites" id="inp1" value="YES" @if(old('treatment_of_parasites')==="YES") checked @endif>
     <label for="inp1">Да</label>
@@ -26,18 +30,19 @@
     <label for="inp1">Нет</label>
     <br>
     <p>Болезни</p>
-    @foreach($diseases as $diseasesItem)
-        <input type="checkbox" name="diseases" value="{{$diseasesItem->id}}" @if(in_array(old('diseases'), $diseasesItem->id)) checked @endif>
-        <label for="diseases">{{$diseasesItem->name}}</label>
-        <br>
-    @endforeach
+    <select id="diseases" name="diseases[]" multiple>
+        @foreach($diseases as $diseasesItem)
+            <option value="{{$diseasesItem->id}}">{{ $diseasesItem->name }}</option>
+        @endforeach
+    </select>
     <p>Прививки</p>
-    @foreach($inoculations as $inoculationsItem)
-        <input type="checkbox" name="diseases" value="{{$inoculationsItem->id}}" @if(in_array(old('inoculations'), $inoculationsItem->id)) checked @endif>
-        <label for="diseases">{{$inoculationsItem->name}}</label>
-        <br>
-    @endforeach
-    <input type="date" name="birthday_at">
+    <select id="inoculations" name="inoculations[]" multiple>
+        @foreach($inoculations as $inoculationsItem)
+            <option value="{{$inoculationsItem->id}}">{{ $inoculationsItem->name }}</option>
+        @endforeach
+    </select>
+    <br>
+    <input type="date" name="birthday_at" value="{{old('birthday_at')}}">
     <br>
     <button type="submit">Сохранить</button>
 </form>

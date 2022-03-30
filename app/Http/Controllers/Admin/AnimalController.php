@@ -4,13 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Animal;
-use App\Models\AnimalDisease;
-use App\Models\AnimalInoculation;
 use App\Models\AnimalType;
 use App\Models\Breed;
 use App\Models\Disease;
 use App\Models\Inoculation;
-use App\Models\Type;
 use Illuminate\Http\Request;
 
 class AnimalController extends Controller
@@ -57,7 +54,19 @@ class AnimalController extends Controller
      */
     public function store(Request $request)
     {
+        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations');
 
+        $created_animal = Animal::create($data_animal);
+        $created_animal->disease()->attach($request->input('diseases'));
+        $created_animal->inoculation()->attach($request->input('inoculations'));
+
+        if($created_animal) {
+            return redirect()->route('admin.animals.index')
+                ->with('success', 'Запись успешно добавлена');
+        }
+
+        return back()->with('error', 'Не удалось добавить запись')
+            ->withInput();
     }
 
     /**
@@ -110,19 +119,43 @@ class AnimalController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Animal $animal)
     {
-        //
+        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations');
+
+        $updated_animal = $animal->fill($data_animal)->save();
+
+        $updated_disease = $animal->disease()->sync($request->input('diseases'));
+        $updated_inoculation = $animal->inoculation()->sync($request->input('inoculations'));
+
+        if($updated_animal && $updated_disease && $updated_inoculation) {
+            return redirect()->route('admin.animals.index')
+                ->with('success', 'Запись успешно добавлена');
+        }
+
+        return back()->with('error', 'Не удалось добавить запись')
+            ->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param Animal $animal
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Animal $animal)
     {
-        //
+        $deleted_disease = $animal->disease()->detach();
+        $deleted_inoculation = $animal->inoculation()->detach();
+
+        $animal_deleted = $animal->delete();
+
+        if ($animal_deleted && $deleted_disease && $deleted_inoculation) {
+            return redirect()->route('admin.animals.index')
+                ->with('success', 'Запись успешно удалена');
+        }
+
+        return back()->with('error', 'Не удалось удалить запись')
+            ->withInput();
     }
 }

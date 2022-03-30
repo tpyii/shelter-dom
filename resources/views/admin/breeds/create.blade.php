@@ -1,3 +1,8 @@
+<x-layout>
+  <x-slot name="title">
+    Breeds create
+  </x-slot>
+
 <form method="post" action="{{ route('admin.breeds.store')}}">
     @csrf
     <label for="type_id">Тип</label>
@@ -9,3 +14,4 @@
     <input type="text" id="name" name="name" value="{{ old('name') }}">
     <button type="submit">Сохранить</button>
 </form>
+</x-layout>

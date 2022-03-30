@@ -1,3 +1,14 @@
+<x-layout>
+  <x-slot name="title">
+    Inoculations
+  </x-slot>
+
+  <x-slot name="toolbar">
+    @if (Route::has('admin.inoculations.create'))
+      <a href="{{ route('admin.inoculations.create') }}" class="btn btn-sm btn-outline-success">Create</a>
+    @endif
+  </x-slot>
+
 @foreach($inoculations as $inoculationsItem)
     <p>{{$inoculationsItem->id}}</p>
     <p>{{$inoculationsItem->name}}</p>
@@ -9,4 +20,4 @@
     </form>
     <hr>
 @endforeach
-<a href="{{route('admin.inoculations.create')}}">Создать</a>
+</x-layout>

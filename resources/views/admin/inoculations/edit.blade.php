@@ -15,6 +15,7 @@
 
   <x-form method="POST" action="{{ route('admin.inoculations.update', $inoculation) }}">
     @method('PUT')
+    <x-label for="name">Name</x-label>
     <input type="text" id="name" name="name" value="{{ $inoculation->name }}">
     <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
   </x-form>

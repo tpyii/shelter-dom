@@ -17,6 +17,6 @@
     @csrf
     @method('put')
     <input type="text" id="name" name="name" value="{{ $disease->name }}">
-    <button type="submit">Сохранить</button>
+    <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
 </form>
 </x-layout>

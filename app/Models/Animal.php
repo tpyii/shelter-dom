@@ -30,17 +30,17 @@ class Animal extends Model
 
     public function images()
     {
-        return $this->hasMany(AnimalImage::class);
+        return $this->belongsToMany(Image::class);
     }
 
     public function disease()
     {
-        return $this->hasMany(AnimalDisease::class);
+        return $this->belongsToMany(Disease::class);
     }
 
     public function inoculation()
     {
-        return $this->hasMany(AnimalInoculation::class);
+        return $this->belongsToMany(Inoculation::class);
     }
 
     public function breed()

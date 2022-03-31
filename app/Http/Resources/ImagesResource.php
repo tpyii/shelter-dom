@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Image;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ImagesResource extends JsonResource

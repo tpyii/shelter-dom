@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Inoculation;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class InoculationResource extends JsonResource

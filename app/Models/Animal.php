@@ -28,6 +28,14 @@ class Animal extends Model
         'treatment_of_parasites'
     ];
 
+    protected $with = [
+        'disease',
+        'images',
+        'inoculation',
+        'breed',
+        'type'
+    ];
+
     public function images()
     {
         return $this->belongsToMany(Image::class);

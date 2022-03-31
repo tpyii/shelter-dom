@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Disease;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class DiseaseResource extends JsonResource

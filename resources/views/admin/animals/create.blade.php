@@ -38,7 +38,7 @@
     </div>
     <div class="mb-3">
       <x-label for="description">Описание</x-label>
-    <textarea name="description" id="description" cols="30" rows="10">{{old('description')}}</textarea>
+      <x-textarea name="description">{{old('description')}}</x-textarea>
     </div>
     <div class="mb-3">
       <x-label>Паразиты</x-label>

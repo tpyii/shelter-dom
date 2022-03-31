@@ -38,7 +38,8 @@
       <x-input name="name" value="{{ $animal->name }}" />
     </div>
     <div class="mb-3">
-    <textarea name="description" id="description" cols="30" rows="10">{{$animal->description}}</textarea>
+      <x-label for="description">Описание</x-label>
+      <x-textarea name="description">{{$animal->description}}</x-textarea>
     </div>
     <div class="mb-3">
       <x-label>Паразиты</x-label>

@@ -16,21 +16,11 @@
   <x-form method="POST" action="{{ route('admin.animals.store') }}" enctype="multipart/form-data">
     <div class="mb-3">
       <x-label for="type_id">Тип</x-label>
-    <select id="type_id" name="type_id">
-        @foreach($animal_types as $animal_typesItem)
-            <option value="{{ $animal_typesItem->id }}"
-                    @if(old('type_id') === $animal_typesItem->id) selected @endif>{{ $animal_typesItem->name }}</option>
-        @endforeach
-    </select>
+      <x-select name="type_id" :options="$animal_types" />
     </div>
     <div class="mb-3">
       <x-label for="breed_id">Порода</x-label>
-    <select id="breed_id" name="breed_id">
-        @foreach($breeds as $breedsItem)
-            <option value="{{ $breedsItem->id }}"
-                    @if(old('breed_id') === $breedsItem->id) selected @endif>{{ $breedsItem->name }}</option>
-        @endforeach
-    </select>
+      <x-select name="breed_id" :options="$breeds" />
     </div>
     <div class="mb-3">
       <x-label for="name">Имя</x-label>
@@ -47,19 +37,11 @@
     </div>
     <div class="mb-3">
       <x-label for="diseases">Diseases</x-label>
-    <select id="diseases" name="diseases[]" multiple>
-        @foreach($diseases as $diseasesItem)
-            <option value="{{$diseasesItem->id}}">{{ $diseasesItem->name }}</option>
-        @endforeach
-    </select>
+      <x-select name="diseases[]" :options="$diseases" multiple />
     </div>
     <div class="mb-3">
       <x-label for="inoculations">Inoculations</x-label>
-    <select id="inoculations" name="inoculations[]" multiple>
-        @foreach($inoculations as $inoculationsItem)
-            <option value="{{$inoculationsItem->id}}">{{ $inoculationsItem->name }}</option>
-        @endforeach
-    </select>
+      <x-select name="inoculations[]" :options="$inoculations" multiple />
     </div>
     <div class="mb-3">
       <x-label>Birthday</x-label>

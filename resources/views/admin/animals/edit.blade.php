@@ -42,15 +42,9 @@
       <x-textarea name="description">{{$animal->description}}</x-textarea>
     </div>
     <div class="mb-3">
-      <x-label>Паразиты</x-label>
-      <div class="form-check">
-    <input type="radio" name="treatment_of_parasites" id="inp1" value="YES" @if($animal->treatment_of_parasites==="YES") checked @endif>
-        <x-label for="inp1" class="form-check-label">YES</x-label>
-      </div>
-      <div class="form-check">
-    <input type="radio" name="treatment_of_parasites" id="inp2" value="NO" @if($animal->treatment_of_parasites==="NO") checked @endif>
-        <x-label for="inp2" class="form-check-label">NO</x-label>
-      </div>
+      <x-label for="inp1">Паразиты</x-label>
+      <x-input type="radio" name="treatment_of_parasites" id="inp1" value="YES" label="Да" :checked="$animal->treatment_of_parasites" />
+      <x-input type="radio" name="treatment_of_parasites" id="inp2" value="NO" label="Нет" :checked="$animal->treatment_of_parasites" />
     </div>
     <div class="mb-3">
       <x-label for="diseases">Болезни</x-label>

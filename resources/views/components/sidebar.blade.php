@@ -8,6 +8,12 @@
       </li>
       @endif
 
+      @if (Route::has('admin.animals.index'))
+      <li class="nav-item">
+        <a class="nav-link @if (request()->routeIs('admin.animals.*')) active @endif" href="{{ route('admin.animals.index') }}">Animals</a>
+      </li>
+      @endif
+
       @if (Route::has('admin.breeds.index'))
       <li class="nav-item">
         <a class="nav-link @if (request()->routeIs('admin.breeds.*')) active @endif" href="{{ route('admin.breeds.index') }}">Breeds</a>

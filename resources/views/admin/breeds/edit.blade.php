@@ -17,11 +17,7 @@
     @method('PUT')
     <div class="mb-3">
     <x-label for="type_id">Тип</x-label>
-    <select id="type_id" name="type_id">
-        @foreach($animal_types as $animal_typesItem)
-            <option value="{{ $animal_typesItem->id }}" @if($breed->type_id === $animal_typesItem->id) selected @endif>{{ $animal_typesItem->name }}</option>
-        @endforeach
-    </select>
+    <x-select name="type_id" :options="$animal_types" :value="$breed->type_id" />
     </div>
     <div class="mb-3">
       <x-label for="name">Name</x-label>

@@ -1,8 +1,8 @@
 /node_modules
 /public/hot
-/public/storage
-/public/images/tmp_db
-/storage/*.key
+#/public/storage
+#/public/images/tmp_db
+#/storage/*.key
 /vendor
 .env
 .env.backup

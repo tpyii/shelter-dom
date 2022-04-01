@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Admin\AnimalController AS AdminAnimalController;
-use App\Http\Controllers\Admin\BreedController AS AdminBreedController;
-use App\Http\Controllers\Admin\DiseaseController AS AdminDiseaseController;
-use App\Http\Controllers\Admin\InoculationController AS AdminInoculationController;
-use App\Http\Controllers\Admin\TypeController AS AdminTypeController;
+use App\Http\Controllers\Admin\AnimalController as AdminAnimalController;
+use App\Http\Controllers\Admin\BreedController as AdminBreedController;
+use App\Http\Controllers\Admin\DiseaseController as AdminDiseaseController;
+use App\Http\Controllers\Admin\InoculationController as AdminInoculationController;
+use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
@@ -37,7 +37,6 @@ Route::get('/catalog/{id}', [CatalogController::class, 'show'])
  * Тут все роуты для андминки
  */
 Route::group(['middleware' => 'auth'], function() {
-
     Route::get('/logout', function(){
         Auth::logout();
         return redirect()->route('login');
@@ -60,3 +59,9 @@ Route::group(['middleware' => 'auth'], function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Тестовый роут для фронта
+
+Route::any('{any}', function () {
+    return view('welcome');
+})->where('any', '^(?!api).*$');

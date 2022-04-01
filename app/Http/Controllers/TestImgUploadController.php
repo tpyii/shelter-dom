@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Animal;
 use App\Models\Image;
-use App\Services\UploadService;
+use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
 
 class TestImgUploadController extends Controller
@@ -50,7 +50,7 @@ class TestImgUploadController extends Controller
         {
             foreach($request->file('files') as $file)
             {
-                app(UploadService::class)->saveUploadedFile($file, $model);
+                app(ImageUploadService::class)->saveUploadedFile($file, $model);
             }
         }
     }

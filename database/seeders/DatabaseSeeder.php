@@ -27,20 +27,19 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $this->call([
                 AnimalSeeder::class,
                 ImageSeeder::class,
             ]);
         }
 
-        for ($i = 0; $i < 20; $i++) {
-            $this->call([
-                AnimalInoculationSeeder::class,
-                AnimalDiseaseSeeder::class,
-                AnimalImagesSeeder::class,
-            ]);
-        }
-        $this->call(AdminSeeder::class);
+        $this->call([
+            AnimalInoculationSeeder::class,
+            AnimalDiseaseSeeder::class,
+            AnimalImagesSeeder::class,
+            AdminSeeder::class
+        ]);
+
     }
 }

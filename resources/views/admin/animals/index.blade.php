@@ -9,11 +9,7 @@
     @endif
   </x-slot>
 
-  @if (session('success'))
-    <x-alert type="success">
-      {{ session('success') }}
-    </x-alert>
-  @endif
+  <x-success />
   
   <x-table>
     <x-slot name="header">

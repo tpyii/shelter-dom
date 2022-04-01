@@ -15,7 +15,6 @@ class AddUserIsAdminTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->tinyInteger('is_admin')->default(false)->after('password');
-            $table->string('session_token')->unique()->after('is_admin');
         });
     }
 

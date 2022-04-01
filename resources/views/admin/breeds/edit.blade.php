@@ -3,15 +3,7 @@
     Breeds edit
   </x-slot>
 
-  @if ($errors->any())
-    <x-alert type="danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </x-alert>
-  @endif
+  <x-errors />
 
   <x-form method="POST" action="{{ route('admin.breeds.update', $breed) }}">
     @method('PUT')

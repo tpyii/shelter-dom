@@ -3,7 +3,7 @@
 
     <ul class="nav flex-column">
       <x-nav-link href="admin.dashboard" route="admin.dashboard">Dashboard</x-nav-link>
-      <x-nav-link href="admin.animals.index" route="admin.animals.*">Aniamls</x-nav-link>
+      <x-nav-link href="admin.animals.index" route="admin.animals.*">Animals</x-nav-link>
       <x-nav-link href="admin.breeds.index" route="admin.breeds.*">Breeds</x-nav-link>
       <x-nav-link href="admin.animal_types.index" route="admin.animal_types.*">Types</x-nav-link>
       <x-nav-link href="admin.diseases.index" route="admin.diseases.*">Diseases</x-nav-link>

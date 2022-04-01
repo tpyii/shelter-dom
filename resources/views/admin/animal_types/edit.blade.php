@@ -15,10 +15,7 @@
 
   <x-form method="POST" action="{{ route('admin.animal_types.update', $animal_type) }}">
     @method('PUT')
-    <div class="mb-3">
-      <x-label for="name">Name</x-label>
-      <x-input name="name" value="{{ $animal_type->name }}" />
-    </div>
+    <x-input name="name" label="Name" value="{{ $animal_type->name }}" />
     <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
   </x-form>
 </x-layout>

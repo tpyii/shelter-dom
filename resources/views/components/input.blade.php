@@ -37,21 +37,27 @@
   @break
 
   @default
-    <input 
-      {{ $attributes->merge([
-        'class' => 'form-control form-control-sm',
-        'type' => $type,
-        'name' => $name,
-        'id' => $name,
-        'value' => old($name, $value)
-      ])->class([
-        'is-invalid' => $errors->has($name),
-      ]) }}
-    >
+    <div class="mb-3">
+      <x-label :for="$name">
+        {{ $label }}
+      </x-label>
+
+      <input 
+        {{ $attributes->merge([
+          'class' => 'form-control form-control-sm',
+          'type' => $type,
+          'name' => $name,
+          'id' => $name,
+          'value' => old($name, $value)
+        ])->class([
+          'is-invalid' => $errors->has($name),
+        ]) }}
+      >
     
-    @error($name)
-      <div class="invalid-feedback">
-        {{ $message }}
-      </div>
-    @enderror
+      @error($name)
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
+    </div>
 @endswitch

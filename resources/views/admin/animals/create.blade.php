@@ -47,6 +47,11 @@
       <x-label>Birthday</x-label>
       <x-input type="date" name="birthday_at" value="{{old('birthday_at')}}" />
     </div>
+      <div class="form-group">
+          <label for="img">Изображение
+          </label>
+          <input class="form-control" name="files[]" id="img" type="file" multiple>
+      </div>
     <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
   </x-form>
 </x-layout>

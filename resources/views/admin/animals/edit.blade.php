@@ -48,6 +48,16 @@
       <x-label for="birthday_at">День рождения</x-label>
       <x-input type="date" name="birthday_at" value="{{$animal->birthday_at}}" />
     </div>
+      <div class="mb-3" id="imgIds">
+      @foreach($imgIds AS $imagesItem)
+          <img src="{{Storage::disk('public')->url($imagesItem)}}" alt="#" style="max-width: 100px; height: auto">
+      @endforeach
+          <div class="form-group">
+              <label for="img">Новые изображения
+              </label>
+              <input class="form-control" name="files[]" id="img" type="file" multiple>
+          </div>
+      </div>
     <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
   </x-form>
 </x-layout>

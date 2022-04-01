@@ -14,10 +14,7 @@
   @endif
 
   <x-form method="POST" action="{{ route('admin.breeds.store') }}">
-    <div class="mb-3">
-    <x-label for="type_id">Тип</x-label>
-    <x-select name="type_id" :options="$animal_types" />
-    </div>
+    <x-select name="type_id" label="Тип" :options="$animal_types" />
     <div class="mb-3">
       <x-label for="name">Name</x-label>
       <x-input name="name" />

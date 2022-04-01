@@ -16,9 +16,11 @@ class AnimalInoculationSeeder extends Seeder
     public function run()
     {
         $this->faker = Faker::create();
-        DB::table('animal_inoculation')->insert([
-            'inoculation_id' =>rand(1,10),
-            'animal_id' =>rand(1,10),
-        ]);
+        for ($i = 1; $i<=10; $i++){
+            DB::table('animal_inoculation')->insert([
+                'inoculation_id' =>$i,
+                'animal_id' =>$i,
+            ]);
+        }
     }
 }

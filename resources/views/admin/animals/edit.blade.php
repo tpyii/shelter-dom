@@ -19,6 +19,16 @@
     <x-select name="diseases[]" label="Болезни" id="diseases" :options="$diseases" :value="$animal->disease" multiple />
     <x-select name="inoculations[]" label="Прививки" :options="$inoculations" :value="$animal->inoculation" multiple/>
     <x-input type="date" name="birthday_at" label="День рождения" value="{{ $animal->birthday_at }}" />
+    <div class="mb-3" id="imgIds">
+      @foreach($imgIds AS $imagesItem)
+          <img src="{{Storage::disk('public')->url($imagesItem)}}" alt="#" style="max-width: 100px; height: auto">
+      @endforeach
+          <div class="form-group">
+              <label for="img">Новые изображения
+              </label>
+              <input class="form-control" name="files[]" id="img" type="file" multiple>
+          </div>
+      </div>
     <x-button type="submit" color="outline-success">Сохранить</x-button>
   </x-form>
 </x-layout>

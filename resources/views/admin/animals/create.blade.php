@@ -18,6 +18,11 @@
     <x-select name="diseases[]" label="Diseases" :options="$diseases" multiple />
     <x-select name="inoculations[]" label="Inoculations" :options="$inoculations" multiple />
     <x-input type="date" name="birthday_at" label="Birthday" value="{{ old('birthday_at') }}" />
+    <div class="form-group">
+          <label for="img">Изображение
+          </label>
+          <input class="form-control" name="files[]" id="img" type="file" multiple>
+      </div>
     <x-button type="submit" color="outline-success">Сохранить</x-button>
   </x-form>
 </x-layout>

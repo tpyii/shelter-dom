@@ -27,10 +27,7 @@
       <x-label for="name">Имя</x-label>
       <x-input name="name" value="{{ $animal->name }}" />
     </div>
-    <div class="mb-3">
-      <x-label for="description">Описание</x-label>
-      <x-textarea name="description">{{$animal->description}}</x-textarea>
-    </div>
+    <x-textarea name="description" label="Описание">{{ $animal->description }}</x-textarea>
     <div class="mb-3">
       <x-label for="inp1">Паразиты</x-label>
       <x-input type="radio" name="treatment_of_parasites" id="inp1" value="YES" label="Да" :checked="$animal->treatment_of_parasites" />

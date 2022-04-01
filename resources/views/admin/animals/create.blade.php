@@ -26,10 +26,7 @@
       <x-label for="name">Имя</x-label>
       <x-input name="name" value="{{ old('name') }}" />
     </div>
-    <div class="mb-3">
-      <x-label for="description">Описание</x-label>
-      <x-textarea name="description">{{old('description')}}</x-textarea>
-    </div>
+    <x-textarea name="description" label="Описание">{{ old('description') }}</x-textarea>
     <div class="mb-3">
       <x-label for="inp1">Паразиты</x-label>
       <x-input type="radio" name="treatment_of_parasites" id="inp1" value="YES" label="Да" />

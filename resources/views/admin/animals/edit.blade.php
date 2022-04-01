@@ -19,6 +19,6 @@
     <x-select name="diseases[]" label="Болезни" id="diseases" :options="$diseases" :value="$animal->disease" multiple />
     <x-select name="inoculations[]" label="Прививки" :options="$inoculations" :value="$animal->inoculation" multiple/>
     <x-input type="date" name="birthday_at" label="День рождения" value="{{ $animal->birthday_at }}" />
-    <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
+    <x-button type="submit" color="outline-success">Сохранить</x-button>
   </x-form>
 </x-layout>

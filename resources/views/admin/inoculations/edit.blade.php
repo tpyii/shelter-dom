@@ -8,6 +8,6 @@
   <x-form method="POST" action="{{ route('admin.inoculations.update', $inoculation) }}">
     @method('PUT')
     <x-input name="name" label="Name" value="{{ $inoculation->name }}" />
-    <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
+    <x-button type="submit" color="outline-success">Сохранить</x-button>
   </x-form>
 </x-layout>

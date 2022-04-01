@@ -7,6 +7,6 @@
 
   <x-form method="POST" action="{{ route('admin.diseases.store') }}">
     <x-input name="name" label="Name" />
-    <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
+    <x-button type="submit" color="outline-success">Сохранить</x-button>
   </x-form>
 </x-layout>

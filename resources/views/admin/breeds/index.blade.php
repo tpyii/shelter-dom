@@ -27,7 +27,7 @@
     <a href="{{ route('admin.breeds.edit', ['breed' => $breedsItem->id]) }}">Редактировать</a>
     <x-form method="POST" action="{{ route('admin.breeds.destroy', $breedsItem) }}">
         @method('DELETE')
-        <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
+        <x-button type="submit" color="outline-danger">Удалить</x-button>
     </x-form>
         </td>
       </tr>

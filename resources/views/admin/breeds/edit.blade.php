@@ -9,6 +9,6 @@
     @method('PUT')
     <x-select name="type_id" label="Тип" :options="$animal_types" :value="$breed->type_id" />
     <x-input name="name" label="Name" value="{{ $breed->name }}" />
-    <x-button type="submit" color="outline-success" class="btn-sm">Сохранить</x-button>
+    <x-button type="submit" color="outline-success">Сохранить</x-button>
   </x-form>
 </x-layout>

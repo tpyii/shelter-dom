@@ -9,11 +9,7 @@
     @endif
   </x-slot>
 
-  @if (session('success'))
-    <x-alert type="success">
-      {{ session('success') }}
-    </x-alert>
-  @endif
+  <x-success />
 
   <x-table>
     <x-slot name="header">
@@ -29,7 +25,7 @@
     <a href="{{ route('admin.animal_types.edit', ['animal_type' => $animal_typesItem->id]) }}">Редактировать</a>
     <x-form method="POST" action="{{ route('admin.animal_types.destroy', $animal_typesItem) }}">
         @method('DELETE')
-        <x-button type="submit" color="outline-danger" class="btn-sm">Удалить</x-button>
+        <x-button type="submit" color="outline-danger">Удалить</x-button>
     </x-form>
         </td>
       </tr>

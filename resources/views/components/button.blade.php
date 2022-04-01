@@ -1,5 +1,5 @@
 <button {{ $attributes->merge([
-  'class' => 'btn btn-'.$color,
+  'class' => 'btn btn-sm btn-'.$color,
   'type' => 'button'
 ]) }}>
   {{ $slot }}

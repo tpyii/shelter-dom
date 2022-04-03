@@ -2,6 +2,7 @@ import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import './NavBarLight.css'
 
 export const NavBarLigth = () => {
+
     return (
         <div>
             <header className="navbar background-darkl">
@@ -18,7 +19,7 @@ export const NavBarLigth = () => {
                                 <li className="nav-item"><Link className='link__our' to="#" className="active">Our
                                     pets</Link></li>
                                 <li className="nav-item"><Link className='link__our' to="#">Help the shelter</Link></li>
-                                <li className="nav-item"><Link className='link__our' to="#">Contacts</Link></li>
+                                <li className="nav-item"><Link className='link__our' value='contacts' to="/#contacts">Contacts</Link></li>
                             </ul>
                         </div>
                     </div>

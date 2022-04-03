@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Inoculation;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class InoculationResource extends JsonResource
@@ -16,8 +15,8 @@ class InoculationResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->inoculation_id,
-            'name' => Inoculation::find($this->inoculation_id)->name
+            'id' => $this->id,
+            'name' => $this->name
         ];
     }
 }

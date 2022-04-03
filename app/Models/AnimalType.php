@@ -14,8 +14,6 @@ class AnimalType extends Model
         'name'
     ];
 
-    protected $table = 'animal_type';
-
     protected $fillable = [
         'name'
     ];

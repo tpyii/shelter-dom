@@ -12562,9 +12562,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css":
 /*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css ***!
   \***********************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -12579,16 +12579,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*  10. Navbar  */\n\n.navbar {\n    position: relative;\n    padding: 30px 0;\n    z-index: 1;\n}\n\n.navbar-burger {\n    display: none !important;\n    width: 30px;\n    height: 22px;\n    z-index: 2;\n    cursor: pointer;\n    transition: transform 0.2s ease-out;\n}\n\n.nav-item {\n    margin-left: 35px;\n}\n\n@media (max-width: 767px) {\n    .navbar.active .navbar-logo {\n        z-index: 2;\n    }\n\n    .navbar-content {\n        position: fixed;\n        top: 0;\n        left: 0;\n        transform: translateX(100%);\n        width: 100%;\n        height: 100vh;\n        padding-top: 120px;\n        z-index: 1;\n        /*background: #292929;*/\n        transition: transform 0.2s ease-out;\n    }\n\n    .navbar-content-container {\n        padding-top: 100px;\n        overflow-y: auto;\n    }\n\n    .navbar.active .navbar-content {\n        transform: translateX(0);\n    }\n\n    .nav-item {\n        margin-bottom: 50px;\n        margin-left: 0;\n        font-size: 32px;\n    }\n\n    .navbar-burger {\n        display: flex !important;\n    }\n\n    .navbar.active .navbar-burger {\n        transform: rotate(90deg);\n    }\n\n    .navbar-burger > div {\n        height: 2px;\n        background-color: #545454;\n        transition: background-color 0.2s ease-out;\n    }\n\n    .background-darkl .navbar-burger > div {\n        background-color: #FFFFFF;\n    }\n}\n\n/*  7. Links */\n\na {\n    position: relative;\n    text-decoration: none;\n    color: #545454;\n}\n\na:hover,\na.active {\n    color: #292929;\n}\n\na:active,\na:focus {\n    color: #545454;\n}\n\na:active::after,\na:focus::after,\na.active::after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: -5px;\n    width: 100%;\n    height: 3px;\n    background-color: #F1CDB3;\n}\n\n.background-darkl a {\n    color: #545454;\n}\n\n.background-darkl a:hover,\n.background-darkl a:active::after,\n.background-darkl a:focus::after,\n.background-darkl a.active {\n    color: #292929;;\n}\n\n/*6. Logo  */\n\n.logo-titlel {\n    display: inline-block;\n    margin-bottom: 10px;\n    font-family: var(--font-family-georgia);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 32px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n    /*color: #545454;*/\n    transition: color 0.2s ease-out;\n}\n\n.cozy_light{\n    color: #545454;\n}\n\n.logo-subtitlel {\n    font-family: var(--font-family-arial);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    letter-spacing: 0.1em;\n    color: #292929;\n    transition: color 0.2s ease-out;\n}\n\n.background-darkl .logo-title,\n.background-darkl .logo-title:hover {\n    color: #F1CDB3;\n}\n\n.background-darkl .logo-subtitle {\n    color: #FFFFFF;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*  10. Navbar  */\r\n\r\n.navbar {\r\n    position: relative;\r\n    padding: 30px 0;\r\n    z-index: 1;\r\n}\r\n\r\n.navbar-burger {\r\n    display: none !important;\r\n    width: 30px;\r\n    height: 22px;\r\n    z-index: 2;\r\n    cursor: pointer;\r\n    transition: transform 0.2s ease-out;\r\n}\r\n\r\n.nav-item {\r\n    margin-left: 35px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .navbar.active .navbar-logo {\r\n        z-index: 2;\r\n    }\r\n\r\n    .navbar-content {\r\n        position: fixed;\r\n        top: 0;\r\n        left: 0;\r\n        transform: translateX(100%);\r\n        width: 100%;\r\n        height: 100vh;\r\n        padding-top: 120px;\r\n        z-index: 1;\r\n        /*background: #292929;*/\r\n        transition: transform 0.2s ease-out;\r\n    }\r\n\r\n    .navbar-content-container {\r\n        padding-top: 100px;\r\n        overflow-y: auto;\r\n    }\r\n\r\n    .navbar.active .navbar-content {\r\n        transform: translateX(0);\r\n    }\r\n\r\n    .nav-item {\r\n        margin-bottom: 50px;\r\n        margin-left: 0;\r\n        font-size: 32px;\r\n    }\r\n\r\n    .navbar-burger {\r\n        display: flex !important;\r\n    }\r\n\r\n    .navbar.active .navbar-burger {\r\n        transform: rotate(90deg);\r\n    }\r\n\r\n    .navbar-burger > div {\r\n        height: 2px;\r\n        background-color: #545454;\r\n        transition: background-color 0.2s ease-out;\r\n    }\r\n\r\n    .background-darkl .navbar-burger > div {\r\n        background-color: #FFFFFF;\r\n    }\r\n}\r\n\r\n/*  7. Links */\r\n\r\na {\r\n    position: relative;\r\n    text-decoration: none;\r\n    color: #545454;\r\n}\r\n\r\na:hover,\r\na.active {\r\n    color: #292929;\r\n}\r\n\r\na:active,\r\na:focus {\r\n    color: #545454;\r\n}\r\n\r\na:active::after,\r\na:focus::after,\r\na.active::after {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    bottom: -5px;\r\n    width: 100%;\r\n    height: 3px;\r\n    background-color: #F1CDB3;\r\n}\r\n\r\n.background-darkl a {\r\n    color: #545454;\r\n}\r\n\r\n.background-darkl a:hover,\r\n.background-darkl a:active::after,\r\n.background-darkl a:focus::after,\r\n.background-darkl a.active {\r\n    color: #292929;;\r\n}\r\n\r\n/*6. Logo  */\r\n\r\n.logo-titlel {\r\n    display: inline-block;\r\n    margin-bottom: 10px;\r\n    font-family: var(--font-family-georgia);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 32px;\r\n    line-height: 110%;\r\n    letter-spacing: 0.06em;\r\n    /*color: #545454;*/\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.cozy_light{\r\n    color: #545454;\r\n}\r\n\r\n.logo-subtitlel {\r\n    font-family: var(--font-family-arial);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n    line-height: 15px;\r\n    letter-spacing: 0.1em;\r\n    color: #292929;\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.background-darkl .logo-title,\r\n.background-darkl .logo-title:hover {\r\n    color: #F1CDB3;\r\n}\r\n\r\n.background-darkl .logo-subtitle {\r\n    color: #FFFFFF;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./templates/assets/css/style.css":
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./templates/assets/css/style.css":
 /*!**************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./templates/assets/css/style.css ***!
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./templates/assets/css/style.css ***!
   \**************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -12609,7 +12609,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_patterns_noise_transparent_2x_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/**\n *  1. Variables\n *  2. Defaults\n *  3. Buttons\n *  4. Typography\n *  5. Lists\n *  6. Logo\n *  7. Links\n *  8. Cards\n *  9. Modal\n *  10. Navbar\n *  11. Welcome\n *  12. About\n *  13. Help\n *  14. Donate\n *  15. Footer\n *  16. Slider\n */\n\n/* 1. Variables */\n\n:root {\n  --font-family-arial: Arial, sans-serif;\n  --font-family-georgia: Georgia, serif;\n  /*--color-dark-s: #CDCDCD;*/\n  /*--color-dark-m: #B2B2B2;*/\n  /*--color-dark-l: #545454;*/\n  /*--color-dark-xl: #4C4C4C;*/\n  /*--color-dark-3xl: #292929;*/\n  /*--color-light-s: #FAFAFA;*/\n  /*--color-light-l: #F6F6F6;*/\n  /*--color-light-xl: #FFFFFF;*/\n  /*--color-primary: #F1CDB3;*/\n  /*--color-primary-light: #FDDCC4;*/\n}\n\n.swiper-wrapper{\n    display: flex;\n    justify-content: space-between;\n}\n\n.welcome__img{\n    margin-top: 120px;\n}\n\na,\nbutton {\n  outline: none;\n}\n\n/* 2. Defaults */\n\n::-moz-selection {\n  background: #F1CDB3;\n  color: #292929;\n}\n\n::selection {\n  background: #F1CDB3;\n  color: #292929;\n}\n\nbody {\n  font-family: var(--font-family-arial);\n  font-size: normal;\n  font-weight: 400;\n  font-size: 15px;\n  line-height: 160%;\n}\n\nimg {\n  max-width: 100%;\n}\n\n.section {\n  padding: 80px 0 100px;\n  overflow: hidden;\n}\n\n.section-light {\n  background-color: #F6F6F6;\n}\n\n@media (max-width: 767px) {\n  .section {\n    padding: 45px 0;\n  }\n}\n\n/* 3. Buttons */\n\n.button {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 10px 0px;\n  padding: 13px 43px;\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 100px;\n  box-sizing: border-box;\n  font-family: var(--font-family-georgia);\n  font-size: 17px;\n  line-height: 130%;\n  letter-spacing: 0.06em;\n  color: #292929;\n  transition: all 0.2s ease-out;\n}\n\n.button:disabled,\n.button:disabled:hover {\n  border-color: #CDCDCD;\n  background-color: transparent;\n  color: #CDCDCD;\n  cursor: not-allowed;\n}\n\n.button:disabled svg * {\n  fill: #CDCDCD;\n}\n\n.button-primary:hover,\n.button.active:hover {\n  border-color: #FDDCC4;\n  background-color: #FDDCC4;\n}\n\n.button-secondary {\n  border-color: #FDDCC4;\n  background-color: transparent;\n}\n\n.button-secondary:hover {\n  background-color: #FDDCC4;\n}\n\n.button-circle {\n  padding: 0;\n  width: 52px;\n  height: 52px;\n}\n\n.button-paginator {\n  font-size: 20px;\n  line-height: 120%;\n  text-align: center;\n  padding: 0;\n}\n\n.button:active,\n.button:focus,\n.button-primary,\n.button.active {\n  border-color: #F1CDB3;\n  background-color: #F1CDB3;\n}\n\n/* 4. Typography */\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  line-height: 130%;\n  color: #545454;\n}\n\nh2 {\n  font-size: 44px;\n}\n\nh3 {\n  font-size: 35px;\n  letter-spacing: 0.06em;\n}\n\nh4 {\n  font-size: 20px;\n  line-height: 115%;\n  letter-spacing: 0.06em;\n}\n\nh5 {\n  font-size: 15px;\n  line-height: 110%;\n  letter-spacing: 0.06em;\n}\n\np {\n  color: #4C4C4C;\n}\n\nsmall {\n  font-style: italic;\n  font-weight: 400;\n  font-size: 12px;\n  line-height: 150%;\n  color: #B2B2B2;\n}\n\n/*  5. Lists  */\n\n.list {\n  padding-left: 15px;\n  list-style: none;\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  font-size: 15px;\n  line-height: 110%;\n  letter-spacing: 0.06em;\n  color: #000000;\n}\n\n.list-item {\n  position: relative;\n  margin-bottom: 6px;\n}\n\n.list-item::before {\n  content: '';\n  padding: 2px;\n  border-radius: 50%;\n  background-color: #F1CDB3;\n  position: absolute;\n  left: -15px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n  /*6. Logo  */\n\n.logo-title {\n  display: inline-block;\n  margin-bottom: 10px;\n  font-family: var(--font-family-georgia);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 32px;\n  line-height: 110%;\n  letter-spacing: 0.06em;\n  color: #F1CDB3;;\n  transition: color 0.2s ease-out;\n}\n\n.logo-subtitle {\n  font-family: var(--font-family-arial);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 13px;\n  line-height: 15px;\n  letter-spacing: 0.1em;\n  color: #CDCDCD;\n  transition: color 0.2s ease-out;\n}\n\n.background-dark .logo-title,\n.background-dark .logo-title:hover {\n  color: #F1CDB3;\n}\n\n.background-dark .logo-subtitle {\n  color: #FFFFFF;\n}\n\n/*!*  7. Links *!*/\n\na {\n  position: relative;\n  text-decoration: none;\n  color: #545454;\n}\n\na:hover,\na.active {\n  color: #292929;\n}\n\na:active,\na:focus {\n  color: #545454;\n}\n\na:active::after,\na:focus::after,\na.active::after {\n  content: '';\n  display: block;\n  position: absolute;\n  bottom: -5px;\n  width: 100%;\n  height: 3px;\n  background-color: #F1CDB3;\n}\n\n.background-dark a {\n  color: #CDCDCD;\n}\n\n.background-dark a:hover,\n.background-dark a:active::after,\n.background-dark a:focus::after,\n.background-dark a.active {\n  color: #FAFAFA;\n}\n\n/*  8. Cards  */\n\n.card {\n  max-width: 270px;\n  margin: 0 auto;\n  border: none;\n  border-radius: 9px;\n  overflow: hidden;\n  background: #FAFAFA;\n}\n\n.card:hover .card-content {\n  background-color: #FFFFFF;\n}\n\n.card img {\n  -o-object-fit: contain;\n     object-fit: contain;\n  width: 100%;\n  height: 270px;\n}\n\n.card-content {\n  padding: 30px;\n  transition: all 0.2s ease-out;\n}\n\n.card.active {\n  max-width: 900px;\n  max-height: 500px;\n  height: auto;\n}\n\n.card.active img {\n  max-width: 500px;\n  height: auto;\n}\n\n.card.active .card-content {\n  padding: 50px 20px 20px;\n  overflow-y: auto;\n}\n\n.card.active .card-content * {\n  color: #000000;\n}\n\n@media (max-width: 992px) {\n  .card.active img {\n    max-width: 400px;\n  }\n}\n\n@media (max-width: 768px) {\n  .card.active {\n    max-height: 350px;\n  }\n\n  .card.active img {\n    max-width: 300px;\n  }\n}\n\n@media (max-width: 575px) {\n  .card.active {\n    max-height: initial;\n    height: 90vh;\n    overflow-y: auto;\n  }\n\n  .card.active .card-content {\n    overflow-y: visible;\n  }\n\n  .card.active img {\n    max-width: 100%;\n  }\n}\n\n/*  9. Modal  */\n\n.modal-dialog {\n  max-width: 900px;\n  margin: 70px auto 20px;\n}\n\n.modal-content {\n  border-radius: 9px;\n  background: #FAFAFA;\n  height: 500px;\n  border: 0;\n}\n\n.modal-header {\n  padding: 0;\n  border: 0;\n}\n\n.modal-header .button-circle {\n  position: absolute;\n  bottom: 100%;\n  left: 100%;\n}\n\n.modal-body {\n  padding: 0;\n  overflow: hidden;\n}\n\n.modal-image {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n\n.modal-text {\n  overflow-y: auto;\n}\n\n@media (max-width: 1024px) {\n  .modal-dialog {\n    margin: 70px 60px 20px;\n  }\n}\n\n@media (max-width: 575px) {\n  .modal-dialog {\n    margin: 70px 20px 20px;\n  }\n\n  .modal-content {\n    height: auto;\n  }\n\n  .modal-header .button-circle {\n    transform: translateX(-100%);\n  }\n}\n\n/*!*  10. Navbar  *!*/\n\n.navbar {\n  position: relative;\n  padding: 30px 0;\n  z-index: 2;\n}\n\n.navbar-burger {\n  display: none !important;\n  width: 30px;\n  height: 22px;\n  cursor: pointer;\n  transition: transform 0.2s ease-out;\n}\n\n.nav-item {\n  margin-left: 35px;\n}\n\n@media (max-width: 767px) {\n  .navbar.active .navbar-logo {\n    z-index: 1;\n  }\n\n  .navbar-content {\n    position: fixed;\n    top: 0;\n    left: 0;\n    transform: translateX(100%);\n    width: 100%;\n    height: 100vh;\n    padding-top: 120px;\n    z-index: 1;\n    background: #292929;\n    transition: transform 0.2s ease-out;\n  }\n\n  .navbar-content-container {\n    padding-top: 100px;\n    overflow-y: auto;\n  }\n\n  .navbar.active .navbar-content {\n    transform: translateX(0);\n  }\n\n  .nav-item {\n    margin-bottom: 50px;\n    margin-left: 0;\n    font-size: 32px;\n  }\n\n  .navbar-burger {\n    display: flex !important;\n  }\n\n  .navbar.active .navbar-burger {\n    transform: rotate(90deg);\n  }\n\n  .navbar-burger > div {\n    height: 2px;\n    background-color: #545454;\n    transition: background-color 0.2s ease-out;\n  }\n\n  .background-dark .navbar-burger > div {\n    background-color: #F1CDB3;\n  }\n}\n\n/*  11. Welcome  */\n\n.welcome {\n  padding-top: 120px;\n  transform: translateY(-120px);\n  min-height: 100vh;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n              radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\n              #211F20;\n}\n\n.welcome h2 {\n  color: #FFFFFF;\n  max-width: 310px;\n  margin-bottom: 45px;\n}\n\n.welcome p {\n  color: #CDCDCD;\n  margin-bottom: 55px;\n}\n\n@media (max-width: 767px) {\n  .welcome {\n    padding-top: 135px;\n  }\n}\n\n/*  12. About  */\n\n.about {\n  max-width: 850px;\n  margin: 0 auto;\n}\n\n@media (max-width: 767px) {\n  .about {\n    text-align: justify;\n  }\n}\n\n/*  13. Help  */\n\n.help svg {\n  margin-bottom: 30px;\n}\n\n.help-item {\n  text-align: center;\n  margin-bottom: 60px;\n}\n\n/*  14. Donate  */\n\n.donate {\n  max-width: 890px;\n  margin: 0 auto;\n}\n\n.donate-content {\n  max-width: 380px;\n  margin: 0 auto;\n}\n\n/*  15. Footer  */\n\n.footer {\n  padding: 60px 0;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n              radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\n              #211F20;\n}\n\n.footer h3 {\n  color: #FFFFFF;\n  margin-bottom: 40px;\n}\n\n.footer h4 {\n  color: #F1CDB3;\n  margin-bottom: 40px;\n}\n\n.footer h4:last-child {\n  margin-bottom: 0;\n}\n\n.footer img {\n  /*position: absolute;*/\n  right: 0;\n  bottom: 0;\n  transform: translateY(60px);\n}\n\n\n@media (max-width: 767px) {\n  .footer img {\n    position: static;\n  }\n}\n\n/*  16. Slider  */\n\n.slider {\n  overflow: visible;\n}\n\n.slider-button {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 1;\n}\n\n.slider-button-next {\n  right: 0;\n}\n\n.slider-button-prev {\n  left: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/**\r\n *  1. Variables\r\n *  2. Defaults\r\n *  3. Buttons\r\n *  4. Typography\r\n *  5. Lists\r\n *  6. Logo\r\n *  7. Links\r\n *  8. Cards\r\n *  9. Modal\r\n *  10. Navbar\r\n *  11. Welcome\r\n *  12. About\r\n *  13. Help\r\n *  14. Donate\r\n *  15. Footer\r\n *  16. Slider\r\n */\r\n\r\n/* 1. Variables */\r\n\r\n:root {\r\n  --font-family-arial: Arial, sans-serif;\r\n  --font-family-georgia: Georgia, serif;\r\n  /*--color-dark-s: #CDCDCD;*/\r\n  /*--color-dark-m: #B2B2B2;*/\r\n  /*--color-dark-l: #545454;*/\r\n  /*--color-dark-xl: #4C4C4C;*/\r\n  /*--color-dark-3xl: #292929;*/\r\n  /*--color-light-s: #FAFAFA;*/\r\n  /*--color-light-l: #F6F6F6;*/\r\n  /*--color-light-xl: #FFFFFF;*/\r\n  /*--color-primary: #F1CDB3;*/\r\n  /*--color-primary-light: #FDDCC4;*/\r\n}\r\n\r\n.swiper-wrapper{\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.welcome__img{\r\n    margin-top: 120px;\r\n}\r\n\r\na,\r\nbutton {\r\n  outline: none;\r\n}\r\n\r\n/* 2. Defaults */\r\n\r\n::-moz-selection {\r\n  background: #F1CDB3;\r\n  color: #292929;\r\n}\r\n\r\n::selection {\r\n  background: #F1CDB3;\r\n  color: #292929;\r\n}\r\n\r\nbody {\r\n  font-family: var(--font-family-arial);\r\n  font-size: normal;\r\n  font-weight: 400;\r\n  font-size: 15px;\r\n  line-height: 160%;\r\n}\r\n\r\nimg {\r\n  max-width: 100%;\r\n}\r\n\r\n.section {\r\n  padding: 80px 0 100px;\r\n  overflow: hidden;\r\n}\r\n\r\n.section-light {\r\n  background-color: #F6F6F6;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .section {\r\n    padding: 45px 0;\r\n  }\r\n}\r\n\r\n/* 3. Buttons */\r\n\r\n.button {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: 10px 0px;\r\n  padding: 13px 43px;\r\n  border-width: 2px;\r\n  border-style: solid;\r\n  border-radius: 100px;\r\n  box-sizing: border-box;\r\n  font-family: var(--font-family-georgia);\r\n  font-size: 17px;\r\n  line-height: 130%;\r\n  letter-spacing: 0.06em;\r\n  color: #292929;\r\n  transition: all 0.2s ease-out;\r\n}\r\n\r\n.button:disabled,\r\n.button:disabled:hover {\r\n  border-color: #CDCDCD;\r\n  background-color: transparent;\r\n  color: #CDCDCD;\r\n  cursor: not-allowed;\r\n}\r\n\r\n.button:disabled svg * {\r\n  fill: #CDCDCD;\r\n}\r\n\r\n.button-primary:hover,\r\n.button.active:hover {\r\n  border-color: #FDDCC4;\r\n  background-color: #FDDCC4;\r\n}\r\n\r\n.button-secondary {\r\n  border-color: #FDDCC4;\r\n  background-color: transparent;\r\n}\r\n\r\n.button-secondary:hover {\r\n  background-color: #FDDCC4;\r\n}\r\n\r\n.button-circle {\r\n  padding: 0;\r\n  width: 52px;\r\n  height: 52px;\r\n}\r\n\r\n.button-paginator {\r\n  font-size: 20px;\r\n  line-height: 120%;\r\n  text-align: center;\r\n  padding: 0;\r\n}\r\n\r\n.button:active,\r\n.button:focus,\r\n.button-primary,\r\n.button.active {\r\n  border-color: #F1CDB3;\r\n  background-color: #F1CDB3;\r\n}\r\n\r\n/* 4. Typography */\r\n\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6 {\r\n  font-family: 'Georgia';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  line-height: 130%;\r\n  color: #545454;\r\n}\r\n\r\nh2 {\r\n  font-size: 44px;\r\n}\r\n\r\nh3 {\r\n  font-size: 35px;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\nh4 {\r\n  font-size: 20px;\r\n  line-height: 115%;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\nh5 {\r\n  font-size: 15px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\np {\r\n  color: #4C4C4C;\r\n}\r\n\r\nsmall {\r\n  font-style: italic;\r\n  font-weight: 400;\r\n  font-size: 12px;\r\n  line-height: 150%;\r\n  color: #B2B2B2;\r\n}\r\n\r\n/*  5. Lists  */\r\n\r\n.list {\r\n  padding-left: 15px;\r\n  list-style: none;\r\n  font-family: 'Georgia';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 15px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n  color: #000000;\r\n}\r\n\r\n.list-item {\r\n  position: relative;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.list-item::before {\r\n  content: '';\r\n  padding: 2px;\r\n  border-radius: 50%;\r\n  background-color: #F1CDB3;\r\n  position: absolute;\r\n  left: -15px;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n}\r\n\r\n  /*6. Logo  */\r\n\r\n.logo-title {\r\n  display: inline-block;\r\n  margin-bottom: 10px;\r\n  font-family: var(--font-family-georgia);\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 32px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n  color: #F1CDB3;;\r\n  transition: color 0.2s ease-out;\r\n}\r\n\r\n.logo-subtitle {\r\n  font-family: var(--font-family-arial);\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 13px;\r\n  line-height: 15px;\r\n  letter-spacing: 0.1em;\r\n  color: #CDCDCD;\r\n  transition: color 0.2s ease-out;\r\n}\r\n\r\n.background-dark .logo-title,\r\n.background-dark .logo-title:hover {\r\n  color: #F1CDB3;\r\n}\r\n\r\n.background-dark .logo-subtitle {\r\n  color: #FFFFFF;\r\n}\r\n\r\n/*!*  7. Links *!*/\r\n\r\na {\r\n  position: relative;\r\n  text-decoration: none;\r\n  color: #545454;\r\n}\r\n\r\na:hover,\r\na.active {\r\n  color: #292929;\r\n}\r\n\r\na:active,\r\na:focus {\r\n  color: #545454;\r\n}\r\n\r\na:active::after,\r\na:focus::after,\r\na.active::after {\r\n  content: '';\r\n  display: block;\r\n  position: absolute;\r\n  bottom: -5px;\r\n  width: 100%;\r\n  height: 3px;\r\n  background-color: #F1CDB3;\r\n}\r\n\r\n.background-dark a {\r\n  color: #CDCDCD;\r\n}\r\n\r\n.background-dark a:hover,\r\n.background-dark a:active::after,\r\n.background-dark a:focus::after,\r\n.background-dark a.active {\r\n  color: #FAFAFA;\r\n}\r\n\r\n/*  8. Cards  */\r\n\r\n.card {\r\n  max-width: 270px;\r\n  margin: 0 auto;\r\n  border: none;\r\n  border-radius: 9px;\r\n  overflow: hidden;\r\n  background: #FAFAFA;\r\n}\r\n\r\n.card:hover .card-content {\r\n  background-color: #FFFFFF;\r\n}\r\n\r\n.card img {\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\r\n  width: 100%;\r\n  height: 270px;\r\n}\r\n\r\n.card-content {\r\n  padding: 30px;\r\n  transition: all 0.2s ease-out;\r\n}\r\n\r\n.card.active {\r\n  max-width: 900px;\r\n  max-height: 500px;\r\n  height: auto;\r\n}\r\n\r\n.card.active img {\r\n  max-width: 500px;\r\n  height: auto;\r\n}\r\n\r\n.card.active .card-content {\r\n  padding: 50px 20px 20px;\r\n  overflow-y: auto;\r\n}\r\n\r\n.card.active .card-content * {\r\n  color: #000000;\r\n}\r\n\r\n@media (max-width: 992px) {\r\n  .card.active img {\r\n    max-width: 400px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .card.active {\r\n    max-height: 350px;\r\n  }\r\n\r\n  .card.active img {\r\n    max-width: 300px;\r\n  }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n  .card.active {\r\n    max-height: initial;\r\n    height: 90vh;\r\n    overflow-y: auto;\r\n  }\r\n\r\n  .card.active .card-content {\r\n    overflow-y: visible;\r\n  }\r\n\r\n  .card.active img {\r\n    max-width: 100%;\r\n  }\r\n}\r\n\r\n/*  9. Modal  */\r\n\r\n.modal-dialog {\r\n  max-width: 900px;\r\n  margin: 70px auto 20px;\r\n}\r\n\r\n.modal-content {\r\n  border-radius: 9px;\r\n  background: #FAFAFA;\r\n  height: 500px;\r\n  border: 0;\r\n}\r\n\r\n.modal-header {\r\n  padding: 0;\r\n  border: 0;\r\n}\r\n\r\n.modal-header .button-circle {\r\n  position: absolute;\r\n  bottom: 100%;\r\n  left: 100%;\r\n}\r\n\r\n.modal-body {\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\n.modal-image {\r\n  width: 100%;\r\n  height: 100%;\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\r\n}\r\n\r\n.modal-text {\r\n  overflow-y: auto;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n  .modal-dialog {\r\n    margin: 70px 60px 20px;\r\n  }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n  .modal-dialog {\r\n    margin: 70px 20px 20px;\r\n  }\r\n\r\n  .modal-content {\r\n    height: auto;\r\n  }\r\n\r\n  .modal-header .button-circle {\r\n    transform: translateX(-100%);\r\n  }\r\n}\r\n\r\n/*!*  10. Navbar  *!*/\r\n\r\n.navbar {\r\n  position: relative;\r\n  padding: 30px 0;\r\n  z-index: 2;\r\n}\r\n\r\n.navbar-burger {\r\n  display: none !important;\r\n  width: 30px;\r\n  height: 22px;\r\n  cursor: pointer;\r\n  transition: transform 0.2s ease-out;\r\n}\r\n\r\n.nav-item {\r\n  margin-left: 35px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .navbar.active .navbar-logo {\r\n    z-index: 1;\r\n  }\r\n\r\n  .navbar-content {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    transform: translateX(100%);\r\n    width: 100%;\r\n    height: 100vh;\r\n    padding-top: 120px;\r\n    z-index: 1;\r\n    background: #292929;\r\n    transition: transform 0.2s ease-out;\r\n  }\r\n\r\n  .navbar-content-container {\r\n    padding-top: 100px;\r\n    overflow-y: auto;\r\n  }\r\n\r\n  .navbar.active .navbar-content {\r\n    transform: translateX(0);\r\n  }\r\n\r\n  .nav-item {\r\n    margin-bottom: 50px;\r\n    margin-left: 0;\r\n    font-size: 32px;\r\n  }\r\n\r\n  .navbar-burger {\r\n    display: flex !important;\r\n  }\r\n\r\n  .navbar.active .navbar-burger {\r\n    transform: rotate(90deg);\r\n  }\r\n\r\n  .navbar-burger > div {\r\n    height: 2px;\r\n    background-color: #545454;\r\n    transition: background-color 0.2s ease-out;\r\n  }\r\n\r\n  .background-dark .navbar-burger > div {\r\n    background-color: #F1CDB3;\r\n  }\r\n}\r\n\r\n/*  11. Welcome  */\r\n\r\n.welcome {\r\n  padding-top: 120px;\r\n  transform: translateY(-120px);\r\n  min-height: 100vh;\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n              radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\r\n              #211F20;\r\n}\r\n\r\n.welcome h2 {\r\n  color: #FFFFFF;\r\n  max-width: 310px;\r\n  margin-bottom: 45px;\r\n}\r\n\r\n.welcome p {\r\n  color: #CDCDCD;\r\n  margin-bottom: 55px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .welcome {\r\n    padding-top: 135px;\r\n  }\r\n}\r\n\r\n/*  12. About  */\r\n\r\n.about {\r\n  max-width: 850px;\r\n  margin: 0 auto;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .about {\r\n    text-align: justify;\r\n  }\r\n}\r\n\r\n/*  13. Help  */\r\n\r\n.help svg {\r\n  margin-bottom: 30px;\r\n}\r\n\r\n.help-item {\r\n  text-align: center;\r\n  margin-bottom: 60px;\r\n}\r\n\r\n/*  14. Donate  */\r\n\r\n.donate {\r\n  max-width: 890px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.donate-content {\r\n  max-width: 380px;\r\n  margin: 0 auto;\r\n}\r\n\r\n/*  15. Footer  */\r\n\r\n.footer {\r\n  padding: 60px 0;\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n              radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\r\n              #211F20;\r\n}\r\n\r\n.footer h3 {\r\n  color: #FFFFFF;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.footer h4 {\r\n  color: #F1CDB3;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.footer h4:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.footer img {\r\n  /*position: absolute;*/\r\n  right: 0;\r\n  bottom: 0;\r\n  transform: translateY(60px);\r\n}\r\n\r\n@media (max-width: 991px) {\r\n  .footer img {\r\n    position: static;\r\n  }\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .footer > .container {\r\n    max-width: 320px;\r\n  }\r\n}\r\n\r\n/*  16. Slider  */\r\n\r\n.slider {\r\n  overflow: visible;\r\n}\r\n\r\n.slider-button {\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  z-index: 1;\r\n}\r\n\r\n.slider-button-next {\r\n  right: 0;\r\n}\r\n\r\n.slider-button-prev {\r\n  left: 0;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -12762,7 +12762,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/credit-card.svg?b0a55b5f9acb325550a024c941c60044");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/credit-card.svg?4ba0426d2bc74b7a78f391d954a2f137");
 
 /***/ }),
 
@@ -31480,6 +31480,19 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
   \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/css/dashboard.css":
+/*!*************************************!*\
+  !*** ./resources/css/dashboard.css ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -59114,11 +59127,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_swipeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-swipeable */ "./node_modules/react-swipeable/es/index.js");
+/* harmony import */ var react_swipeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-swipeable */ "./node_modules/react-elastic-carousel/node_modules/react-swipeable/es/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var resize_observer_polyfill__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
-/* harmony import */ var react_only_when__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-only-when */ "./node_modules/react-only-when/dist/index.es.js");
+/* harmony import */ var react_only_when__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-only-when */ "./node_modules/react-elastic-carousel/node_modules/react-only-when/dist/index.es.js");
 
 
 
@@ -61171,6 +61184,537 @@ Carousel.propTypes = {
 
 /***/ }),
 
+/***/ "./node_modules/react-elastic-carousel/node_modules/react-only-when/dist/index.es.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/react-elastic-carousel/node_modules/react-only-when/dist/index.es.js ***!
+  \*******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var classCallCheck = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+var inherits = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+var objectWithoutProperties = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
+
+var possibleConstructorReturn = function (self, call) {
+  if (!self) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return call && (typeof call === "object" || typeof call === "function") ? call : self;
+};
+
+var Only = function (_Component) {
+  inherits(Only, _Component);
+
+  function Only() {
+    classCallCheck(this, Only);
+    return possibleConstructorReturn(this, (Only.__proto__ || Object.getPrototypeOf(Only)).apply(this, arguments));
+  }
+
+  createClass(Only, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          children = _props.children,
+          when = _props.when,
+          hiddenMode = _props.hiddenMode,
+          className = _props.className;
+
+      var singleChild = react__WEBPACK_IMPORTED_MODULE_0__.Children.only(children);
+      var _singleChild$props = singleChild.props,
+          style = _singleChild$props.style,
+          restOfChildProps = objectWithoutProperties(_singleChild$props, ['style']);
+
+      var extendedProps = _extends({}, restOfChildProps);
+
+      var keepNode = hiddenMode && hiddenMode !== "withNull";
+
+      if (keepNode) {
+        if (hiddenMode === "withCss") {
+          extendedProps.className = extendedProps.className + ' ' + className;
+        } else {
+          extendedProps.style = _extends({}, style, hiddenMode === "withDisplay" && { display: "none" }, hiddenMode === "withVisibility" && { visibility: "hidden" });
+        }
+      }
+      var cloned = react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(singleChild, extendedProps);
+      var toHide = keepNode ? cloned : null;
+
+      return when ? singleChild : toHide;
+    }
+  }]);
+  return Only;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+Only.defaultProps = {
+  hiddenMode: "withNull",
+  className: "r-o_hidden"
+};
+Only.propTypes = {
+  /** A single child element */
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().element.isRequired),
+
+  /** When true, children will rendered as is  */
+  when: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool.isRequired),
+
+  /** Determines how "react-only-when" should hide the child element 
+   * "withNull": Will not render the child
+   * "withDisplay": Will render the child with display:none  
+   * "withVisibility": Will render the child with visibility:hidden
+   * "withCss": Will render the child with a CSS class (you can pass it a custom className prop)
+  */
+  hiddenMode: prop_types__WEBPACK_IMPORTED_MODULE_1___default().oneOf(["withNull", "withDisplay", "withVisibility", "withCss"]),
+  /** This is working in combination with hiddenMode={"withCss"}   */
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Only);
+//# sourceMappingURL=index.es.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/react-elastic-carousel/node_modules/react-swipeable/es/index.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/react-elastic-carousel/node_modules/react-swipeable/es/index.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DOWN": () => (/* binding */ DOWN),
+/* harmony export */   "LEFT": () => (/* binding */ LEFT),
+/* harmony export */   "RIGHT": () => (/* binding */ RIGHT),
+/* harmony export */   "Swipeable": () => (/* binding */ Swipeable),
+/* harmony export */   "UP": () => (/* binding */ UP),
+/* harmony export */   "useSwipeable": () => (/* binding */ useSwipeable)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+var defaultProps = {
+  preventDefaultTouchmoveEvent: false,
+  delta: 10,
+  rotationAngle: 0,
+  trackMouse: false,
+  trackTouch: true
+};
+var initialState = {
+  xy: [0, 0],
+  swiping: false,
+  eventData: undefined,
+  start: undefined
+};
+var LEFT = 'Left';
+var RIGHT = 'Right';
+var UP = 'Up';
+var DOWN = 'Down';
+var touchStart = 'touchstart';
+var touchMove = 'touchmove';
+var touchEnd = 'touchend';
+var mouseMove = 'mousemove';
+var mouseUp = 'mouseup';
+
+function getDirection(absX, absY, deltaX, deltaY) {
+  if (absX > absY) {
+    if (deltaX > 0) {
+      return LEFT;
+    }
+
+    return RIGHT;
+  } else if (deltaY > 0) {
+    return UP;
+  }
+
+  return DOWN;
+}
+
+function rotateXYByAngle(pos, angle) {
+  if (angle === 0) return pos;
+  var angleInRadians = Math.PI / 180 * angle;
+  var x = pos[0] * Math.cos(angleInRadians) + pos[1] * Math.sin(angleInRadians);
+  var y = pos[1] * Math.cos(angleInRadians) - pos[0] * Math.sin(angleInRadians);
+  return [x, y];
+}
+
+function getHandlers(set, handlerProps) {
+  var onStart = function onStart(event) {
+    // if more than a single touch don't track, for now...
+    if (event.touches && event.touches.length > 1) return;
+    set(function (state, props) {
+      // setup mouse listeners on document to track swipe since swipe can leave container
+      if (props.trackMouse) {
+        document.addEventListener(mouseMove, onMove);
+        document.addEventListener(mouseUp, onUp);
+      }
+
+      var _ref = event.touches ? event.touches[0] : event,
+          clientX = _ref.clientX,
+          clientY = _ref.clientY;
+
+      var xy = rotateXYByAngle([clientX, clientY], props.rotationAngle);
+      return _extends({}, state, initialState, {
+        eventData: {
+          initial: [].concat(xy),
+          first: true
+        },
+        xy: xy,
+        start: event.timeStamp || 0
+      });
+    });
+  };
+
+  var onMove = function onMove(event) {
+    set(function (state, props) {
+      if (!state.xy[0] || !state.xy[1] || event.touches && event.touches.length > 1) {
+        return state;
+      }
+
+      var _ref2 = event.touches ? event.touches[0] : event,
+          clientX = _ref2.clientX,
+          clientY = _ref2.clientY;
+
+      var _rotateXYByAngle = rotateXYByAngle([clientX, clientY], props.rotationAngle),
+          x = _rotateXYByAngle[0],
+          y = _rotateXYByAngle[1];
+
+      var deltaX = state.xy[0] - x;
+      var deltaY = state.xy[1] - y;
+      var absX = Math.abs(deltaX);
+      var absY = Math.abs(deltaY);
+      var time = (event.timeStamp || 0) - state.start;
+      var velocity = Math.sqrt(absX * absX + absY * absY) / (time || 1); // if swipe is under delta and we have not started to track a swipe: skip update
+
+      if (absX < props.delta && absY < props.delta && !state.swiping) return state;
+      var dir = getDirection(absX, absY, deltaX, deltaY);
+
+      var eventData = _extends({}, state.eventData, {
+        event: event,
+        absX: absX,
+        absY: absY,
+        deltaX: deltaX,
+        deltaY: deltaY,
+        velocity: velocity,
+        dir: dir
+      });
+
+      props.onSwiping && props.onSwiping(eventData); // track if a swipe is cancelable(handler for swiping or swiped(dir) exists)
+      // so we can call preventDefault if needed
+
+      var cancelablePageSwipe = false;
+
+      if (props.onSwiping || props.onSwiped || props["onSwiped" + dir]) {
+        cancelablePageSwipe = true;
+      }
+
+      if (cancelablePageSwipe && props.preventDefaultTouchmoveEvent && props.trackTouch && event.cancelable) event.preventDefault(); // first is now always false
+
+      return _extends({}, state, {
+        eventData: _extends({}, eventData, {
+          first: false
+        }),
+        swiping: true
+      });
+    });
+  };
+
+  var onEnd = function onEnd(event) {
+    set(function (state, props) {
+      var eventData;
+
+      if (state.swiping) {
+        eventData = _extends({}, state.eventData, {
+          event: event
+        });
+        props.onSwiped && props.onSwiped(eventData);
+        props["onSwiped" + eventData.dir] && props["onSwiped" + eventData.dir](eventData);
+      }
+
+      return _extends({}, state, initialState, {
+        eventData: eventData
+      });
+    });
+  };
+
+  var cleanUpMouse = function cleanUpMouse() {
+    // safe to just call removeEventListener
+    document.removeEventListener(mouseMove, onMove);
+    document.removeEventListener(mouseUp, onUp);
+  };
+
+  var onUp = function onUp(e) {
+    cleanUpMouse();
+    onEnd(e);
+  };
+
+  var attachTouch = function attachTouch(el) {
+    if (el && el.addEventListener) {
+      // attach touch event listeners and handlers
+      var tls = [[touchStart, onStart], [touchMove, onMove], [touchEnd, onEnd]];
+      tls.forEach(function (_ref3) {
+        var e = _ref3[0],
+            h = _ref3[1];
+        return el.addEventListener(e, h);
+      }); // return properly scoped cleanup method for removing listeners
+
+      return function () {
+        return tls.forEach(function (_ref4) {
+          var e = _ref4[0],
+              h = _ref4[1];
+          return el.removeEventListener(e, h);
+        });
+      };
+    }
+  };
+
+  var onRef = function onRef(el) {
+    // "inline" ref functions are called twice on render, once with null then again with DOM element
+    // ignore null here
+    if (el === null) return;
+    set(function (state, props) {
+      // if the same DOM el as previous just return state
+      if (state.el === el) return state;
+      var addState = {}; // if new DOM el clean up old DOM and reset cleanUpTouch
+
+      if (state.el && state.el !== el && state.cleanUpTouch) {
+        state.cleanUpTouch();
+        addState.cleanUpTouch = null;
+      } // only attach if we want to track touch
+
+
+      if (props.trackTouch && el) {
+        addState.cleanUpTouch = attachTouch(el);
+      } // store event attached DOM el for comparison, clean up, and re-attachment
+
+
+      return _extends({}, state, {
+        el: el
+      }, addState);
+    });
+  }; // set ref callback to attach touch event listeners
+
+
+  var output = {
+    ref: onRef // if track mouse attach mouse down listener
+
+  };
+
+  if (handlerProps.trackMouse) {
+    output.onMouseDown = onStart;
+  }
+
+  return [output, attachTouch];
+}
+
+function updateTransientState(state, props, attachTouch) {
+  var addState = {}; // clean up touch handlers if no longer tracking touches
+
+  if (!props.trackTouch && state.cleanUpTouch) {
+    state.cleanUpTouch();
+    addState.cleanUpTouch = null;
+  } else if (props.trackTouch && !state.cleanUpTouch) {
+    // attach/re-attach touch handlers
+    if (state.el) {
+      addState.cleanUpTouch = attachTouch(state.el);
+    }
+  }
+
+  return _extends({}, state, addState);
+}
+
+function useSwipeable(props) {
+  var trackMouse = props.trackMouse;
+  var transientState = react__WEBPACK_IMPORTED_MODULE_0__.useRef(_extends({}, initialState, {
+    type: 'hook'
+  }));
+  var transientProps = react__WEBPACK_IMPORTED_MODULE_0__.useRef();
+  transientProps.current = _extends({}, defaultProps, props);
+
+  var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(function () {
+    return getHandlers(function (cb) {
+      return transientState.current = cb(transientState.current, transientProps.current);
+    }, {
+      trackMouse: trackMouse
+    });
+  }, [trackMouse]),
+      handlers = _React$useMemo[0],
+      attachTouch = _React$useMemo[1];
+
+  transientState.current = updateTransientState(transientState.current, transientProps.current, attachTouch);
+  return handlers;
+}
+var Swipeable =
+/*#__PURE__*/
+function (_React$PureComponent) {
+  _inheritsLoose(Swipeable, _React$PureComponent);
+
+  function Swipeable(props) {
+    var _this;
+
+    _this = _React$PureComponent.call(this, props) || this;
+
+    _this._set = function (cb) {
+      _this.transientState = cb(_this.transientState, _this.props);
+    };
+
+    _this.transientState = _extends({}, initialState, {
+      type: 'class'
+    });
+    return _this;
+  }
+
+  var _proto = Swipeable.prototype;
+
+  _proto.render = function render() {
+    var _this$props = this.props,
+        className = _this$props.className,
+        style = _this$props.style,
+        _this$props$nodeName = _this$props.nodeName,
+        nodeName = _this$props$nodeName === void 0 ? 'div' : _this$props$nodeName,
+        innerRef = _this$props.innerRef,
+        children = _this$props.children,
+        trackMouse = _this$props.trackMouse;
+
+    var _getHandlers = getHandlers(this._set, {
+      trackMouse: trackMouse
+    }),
+        handlers = _getHandlers[0],
+        attachTouch = _getHandlers[1];
+
+    this.transientState = updateTransientState(this.transientState, this.props, attachTouch);
+    var ref = innerRef ? function (el) {
+      return innerRef(el), handlers.ref(el);
+    } : handlers.ref;
+    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(nodeName, _extends({}, handlers, {
+      className: className,
+      style: style,
+      ref: ref
+    }), children);
+  };
+
+  return Swipeable;
+}(react__WEBPACK_IMPORTED_MODULE_0__.PureComponent);
+Swipeable.propTypes = {
+  onSwiped: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  onSwiping: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  onSwipedUp: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  onSwipedRight: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  onSwipedDown: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  onSwipedLeft: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  delta: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number),
+  preventDefaultTouchmoveEvent: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool),
+  nodeName: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
+  trackMouse: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool),
+  trackTouch: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool),
+  innerRef: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
+  rotationAngle: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number)
+};
+Swipeable.defaultProps = defaultProps;
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -61420,167 +61964,6 @@ exports.typeOf = typeOf;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/react-is/cjs/react-is.development.js");
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/react-only-when/dist/index.es.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/react-only-when/dist/index.es.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-var createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-
-  return target;
-};
-
-var inherits = function (subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-  }
-
-  subClass.prototype = Object.create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      enumerable: false,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
-var objectWithoutProperties = function (obj, keys) {
-  var target = {};
-
-  for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;
-    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-    target[i] = obj[i];
-  }
-
-  return target;
-};
-
-var possibleConstructorReturn = function (self, call) {
-  if (!self) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return call && (typeof call === "object" || typeof call === "function") ? call : self;
-};
-
-var Only = function (_Component) {
-  inherits(Only, _Component);
-
-  function Only() {
-    classCallCheck(this, Only);
-    return possibleConstructorReturn(this, (Only.__proto__ || Object.getPrototypeOf(Only)).apply(this, arguments));
-  }
-
-  createClass(Only, [{
-    key: 'render',
-    value: function render() {
-      var _props = this.props,
-          children = _props.children,
-          when = _props.when,
-          hiddenMode = _props.hiddenMode,
-          className = _props.className;
-
-      var singleChild = react__WEBPACK_IMPORTED_MODULE_0__.Children.only(children);
-      var _singleChild$props = singleChild.props,
-          style = _singleChild$props.style,
-          restOfChildProps = objectWithoutProperties(_singleChild$props, ['style']);
-
-      var extendedProps = _extends({}, restOfChildProps);
-
-      var keepNode = hiddenMode && hiddenMode !== "withNull";
-
-      if (keepNode) {
-        if (hiddenMode === "withCss") {
-          extendedProps.className = extendedProps.className + ' ' + className;
-        } else {
-          extendedProps.style = _extends({}, style, hiddenMode === "withDisplay" && { display: "none" }, hiddenMode === "withVisibility" && { visibility: "hidden" });
-        }
-      }
-      var cloned = react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(singleChild, extendedProps);
-      var toHide = keepNode ? cloned : null;
-
-      return when ? singleChild : toHide;
-    }
-  }]);
-  return Only;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-
-Only.defaultProps = {
-  hiddenMode: "withNull",
-  className: "r-o_hidden"
-};
-Only.propTypes = {
-  /** A single child element */
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().element.isRequired),
-
-  /** When true, children will rendered as is  */
-  when: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool.isRequired),
-
-  /** Determines how "react-only-when" should hide the child element 
-   * "withNull": Will not render the child
-   * "withDisplay": Will render the child with display:none  
-   * "withVisibility": Will render the child with visibility:hidden
-   * "withCss": Will render the child with a CSS class (you can pass it a custom className prop)
-  */
-  hiddenMode: prop_types__WEBPACK_IMPORTED_MODULE_1___default().oneOf(["withNull", "withDisplay", "withVisibility", "withCss"]),
-  /** This is working in combination with hiddenMode={"withCss"}   */
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string)
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Only);
-//# sourceMappingURL=index.es.js.map
 
 
 /***/ }),
@@ -63021,376 +63404,6 @@ const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") 
 
 
 //# sourceMappingURL=index.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/react-swipeable/es/index.js":
-/*!**************************************************!*\
-  !*** ./node_modules/react-swipeable/es/index.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "DOWN": () => (/* binding */ DOWN),
-/* harmony export */   "LEFT": () => (/* binding */ LEFT),
-/* harmony export */   "RIGHT": () => (/* binding */ RIGHT),
-/* harmony export */   "Swipeable": () => (/* binding */ Swipeable),
-/* harmony export */   "UP": () => (/* binding */ UP),
-/* harmony export */   "useSwipeable": () => (/* binding */ useSwipeable)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-var defaultProps = {
-  preventDefaultTouchmoveEvent: false,
-  delta: 10,
-  rotationAngle: 0,
-  trackMouse: false,
-  trackTouch: true
-};
-var initialState = {
-  xy: [0, 0],
-  swiping: false,
-  eventData: undefined,
-  start: undefined
-};
-var LEFT = 'Left';
-var RIGHT = 'Right';
-var UP = 'Up';
-var DOWN = 'Down';
-var touchStart = 'touchstart';
-var touchMove = 'touchmove';
-var touchEnd = 'touchend';
-var mouseMove = 'mousemove';
-var mouseUp = 'mouseup';
-
-function getDirection(absX, absY, deltaX, deltaY) {
-  if (absX > absY) {
-    if (deltaX > 0) {
-      return LEFT;
-    }
-
-    return RIGHT;
-  } else if (deltaY > 0) {
-    return UP;
-  }
-
-  return DOWN;
-}
-
-function rotateXYByAngle(pos, angle) {
-  if (angle === 0) return pos;
-  var angleInRadians = Math.PI / 180 * angle;
-  var x = pos[0] * Math.cos(angleInRadians) + pos[1] * Math.sin(angleInRadians);
-  var y = pos[1] * Math.cos(angleInRadians) - pos[0] * Math.sin(angleInRadians);
-  return [x, y];
-}
-
-function getHandlers(set, handlerProps) {
-  var onStart = function onStart(event) {
-    // if more than a single touch don't track, for now...
-    if (event.touches && event.touches.length > 1) return;
-    set(function (state, props) {
-      // setup mouse listeners on document to track swipe since swipe can leave container
-      if (props.trackMouse) {
-        document.addEventListener(mouseMove, onMove);
-        document.addEventListener(mouseUp, onUp);
-      }
-
-      var _ref = event.touches ? event.touches[0] : event,
-          clientX = _ref.clientX,
-          clientY = _ref.clientY;
-
-      var xy = rotateXYByAngle([clientX, clientY], props.rotationAngle);
-      return _extends({}, state, initialState, {
-        eventData: {
-          initial: [].concat(xy),
-          first: true
-        },
-        xy: xy,
-        start: event.timeStamp || 0
-      });
-    });
-  };
-
-  var onMove = function onMove(event) {
-    set(function (state, props) {
-      if (!state.xy[0] || !state.xy[1] || event.touches && event.touches.length > 1) {
-        return state;
-      }
-
-      var _ref2 = event.touches ? event.touches[0] : event,
-          clientX = _ref2.clientX,
-          clientY = _ref2.clientY;
-
-      var _rotateXYByAngle = rotateXYByAngle([clientX, clientY], props.rotationAngle),
-          x = _rotateXYByAngle[0],
-          y = _rotateXYByAngle[1];
-
-      var deltaX = state.xy[0] - x;
-      var deltaY = state.xy[1] - y;
-      var absX = Math.abs(deltaX);
-      var absY = Math.abs(deltaY);
-      var time = (event.timeStamp || 0) - state.start;
-      var velocity = Math.sqrt(absX * absX + absY * absY) / (time || 1); // if swipe is under delta and we have not started to track a swipe: skip update
-
-      if (absX < props.delta && absY < props.delta && !state.swiping) return state;
-      var dir = getDirection(absX, absY, deltaX, deltaY);
-
-      var eventData = _extends({}, state.eventData, {
-        event: event,
-        absX: absX,
-        absY: absY,
-        deltaX: deltaX,
-        deltaY: deltaY,
-        velocity: velocity,
-        dir: dir
-      });
-
-      props.onSwiping && props.onSwiping(eventData); // track if a swipe is cancelable(handler for swiping or swiped(dir) exists)
-      // so we can call preventDefault if needed
-
-      var cancelablePageSwipe = false;
-
-      if (props.onSwiping || props.onSwiped || props["onSwiped" + dir]) {
-        cancelablePageSwipe = true;
-      }
-
-      if (cancelablePageSwipe && props.preventDefaultTouchmoveEvent && props.trackTouch && event.cancelable) event.preventDefault(); // first is now always false
-
-      return _extends({}, state, {
-        eventData: _extends({}, eventData, {
-          first: false
-        }),
-        swiping: true
-      });
-    });
-  };
-
-  var onEnd = function onEnd(event) {
-    set(function (state, props) {
-      var eventData;
-
-      if (state.swiping) {
-        eventData = _extends({}, state.eventData, {
-          event: event
-        });
-        props.onSwiped && props.onSwiped(eventData);
-        props["onSwiped" + eventData.dir] && props["onSwiped" + eventData.dir](eventData);
-      }
-
-      return _extends({}, state, initialState, {
-        eventData: eventData
-      });
-    });
-  };
-
-  var cleanUpMouse = function cleanUpMouse() {
-    // safe to just call removeEventListener
-    document.removeEventListener(mouseMove, onMove);
-    document.removeEventListener(mouseUp, onUp);
-  };
-
-  var onUp = function onUp(e) {
-    cleanUpMouse();
-    onEnd(e);
-  };
-
-  var attachTouch = function attachTouch(el) {
-    if (el && el.addEventListener) {
-      // attach touch event listeners and handlers
-      var tls = [[touchStart, onStart], [touchMove, onMove], [touchEnd, onEnd]];
-      tls.forEach(function (_ref3) {
-        var e = _ref3[0],
-            h = _ref3[1];
-        return el.addEventListener(e, h);
-      }); // return properly scoped cleanup method for removing listeners
-
-      return function () {
-        return tls.forEach(function (_ref4) {
-          var e = _ref4[0],
-              h = _ref4[1];
-          return el.removeEventListener(e, h);
-        });
-      };
-    }
-  };
-
-  var onRef = function onRef(el) {
-    // "inline" ref functions are called twice on render, once with null then again with DOM element
-    // ignore null here
-    if (el === null) return;
-    set(function (state, props) {
-      // if the same DOM el as previous just return state
-      if (state.el === el) return state;
-      var addState = {}; // if new DOM el clean up old DOM and reset cleanUpTouch
-
-      if (state.el && state.el !== el && state.cleanUpTouch) {
-        state.cleanUpTouch();
-        addState.cleanUpTouch = null;
-      } // only attach if we want to track touch
-
-
-      if (props.trackTouch && el) {
-        addState.cleanUpTouch = attachTouch(el);
-      } // store event attached DOM el for comparison, clean up, and re-attachment
-
-
-      return _extends({}, state, {
-        el: el
-      }, addState);
-    });
-  }; // set ref callback to attach touch event listeners
-
-
-  var output = {
-    ref: onRef // if track mouse attach mouse down listener
-
-  };
-
-  if (handlerProps.trackMouse) {
-    output.onMouseDown = onStart;
-  }
-
-  return [output, attachTouch];
-}
-
-function updateTransientState(state, props, attachTouch) {
-  var addState = {}; // clean up touch handlers if no longer tracking touches
-
-  if (!props.trackTouch && state.cleanUpTouch) {
-    state.cleanUpTouch();
-    addState.cleanUpTouch = null;
-  } else if (props.trackTouch && !state.cleanUpTouch) {
-    // attach/re-attach touch handlers
-    if (state.el) {
-      addState.cleanUpTouch = attachTouch(state.el);
-    }
-  }
-
-  return _extends({}, state, addState);
-}
-
-function useSwipeable(props) {
-  var trackMouse = props.trackMouse;
-  var transientState = react__WEBPACK_IMPORTED_MODULE_0__.useRef(_extends({}, initialState, {
-    type: 'hook'
-  }));
-  var transientProps = react__WEBPACK_IMPORTED_MODULE_0__.useRef();
-  transientProps.current = _extends({}, defaultProps, props);
-
-  var _React$useMemo = react__WEBPACK_IMPORTED_MODULE_0__.useMemo(function () {
-    return getHandlers(function (cb) {
-      return transientState.current = cb(transientState.current, transientProps.current);
-    }, {
-      trackMouse: trackMouse
-    });
-  }, [trackMouse]),
-      handlers = _React$useMemo[0],
-      attachTouch = _React$useMemo[1];
-
-  transientState.current = updateTransientState(transientState.current, transientProps.current, attachTouch);
-  return handlers;
-}
-var Swipeable =
-/*#__PURE__*/
-function (_React$PureComponent) {
-  _inheritsLoose(Swipeable, _React$PureComponent);
-
-  function Swipeable(props) {
-    var _this;
-
-    _this = _React$PureComponent.call(this, props) || this;
-
-    _this._set = function (cb) {
-      _this.transientState = cb(_this.transientState, _this.props);
-    };
-
-    _this.transientState = _extends({}, initialState, {
-      type: 'class'
-    });
-    return _this;
-  }
-
-  var _proto = Swipeable.prototype;
-
-  _proto.render = function render() {
-    var _this$props = this.props,
-        className = _this$props.className,
-        style = _this$props.style,
-        _this$props$nodeName = _this$props.nodeName,
-        nodeName = _this$props$nodeName === void 0 ? 'div' : _this$props$nodeName,
-        innerRef = _this$props.innerRef,
-        children = _this$props.children,
-        trackMouse = _this$props.trackMouse;
-
-    var _getHandlers = getHandlers(this._set, {
-      trackMouse: trackMouse
-    }),
-        handlers = _getHandlers[0],
-        attachTouch = _getHandlers[1];
-
-    this.transientState = updateTransientState(this.transientState, this.props, attachTouch);
-    var ref = innerRef ? function (el) {
-      return innerRef(el), handlers.ref(el);
-    } : handlers.ref;
-    return react__WEBPACK_IMPORTED_MODULE_0__.createElement(nodeName, _extends({}, handlers, {
-      className: className,
-      style: style,
-      ref: ref
-    }), children);
-  };
-
-  return Swipeable;
-}(react__WEBPACK_IMPORTED_MODULE_0__.PureComponent);
-Swipeable.propTypes = {
-  onSwiped: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
-  onSwiping: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
-  onSwipedUp: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
-  onSwipedRight: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
-  onSwipedDown: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
-  onSwipedLeft: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
-  delta: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number),
-  preventDefaultTouchmoveEvent: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool),
-  nodeName: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
-  trackMouse: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool),
-  trackTouch: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool),
-  innerRef: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func),
-  rotationAngle: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().number)
-};
-Swipeable.defaultProps = defaultProps;
-
-
 
 
 /***/ }),
@@ -69158,7 +69171,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./NavBarLight.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./NavBarLight.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css");
 
             
 
@@ -69167,11 +69180,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -69188,7 +69201,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./style.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./templates/assets/css/style.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./style.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./templates/assets/css/style.css");
 
             
 
@@ -69197,11 +69210,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -69692,7 +69705,8 @@ function _extends() {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
+/******/ 			"css/app": 0,
+/******/ 			"css/dashboard": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -69742,8 +69756,9 @@ function _extends() {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/css/dashboard.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

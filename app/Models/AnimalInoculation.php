@@ -20,9 +20,4 @@ class AnimalInoculation extends Model
         'inoculation_id',
         'animal_id',
     ];
-
-    public function animal()
-    {
-        return $this->belongsTo(Animal::class);
-    }
 }

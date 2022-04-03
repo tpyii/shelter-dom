@@ -1,5 +1,12 @@
-<form method="post" action="{{ route('admin.diseases.store')}}">
-    @csrf
-    <input type="text" id="name" name="name" value="{{ old('name') }}">
-    <button type="submit">Сохранить</button>
-</form>
+<x-layout>
+  <x-slot name="title">
+    Diseases create
+  </x-slot>
+
+  <x-errors />
+
+  <x-form method="POST" action="{{ route('admin.diseases.store') }}">
+    <x-input name="name" label="Name" />
+    <x-button type="submit" color="outline-success">Сохранить</x-button>
+  </x-form>
+</x-layout>

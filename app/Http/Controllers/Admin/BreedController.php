@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Breed;
-use App\Models\Type;
+use App\Models\AnimalType;
 use Illuminate\Http\Request;
 
 class BreedController extends Controller
@@ -18,10 +18,10 @@ class BreedController extends Controller
     {
         $breeds = Breed::all();
 
-        $type = new Type;
+        $animal_type = new AnimalType();
         return view('admin.breeds.index', [
             'breeds' => $breeds,
-            'type' => $type
+            'animal_type' => $animal_type
         ]);
     }
 
@@ -32,10 +32,10 @@ class BreedController extends Controller
      */
     public function create()
     {
-        $types = Type::all();
+        $animal_types = AnimalType::all();
 
         return view('admin.breeds.create', [
-            'types' => $types
+            'animal_types' => $animal_types
         ]);
     }
 
@@ -79,11 +79,11 @@ class BreedController extends Controller
      */
     public function edit(Breed $breed)
     {
-        $types = Type::all();
+        $animal_types = AnimalType::all();
 
         return view('admin.breeds.edit', [
             'breed' => $breed,
-            'types' => $types
+            'animal_types' => $animal_types
         ]);
     }
 

@@ -1,13 +1,36 @@
+<x-layout>
+  <x-slot name="title">
+    Breeds
+  </x-slot>
+
+  <x-slot name="toolbar">
+    @if (Route::has('admin.breeds.create'))
+      <a href="{{ route('admin.breeds.create') }}" class="btn btn-sm btn-outline-success">Create</a>
+    @endif
+  </x-slot>
+
+  <x-success />
+
+  <x-table>
+    <x-slot name="header">
+      <th>#</th>
+      <th>Type</th>
+      <th>Breed</th>
+      <th></th>
+    </x-slot>
 @foreach($breeds as $breedsItem)
-    <p>{{$breedsItem->id}}</p>
-    <p>{{$type::find($breedsItem->type_id)->name}}</p>
-    <p>{{$breedsItem->name}}</p>
+      <tr>
+        <td>{{$breedsItem->id}}</td>
+        <td>{{$animal_type::find($breedsItem->type_id)->name}}</td>
+        <td>{{$breedsItem->name}}</td>
+        <td>
     <a href="{{ route('admin.breeds.edit', ['breed' => $breedsItem->id]) }}">Редактировать</a>
-    <form method="post" action="{{ route('admin.breeds.destroy', ['breed' => $breedsItem->id])}}">
-        @csrf
-        @method('delete')
-        <button type="submit">Удалить</button>
-    </form>
-    <hr>
+    <x-form method="POST" action="{{ route('admin.breeds.destroy', $breedsItem) }}">
+        @method('DELETE')
+        <x-button type="submit" color="outline-danger">Удалить</x-button>
+    </x-form>
+        </td>
+      </tr>
 @endforeach
-<a href="{{route('admin.breeds.create')}}">Создать</a>
+  </x-table>
+</x-layout>

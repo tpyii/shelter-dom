@@ -14,7 +14,11 @@ class ImageUploadService implements UploadService
 
     public function saveUploadedFile($file, $oldFiles, Model $model)
     {
-        $imgsfrom = explode(',', $oldFiles['oldImgs']);
+        $imgsfrom=[];
+
+        if ($oldFiles['oldImgs'] !== null) {
+            $imgsfrom = explode(',', $oldFiles['oldImgs']);
+        }
         $pathToDir = 'image';
         $imgToAdd = [];
         if ($file !== null) {

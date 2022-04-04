@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function() {
         Auth::logout();
         return redirect()->route('login');
     })->name('logout');
-    
+
     Route::group(['prefix' => 'admin', 'as' => 'admin.'], function (){
         Route::view('/', 'admin.dashboard')->name('dashboard');
         Route::resource('/breeds', AdminBreedController::class);

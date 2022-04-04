@@ -56,7 +56,7 @@ class BreedController extends Controller
                 ->with('success', 'Запись успешно добавлена');
         }
 
-        return back()->with('error', 'Не удалось добавить запись')
+        return back()->withErrors('Не удалось добавить запись')
             ->withInput();
     }
 
@@ -105,7 +105,7 @@ class BreedController extends Controller
                 ->with('success', 'Запись успешно изменена');
         }
 
-        return back()->with('error', 'Не удалось изменить запись')
+        return back()->withErrors('Не удалось изменить запись')
             ->withInput();
     }
 
@@ -124,7 +124,7 @@ class BreedController extends Controller
                 ->with('success', 'Запись успешно удалена');
         }
 
-        return back()->with('error', 'Не удалось удалить запись')
+        return back()->withErrors('Не удалось удалить запись')
             ->withInput();
     }
 }

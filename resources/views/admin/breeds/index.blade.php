@@ -24,7 +24,9 @@
         <td>{{$animal_type::find($breedsItem->type_id)->name}}</td>
         <td>{{$breedsItem->name}}</td>
         <td>
-    <a href="{{ route('admin.breeds.edit', ['breed' => $breedsItem->id]) }}">Редактировать</a>
+    <a href="{{ route('admin.breeds.edit', ['breed' => $breedsItem->id]) }}">
+        <x-button type="submit" color="outline-info" class="mb-2">Редактировать</x-button>
+    </a>
     <x-form method="POST" action="{{ route('admin.breeds.destroy', $breedsItem) }}">
         @method('DELETE')
         <x-button type="submit" color="outline-danger">Удалить</x-button>

@@ -106,9 +106,6 @@ class AnimalController extends Controller
         foreach ($animal->inoculation AS $inoculationItem){
             $inoculations_array[] = $inoculationItem->id;
         }
-        foreach ($animal->images AS $imageId){
-            $imgIds[] = $imageId->path;
-        }
 
         return view('admin.animals.edit', [
             'animal' => $animal,
@@ -118,7 +115,7 @@ class AnimalController extends Controller
             'diseases_array' => $diseases_array,
             'inoculations' => $inoculations,
             'inoculations_array' => $inoculations_array,
-            'imgIds' => $imgIds
+            'imgIds' => $animal->images
         ]);
     }
 
@@ -138,9 +135,9 @@ class AnimalController extends Controller
         $updated_disease = $animal->disease()->sync($request->input('diseases'));
         $updated_inoculation = $animal->inoculation()->sync($request->input('inoculations'));
 
-        if($request->hasfile('files'))
+        if($request->hasfile('files')|| $request->only('oldImgs'))
         {
-           app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $animal);
+           app(ImageUploadService::class)->saveUploadedFile($request->file('files'),$request->only('oldImgs'), $animal);
         }
 
         if($updated_animal && $updated_disease && $updated_inoculation) {

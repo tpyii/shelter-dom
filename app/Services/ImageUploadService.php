@@ -12,23 +12,28 @@ use Illuminate\Database\Eloquent\Model;
 class ImageUploadService implements UploadService
 {
 
-    public function saveUploadedFile($file, Model $model)
+    public function saveUploadedFile($file, $oldFiles, Model $model)
     {
+        $imgsfrom = explode(',', $oldFiles['oldImgs']);
         $pathToDir = 'image';
         $imgToAdd = [];
-        foreach ($file as $f) {
-            $img = new Image();
-            $id = $model->id;
-            $breed = $model->breed->name;
-            $type = $model->type->name;
-            $path = $pathToDir . DIRECTORY_SEPARATOR . $type . DIRECTORY_SEPARATOR . $breed . DIRECTORY_SEPARATOR . $id;
-            $img->path = self::PATH_TO_STORAGE . $f->storeAs($path, $f->hashName(), 'public');
-            if (!$img->path) {
-                throw new \Exception('File not loaded');
+        if ($file !== null) {
+            foreach ($file as $f) {
+//                dd($f->getClientOriginalName());
+                $img = new Image();
+                $id = $model->id;
+                $breed = $model->breed->name;
+                $type = $model->type->name;
+                $path = $pathToDir . DIRECTORY_SEPARATOR . $type . DIRECTORY_SEPARATOR . $breed . DIRECTORY_SEPARATOR . $id;
+                $img->path = self::PATH_TO_STORAGE . $f->storeAs($path, $f->hashName(), 'public');
+                if (!$img->path) {
+                    throw new \Exception('File not loaded');
+                }
+                $img->save();
+                $imgToAdd[] = $img->id;
             }
-            $img->save();
-            $imgToAdd[] = $img->id;
         }
-        $model->images()->sync($imgToAdd);
+        $imgs = array_merge($imgToAdd, $imgsfrom);
+        $model->images()->sync($imgs);
     }
 }

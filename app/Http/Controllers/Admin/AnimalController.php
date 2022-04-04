@@ -71,7 +71,7 @@ class AnimalController extends Controller
                 ->with('success', 'Запись успешно добавлена');
         }
 
-        return back()->with('error', 'Не удалось добавить запись')
+        return back()->withErrors('Не удалось добавить запись')
             ->withInput();
     }
 
@@ -148,7 +148,7 @@ class AnimalController extends Controller
                 ->with('success', 'Запись успешно добавлена');
         }
 
-        return back()->with('error', 'Не удалось добавить запись')
+        return back()->withErrors('Не удалось добавить запись')
             ->withInput();
     }
 
@@ -170,7 +170,7 @@ class AnimalController extends Controller
                 ->with('success', 'Запись успешно удалена');
         }
 
-        return back()->with('error', 'Не удалось удалить запись')
+        return back()->withErrors('Не удалось удалить запись')
             ->withInput();
     }
 }

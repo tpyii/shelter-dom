@@ -1,0 +1,12 @@
+.modal-header .btn-close {
+    margin: -4.5rem -3.5rem -0.5rem auto;
+    border: 3px solid #FDDCC4;
+    /*border-color: ;*/
+    border-radius: 50px;
+    padding: 17px;
+}
+
+.modal-header .btn-close:hover {
+    background-color: #FDDCC4;
+    transition: all 0.2s ease-out;
+}

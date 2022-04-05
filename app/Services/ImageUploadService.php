@@ -12,11 +12,10 @@ use Illuminate\Database\Eloquent\Model;
 class ImageUploadService implements UploadService
 {
 
-    public function saveUploadedFile($file, $oldFiles, Model $model)
+    public function saveUploadedFile($file, Model $model, $oldFiles = [])
     {
-        $imgsfrom=[];
-
-        if ($oldFiles['oldImgs'] !== null) {
+        $imgsfrom = [];
+        if ($oldFiles !== []) {
             $imgsfrom = explode(',', $oldFiles['oldImgs']);
         }
         $pathToDir = 'image';

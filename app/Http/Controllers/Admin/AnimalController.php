@@ -98,13 +98,12 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations');
-
         $created_animal = Animal::create($data_animal);
         $created_animal->disease()->attach($request->input('diseases'));
         $created_animal->inoculation()->attach($request->input('inoculations'));
 
         if ($request->hasfile('files')) {
-            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $created_animal);
+            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $created_animal, []);
         }
 
         if ($created_animal) {
@@ -177,7 +176,7 @@ class AnimalController extends Controller
         $updated_inoculation = $animal->inoculation()->sync($request->input('inoculations'));
 
         if ($request->hasfile('files') || $request->only('oldImgs')) {
-            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $request->only('oldImgs'), $animal);
+            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $animal, $request->only('oldImgs'));
         }
 
         if ($updated_animal && $updated_disease && $updated_inoculation) {

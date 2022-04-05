@@ -18,12 +18,54 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $animals = Animal::paginate(7);
+        $breeds = Breed::all();
+        $animal_types = AnimalType::all();
+        $diseases = Disease::all();
+        $inoculations = Inoculation::all();
+
+        if ($request->input('type_id') !== null || $request->input('breed_id') !== null || $request->input('name') !== null) {
+
+            if ($request->input('type_id') !== null) {
+                $animals = Animal::where('type_id', $request->input('type_id'))->get();
+            }
+            if ($request->input('breed_id') !== null) {
+                $animals = Animal::where('breed_id', $request->input('breed_id'))->get();
+            }
+            if ($request->input('name') !== null) {
+                $animals = Animal::where('name', 'LIKE', '%' . $request->input('name') . '%')->get();
+            }
+            if ($request->input('name') !== null && $request->input('breed_id') !== null) {
+                $animals = Animal::where('name', 'LIKE', '%' . $request->input('name') . '%')->
+                where('breed_id', $request->input('breed_id'))->
+                get();
+            }
+            if ($request->input('name') !== null && $request->input('type_id') !== null) {
+                $animals = Animal::where('name', 'LIKE', '%' . $request->input('name') . '%')->
+                where('type_id', $request->input('type_id'))->
+                get();
+            }
+            if ($request->input('type_id') !== null && $request->input('breed_id') !== null) {
+                $animals = Animal::where('breed_id', $request->input('breed_id'))->
+                where('type_id', $request->input('type_id'))->
+                get();
+            }
+            if ($request->input('type_id') !== null && $request->input('type_id') !== null && $request->input('name') !== null) {
+                $animals = Animal::where('breed_id', $request->input('breed_id'))->
+                where('type_id', $request->input('type_id'))->
+                where('name', 'LIKE', '%' . $request->input('name') . '%')->
+                get();
+            }
+        }
 
         return view('admin.animals.index', [
-            'animals' => $animals
+            'animals' => $animals,
+            'breeds' => $breeds,
+            'animal_types' => $animal_types,
+            'diseases' => $diseases,
+            'inoculations' => $inoculations
         ]);
     }
 
@@ -61,12 +103,11 @@ class AnimalController extends Controller
         $created_animal->disease()->attach($request->input('diseases'));
         $created_animal->inoculation()->attach($request->input('inoculations'));
 
-        if($request->hasfile('files'))
-        {
+        if ($request->hasfile('files')) {
             app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $created_animal);
         }
 
-        if($created_animal) {
+        if ($created_animal) {
             return redirect()->route('admin.animals.index')
                 ->with('success', 'Запись успешно добавлена');
         }
@@ -99,11 +140,11 @@ class AnimalController extends Controller
         $diseases = Disease::all();
         $inoculations = Inoculation::all();
 
-        foreach ($animal->disease AS $diseaseItem){
+        foreach ($animal->disease as $diseaseItem) {
             $diseases_array[] = $diseaseItem->id;
         }
 
-        foreach ($animal->inoculation AS $inoculationItem){
+        foreach ($animal->inoculation as $inoculationItem) {
             $inoculations_array[] = $inoculationItem->id;
         }
 
@@ -135,12 +176,11 @@ class AnimalController extends Controller
         $updated_disease = $animal->disease()->sync($request->input('diseases'));
         $updated_inoculation = $animal->inoculation()->sync($request->input('inoculations'));
 
-        if($request->hasfile('files')|| $request->only('oldImgs'))
-        {
-           app(ImageUploadService::class)->saveUploadedFile($request->file('files'),$request->only('oldImgs'), $animal);
+        if ($request->hasfile('files') || $request->only('oldImgs')) {
+            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $request->only('oldImgs'), $animal);
         }
 
-        if($updated_animal && $updated_disease && $updated_inoculation) {
+        if ($updated_animal && $updated_disease && $updated_inoculation) {
             return redirect()->route('admin.animals.index')
                 ->with('success', 'Запись успешно добавлена');
         }

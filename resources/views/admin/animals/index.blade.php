@@ -9,7 +9,7 @@
         @endif
     </x-slot>
 
-    <x-form method="GET" action="{{ route('admin.animals.index') }}" enctype="multipart/form-data">
+    <x-form method="GET" action="{{ route('admin.animals.index') }}" enctype="multipart/form-data" class="w-25">
         <x-input name="name" label="Имя" value="{{ old('name') }}"/>
         <x-select name="type_id" label="Тип" :options="$animal_types"/>
         <x-select name="breed_id" label="Порода" :options="$breeds"/>
@@ -21,7 +21,7 @@
         {{--        <x-select name="diseases[]" label="Diseases" :options="$diseases" multiple />--}}
         {{--        <x-select name="inoculations[]" label="Inoculations" :options="$inoculations" multiple />--}}
         {{--        <x-input type="date" name="birthday_at" label="Birthday" value="{{ old('birthday_at') }}" />--}}
-        <x-button type="submit" color="outline-success">Search</x-button>
+        <x-button type="submit" color="outline-success mb-4">Search</x-button>
     </x-form>
 
 

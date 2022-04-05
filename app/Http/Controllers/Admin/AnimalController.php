@@ -20,45 +20,11 @@ class AnimalController extends Controller
      */
     public function index(Request $request)
     {
-        $animals = Animal::paginate(7);
+        $animals = Animal::name($request)->type($request)->breed($request)->paginate(7);
         $breeds = Breed::all();
         $animal_types = AnimalType::all();
         $diseases = Disease::all();
         $inoculations = Inoculation::all();
-
-        if ($request->input('type_id') !== null || $request->input('breed_id') !== null || $request->input('name') !== null) {
-
-            if ($request->input('type_id') !== null) {
-                $animals = Animal::where('type_id', $request->input('type_id'))->get();
-            }
-            if ($request->input('breed_id') !== null) {
-                $animals = Animal::where('breed_id', $request->input('breed_id'))->get();
-            }
-            if ($request->input('name') !== null) {
-                $animals = Animal::where('name', 'LIKE', '%' . $request->input('name') . '%')->get();
-            }
-            if ($request->input('name') !== null && $request->input('breed_id') !== null) {
-                $animals = Animal::where('name', 'LIKE', '%' . $request->input('name') . '%')->
-                where('breed_id', $request->input('breed_id'))->
-                get();
-            }
-            if ($request->input('name') !== null && $request->input('type_id') !== null) {
-                $animals = Animal::where('name', 'LIKE', '%' . $request->input('name') . '%')->
-                where('type_id', $request->input('type_id'))->
-                get();
-            }
-            if ($request->input('type_id') !== null && $request->input('breed_id') !== null) {
-                $animals = Animal::where('breed_id', $request->input('breed_id'))->
-                where('type_id', $request->input('type_id'))->
-                get();
-            }
-            if ($request->input('type_id') !== null && $request->input('type_id') !== null && $request->input('name') !== null) {
-                $animals = Animal::where('breed_id', $request->input('breed_id'))->
-                where('type_id', $request->input('type_id'))->
-                where('name', 'LIKE', '%' . $request->input('name') . '%')->
-                get();
-            }
-        }
 
         return view('admin.animals.index', [
             'animals' => $animals,

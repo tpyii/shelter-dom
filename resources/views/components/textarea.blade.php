@@ -8,10 +8,10 @@
     {{ $label }}
   </x-label>
 
-  <textarea 
+  <textarea
     {{ $attributes->merge([
       'class' => 'form-control form-control-sm',
-      'id' => $name,
+      'name' => $name,
       'rows' => 3,
     ])->class([
       'is-invalid' => $errors->has($name)
@@ -19,7 +19,7 @@
   >
     {{ $slot }}
   </textarea>
-  
+
   @error($name)
     <div class="invalid-feedback">
       {{ $message }}

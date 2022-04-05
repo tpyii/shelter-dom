@@ -15,7 +15,7 @@ class InoculationController extends Controller
      */
     public function index()
     {
-        $inoculations = Inoculation::all();
+        $inoculations = Inoculation::paginate(7);
 
         return view('admin.inoculations.index', [
             'inoculations' => $inoculations

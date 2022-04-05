@@ -16,7 +16,7 @@ class BreedController extends Controller
      */
     public function index()
     {
-        $breeds = Breed::all();
+        $breeds = Breed::paginate(7);
 
         $animal_type = new AnimalType();
         return view('admin.breeds.index', [

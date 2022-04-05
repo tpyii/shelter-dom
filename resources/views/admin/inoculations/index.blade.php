@@ -33,4 +33,5 @@
       </tr>
 @endforeach
   </x-table>
+    {{$inoculations->links()}}
 </x-layout>

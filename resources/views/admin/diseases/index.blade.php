@@ -33,4 +33,5 @@
       </tr>
 @endforeach
   </x-table>
+    {{$diseases->links()}}
 </x-layout>

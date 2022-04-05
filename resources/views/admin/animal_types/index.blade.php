@@ -33,4 +33,5 @@
       </tr>
 @endforeach
   </x-table>
+    {{$animal_types->links()}}
 </x-layout>

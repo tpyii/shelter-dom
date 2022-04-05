@@ -20,7 +20,7 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        $animals = Animal::all();
+        $animals = Animal::paginate(7);
 
         return view('admin.animals.index', [
             'animals' => $animals

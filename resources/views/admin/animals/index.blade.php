@@ -62,4 +62,5 @@
             </tr>
         @endforeach
     </x-table>
+    {{$animals->links()}}
 </x-layout>

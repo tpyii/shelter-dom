@@ -35,4 +35,5 @@
       </tr>
 @endforeach
   </x-table>
+    {{$breeds->links()}}
 </x-layout>

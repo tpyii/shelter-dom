@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\ImageUploadService;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if (env('APP_ENV') === 'production') {
             URL::forceScheme('https');
-        }
+        };
+        Paginator::useBootstrap();
     }
 }

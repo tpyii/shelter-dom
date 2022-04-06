@@ -16,7 +16,7 @@ class DiseaseController extends Controller
      */
     public function index()
     {
-        $diseases = Disease::all();
+        $diseases = Disease::paginate(7);
 
         return view('admin.diseases.index', [
             'diseases' => $diseases

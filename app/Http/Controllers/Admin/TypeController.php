@@ -16,7 +16,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = AnimalType::all();
+        $types = AnimalType::paginate(7);
 
         return view('admin.animal_types.index', [
             'animal_types' => $types

@@ -21,7 +21,7 @@ class AnimalController extends Controller
     public function index(Request $request)
     {
         $searchParams = $request->all();
-        $animals = Animal::name($request)->type($request)->breed($request)->paginate(7)->withQueryString();
+        $animals = Animal::filter()->paginate(7)->withQueryString();
         $breeds = Breed::all();
         $animal_types = AnimalType::all();
         $diseases = Disease::all();

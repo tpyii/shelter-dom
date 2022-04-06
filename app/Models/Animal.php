@@ -64,41 +64,18 @@ class Animal extends Model
 
     /**
      * @param $query
-     * @param $request
      * @return mixed
      */
-    public function scopeName($query, $request)
+    public function scopeFilter($query)
     {
-        if ($request->input('name') !== null) {
-            return $query->where('name', 'LIKE', '%' . $request->input('name') . '%');
-        }
-        return $query;
-    }
-
-    /**
-     * @param $query
-     * @param $request
-     * @return mixed
-     */
-    public function scopeType($query, $request)
-    {
-        if ($request->input('type_id') !== null) {
-            return $query->where('type_id', $request->input('type_id'));
-        }
-        return $query;
-    }
-
-    /**
-     * @param $query
-     * @param $request
-     * @return mixed
-     */
-    public function scopeBreed($query, $request)
-    {
-        if ($request->input('breed_id') !== null) {
-            return $query->where('breed_id', $request->input('breed_id'));
-        }
-        return $query;
+        return $query->
+        when(request("name"), function ($query, $value) {
+            return $query->where("name", "LIKE", "%" . $value . "%");
+        })->when(request("breed_id"), function ($query, $value) {
+            return $query->where('breed_id', $value);
+        })->when(request("type_id"), function ($query, $value) {
+            return $query->where('type_id', $value);
+        });
     }
 }
 

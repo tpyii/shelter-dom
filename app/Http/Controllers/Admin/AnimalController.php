@@ -20,7 +20,8 @@ class AnimalController extends Controller
      */
     public function index(Request $request)
     {
-        $animals = Animal::name($request)->type($request)->breed($request)->paginate(7);
+        $searchParams = $request->all();
+        $animals = Animal::name($request)->type($request)->breed($request)->paginate(7)->withQueryString();
         $breeds = Breed::all();
         $animal_types = AnimalType::all();
         $diseases = Disease::all();
@@ -31,7 +32,8 @@ class AnimalController extends Controller
             'breeds' => $breeds,
             'animal_types' => $animal_types,
             'diseases' => $diseases,
-            'inoculations' => $inoculations
+            'inoculations' => $inoculations,
+            'searchParams' => $searchParams
         ]);
     }
 

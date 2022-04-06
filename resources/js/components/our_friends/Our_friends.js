@@ -1,81 +1,77 @@
-import katrine from '../../../../templates/assets/images/pets-katrine.png'
-import jennifer from '../../../../templates/assets/images/pets-jennifer.png'
-import woody from '../../../../templates/assets/images/pets-woody.png'
-import timmy from '../../../../templates/assets/images/pets-timmy.png'
 import Carousel from 'react-elastic-carousel'
 import Item from "./Item";
+import {Link} from "react-router-dom";
+import {Modal_window} from '../modal_window/Modal_window'
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+
 
 export const Our_friends = () => {
-    const images = [katrine, jennifer, woody, timmy]
+    const placeholder = 'https://placehold.co/600x400'
+
+    const [show, setShow] = useState(false)
+    const [animals, setAnimals] = useState()
+    const [animalData, setAnimalData] = useState('')
+
+    useEffect(() => {
+        const apiURL = "/api/animals";
+        axios.get(apiURL).then((resp) => {
+            const animalsArr = resp.data;
+            setAnimals(animalsArr.data);
+        });
+    }, []);
+
+    const handleShow = () => setShow(true)
+    const handleClose = () => setShow(false)
+
+    const getAnimalDataById = (e) => {
+        const value = e.target.id
+        let data = animals.find(animal => animal.id === Number(value))
+        setAnimalData(data)
+    }
+
+    const functionWrapper = (e) => {
+        handleShow()
+        getAnimalDataById(e)
+    }
+
     const breakPoints = [
         {width: 1, itemsToShow: 1},
         {width: 550, itemsToShow: 2},
         {width: 768, itemsToShow: 3},
         {width: 1200, itemsToShow: 4},
     ];
+
     return (
-        <div className='container' style={{background :'#F6F6F6'}}>
-            <h3 className="mb-5 text-center">Our friends who<br/>are looking for a house</h3>
+        <div className='container  text-center ' style={{background: '#F6F6F6', paddingBottom: '100px'}}>
+            <h3 style={{paddingTop: '80px'}} className="mb-5 text-center">Our friends who<br/>are looking for a house
+            </h3>
             <Carousel breakPoints={breakPoints}>
-                <Item className='d-flex justify-content-around'>
-
-                    <div className="swiper-slide">
-                        <div className="card d-flex flex-column">
-                            <img src={katrine} alt="pets-katrine"/>
-                            <div
-                                className="card-content d-flex flex-column justify-content-center align-items-center">
-                                <h4>Katrine</h4>
-                                <button className="button button-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">Learn more
-                                </button>
+                {animals?.map(({images, name, id}) => (
+                    <Item key={id} className='d-flex justify-content-around'>
+                        <div className="swiper-slide">
+                            <div className="card d-flex flex-column">
+                                <img src={`${images?.length === 0 ? placeholder : images?.length && images[0]?.path
+                                    .replace('public/', '')
+                                    .replace('\\', '/')
+                                    .replace('tmp_db/', '')}`
+                                } alt={name}/>
+                                <div
+                                    className="card-content d-flex flex-column justify-content-center align-items-center">
+                                    <h4>{name}</h4>
+                                    <button id={id} onClick={functionWrapper} className="button button-secondary"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Learn more
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </Item>
-                <Item>
-                    <div className="swiper-slide">
-                        <div className="card d-flex flex-column">
-                            <img src={jennifer} alt="pets-katrine"/>
-                            <div
-                                className="card-content d-flex flex-column justify-content-center align-items-center">
-                                <h4>Jennifer</h4>
-                                <button className="button button-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">Learn more
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </Item>
-                <Item>
-                    <div className="swiper-slide">
-                        <div className="card d-flex flex-column">
-                            <img src={woody} alt="pets-katrine"/>
-                            <div
-                                className="card-content d-flex flex-column justify-content-center align-items-center">
-                                <h4>Woody</h4>
-                                <button className="button button-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">Learn more
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </Item>
-                <Item className='d-flex justify-content-around'>
-                    <div className="swiper-slide">
-                        <div className="card d-flex flex-column">
-                            <img src={timmy} alt="pets-katrine"/>
-                            <div
-                                className="card-content d-flex flex-column justify-content-center align-items-center">
-                                <h4>Timmy</h4>
-                                <button className="button button-secondary" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">Learn more
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </Item>
+                    </Item>
+                ))}
             </Carousel>
+            <Link to="/our_pets" style={{marginTop: '60px', width: '265px', textDecoration: 'none'}}
+                  className="button button-primary mx-auto mt-60 mb-100">Get to know the rest</Link>
+            <Modal_window show={show} hide={handleClose} animalData={animalData}/>
         </div>
     )
 }

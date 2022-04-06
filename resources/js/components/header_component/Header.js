@@ -19,7 +19,7 @@ export const Header = () => {
                             <p>We offer to give a chance to a little and nice puppy with an extremely wide and open
                                 heart. He or she will love you more than anybody else in the world, you will
                                 see!</p>
-                            <button className="button button-primary">Make a friend</button>
+                            <Link to="/our_pets" className="button button-primary">Make a friend</Link>
                         </div>
                         <div className="align-items-end col col-auto col-md-7 d-flex">
                             <img className="welcome__img" src={puppy}

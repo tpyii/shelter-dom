@@ -15,7 +15,7 @@ class DiseaseController extends Controller
      */
     public function index()
     {
-        $diseases = Disease::all();
+        $diseases = Disease::paginate(7);
 
         return view('admin.diseases.index', [
             'diseases' => $diseases
@@ -49,7 +49,7 @@ class DiseaseController extends Controller
                 ->with('success', 'Запись успешно добавлена');
         }
 
-        return back()->with('error', 'Не удалось добавить запись')
+        return back()->withErrors( 'Не удалось добавить запись')
             ->withInput();
     }
 
@@ -95,7 +95,7 @@ class DiseaseController extends Controller
                 ->with('success', 'Запись успешно изменена');
         }
 
-        return back()->with('error', 'Не удалось изменить запись')
+        return back()->withErrors( 'Не удалось изменить запись')
             ->withInput();
     }
 
@@ -114,7 +114,7 @@ class DiseaseController extends Controller
                 ->with('success', 'Запись успешно удалена');
         }
 
-        return back()->with('error', 'Не удалось удалить запись')
+        return back()->withErrors( 'Не удалось удалить запись')
             ->withInput();
     }
 }

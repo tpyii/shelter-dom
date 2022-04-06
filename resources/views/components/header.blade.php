@@ -4,8 +4,12 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="navbar-nav d-md-flex d-none">
-    <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="{{ route('logout') }}">Sign out</a>
-    </div>
+    @auth
+      <div class="nav-item text-nowrap">
+        <x-form method="POST" action="{{ route('logout') }}">
+          <x-button type="submit" class="nav-link px-3" color="link">Sign out</x-button>
+        </x-form>
+      </div>
+    @endauth
   </div>
 </header>

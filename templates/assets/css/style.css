@@ -231,8 +231,11 @@ small {
 
   /*6. Logo  */
 
+.logo::after {
+  content: none !important;
+}
+
 .logo-title {
-  display: inline-block;
   margin-bottom: 10px;
   font-family: var(--font-family-georgia);
   font-style: normal;

@@ -231,8 +231,11 @@ small {
 
   /*6. Logo  */
 
+.logo::after {
+  content: none !important;
+}
+
 .logo-title {
-  display: inline-block;
   margin-bottom: 10px;
   font-family: var(--font-family-georgia);
   font-style: normal;
@@ -520,7 +523,6 @@ a.active::after {
 .welcome {
   padding-top: 120px;
   transform: translateY(-120px);
-  min-height: 100vh;
   background: url(../patterns/noise_transparent@2x.png),
               radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
               #211F20;
@@ -641,3 +643,5 @@ a.active::after {
 .slider-button-prev {
   left: 0;
 }
+
+

@@ -22,7 +22,9 @@
         <td>{{$inoculationsItem->id}}</td>
         <td>{{$inoculationsItem->name}}</td>
         <td>
-    <a href="{{ route('admin.inoculations.edit', ['inoculation' => $inoculationsItem->id]) }}">Редактировать</a>
+    <a href="{{ route('admin.inoculations.edit', ['inoculation' => $inoculationsItem->id]) }}">
+        <x-button type="submit" color="outline-info" class="mb-2">Редактировать</x-button>
+    </a>
     <x-form method="POST" action="{{ route('admin.inoculations.destroy', $inoculationsItem) }}">
         @method('DELETE')
         <x-button type="submit" color="outline-danger">Удалить</x-button>
@@ -31,4 +33,5 @@
       </tr>
 @endforeach
   </x-table>
+    {{$inoculations->links()}}
 </x-layout>

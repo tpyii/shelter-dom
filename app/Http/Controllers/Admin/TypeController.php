@@ -15,7 +15,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = AnimalType::all();
+        $types = AnimalType::paginate(7);
 
         return view('admin.animal_types.index', [
             'animal_types' => $types
@@ -49,7 +49,7 @@ class TypeController extends Controller
                 ->with('success', 'Запись успешно добавлена');
         }
 
-        return back()->with('error', 'Не удалось добавить запись')
+        return back()->withErrors( 'Не удалось добавить запись')
             ->withInput();
     }
 
@@ -95,7 +95,7 @@ class TypeController extends Controller
                 ->with('success', 'Запись успешно изменена');
         }
 
-        return back()->with('error', 'Не удалось изменить запись')
+        return back()->withErrors( 'Не удалось изменить запись')
             ->withInput();
     }
 
@@ -114,7 +114,7 @@ class TypeController extends Controller
                 ->with('success', 'Запись успешно удалена');
         }
 
-        return back()->with('error', 'Не удалось удалить запись')
+        return back()->withErrors('Не удалось удалить запись')
             ->withInput();
     }
 }

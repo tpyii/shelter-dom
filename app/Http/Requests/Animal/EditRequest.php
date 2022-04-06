@@ -35,7 +35,7 @@ class EditRequest extends FormRequest
             'birthday_at'=> ['required', 'date'],
             'treatment_of_parasites'=> ['required', 'in:YES,NO'],
             'images' => ['required', 'array'],
-            'images.*' => ['image', 'file', 'mimes:png, jpg, jpeg']
+            'images.*' => ['image', 'file', 'mimes:png,jpg,jpeg']
         ];
     }
 }

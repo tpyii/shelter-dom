@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Inoculation\CreateRequest;
+use App\Http\Requests\Inoculation\EditRequest;
 use App\Models\Inoculation;
-use Illuminate\Http\Request;
 
 class InoculationController extends Controller
 {
@@ -35,10 +36,10 @@ class InoculationController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CreateRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
         $data = $request->only('name');
 
@@ -80,11 +81,11 @@ class InoculationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param EditRequest $request
      * @param Inoculation $inoculation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Inoculation $inoculation)
+    public function update(EditRequest $request, Inoculation $inoculation)
     {
         $data = $request->only('name');
 

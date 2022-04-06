@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Disease\CreateRequest;
+use App\Http\Requests\Disease\EditRequest;
 use App\Models\Disease;
-use Illuminate\Http\Request;
 
 class DiseaseController extends Controller
 {
@@ -35,10 +36,10 @@ class DiseaseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param CreateRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
         $data = $request->only('name');
 
@@ -80,11 +81,11 @@ class DiseaseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param EditRequest $request
      * @param Disease $disease
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Disease $disease)
+    public function update(EditRequest $request, Disease $disease)
     {
         $data = $request->only('name');
 

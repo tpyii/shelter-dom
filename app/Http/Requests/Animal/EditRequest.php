@@ -34,7 +34,7 @@ class EditRequest extends FormRequest
             'description'=> ['required', 'string', 'min:24', 'max:1024'],
             'birthday_at'=> ['required', 'date'],
             'treatment_of_parasites'=> ['required', 'in:YES,NO'],
-            'files' => ['required', 'array'],
+            'files' => ['array'],
             'files.*' => ['image', 'file', 'mimes:png,jpg,jpeg']
         ];
     }

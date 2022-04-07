@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AnimalType\CreateRequest;
+use App\Http\Requests\AnimalType\EditRequest;
 use App\Models\AnimalType;
-use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
@@ -35,10 +36,10 @@ class TypeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CreateRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
         $data = $request->only('name');
 
@@ -80,11 +81,11 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param EditRequest $request
      * @param AnimalType $animal_type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AnimalType $animal_type)
+    public function update(EditRequest $request, AnimalType $animal_type)
     {
         $data = $request->only('name');
 

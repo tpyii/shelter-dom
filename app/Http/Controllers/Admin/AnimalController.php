@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Animal\CreateRequest;
+use App\Http\Requests\Animal\EditRequest;
 use App\Models\Animal;
 use App\Models\AnimalType;
 use App\Models\Breed;
@@ -60,12 +62,12 @@ class AnimalController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param CreateRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
-        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations');
+        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations', 'files');
         $created_animal = Animal::create($data_animal);
         $created_animal->disease()->attach($request->input('diseases'));
         $created_animal->inoculation()->attach($request->input('inoculations'));
@@ -130,13 +132,13 @@ class AnimalController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param EditRequest $request
+     * @param Animal $animal
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(Request $request, Animal $animal)
+    public function update(EditRequest $request, Animal $animal)
     {
-        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations');
+        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations', 'files');
 
         $updated_animal = $animal->fill($data_animal)->save();
 

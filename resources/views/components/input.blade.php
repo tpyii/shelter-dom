@@ -5,7 +5,12 @@
   'name',
   'id',
   'label',
+  'multiple' => false,
 ])
+
+@php
+$n = $multiple ? substr($name, 0, -2) : $name;
+@endphp
 
 @switch($type)
   @case('radio')
@@ -30,6 +35,32 @@
 
       @error($name)
         <div class="invalid-feedback mb-3">
+          {{ $message }}
+        </div>
+      @enderror
+    </div>
+  @break
+
+  @case('file')
+    <div class="mb-3">
+      <x-label :for="$n">
+        {{ $label }}
+      </x-label>
+
+      <input 
+        {{ $attributes->merge([
+          'class' => 'form-control form-control-sm',
+          'type' => $type,
+          'name' => $name,
+          'id' => $n
+        ])->class([
+          'is-invalid' => $errors->has($n),
+        ]) }}
+        @if($multiple) multiple @endif
+      >
+    
+      @error($n)
+        <div class="invalid-feedback">
           {{ $message }}
         </div>
       @enderror

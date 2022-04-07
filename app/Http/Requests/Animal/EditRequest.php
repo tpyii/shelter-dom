@@ -27,15 +27,15 @@ class EditRequest extends FormRequest
             'name'=> ['required', 'string', 'max:24', 'min:2'],
             'type_id'=> ['required', 'integer'],
             'breed_id'=> ['required', 'integer'],
-            'diseases' => ['nullable', 'array:id'],
+            'diseases' => ['nullable', 'array'],
             'diseases.*' => ['integer'],
-            'inoculations' => ['nullable', 'array:id'],
+            'inoculations' => ['nullable', 'array'],
             'inoculations.*' => ['integer'],
             'description'=> ['required', 'string', 'min:24', 'max:1024'],
             'birthday_at'=> ['required', 'date'],
             'treatment_of_parasites'=> ['required', 'in:YES,NO'],
-            'images' => ['required', 'array'],
-            'images.*' => ['image', 'file', 'mimes:png,jpg,jpeg']
+            'files' => ['required', 'array'],
+            'files.*' => ['image', 'file', 'mimes:png,jpg,jpeg']
         ];
     }
 }

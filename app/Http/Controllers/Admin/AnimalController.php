@@ -68,8 +68,6 @@ class AnimalController extends Controller
     public function store(CreateRequest $request)
     {
         $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations', 'files');
-//        dump($data_animal);
-//        die();
         $created_animal = Animal::create($data_animal);
         $created_animal->disease()->attach($request->input('diseases'));
         $created_animal->inoculation()->attach($request->input('inoculations'));
@@ -140,7 +138,7 @@ class AnimalController extends Controller
      */
     public function update(EditRequest $request, Animal $animal)
     {
-        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations');
+        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations', 'files');
 
         $updated_animal = $animal->fill($data_animal)->save();
 

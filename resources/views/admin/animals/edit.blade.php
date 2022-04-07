@@ -32,12 +32,8 @@
                 </div>
             @endforeach
                 <input class="form-control" name="oldImgs" id="oldImg" value="" hidden>
-            <div class="form-group">
-                <label for="img">Новые изображения
-                </label>
-                <input class="form-control" name="files[]" id="img" type="file" multiple>
-            </div>
         </div>
+        <x-input type="file" name="files[]" label="Изображение" accept=".jpg, .jpeg, .png" multiple />
         <x-button type="submit" color="outline-success">Сохранить</x-button>
     </x-form>
 </x-layout>

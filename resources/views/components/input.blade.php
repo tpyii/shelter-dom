@@ -54,12 +54,12 @@ $n = $multiple ? substr($name, 0, -2) : $name;
           'name' => $name,
           'id' => $n
         ])->class([
-          'is-invalid' => $errors->has($name),
+          'is-invalid' => $errors->has($n),
         ]) }}
         @if($multiple) multiple @endif
       >
     
-      @error($name)
+      @error($n)
         <div class="invalid-feedback">
           {{ $message }}
         </div>

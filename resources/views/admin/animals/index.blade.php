@@ -60,7 +60,7 @@
             <th></th>
         </x-slot>
         @foreach($animals as $animalsItem)
-            <tr>
+            <tr id="{{$animalsItem->id}}">
                 <td>{{$animalsItem->id}}</td>
                 <td>{{$animalsItem->name}}</td>
                 <td>{{$animalsItem->description}}</td>
@@ -88,10 +88,31 @@
                     <a href="{{route('admin.animals.edit', ['animal' => $animalsItem])}}">
                         <x-button type="submit" color="outline-info" class="mb-2">Редактировать</x-button>
                     </a>
-                    <x-form method="POST" action="{{ route('admin.animals.destroy', $animalsItem) }}">
-                        @method('DELETE')
-                        <x-button type="submit" color="outline-danger">Удалить</x-button>
-                    </x-form>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#Modal{{$animalsItem->id}}">
+                        Удалить
+                    </button>
+                    <div class="modal fade" id="Modal{{$animalsItem->id}}" tabindex="-1"
+                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Confirm deleting</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <b>Confirm deleting record №{{$animalsItem->id}}</b>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary delete"
+                                            data-id="{{$animalsItem->id}}" data-bs-dismiss="modal">Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         @endforeach
@@ -99,4 +120,25 @@
     @if(method_exists($animals, 'links'))
         {{$animals->links()}}
     @endif
+    <script type="text/javascript">
+        let deleteButtons = document.querySelectorAll('.delete');
+        deleteButtons.forEach((elem) => {
+            elem.addEventListener('click', () => {
+                let id = elem.getAttribute('data-id');
+                send('/admin/animals/' + id)
+                document.getElementById(id).remove();
+            });
+        });
+
+        async function send(url) {
+            let response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            });
+            let result = await response.json();
+            return result.ok
+        }
+    </script>
 </x-layout>

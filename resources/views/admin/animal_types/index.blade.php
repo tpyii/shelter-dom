@@ -45,7 +45,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary delete"
-                                        data-id="{{$animal_typesItem->id}}">Delete
+                                        data-id="{{$animal_typesItem->id}}" data-bs-dismiss="modal">Delete
                                 </button>
                             </div>
                         </div>
@@ -62,7 +62,6 @@
                 let id = elem.getAttribute('data-id');
                 send('/admin/animal_types/' + id)
                 document.getElementById(id).remove();
-                location.reload();
             });
         });
 

@@ -8,7 +8,12 @@
 
 @php
   $n = $multiple ? substr($name, 0, -2) : $name;
-  $value = $multiple && $value ? $value->pluck('id')->toArray() : $value;
+  $value = $multiple 
+    ? empty($value)
+      ? []
+      : $value->pluck('id')->toArray()
+    : $value;
+  $value = old($n, $value);
 @endphp
 
 <div class="mb-3">
@@ -33,10 +38,10 @@
     @foreach($options as $option)
       <option 
         value="{{ $option->id }}"
-        @if($multiple && $value)
-          @if(in_array($option->id, old($n, $value))) selected @endif
+        @if($multiple)
+          @if(in_array($option->id, $value)) selected @endif
         @else
-          @if($option->id == old($name, $value)) selected @endif
+          @if($option->id == $value) selected @endif
         @endif
       >
         {{ $option->name }}

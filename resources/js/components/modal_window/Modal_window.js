@@ -1,10 +1,19 @@
-import katrine from '../../../../templates/assets/images/pets-katrine.png'
 import {Modal} from 'react-bootstrap'
 import {useState, useEffect} from 'react'
+import Carousel from 'react-elastic-carousel'
+import Item from "../our_friends/Item";
 import './modal.css'
 
 export const Modal_window = ({show, hide, animalData}) => {
     const placeholder = 'https://placehold.co/600x400'
+    const imagesArr = animalData.images;
+
+    const breakPoints = [
+        {width: 1, itemsToShow: 1},
+        {width: 550, itemsToShow: 2},
+        {width: 768, itemsToShow: 3},
+        {width: 1200, itemsToShow: 4},
+    ];
 
     function getAge(dateString) {
         let today = new Date();
@@ -22,20 +31,38 @@ export const Modal_window = ({show, hide, animalData}) => {
             <Modal.Header closeButton>
 
             </Modal.Header>
-            <Modal.Body style={{overflowY: 'auto'}}>
+            <Modal.Body>
                 <div className="modal-body">
                     <div className="row m-0 h-100 flex-column flex-sm-row">
-                        <div className="col h-100">
-                            <img src={animalData?.images?.length === 0 ? placeholder :
-                            animalData?.images?.length && animalData.images[0].path
-                                .replace('public/', '')
-                                .replace('\\', '/')
-                                .replace('tmp_db/', '')}
-                                 alt={animalData.name}
-                                 className="modal-image"
-                            />
+                        <div className="col h-100 item__carousel">
+                            {imagesArr?.length > 1 ?
+                                <Carousel >
+                                    {imagesArr?.map(({images, name, id}) => (
+                                        <Item key={id} className='d-flex justify-content-around'>
+                                            <div className="swiper-slide">
+                                                <div className="card d-flex flex-column">
+                                                    <img src={`${imagesArr?.length === 0 ? placeholder : imagesArr?.length && imagesArr[0]?.path
+                                                            .replace('public/', '')
+                                                            .replace('\\', '/')
+                                                            .replace('tmp_db/', '')}`
+                                                        } alt='pic'/>
+                                                </div>
+                                            </div>
+                                        </Item>
+                                    ))}
+                                </Carousel>
+
+                                : <img style={{marginTop:'-90px'}} src={imagesArr?.length === 0 ? placeholder :
+                                    imagesArr?.length && imagesArr[0].path
+                                        .replace('public/', '')
+                                        .replace('\\', '/')
+                                        .replace('tmp_db/', '')}
+                                       alt={animalData.name}
+                                       className="modal-image"
+                                />
+                            }
                         </div>
-                        <div className="col h-100 modal-text">
+                        <div style={{overflowY: 'auto',  height:'500px'}} className="col modal-text">
                             <div className="py-5 px-3">
                                 <h3 className="mb-2">{animalData.name}</h3>
                                 <h4 className="mb-5">{animalData.type} - {animalData.breed}</h4>

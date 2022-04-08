@@ -3,23 +3,21 @@ import Item from "./Item";
 import {Link} from "react-router-dom";
 import {Modal_window} from '../modal_window/Modal_window'
 import {useState, useEffect} from 'react'
-import axios from 'axios'
+import {selectAnimalsList} from '../store/getAnimalsList/selectors'
+import {useDispatch, useSelector} from "react-redux";
+import {getAnimals} from '../store/getAnimalsList/actions'
 
 
 export const Our_friends = () => {
     const placeholder = 'https://placehold.co/600x400'
-
+    const dispatch = useDispatch()
+    const animals = useSelector(selectAnimalsList)
     const [show, setShow] = useState(false)
-    const [animals, setAnimals] = useState()
     const [animalData, setAnimalData] = useState('')
 
     useEffect(() => {
-        const apiURL = "/api/animals";
-        axios.get(apiURL).then((resp) => {
-            const animalsArr = resp.data;
-            setAnimals(animalsArr.data);
-        });
-    }, []);
+        dispatch(getAnimals())
+    }, [])
 
     const handleShow = () => setShow(true)
     const handleClose = () => setShow(false)
@@ -43,9 +41,10 @@ export const Our_friends = () => {
     ];
 
     return (
-        <div className='container  text-center ' style={{background: '#F6F6F6', paddingBottom: '100px'}}>
+        <div className='text-center ' style={{background: '#F6F6F6', paddingBottom: '100px'}}>
             <h3 style={{paddingTop: '80px'}} className="mb-5 text-center">Our friends who<br/>are looking for a house
             </h3>
+            <div className='container'>
             <Carousel breakPoints={breakPoints}>
                 {animals?.map(({images, name, id}) => (
                     <Item key={id} className='d-flex justify-content-around'>
@@ -69,6 +68,7 @@ export const Our_friends = () => {
                     </Item>
                 ))}
             </Carousel>
+            </div>
             <Link to="/our_pets" style={{marginTop: '60px', width: '265px', textDecoration: 'none'}}
                   className="button button-primary mx-auto mt-60 mb-100">Get to know the rest</Link>
             <Modal_window show={show} hide={handleClose} animalData={animalData}/>

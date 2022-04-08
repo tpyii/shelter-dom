@@ -12,7 +12,7 @@ export const NavBar = () => {
     }
 
     const goToRegist = () => {
-        window.location.href='/register'
+        window.location.href='/user'
     }
 
     return (

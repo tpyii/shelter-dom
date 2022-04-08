@@ -6,6 +6,7 @@
   'id',
   'label',
   'multiple' => false,
+  'required' => false,
 ])
 
 @php
@@ -45,6 +46,7 @@ $n = $multiple ? substr($name, 0, -2) : $name;
     <div class="mb-3">
       <x-label :for="$n">
         {{ $label }}
+        @if($required) * @endif
       </x-label>
 
       <input 
@@ -57,6 +59,7 @@ $n = $multiple ? substr($name, 0, -2) : $name;
           'is-invalid' => $errors->has($n),
         ]) }}
         @if($multiple) multiple @endif
+        @if($required) required @endif
       >
     
       @error($n)
@@ -71,6 +74,7 @@ $n = $multiple ? substr($name, 0, -2) : $name;
     <div class="mb-3">
       <x-label :for="$name">
         {{ $label }}
+        @if($required) * @endif
       </x-label>
 
       <input 
@@ -83,6 +87,7 @@ $n = $multiple ? substr($name, 0, -2) : $name;
         ])->class([
           'is-invalid' => $errors->has($name),
         ]) }}
+        @if($required) required @endif
       >
     
       @error($name)

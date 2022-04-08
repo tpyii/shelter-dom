@@ -1,11 +1,13 @@
 @props([
   'name',
-  'label'
+  'label',
+  'required' => false,
 ])
 
 <div class="mb-3">
   <x-label :for="$name">
     {{ $label }}
+    @if($required) * @endif
   </x-label>
 
   <textarea
@@ -16,9 +18,8 @@
     ])->class([
       'is-invalid' => $errors->has($name)
     ])  }}
-  >
-    {{ $slot }}
-  </textarea>
+    @if($required) required @endif
+  >{{ old($name, $slot) }}</textarea>
 
   @error($name)
     <div class="invalid-feedback">

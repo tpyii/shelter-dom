@@ -61,7 +61,7 @@
         deleteButtons.forEach((elem) => {
             elem.addEventListener('click', () => {
                 let id = elem.getAttribute('data-id');
-                send('/admin/inoculations/' + id))
+                send('/admin/inoculations/' + id)
                 document.getElementById(id).remove();
             });
         });

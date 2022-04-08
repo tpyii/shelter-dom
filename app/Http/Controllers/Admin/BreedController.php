@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Breed\CreateRequest;
+use App\Http\Requests\Breed\EditRequest;
 use App\Models\Breed;
 use App\Models\AnimalType;
-use Illuminate\Http\Request;
 
 class BreedController extends Controller
 {
@@ -16,7 +17,7 @@ class BreedController extends Controller
      */
     public function index()
     {
-        $breeds = Breed::all();
+        $breeds = Breed::paginate(7);
 
         $animal_type = new AnimalType();
         return view('admin.breeds.index', [
@@ -42,10 +43,10 @@ class BreedController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CreateRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
         $data = $request->only('name', 'type_id');
 
@@ -56,7 +57,7 @@ class BreedController extends Controller
                 ->with('success', 'Запись успешно добавлена');
         }
 
-        return back()->with('error', 'Не удалось добавить запись')
+        return back()->withErrors('Не удалось добавить запись')
             ->withInput();
     }
 
@@ -90,11 +91,11 @@ class BreedController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param EditRequest $request
      * @param Breed $breed
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Breed $breed)
+    public function update(EditRequest $request, Breed $breed)
     {
         $data = $request->only('name', 'type_id');
 
@@ -105,7 +106,7 @@ class BreedController extends Controller
                 ->with('success', 'Запись успешно изменена');
         }
 
-        return back()->with('error', 'Не удалось изменить запись')
+        return back()->withErrors('Не удалось изменить запись')
             ->withInput();
     }
 
@@ -124,7 +125,7 @@ class BreedController extends Controller
                 ->with('success', 'Запись успешно удалена');
         }
 
-        return back()->with('error', 'Не удалось удалить запись')
+        return back()->withErrors('Не удалось удалить запись')
             ->withInput();
     }
 }

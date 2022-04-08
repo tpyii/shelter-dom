@@ -5365,6 +5365,29 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/form.js":
+/*!******************************!*\
+  !*** ./resources/js/form.js ***!
+  \******************************/
+/***/ (() => {
+
+function disableFormEmptyElements() {
+  [].forEach.call(this.elements, function (element) {
+    return !element.value ? element.setAttribute('disabled', 'disabled') : '';
+  });
+}
+
+function sendForm() {
+  disableFormEmptyElements.call(this);
+  this.submit();
+}
+
+document.querySelectorAll('.modal-footer button').forEach(function (element) {
+  return element.addEventListener('click', sendForm.bind(element.closest('.modal').querySelector('form')));
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.esm.js":
 /*!*********************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.esm.js ***!
@@ -27911,6 +27934,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+__webpack_require__(/*! ./form */ "./resources/js/form.js");
 })();
 
 /******/ })()

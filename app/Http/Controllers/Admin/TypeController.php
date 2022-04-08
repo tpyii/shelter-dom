@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AnimalType\CreateRequest;
+use App\Http\Requests\AnimalType\EditRequest;
 use App\Models\AnimalType;
-use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
@@ -15,7 +16,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = AnimalType::all();
+        $types = AnimalType::paginate(7);
 
         return view('admin.animal_types.index', [
             'animal_types' => $types
@@ -35,10 +36,10 @@ class TypeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param CreateRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateRequest $request)
     {
         $data = $request->only('name');
 
@@ -49,7 +50,7 @@ class TypeController extends Controller
                 ->with('success', 'Запись успешно добавлена');
         }
 
-        return back()->with('error', 'Не удалось добавить запись')
+        return back()->withErrors( 'Не удалось добавить запись')
             ->withInput();
     }
 
@@ -80,11 +81,11 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param EditRequest $request
      * @param AnimalType $animal_type
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AnimalType $animal_type)
+    public function update(EditRequest $request, AnimalType $animal_type)
     {
         $data = $request->only('name');
 
@@ -95,7 +96,7 @@ class TypeController extends Controller
                 ->with('success', 'Запись успешно изменена');
         }
 
-        return back()->with('error', 'Не удалось изменить запись')
+        return back()->withErrors( 'Не удалось изменить запись')
             ->withInput();
     }
 
@@ -114,7 +115,7 @@ class TypeController extends Controller
                 ->with('success', 'Запись успешно удалена');
         }
 
-        return back()->with('error', 'Не удалось удалить запись')
+        return back()->withErrors('Не удалось удалить запись')
             ->withInput();
     }
 }

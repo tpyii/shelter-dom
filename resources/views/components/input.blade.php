@@ -5,7 +5,13 @@
   'name',
   'id',
   'label',
+  'multiple' => false,
+  'required' => false,
 ])
+
+@php
+$n = $multiple ? substr($name, 0, -2) : $name;
+@endphp
 
 @switch($type)
   @case('radio')
@@ -36,10 +42,39 @@
     </div>
   @break
 
+  @case('file')
+    <div class="mb-3">
+      <x-label :for="$n">
+        {{ $label }}
+        @if($required) * @endif
+      </x-label>
+
+      <input 
+        {{ $attributes->merge([
+          'class' => 'form-control form-control-sm',
+          'type' => $type,
+          'name' => $name,
+          'id' => $n
+        ])->class([
+          'is-invalid' => $errors->has($n),
+        ]) }}
+        @if($multiple) multiple @endif
+        @if($required) required @endif
+      >
+    
+      @error($n)
+        <div class="invalid-feedback">
+          {{ $message }}
+        </div>
+      @enderror
+    </div>
+  @break
+
   @default
     <div class="mb-3">
       <x-label :for="$name">
         {{ $label }}
+        @if($required) * @endif
       </x-label>
 
       <input 
@@ -52,6 +87,7 @@
         ])->class([
           'is-invalid' => $errors->has($name),
         ]) }}
+        @if($required) required @endif
       >
     
       @error($name)

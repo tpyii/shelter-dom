@@ -7,12 +7,12 @@
 
     <x-form method="POST" action="{{ route('admin.animals.update', $animal) }}" enctype="multipart/form-data">
         @method('PUT')
-        <x-select name="type_id" label="Тип" :options="$animal_types" :value="$animal->type_id"/>
-        <x-select name="breed_id" label="Порода" :options="$breeds" :value="$animal->breed_id"/>
-        <x-input name="name" label="Имя" value="{{ $animal->name }}"/>
-        <x-textarea name="description" label="Описание">{{ $animal->description }}</x-textarea>
+        <x-select name="type_id" label="Тип" :options="$animal_types" :value="$animal->type_id" required />
+        <x-select name="breed_id" label="Порода" :options="$breeds" :value="$animal->breed_id" required />
+        <x-input name="name" label="Имя" value="{{ $animal->name }}" required />
+        <x-textarea name="description" label="Описание" required>{{ $animal->description }}</x-textarea>
         <div class="mb-3">
-            <x-label for="inp1">Паразиты</x-label>
+            <x-label for="inp1">Паразиты *</x-label>
             <x-input type="radio" name="treatment_of_parasites" id="inp1" value="YES" label="Да"
                      :checked="$animal->treatment_of_parasites"/>
             <x-input type="radio" name="treatment_of_parasites" id="inp2" value="NO" label="Нет"
@@ -22,7 +22,7 @@
                   multiple/>
         <x-select name="inoculations[]" label="Прививки" :options="$inoculations" :value="$animal->inoculation"
                   multiple/>
-        <x-input type="date" name="birthday_at" label="День рождения" value="{{ $animal->birthday_at }}"/>
+        <x-input type="date" name="birthday_at" label="День рождения" value="{{ $animal->birthday_at }}" required />
         <div class="mb-3" id="imgIds">
             @foreach($imgIds AS $imagesItem)
                 <div class="d-inline-block" id="img_{{$imagesItem->id}}">

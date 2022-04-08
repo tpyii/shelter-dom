@@ -1,23 +1,28 @@
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {useEffect} from 'react'
+import { slide as Menu } from 'react-burger-menu'
 
 
 export const NavBar = () => {
 
-        const scrollToComponent = (e) => {
-            const value = e.currentTarget.getAttribute('value')
-            const element = document.getElementById(value)
-            element.scrollIntoView();
-        }
+    const scrollToComponent = (e) => {
+        const value = e.currentTarget.getAttribute('value')
+        const element = document.getElementById(value)
+        element.scrollIntoView();
+    }
+
+    const goToRegist = () => {
+        window.location.href='/register'
+    }
 
     return (
         <div>
             <header className="navbar background-dark">
                 <div className="container">
-                    <div className="navbar-logo col-auto">
-                        <Link to="/" className="logo-title">Cozy House</Link>
+                    <Link to='/' className="navbar-logo col-auto">
+                        <div className="logo-title">Cozy House</div>
                         <div className="logo-subtitle">Shelter for pets in Boston</div>
-                    </div>
+                    </Link>
                     <div className="navbar-content col-auto align-self-center d-flex flex-column">
                         <div className="navbar-content-container">
                             <ul className="nav flex-column flex-md-row align-content-center align-items-center">
@@ -30,6 +35,7 @@ export const NavBar = () => {
                                                                onClick={scrollToComponent}>Help the shelter</Link></li>
                                 <li className="nav-item"><Link onClick={scrollToComponent} value='contacts'
                                                                className='link__our' to="#contacts">Contacts</Link></li>
+                                <button style={{padding:'5px', marginLeft:'35px', fontSize:'15px'}} className="button button-primary" onClick={goToRegist} to=''>Registration</button>
                             </ul>
                         </div>
                     </div>

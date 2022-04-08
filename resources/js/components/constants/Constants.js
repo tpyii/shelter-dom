@@ -7,7 +7,15 @@ import charly from '../../../../templates/assets/images/pets-charly.png'
 import scarlet from '../../../../templates/assets/images/pets-scarlet.png'
 import katrine2 from '../../../../templates/assets/images/pets-katrine-2.png'
 
-const apiURL = "/api/animals";
+export const apiURL = "/api/animals";
+
+export const REQUEST_STATUS = {
+    IDLE: 0,
+    LOADING: 1,
+    SUCCESS: 2,
+    FAILURE: 3
+}
+
 let animalArr = []
 
 const fetchData = async () => {

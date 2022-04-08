@@ -4,6 +4,7 @@ import {Modal_window} from '../modal_window/Modal_window'
 export const Animals = ({animals, loading}) => {
     const [show, setShow] = useState(false)
     const [animalData, setAnimalData] = useState('')
+
     const placeholder = 'https://placehold.co/600x400'
 
     if (loading) {
@@ -15,7 +16,6 @@ export const Animals = ({animals, loading}) => {
 
     const getAnimalDataById = (e) => {
         const value = e.target.id
-
         setAnimalData(animals.find(animal => animal.id === Number(value)))
     }
 

@@ -5,22 +5,27 @@ import {useState, useEffect} from 'react'
 import {Animals} from '../animals/Animals'
 import {NavBarLigth} from '../NavBarLigth/NavBarLigth'
 import {Pagination} from '../Pagination/Pagination'
-import {animalArr} from '../constants/Constants'
-
+import {selectAnimalsList} from '../store/getAnimalsList/selectors'
+import {useDispatch, useSelector} from "react-redux";
+import {getAnimals} from '../store/getAnimalsList/actions'
 
 export const OurPets = () => {
-
-    const [animals, setAnimals] = useState(animalArr);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [animalsPerPage] = useState(8);
     const [lastNumber, setLastNumber] = useState();
+    const dispatch = useDispatch()
+    const animals = useSelector(selectAnimalsList)
 
     useEffect(() => {
         window.scrollTo({
             top: 0,
             behavior: "instant"
         });
+    }, [])
+
+    useEffect(() => {
+        dispatch(getAnimals())
     }, [])
 
 

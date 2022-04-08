@@ -16,9 +16,7 @@
     ])->class([
       'is-invalid' => $errors->has($name)
     ])  }}
-  >
-    {{ $slot }}
-  </textarea>
+  >{{ old($name, $slot) }}</textarea>
 
   @error($name)
     <div class="invalid-feedback">

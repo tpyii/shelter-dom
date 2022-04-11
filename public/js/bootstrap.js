@@ -5365,6 +5365,45 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/delete.js":
+/*!********************************!*\
+  !*** ./resources/js/delete.js ***!
+  \********************************/
+/***/ (() => {
+
+var deleteModal = document.getElementById('delete');
+
+if (deleteModal) {
+  deleteModal.addEventListener('show.bs.modal', function (event) {
+    var dataset = event.target.querySelector('.delete').dataset;
+    dataset.action = event.relatedTarget.dataset.action;
+    dataset.remove = event.relatedTarget.dataset.remove;
+  });
+  deleteModal.querySelector('.delete').addEventListener('click', function (event) {
+    return send(event.target.dataset.action).then(function () {
+      return document.querySelector(event.target.dataset.remove).remove();
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  });
+  document.querySelectorAll('.showDeleteModal').forEach(function (element) {
+    return element.addEventListener('click', function () {
+      return bootstrap.Modal.getOrCreateInstance(deleteModal).show(element);
+    });
+  });
+}
+
+function send(url) {
+  return fetch(url, {
+    method: 'DELETE',
+    headers: {
+      'X-CSRF-TOKEN': document.head.querySelector('[name=csrf-token]').content
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./resources/js/form.js":
 /*!******************************!*\
   !*** ./resources/js/form.js ***!
@@ -5382,7 +5421,7 @@ function sendForm() {
   this.submit();
 }
 
-document.querySelectorAll('.modal-footer button').forEach(function (element) {
+document.querySelectorAll('.modal-footer [type=submit]').forEach(function (element) {
   return element.addEventListener('click', sendForm.bind(element.closest('.modal').querySelector('form')));
 });
 
@@ -27910,7 +27949,7 @@ var __webpack_exports__ = {};
 window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 
 try {
-  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+  window.bootstrap = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -27936,6 +27975,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 
 __webpack_require__(/*! ./form */ "./resources/js/form.js");
+
+__webpack_require__(/*! ./delete */ "./resources/js/delete.js");
 })();
 
 /******/ })()

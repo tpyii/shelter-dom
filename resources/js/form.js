@@ -12,7 +12,7 @@ function sendForm() {
 }
 
 document
-  .querySelectorAll('.modal-footer button')
+  .querySelectorAll('.modal-footer [type=submit]')
   .forEach(element => element.addEventListener(
     'click',
     sendForm.bind(element.closest('.modal').querySelector('form'))

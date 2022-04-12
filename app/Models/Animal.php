@@ -75,6 +75,10 @@ class Animal extends Model
             return $query->where('breed_id', $value);
         })->when(request("type_id"), function ($query, $value) {
             return $query->where('type_id', $value);
+        })->when(request("type"), function ($query, $value) {
+            return $query->whereRelation('type', 'name', "LIKE", "%" . $value . "%");
+        })->when(request("breed"), function ($query, $value) {
+            return $query->whereRelation('breed', 'name', "LIKE", "%" . $value . "%");
         });
     }
 }

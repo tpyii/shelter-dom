@@ -6,27 +6,30 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AnimalType\CreateRequest;
 use App\Http\Requests\AnimalType\EditRequest;
 use App\Models\AnimalType;
+use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $types = AnimalType::paginate(7);
+        $searchParams = $request->all();
+        $types = AnimalType::filter()->paginate(7)->withQueryString();
 
         return view('admin.animal_types.index', [
-            'animal_types' => $types
+            'animal_types' => $types,
+            'searchParams' => $searchParams
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -37,7 +40,7 @@ class TypeController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(CreateRequest $request)
     {
@@ -69,7 +72,7 @@ class TypeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param AnimalType $animal_type
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(AnimalType $animal_type)
     {
@@ -83,7 +86,7 @@ class TypeController extends Controller
      *
      * @param EditRequest $request
      * @param AnimalType $animal_type
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function update(EditRequest $request, AnimalType $animal_type)
     {
@@ -104,7 +107,7 @@ class TypeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param AnimalType $animal_type
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(AnimalType $animal_type)
     {

@@ -4,6 +4,9 @@
     </x-slot>
 
     <x-slot name="toolbar">
+        <x-button class="me-2" color="outline-secondary" data-bs-toggle="modal" data-bs-target="#filter">
+            Filter
+        </x-button>
         @if (Route::has('admin.diseases.create'))
             <a href="{{ route('admin.diseases.create') }}" class="btn btn-sm btn-outline-success">Create</a>
         @endif
@@ -39,8 +42,29 @@
             </tr>
         @endforeach
     </x-table>
-    {{$diseases->links()}}
-    
+
+    @if(method_exists($diseases, 'links'))
+        {{$diseases->links()}}
+    @endif
+
+    <x-modal id="filter" title="Filter">
+        <x-form action="{{ route('admin.diseases.index') }}">
+            @if($searchParams)
+                @if(array_key_exists('name',$searchParams))
+                    <x-input name="name" label="Имя" value="{{ $searchParams['name'] }}"/>
+                @else
+                    <x-input name="name" label="Имя" value=""/>
+                @endif
+            @else
+                <x-input name="name" label="Имя" value=""/>
+            @endif
+        </x-form>
+        <x-slot name="footer">
+            <a class="btn btn-sm btn-secondary" href="{{ route('admin.diseases.index') }}">Reset</a>
+            <x-button type="submit" color="primary">Apply</x-button>
+        </x-slot>
+    </x-modal>
+
     <x-modal id="delete" title="Confirm deleting">
         <b>Confirm deleting record</b>
         <x-slot name="footer">

@@ -17,4 +17,14 @@ class Inoculation extends Model
     protected $fillable = [
         'name'
     ];
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeFilter($query)
+    {
+        return $query->when(request("name"), function ($query, $value) {
+            return $query->where("name", "LIKE", "%" . $value . "%");
+        });
+    }
 }

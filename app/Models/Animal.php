@@ -68,6 +68,8 @@ class Animal extends Model
      */
     public function scopeFilter($query)
     {
+
+
         return $query->
         when(request("name"), function ($query, $value) {
             return $query->where("name", "LIKE", "%" . $value . "%");
@@ -79,6 +81,20 @@ class Animal extends Model
             return $query->whereRelation('type', 'name', "LIKE", "%" . $value . "%");
         })->when(request("breed"), function ($query, $value) {
             return $query->whereRelation('breed', 'name', "LIKE", "%" . $value . "%");
+        })->when(request("age"), function ($query, $value) {
+
+            $yearQuery = '(YEAR(CURRENT_DATE)-YEAR(birthday_at))-(RIGHT(CURRENT_DATE,5)<RIGHT(birthday_at,5))';
+
+            switch ($value) {
+                case ($value == 1):
+                    return $query->whereRaw($yearQuery . '< ?', [1]);
+                case ($value == 2):
+                    return $query->whereRaw($yearQuery . ' >= ? AND' . $yearQuery . ' < ?', [1, 2]);
+                case ($value == 3):
+                    return $query->whereRaw($yearQuery . ' >= ? AND' . $yearQuery . ' < ?', [2, 5]);
+                case ($value == 4):
+                    return $query->whereRaw($yearQuery . ' >= ?', [5]);
+            }
         });
     }
 }

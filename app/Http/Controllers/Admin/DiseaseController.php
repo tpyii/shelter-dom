@@ -6,27 +6,30 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Disease\CreateRequest;
 use App\Http\Requests\Disease\EditRequest;
 use App\Models\Disease;
+use Illuminate\Http\Request;
 
 class DiseaseController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $diseases = Disease::paginate(7);
+        $searchParams = $request->all();
+        $diseases = Disease::filter()->paginate(7)->withQueryString();
 
         return view('admin.diseases.index', [
-            'diseases' => $diseases
+            'diseases' => $diseases,
+            'searchParams' => $searchParams
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -37,7 +40,7 @@ class DiseaseController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(CreateRequest $request)
     {
@@ -69,7 +72,7 @@ class DiseaseController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Disease $disease
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Disease $disease)
     {
@@ -83,7 +86,7 @@ class DiseaseController extends Controller
      *
      * @param EditRequest $request
      * @param Disease $disease
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function update(EditRequest $request, Disease $disease)
     {
@@ -104,7 +107,7 @@ class DiseaseController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Disease $disease
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(Disease $disease)
     {

@@ -22,20 +22,24 @@ class AnimalController extends Controller
      */
     public function index(Request $request)
     {
+//        $age = [];
         $searchParams = $request->all();
         $animals = Animal::filter()->paginate(7)->withQueryString();
         $breeds = Breed::all();
         $animal_types = AnimalType::all();
         $diseases = Disease::all();
         $inoculations = Inoculation::all();
-
+//        foreach ($diseases as $d){
+//            dd($d->getOriginal());
+//        }
         return view('admin.animals.index', [
             'animals' => $animals,
             'breeds' => $breeds,
             'animal_types' => $animal_types,
             'diseases' => $diseases,
             'inoculations' => $inoculations,
-            'searchParams' => $searchParams
+            'searchParams' => $searchParams,
+//            'age' => $age,
         ]);
     }
 

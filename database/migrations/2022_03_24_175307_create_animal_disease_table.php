@@ -14,11 +14,8 @@ class CreateAnimalDiseaseTable extends Migration
     public function up()
     {
         Schema::create('animal_disease', function (Blueprint $table) {
-            $table->unsignedBigInteger('disease_id');
-            $table->unsignedBigInteger('animal_id');
-
-            $table->foreign('disease_id')->references('id')->on('diseases');
-            $table->foreign('animal_id')->references('id')->on('animals')->onDelete('cascade');
+            $table->foreignId('disease_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('animal_id')->constrained()->cascadeOnDelete();
         });
     }
 

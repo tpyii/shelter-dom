@@ -15,8 +15,8 @@ class CreateBreedsTable extends Migration
     {
         Schema::create('breeds', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('type_id');
-            $table->string('name')->index();
+            $table->foreignId('type_id')->constrained('animal_types');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }

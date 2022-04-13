@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Services\ImageUploadService;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(ImageUploadService::class);
+        //
     }
 
     /**

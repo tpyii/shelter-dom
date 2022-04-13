@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Animal\CreateRequest;
-use App\Http\Requests\Animal\EditRequest;
-use App\Models\Animal;
-use App\Models\AnimalType;
 use App\Models\Breed;
+use App\Models\Image;
+use App\Models\Animal;
 use App\Models\Disease;
+use App\Models\AnimalType;
 use App\Models\Inoculation;
-use App\Services\ImageUploadService;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Services\ImageUploadService;
+use App\Http\Requests\Animal\EditRequest;
+use App\Http\Requests\Animal\CreateRequest;
 
 class AnimalController extends Controller
 {
@@ -129,7 +130,7 @@ class AnimalController extends Controller
             'diseases_array' => $diseases_array,
             'inoculations' => $inoculations,
             'inoculations_array' => $inoculations_array,
-            'imgIds' => $animal->images
+            'images' => $animal->images
         ]);
     }
 
@@ -138,9 +139,10 @@ class AnimalController extends Controller
      *
      * @param EditRequest $request
      * @param Animal $animal
+     * @param \App\Services\ImageUploadService $upload
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(EditRequest $request, Animal $animal)
+    public function update(EditRequest $request, Animal $animal, ImageUploadService $upload)
     {
         $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations', 'files');
 
@@ -149,8 +151,8 @@ class AnimalController extends Controller
         $updated_disease = $animal->disease()->sync($request->input('diseases'));
         $updated_inoculation = $animal->inoculation()->sync($request->input('inoculations'));
 
-        if ($request->hasfile('files') || $request->only('oldImgs')) {
-            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $animal, $request->only('oldImgs'));
+        if ($request->hasfile('files')) {
+            $upload->saveUploadedFile($request->file('files'), $animal);
         }
 
         if ($updated_animal && $updated_disease && $updated_inoculation) {
@@ -170,17 +172,8 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        $deleted_disease = $animal->disease()->detach();
-        $deleted_inoculation = $animal->inoculation()->detach();
-
-        $animal_deleted = $animal->delete();
-
-        if ($animal_deleted && $deleted_disease && $deleted_inoculation) {
-            return redirect()->route('admin.animals.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors('Не удалось удалить запись')
-            ->withInput();
+        return $animal->delete()
+            ? redirect()->route('admin.animals.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

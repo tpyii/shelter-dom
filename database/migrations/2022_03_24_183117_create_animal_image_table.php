@@ -14,11 +14,8 @@ class CreateAnimalImageTable extends Migration
     public function up()
     {
         Schema::create('animal_image', function (Blueprint $table) {
-            $table->unsignedBigInteger('image_id');
-            $table->unsignedBigInteger('animal_id');
-
-            $table->foreign('image_id')->references('id')->on('images');
-            $table->foreign('animal_id')->references('id')->on('animals')->onDelete('cascade');
+            $table->foreignId('image_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('animal_id')->constrained()->cascadeOnDelete();
         });
     }
 

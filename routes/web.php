@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AnimalController as AdminAnimalController;
 use App\Http\Controllers\Admin\BreedController as AdminBreedController;
 use App\Http\Controllers\Admin\DiseaseController as AdminDiseaseController;
+use App\Http\Controllers\admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\InoculationController as AdminInoculationController;
 use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
@@ -47,6 +48,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/animals', AdminAnimalController::class);
         Route::resource('/img', TestImgUploadController::class);
         Route::resource('/users',   AdminUserController::class);
+        Route::resource('/images', AdminImageController::class);
     });
     Route::resource('/user', UserController::class);
 });

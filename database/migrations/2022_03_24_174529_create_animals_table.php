@@ -15,10 +15,11 @@ class CreateAnimalsTable extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('type_id');
-            $table->unsignedBigInteger('breed_id');
+            $table->foreignId('type_id')->constrained('animal_types');
+            $table->foreignId('breed_id')->constrained();
             $table->string('name')->index();
             $table->text('description');
+            $table->enum('treatment_of_parasites', ['YES', 'NO'])->default('NO');
             $table->date('birthday_at');
             $table->timestamps();
         });

@@ -17,7 +17,7 @@
     </div>
     <x-select name="diseases[]" label="Diseases" :options="$diseases" multiple />
     <x-select name="inoculations[]" label="Inoculations" :options="$inoculations" multiple />
-    <x-input type="date" name="birthday_at" label="Birthday" value="{{ old('birthday_at') }}"required />
+    <x-input type="date" name="birthday_at" label="Birthday" value="{{ old('birthday_at') }}" required />
     <x-input type="file" name="files[]" label="Изображение" accept=".jpg, .jpeg, .png" multiple required />
     <x-button type="submit" color="outline-success">Сохранить</x-button>
   </x-form>

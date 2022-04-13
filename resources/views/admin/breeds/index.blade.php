@@ -1,14 +1,14 @@
 <x-layout>
     <x-slot name="title">
-        Breeds
+        Породы
     </x-slot>
 
     <x-slot name="toolbar">
         <x-button class="me-2" color="outline-secondary" data-bs-toggle="modal" data-bs-target="#filter">
-            Filter
+            Фильтры
         </x-button>
         @if (Route::has('admin.breeds.create'))
-            <a href="{{ route('admin.breeds.create') }}" class="btn btn-sm btn-outline-success">Create</a>
+            <a href="{{ route('admin.breeds.create') }}" class="btn btn-sm btn-outline-success">Создать</a>
         @endif
     </x-slot>
 
@@ -17,8 +17,8 @@
     <x-table>
         <x-slot name="header">
             <th>#</th>
-            <th>Type</th>
-            <th>Breed</th>
+            <th>Тип</th>
+            <th>Порода</th>
             <th style="width: 0px"></th>
         </x-slot>
         @foreach($breeds as $breedsItem)
@@ -48,29 +48,29 @@
         {{$breeds->links()}}
     @endif
 
-    <x-modal id="filter" title="Filter">
+    <x-modal id="filter" title="Фильтры">
         <x-form action="{{ route('admin.breeds.index') }}">
             @if($searchParams)
                 @if(array_key_exists('name',$searchParams))
-                    <x-input name="name" label="Имя" value="{{ $searchParams['name'] }}"/>
+                    <x-input name="name" label="Порода" value="{{ $searchParams['name'] }}"/>
                 @else
-                    <x-input name="name" label="Имя" value=""/>
+                    <x-input name="name" label="Порода" value=""/>
                 @endif
             @else
-                <x-input name="name" label="Имя" value=""/>
+                <x-input name="name" label="Порода" value=""/>
             @endif
         </x-form>
         <x-slot name="footer">
-            <a class="btn btn-sm btn-secondary" href="{{ route('admin.breeds.index') }}">Reset</a>
-            <x-button type="submit" color="primary">Apply</x-button>
+                <a class="btn btn-sm btn-secondary" href="{{ route('admin.breeds.index') }}">Сбросить</a>
+            <x-button type="submit" color="primary">Применить</x-button>
         </x-slot>
     </x-modal>
 
-    <x-modal id="delete" title="Confirm deleting">
-        <b>Confirm deleting record</b>
+    <x-modal id="delete" title="Подтвердить удалени">
+        <b>Подтвердить удаление записи</b>
         <x-slot name="footer">
-            <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
-            <x-button color="primary" class="delete" data-bs-dismiss="modal">Delete</x-button>
+            <x-button color="secondary" data-bs-dismiss="modal">Закрытть</x-button>
+            <x-button color="primary" class="delete" data-bs-dismiss="modal">Удалить</x-button>
         </x-slot>
     </x-modal>
 </x-layout>

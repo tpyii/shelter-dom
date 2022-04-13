@@ -7,7 +7,7 @@
     @auth
       <div class="nav-item text-nowrap">
         <x-form method="POST" action="{{ route('logout') }}">
-          <x-button type="submit" class="nav-link px-3" color="link">Sign out</x-button>
+          <x-button type="submit" class="nav-link px-3" color="link">Выйти</x-button>
         </x-form>
       </div>
     @endauth

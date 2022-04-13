@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        Animals edit
+        Редактирование животного
     </x-slot>
 
     <x-errors/>
@@ -9,7 +9,7 @@
         @method('PUT')
         <x-select name="type_id" label="Тип" :options="$animal_types" :value="$animal->type_id" required />
         <x-select name="breed_id" label="Порода" :options="$breeds" :value="$animal->breed_id" required />
-        <x-input name="name" label="Имя" value="{{ $animal->name }}" required />
+        <x-input name="name" label="Кличка" value="{{ $animal->name }}" required />
         <x-textarea name="description" label="Описание" required>{{ $animal->description }}</x-textarea>
         <div class="mb-3">
             <x-label for="inp1">Паразиты *</x-label>
@@ -28,7 +28,7 @@
                 <div class="d-inline-block" id="img_{{$imagesItem->id}}">
                     <img src="{{Storage::disk('public')->url($imagesItem->path)}}" alt="#"
                          style="max-width: 100px; height: auto">
-                    <x-button color="outline-danger" data-id="{{$imagesItem->id}}">Delete</x-button>
+                    <x-button color="outline-danger" data-id="{{$imagesItem->id}}">Удалить</x-button>
                 </div>
             @endforeach
                 <input class="form-control" name="oldImgs" id="oldImg" value="" hidden>

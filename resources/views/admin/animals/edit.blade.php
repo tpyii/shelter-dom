@@ -43,11 +43,11 @@
         <x-button type="submit" color="outline-success">Сохранить</x-button>
     </x-form>
 
-    <x-modal id="delete" title="Confirm deleting">
-        <b>Confirm deleting record</b>
+    <x-modal id="delete" title="Подтвердить удаление">
+        <b>Подтвердить уделание записи</b>
         <x-slot name="footer">
-            <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
-            <x-button color="primary" class="delete" data-bs-dismiss="modal">Delete</x-button>
+            <x-button color="secondary" data-bs-dismiss="modal">Закрыть</x-button>
+            <x-button color="primary" class="delete" data-bs-dismiss="modal">Удалить</x-button>
         </x-slot>
     </x-modal>
 </x-layout>

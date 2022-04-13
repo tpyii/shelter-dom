@@ -166,17 +166,8 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        $deleted_disease = $animal->disease()->detach();
-        $deleted_inoculation = $animal->inoculation()->detach();
-
-        $animal_deleted = $animal->delete();
-
-        if ($animal_deleted && $deleted_disease && $deleted_inoculation) {
-            return redirect()->route('admin.animals.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors('Не удалось удалить запись')
-            ->withInput();
+        return $animal->delete()
+            ? redirect()->route('admin.animals.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

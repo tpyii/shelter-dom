@@ -108,14 +108,8 @@ class InoculationController extends Controller
      */
     public function destroy(Inoculation $inoculation)
     {
-        $deleted = $inoculation->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.inoculations.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors( 'Не удалось удалить запись')
-            ->withInput();
+        return $inoculation->delete()
+            ? redirect()->route('admin.inoculations.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors( 'Не удалось удалить запись')->withInput();
     }
 }

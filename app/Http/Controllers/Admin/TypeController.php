@@ -108,14 +108,8 @@ class TypeController extends Controller
      */
     public function destroy(AnimalType $animal_type)
     {
-        $deleted = $animal_type->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.animal_types.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors('Не удалось удалить запись')
-            ->withInput();
+        return $animal_type->delete()
+            ? redirect()->route('admin.animal_types.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

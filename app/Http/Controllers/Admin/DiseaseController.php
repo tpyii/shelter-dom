@@ -108,14 +108,8 @@ class DiseaseController extends Controller
      */
     public function destroy(Disease $disease)
     {
-        $deleted = $disease->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.diseases.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors( 'Не удалось удалить запись')
-            ->withInput();
+        return $disease->delete()
+            ? redirect()->route('admin.diseases.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors( 'Не удалось удалить запись')->withInput();
     }
 }

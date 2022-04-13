@@ -118,14 +118,8 @@ class BreedController extends Controller
      */
     public function destroy(Breed $breed)
     {
-        $deleted = $breed->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.breeds.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors('Не удалось удалить запись')
-            ->withInput();
+        return $breed->delete()
+            ? redirect()->route('admin.breeds.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

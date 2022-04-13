@@ -50,7 +50,7 @@
                 <td>{{$animalsItem->birthday_at}}</td>
                 <td>
                     @foreach($animalsItem->images AS $imagesItem)
-                        <img src="{{Storage::disk('public')->url($imagesItem->path)}}" alt="#"
+                        <img src="{{Storage::url($imagesItem->path)}}" alt="#"
                              style="max-width: 100px; height: auto">
                     @endforeach
                 </td>

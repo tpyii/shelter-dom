@@ -23,39 +23,31 @@
         <x-select name="inoculations[]" label="Прививки" :options="$inoculations" :value="$animal->inoculation"
                   multiple/>
         <x-input type="date" name="birthday_at" label="День рождения" value="{{ $animal->birthday_at }}" required />
-        <div class="mb-3" id="imgIds">
-            @foreach($imgIds AS $imagesItem)
-                <div class="d-inline-block" id="img_{{$imagesItem->id}}">
-                    <img src="{{Storage::disk('public')->url($imagesItem->path)}}" alt="#"
-                         style="max-width: 100px; height: auto">
-                    <x-button color="outline-danger" data-id="{{$imagesItem->id}}">Delete</x-button>
+        <div class="mb-3">
+            @foreach($images AS $image)
+                <div class="d-inline-block" id="image-{{ $image->id }}">
+                    <img src="{{Storage::url($image->path)}}" alt="#" style="max-width: 100px; height: auto">
+                    <x-button color="outline-danger" class="showDeleteModal" data-action="{{ route('admin.images.destroy', $image) }}" data-remove="#image-{{ $image->id }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                    d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+                            <path fill-rule="evenodd"
+                                    d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+                        </svg>
+                    </x-button>
                 </div>
             @endforeach
-                <input class="form-control" name="oldImgs" id="oldImg" value="" hidden>
         </div>
         <x-input type="file" name="files[]" label="Изображение" accept=".jpg, .jpeg, .png" multiple />
         <x-button type="submit" color="outline-success">Сохранить</x-button>
     </x-form>
+    
+    <x-modal id="delete" title="Confirm deleting">
+        <b>Confirm deleting record</b>
+        <x-slot name="footer">
+            <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+            <x-button color="primary" class="delete" data-bs-dismiss="modal">Delete</x-button>
+        </x-slot>
+    </x-modal>
 </x-layout>
-
-<script>
-    let buttons = document.querySelectorAll('.btn.btn-sm.btn-outline-danger');
-    let arr = [];
-    let oldImg = document.querySelector('#oldImg')
-    buttons.forEach((elem) => {
-        let id = elem.getAttribute('data-id');
-        arr.push(id)
-    });
-
-    oldImg.setAttribute('value', arr);
-
-    buttons.forEach((elem) => {
-        let idToRemove = elem.getAttribute('data-id');
-        elem.addEventListener('click', () => {
-            arr = arr.filter((id)=>id!==idToRemove);
-            document.querySelector(`#img_${idToRemove}`).remove()
-            oldImg.setAttribute('value', arr )
-        })
-    })
-
-</script>

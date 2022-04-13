@@ -17,7 +17,7 @@ class ImageSeeder extends Seeder
     {
         $this->faker = Faker::create();
         DB::table('images')->insert([
-            'path' =>'storage/image/Breitenberg/Goldner/1/BgFHIPiv6c6qqG86X2PnMj6PhMViZB1z9uuCba8D.png',
+            'path' =>'image/Breitenberg/Goldner/1/BgFHIPiv6c6qqG86X2PnMj6PhMViZB1z9uuCba8D.png',
             'created_at'=>$this->faker->dateTime,
             'updated_at'=>$this->faker->dateTime
         ]);

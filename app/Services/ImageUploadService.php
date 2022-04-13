@@ -1,42 +1,38 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Services;
 
-use App\Contracts\UploadService;
 use App\Models\Image;
+use Illuminate\Support\Arr;
+use App\Contracts\UploadService;
 use Illuminate\Database\Eloquent\Model;
-
 
 class ImageUploadService implements UploadService
 {
-
-    public function saveUploadedFile($file, Model $model, $oldFiles = [])
+    /**
+     * @param array $files
+     * @param \Illuminate\Database\Eloquent\Model $model
+     * @return void
+     */
+    public function saveUploadedFile(array $files, Model $model)
     {
-        $imgsfrom = [];
-        if ($oldFiles !== []) {
-            $imgsfrom = explode(',', $oldFiles['oldImgs']);
-        }
-        $pathToDir = 'image';
-        $imgToAdd = [];
-        if ($file !== null) {
-            foreach ($file as $f) {
-//                dd($f->getClientOriginalName());
-                $img = new Image();
-                $id = $model->id;
-                $breed = $model->breed->name;
-                $type = $model->type->name;
-                $path = $pathToDir . DIRECTORY_SEPARATOR . $type . DIRECTORY_SEPARATOR . $breed . DIRECTORY_SEPARATOR . $id;
-                $img->path = self::PATH_TO_STORAGE . $f->storeAs($path, $f->hashName(), 'public');
-                if (!$img->path) {
-                    throw new \Exception('File not loaded');
-                }
-                $img->save();
-                $imgToAdd[] = $img->id;
-            }
-        }
-        $imgs = array_merge($imgToAdd, $imgsfrom);
-        $model->images()->sync($imgs);
+        $path = implode('/', [
+            'image',
+            $model->type->name,
+            $model->breed->name,
+            $model->id,
+        ]);
+
+        $paths = array_map(function ($file) use ($path) {
+            return [
+                'path' => $file->store($path, 'public'),
+            ];
+        }, $files);
+
+        Image::upsert($paths, []);
+
+        $ids = Image::whereIn('path', Arr::pluck($paths, 'path'))->pluck('id')->toArray();
+        
+        $model->images()->sync($ids);
     }
 }

@@ -39,4 +39,12 @@ class CreateRequest extends FormRequest
             'files.*' => ['image', 'file', 'mimes:png,jpg,jpeg']
         ];
     }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'Имя',
+            'birthday_at' => 'День рождения'
+        ];
+    }
 }

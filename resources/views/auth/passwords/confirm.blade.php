@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        {{ __('Confirm Password') }}
+        {{ __('auth.confirm_pass') }}
     </x-slot>
 
     <x-errors />
@@ -8,7 +8,7 @@
     {{ __('auth.please_confirm') }}
 
     <x-form method="POST" action="{{ route('password.confirm') }}">
-        <x-input name="password" type="password" label="{{ __('auth.password1') }}" required />
+        <x-input name="password" type="password" label="{{ __('auth.pass') }}" required />
 
         <div class="row mb-0">
             <div class="col">

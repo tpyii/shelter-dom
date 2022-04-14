@@ -1,17 +1,17 @@
 <x-layout>
     <x-slot name="title">
-        {{ __('Register') }}
+        {{ __('auth.registration') }}
     </x-slot>
 
     <x-errors />
 
     <x-form method="POST" action="{{ route('register') }}">
-        <x-input name="name" label="{{ __('Name') }}" required autocomplete="name" autofocus />
-        <x-input name="email" type="email" label="{{ __('Email Address') }}" required />
-        <x-input name="password" type="password" label="{{ __('Password') }}" required />
-        <x-input name="password_confirmation" type="password" label="{{ __('Confirm Password') }}" required />
+        <x-input name="name" label="{{ __('auth.name') }}" required autocomplete="name" autofocus />
+        <x-input name="email" type="email" label="{{ __('auth.email') }}" required />
+        <x-input name="password" type="password" label="{{ __('auth.pass') }}" required />
+        <x-input name="password_confirmation" type="password" label="{{ __('auth.confirm_pass') }}" required />
         <x-button type="submit" color="primary">
-            {{ __('Register') }}
+            {{ __('auth.register') }}
         </x-button>
     </x-form>
 </x-layout>

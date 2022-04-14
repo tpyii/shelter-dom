@@ -19,7 +19,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $searchParams = $request->all();
-        $users = User::all();
+        $users = User::filter()->paginate(7)->withQueryString();
 
         return view('admin.users.index', [
             'users' => $users,
@@ -47,22 +47,15 @@ class UserController extends Controller
     {
         $data = $request->only('name', 'email', 'password', 'is_admin');
 
-        $created = User::create(
+        return User::create(
             [
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'is_admin' => $data['is_admin'],
                 'password' => Hash::make($data['password'])
             ]
-        );
-
-        if ($created) {
-            return redirect()->route('admin.users.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors('Не удалось добавить запись')
-            ->withInput();
+        ) ? redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись') ->withInput();
     }
 
     /**
@@ -100,34 +93,21 @@ class UserController extends Controller
     {
         $data = $request->only('name', 'email', 'is_admin');
 
-
-        $updated = $user->fill($data)->save();
-
-        if ($updated) {
-            return redirect()->route('admin.users.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors('Не удалось изменить запись')
-            ->withInput();
+        return $user->fill($data)->save()
+            ? redirect()->route('admin.users.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors('Не удалось изменить запись')->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(User $user)
     {
-        $deleted = $user->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.users.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors('Не удалось удалить запись')
-            ->withInput();
+        return $user->delete()
+            ? redirect()->route('admin.users.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

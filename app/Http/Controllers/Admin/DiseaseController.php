@@ -46,15 +46,9 @@ class DiseaseController extends Controller
     {
         $data = $request->only('name');
 
-        $created = Disease::create($data);
-
-        if($created) {
-            return redirect()->route('admin.diseases.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors( 'Не удалось добавить запись')
-            ->withInput();
+        return Disease::create($data)
+            ? redirect()->route('admin.diseases.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors( 'Не удалось добавить запись')->withInput();
     }
 
     /**
@@ -92,15 +86,9 @@ class DiseaseController extends Controller
     {
         $data = $request->only('name');
 
-        $updated = $disease->fill($data)->save();
-
-        if($updated) {
-            return redirect()->route('admin.diseases.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors( 'Не удалось изменить запись')
-            ->withInput();
+        return $disease->fill($data)->save()
+            ? redirect()->route('admin.diseases.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors( 'Не удалось изменить запись')->withInput();
     }
 
     /**

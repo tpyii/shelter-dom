@@ -46,21 +46,15 @@ class TypeController extends Controller
     {
         $data = $request->only('name');
 
-        $created = AnimalType::create($data);
-
-        if($created) {
-            return redirect()->route('admin.animal_types.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors( 'Не удалось добавить запись')
-            ->withInput();
+        return AnimalType::create($data)
+            ? redirect()->route('admin.animal_types.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -92,15 +86,9 @@ class TypeController extends Controller
     {
         $data = $request->only('name');
 
-        $updated = $animal_type->fill($data)->save();
-
-        if($updated) {
-            return redirect()->route('admin.animal_types.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors( 'Не удалось изменить запись')
-            ->withInput();
+        return $animal_type->fill($data)->save()
+            ? redirect()->route('admin.animal_types.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors('Не удалось изменить запись')->withInput();
     }
 
     /**

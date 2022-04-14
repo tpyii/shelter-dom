@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        {{ __('Reset Password') }}
+        {{ __('auth.reset_pass') }}
     </x-slot>
 
     <x-errors />
@@ -12,9 +12,9 @@
     @endif
 
     <x-form method="POST" action="{{ route('password.email') }}">
-        <x-input name="email" type="email" label="{{ __('Email Address') }}" required autofocus />
+        <x-input name="email" type="email" label="{{ __('auth.email') }}" required autofocus />
         <x-button type="submit" color="primary">
-            {{ __('Send Password Reset Link') }}
+            {{ __('auth.send_reset_link') }}
         </x-button>
     </x-form>
 </x-layout>

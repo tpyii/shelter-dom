@@ -25,7 +25,7 @@ class EditRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'is_admin' => ['required', 'in:0,1']
         ];
     }

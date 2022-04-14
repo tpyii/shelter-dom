@@ -3,8 +3,8 @@
 
         <ul class="nav flex-column">
             @guest
-                <x-nav-link href="login" route="login">{{ __('Login') }}</x-nav-link>
-                <x-nav-link href="register" route="register">{{ __('Register') }}</x-nav-link>
+                <x-nav-link href="login" route="login">{{ __('auth.login') }}</x-nav-link>
+                <x-nav-link href="register" route="register">{{ __('auth.registration') }}</x-nav-link>
             @else
                 <x-nav-link href="admin.dashboard" route="admin.dashboard">Дэшборд</x-nav-link>
                     <x-nav-link href="admin.animals.index" route="admin.animals.*">Животные</x-nav-link>

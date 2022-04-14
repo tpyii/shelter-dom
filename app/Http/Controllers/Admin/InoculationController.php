@@ -46,15 +46,9 @@ class InoculationController extends Controller
     {
         $data = $request->only('name');
 
-        $created = Inoculation::create($data);
-
-        if($created) {
-            return redirect()->route('admin.inoculations.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors( 'Не удалось добавить запись')
-            ->withInput();
+        return Inoculation::create($data)
+            ? redirect()->route('admin.inoculations.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors( 'Не удалось добавить запись')->withInput();
     }
 
     /**
@@ -92,15 +86,9 @@ class InoculationController extends Controller
     {
         $data = $request->only('name');
 
-        $updated = $inoculation->fill($data)->save();
-
-        if($updated) {
-            return redirect()->route('admin.inoculations.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors( 'Не удалось изменить запись')
-            ->withInput();
+        return $inoculation->fill($data)->save()
+            ? redirect()->route('admin.inoculations.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors( 'Не удалось изменить запись')->withInput();
     }
 
     /**

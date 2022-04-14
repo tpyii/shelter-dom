@@ -14,7 +14,7 @@ class BreedController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index(Request $request)
     {
@@ -32,7 +32,7 @@ class BreedController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -47,21 +47,15 @@ class BreedController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(CreateRequest $request)
     {
         $data = $request->only('name', 'type_id');
 
-        $created = Breed::create($data);
-
-        if($created) {
-            return redirect()->route('admin.breeds.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors('Не удалось добавить запись')
-            ->withInput();
+        return Breed::create($data)
+            ? redirect()->route('admin.breeds.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 
     /**
@@ -79,7 +73,7 @@ class BreedController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Breed $breed
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Breed $breed)
     {
@@ -96,28 +90,22 @@ class BreedController extends Controller
      *
      * @param EditRequest $request
      * @param Breed $breed
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(EditRequest $request, Breed $breed)
     {
         $data = $request->only('name', 'type_id');
 
-        $updated = $breed->fill($data)->save();
-
-        if($updated) {
-            return redirect()->route('admin.breeds.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors('Не удалось изменить запись')
-            ->withInput();
+        return $breed->fill($data)->save()
+            ? redirect()->route('admin.breeds.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors('Не удалось изменить запись')->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Breed $breed
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Breed $breed)
     {

@@ -1,42 +1,50 @@
 <x-layout>
     <x-slot name="title">
-        Типы
+        Пользователи
     </x-slot>
 
     <x-slot name="toolbar">
         <x-button class="me-2" color="outline-secondary" data-bs-toggle="modal" data-bs-target="#filter">
             Фильтры
         </x-button>
-        @if (Route::has('admin.animal_types.create'))
-            <a href="{{ route('admin.animal_types.create') }}" class="btn btn-sm btn-outline-success">Создать</a>
+        @if (Route::has('admin.users.create'))
+            <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-outline-success">Создать</a>
         @endif
     </x-slot>
 
-    <x-success/>
+    <x-success />
 
     <x-table>
         <x-slot name="header">
             <th>#</th>
-            <th>Название</th>
+            <th>Имя</th>
+            <th>Электронная почта</th>
+            <th>Является админом</th>
             <th style="width: 0px"></th>
         </x-slot>
-        @foreach($animal_types as $animal_typesItem)
-            <tr id="row-{{$animal_typesItem->id}}">
-                <td>{{$animal_typesItem->id}}</td>
-                <td>{{$animal_typesItem->name}}</td>
+        @foreach($users as $usersItem)
+            <tr id="row-{{$usersItem->id}}">
+                <td>{{$usersItem->id}}</td>
+                <td>{{$usersItem->name}}</td>
+                <td>{{$usersItem->email}}</td>
+                <td>{{$usersItem->is_admin}}</td>
                 <td>
                     <div class="d-flex">
                         <a class="btn btn-outline-primary btn-sm me-2"
-                           href="{{ route('admin.animal_types.edit', ['animal_type' => $animal_typesItem->id]) }}">
+                           href="{{ route('admin.users.edit', ['user' => $usersItem->id]) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                 class="bi bi-pencil-fill" viewBox="0 0 16 16">
+                                 class="bi bi-pencil-fill"
+                                 viewBox="0 0 16 16">
                                 <path
                                     d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
                             </svg>
                         </a>
-                        <x-button color="outline-danger" class="showDeleteModal" data-action="{{ route('admin.animal_types.destroy', $animal_typesItem) }}" data-remove="#row-{{ $animal_typesItem->id }}">
+                        <x-button color="outline-danger" class="showDeleteModal"
+                                  data-action="{{ route('admin.users.destroy', ['user' => $usersItem]) }}"
+                                  data-remove="#row-{{ $usersItem->id }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                 class="bi bi-x-lg" viewBox="0 0 16 16">
+                                 class="bi bi-x-lg"
+                                 viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
                                 <path fill-rule="evenodd"
@@ -48,31 +56,36 @@
             </tr>
         @endforeach
     </x-table>
-
-    @if(method_exists($animal_types, 'links'))
-        {{$animal_types->links()}}
+    @if(method_exists($users, 'links'))
+        {{$users->links()}}
     @endif
 
     <x-modal id="filter" title="Фильтры">
-        <x-form action="{{ route('admin.animal_types.index') }}">
+        <x-form action="{{ route('admin.users.index') }}">
             @if($searchParams)
                 @if(array_key_exists('name',$searchParams))
-                    <x-input name="name" label="Название" value="{{ $searchParams['name'] }}"/>
+                    <x-input name="name" label="Имя" value="{{ $searchParams['name'] }}" />
                 @else
-                    <x-input name="name" label="Название" value=""/>
+                    <x-input name="name" label="Имя" value="" />
+                @endif
+                @if(array_key_exists('email',$searchParams))
+                    <x-input name="email" label="Электронная почта" value="{{ $searchParams['name'] }}" />
+                @else
+                    <x-input name="email" label="Электронная почта" value="" />
                 @endif
             @else
-                <x-input name="name" label="Название" value=""/>
+                <x-input name="name" label="Имя" value="" />
+                <x-input name="email" label="Электронная почта" value="" />
             @endif
         </x-form>
         <x-slot name="footer">
-            <a class="btn btn-sm btn-secondary" href="{{ route('admin.animal_types.index') }}">Сбросить</a>
+            <a class="btn btn-sm btn-secondary" href="{{ route('admin.users.index') }}">Сбросить</a>
             <x-button type="submit" color="primary">Применить</x-button>
         </x-slot>
     </x-modal>
 
-    <x-modal id="delete" title="Подтвердить удаление">
-        <b>Подтвердить удаление записи</b>
+    <x-modal id="delete" title="Подтвердите удаление">
+        <b>Подтвердите удаление записи</b>
         <x-slot name="footer">
             <x-button color="secondary" data-bs-dismiss="modal">Закрыть</x-button>
             <x-button color="primary" class="delete" data-bs-dismiss="modal">Удалить</x-button>

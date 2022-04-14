@@ -1,15 +1,15 @@
 <x-layout>
     <x-slot name="title">
-        Animals
+        Животные
     </x-slot>
 
     <x-slot name="toolbar">
         <x-button class="me-2" color="outline-secondary" data-bs-toggle="modal" data-bs-target="#filter">
-            Filter
+            Фильтры
         </x-button>
 
         @if (Route::has('admin.animals.create'))
-            <a href="{{ route('admin.animals.create') }}" class="btn btn-sm btn-outline-success">Create</a>
+            <a href="{{ route('admin.animals.create') }}" class="btn btn-sm btn-outline-success">Создать</a>
         @endif
     </x-slot>
 
@@ -18,15 +18,15 @@
     <x-table>
         <x-slot name="header">
             <th>#</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Type</th>
-            <th>Breed</th>
-            <th>Diseases</th>
-            <th>Inoculations</th>
-            <th>Parasites</th>
-            <th>Birthday</th>
-            <th>Images</th>
+            <th>Кличка</th>
+            <th>Описание</th>
+            <th>Тип</th>
+            <th>Порода</th>
+            <th>Болезни</th>
+            <th>Прививки</th>
+            <th>Паразиты</th>
+            <th>День рождения</th>
+            <th>Фотографии</th>
             <th style="width: 0px"></th>
         </x-slot>
         @foreach($animals as $animalsItem)
@@ -83,13 +83,13 @@
     @if(method_exists($animals, 'links'))
         {{$animals->links()}}
     @endif
-    <x-modal id="filter" title="Filter">
+    <x-modal id="filter" title="Фильтры">
         <x-form action="{{ route('admin.animals.index') }}">
             @if($searchParams)
                 @if(array_key_exists('name',$searchParams))
-                    <x-input name="name" label="Имя" value="{{ $searchParams['name'] }}"/>
+                    <x-input name="name" label="Кличка" value="{{ $searchParams['name'] }}"/>
                 @else
-                    <x-input name="name" label="Имя" value=""/>
+                    <x-input name="name" label="Кличка" value=""/>
                 @endif
                 @if(array_key_exists('type_id',$searchParams))
                     <x-select name="type_id" label="Тип" :options="$animal_types"
@@ -104,13 +104,13 @@
                     <x-select name="breed_id" label="Порода" :options="$breeds" value=""/>
                 @endif
                 @if(array_key_exists('age',$searchParams))
-                        <label for="age">Age</label>
+                        <label for="age">Возраст</label>
                         <select class="form-control" name="age" id="age" >
                                 <option value="{{ $searchParams['age'] }}">{{ $searchParams['age'] }}</option>
                         </select>
                 @else
 {{--                    <x-select name="age" label="Возраст" :options="$age" value=""/>--}}
-                        <label for="age">Age</label>
+                        <label for="age">Возраст</label>
                         <select class="form-control" name="age" id="age" >
                             <option value="1"> < 1</option>
                             <option value="2">1 - 2</option>
@@ -123,7 +123,7 @@
                 <x-select name="type_id" label="Тип" :options="$animal_types" value=""/>
                 <x-select name="breed_id" label="Порода" :options="$breeds" value=""/>
 {{--                <x-select name="age" label="Возраст" :options="$age" value=""/>--}}
-                <label for="age">Age</label>
+                <label for="age">Возраст</label>
                 <select class="form-control" name="age" id="age" >
                         <option value="1"> < 1</option>
                         <option value="2">1 - 2</option>
@@ -141,16 +141,16 @@
             {{--        <x-input type="date" name="birthday_at" label="Birthday" value="{{ old('birthday_at') }}" />--}}
         </x-form>
         <x-slot name="footer">
-            <a class="btn btn-sm btn-secondary" href="{{ route('admin.animals.index') }}">Reset</a>
-            <x-button type="submit" color="primary">Apply</x-button>
+            <a class="btn btn-sm btn-secondary" href="{{ route('admin.animals.index') }}">Сбросить</a>
+            <x-button type="submit" color="primary">Применить</x-button>
         </x-slot>
     </x-modal>
 
-    <x-modal id="delete" title="Confirm deleting">
-        <b>Confirm deleting record</b>
+    <x-modal id="delete" title="Подтвердить удаление">
+        <b>Подтвердить удаление записи</b>
         <x-slot name="footer">
-            <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
-            <x-button color="primary" class="delete" data-bs-dismiss="modal">Delete</x-button>
+            <x-button color="secondary" data-bs-dismiss="modal">Закрыть</x-button>
+            <x-button color="primary" class="delete" data-bs-dismiss="modal">Удалить</x-button>
         </x-slot>
     </x-modal>
 </x-layout>

@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\AnimalController;
-use App\Http\Controllers\CatalogController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\BreedController;
+use App\Http\Controllers\Api\AnimalController;
+use App\Http\Controllers\Api\DiseaseController;
+use App\Http\Controllers\Api\InoculationController;
+use App\Http\Controllers\Api\AnimalTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::apiResources([
-    'animals' => AnimalController::class
-]);
-
-Route::apiResources([
-    'catalog' => CatalogController::class
+    'animals' => AnimalController::class,
+    'breeds' => BreedController::class,
+    'diseases' => DiseaseController::class,
+    'inoculations' => InoculationController::class,
+    'types' => AnimalTypeController::class,
+], [
+    'parameters' => [
+        'types' => 'animal_type',
+    ]
 ]);

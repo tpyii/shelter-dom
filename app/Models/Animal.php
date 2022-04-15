@@ -2,23 +2,12 @@
 
 namespace App\Models;
 
-use http\Env\Request;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Animal extends Model
 {
     use HasFactory;
-
-    public static $availableFields = [
-        'id',
-        'name',
-        'type_id',
-        'breed_id',
-        'description',
-        'birthday_at',
-        'treatment_of_parasites'
-    ];
 
     protected $fillable = [
         'name',
@@ -68,8 +57,6 @@ class Animal extends Model
      */
     public function scopeFilter($query)
     {
-
-
         return $query->
         when(request("name"), function ($query, $value) {
             return $query->where("name", "LIKE", "%" . $value . "%");
@@ -98,4 +85,3 @@ class Animal extends Model
         });
     }
 }
-

@@ -40,6 +40,5 @@ class DatabaseSeeder extends Seeder
             AnimalImagesSeeder::class,
             AdminSeeder::class
         ]);
-
     }
 }

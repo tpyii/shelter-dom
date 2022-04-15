@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Animal;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Enum;
 
 class CreateRequest extends FormRequest
 {

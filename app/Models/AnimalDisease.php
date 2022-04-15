@@ -9,13 +9,6 @@ class AnimalDisease extends Model
 {
     use HasFactory;
 
-    public static $availableFields = [
-        'disease_id',
-        'animal_id',
-    ];
-
-    protected $table = 'animal_disease';
-
     protected $fillable = [
         'disease_id',
         'animal_id',

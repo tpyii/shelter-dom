@@ -9,11 +9,6 @@ class Disease extends Model
 {
     use HasFactory;
 
-    public static $availabeFiedls = [
-        'id',
-        'name'
-    ];
-
     protected $fillable = [
         'name'
     ];

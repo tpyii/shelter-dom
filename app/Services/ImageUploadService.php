@@ -33,6 +33,6 @@ class ImageUploadService implements UploadService
 
         $ids = Image::whereIn('path', Arr::pluck($paths, 'path'))->pluck('id')->toArray();
         
-        $model->images()->sync($ids);
+        $model->images()->attach($ids);
     }
 }

@@ -14,6 +14,11 @@ class Breed extends Model
         'name'
     ];
 
+    public function type()
+    {
+        return $this->belongsTo(AnimalType::class);
+    }
+
     /**
      * @param $query
      * @return mixed

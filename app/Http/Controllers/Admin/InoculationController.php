@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Inoculation\CreateRequest;
 use App\Http\Requests\Inoculation\EditRequest;
 use App\Models\Inoculation;
-use Illuminate\Http\Request;
 
 class InoculationController extends Controller
 {
@@ -15,14 +14,12 @@ class InoculationController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $searchParams = $request->all();
         $inoculations = Inoculation::filter()->paginate(7)->withQueryString();
 
         return view('admin.inoculations.index', [
             'inoculations' => $inoculations,
-            'searchParams' => $searchParams
         ]);
     }
 
@@ -71,7 +68,7 @@ class InoculationController extends Controller
     public function edit(Inoculation $inoculation)
     {
         return view('admin.inoculations.edit', [
-            'inoculation' => $inoculation
+            'inoculation' => $inoculation,
         ]);
     }
 

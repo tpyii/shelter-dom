@@ -7,7 +7,6 @@ use App\Models\Animal;
 use App\Models\Disease;
 use App\Models\AnimalType;
 use App\Models\Inoculation;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\ImageUploadService;
 use App\Http\Requests\Animal\EditRequest;
@@ -20,14 +19,29 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $searchParams = $request->all();
         $animals = Animal::filter()->paginate(7)->withQueryString();
         $breeds = Breed::all();
         $animal_types = AnimalType::all();
         $diseases = Disease::all();
         $inoculations = Inoculation::all();
+        $ages_array = [
+            '1',
+            '1 - 2',
+            '2 - 5',
+            '> 5'
+        ];
+        $ages = array_map(
+            function($value, $key) {
+                return (object) [
+                    'id' => $key,
+                    'name' => $value,
+                ];
+            },
+            $ages_array, 
+            range(1, count($ages_array))
+        );
 
         return view('admin.animals.index', [
             'animals' => $animals,
@@ -35,7 +49,7 @@ class AnimalController extends Controller
             'animal_types' => $animal_types,
             'diseases' => $diseases,
             'inoculations' => $inoculations,
-            'searchParams' => $searchParams,
+            'ages' => $ages,
         ]);
     }
 
@@ -55,7 +69,7 @@ class AnimalController extends Controller
             'breeds' => $breeds,
             'animal_types' => $animal_types,
             'diseases' => $diseases,
-            'inoculations' => $inoculations
+            'inoculations' => $inoculations,
         ]);
     }
 
@@ -67,22 +81,18 @@ class AnimalController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations', 'files');
-        $created_animal = Animal::create($data_animal);
-        $created_animal->disease()->attach($request->input('diseases'));
-        $created_animal->inoculation()->attach($request->input('inoculations'));
+        $data = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description');
+        $animal = Animal::create($data);
+        $animal->disease()->attach($request->input('diseases'));
+        $animal->inoculation()->attach($request->input('inoculations'));
 
         if ($request->hasfile('files')) {
-            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $created_animal, []);
+            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $animal, []);
         }
 
-        if ($created_animal) {
-            return redirect()->route('admin.animals.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors('Не удалось добавить запись')
-            ->withInput();
+        return $animal
+            ? redirect()->route('admin.animals.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 
     /**
@@ -109,23 +119,13 @@ class AnimalController extends Controller
         $diseases = Disease::all();
         $inoculations = Inoculation::all();
 
-        foreach ($animal->disease as $diseaseItem) {
-            $diseases_array[] = $diseaseItem->id;
-        }
-
-        foreach ($animal->inoculation as $inoculationItem) {
-            $inoculations_array[] = $inoculationItem->id;
-        }
-
         return view('admin.animals.edit', [
             'animal' => $animal,
             'breeds' => $breeds,
             'animal_types' => $animal_types,
             'diseases' => $diseases,
-            'diseases_array' => $diseases_array,
             'inoculations' => $inoculations,
-            'inoculations_array' => $inoculations_array,
-            'images' => $animal->images
+            'images' => $animal->images,
         ]);
     }
 
@@ -139,10 +139,8 @@ class AnimalController extends Controller
      */
     public function update(EditRequest $request, Animal $animal, ImageUploadService $upload)
     {
-        $data_animal = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description', 'diseases', 'inoculations', 'files');
-
-        $updated_animal = $animal->fill($data_animal)->save();
-
+        $data = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description');
+        $updated_animal = $animal->fill($data)->save();
         $updated_disease = $animal->disease()->sync($request->input('diseases'));
         $updated_inoculation = $animal->inoculation()->sync($request->input('inoculations'));
 
@@ -150,13 +148,9 @@ class AnimalController extends Controller
             $upload->saveUploadedFile($request->file('files'), $animal);
         }
 
-        if ($updated_animal && $updated_disease && $updated_inoculation) {
-            return redirect()->route('admin.animals.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors('Не удалось добавить запись')
-            ->withInput();
+        return $updated_animal && $updated_disease && $updated_inoculation
+            ? redirect()->route('admin.animals.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 
     /**

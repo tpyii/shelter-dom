@@ -5,8 +5,7 @@
 
     <x-errors />
 
-    <x-form action="{{route('admin.users.store')}}" method="POST">
-        @csrf
+    <x-form action="{{ route('admin.users.store') }}" method="POST">
         <x-input type="text" name="name" label="Имя" required />
         <x-input type="email" name="email" label="Почта" required />
         <x-input type="text" name="password" label="Пароль" required />

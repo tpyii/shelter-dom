@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CreateRequest;
 use App\Http\Requests\User\EditRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -16,14 +15,12 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index(Request $request)
+    public function index()
     {
-        $searchParams = $request->all();
         $users = User::filter()->paginate(7)->withQueryString();
 
         return view('admin.users.index', [
             'users' => $users,
-            'searchParams' => $searchParams
         ]);
     }
 
@@ -47,14 +44,14 @@ class UserController extends Controller
     {
         $data = $request->only('name', 'email', 'password', 'is_admin');
 
-        return User::create(
-            [
+        // TODO: Переделать формирование пароля в CreateRequest после проверки
+        return User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'is_admin' => $data['is_admin'],
-                'password' => Hash::make($data['password'])
-            ]
-        ) ? redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена')
+                'password' => Hash::make($data['password']),
+        ])
+            ? redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена')
             : back()->withErrors('Не удалось добавить запись') ->withInput();
     }
 
@@ -78,7 +75,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         return view('admin.users.edit', [
-            'user' => $user
+            'user' => $user,
         ]);
     }
 

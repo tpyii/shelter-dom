@@ -7,7 +7,6 @@ use App\Http\Requests\Breed\CreateRequest;
 use App\Http\Requests\Breed\EditRequest;
 use App\Models\Breed;
 use App\Models\AnimalType;
-use Illuminate\Http\Request;
 
 class BreedController extends Controller
 {
@@ -16,16 +15,12 @@ class BreedController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
-    public function index(Request $request)
+    public function index()
     {
-        $searchParams = $request->all();
-        $breeds = Breed::filter()->paginate(7)->withQueryString();
+        $breeds = Breed::with('type')->filter()->paginate(7)->withQueryString();
 
-        $animal_type = new AnimalType();
         return view('admin.breeds.index', [
             'breeds' => $breeds,
-            'animal_type' => $animal_type,
-            'searchParams' => $searchParams
         ]);
     }
 
@@ -39,7 +34,7 @@ class BreedController extends Controller
         $animal_types = AnimalType::all();
 
         return view('admin.breeds.create', [
-            'animal_types' => $animal_types
+            'animal_types' => $animal_types,
         ]);
     }
 
@@ -81,7 +76,7 @@ class BreedController extends Controller
 
         return view('admin.breeds.edit', [
             'breed' => $breed,
-            'animal_types' => $animal_types
+            'animal_types' => $animal_types,
         ]);
     }
 

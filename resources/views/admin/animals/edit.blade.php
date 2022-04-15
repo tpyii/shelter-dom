@@ -26,7 +26,7 @@
         <div class="mb-3">
             @foreach($images AS $image)
                 <div class="d-inline-block" id="image-{{ $image->id }}">
-                    <img src="{{Storage::url($image->path)}}" alt="#" style="max-width: 100px; height: auto">
+                    <img src="{{ Storage::url($image->path) }}" alt="#" style="max-width: 100px; height: auto">
                     <x-button color="outline-danger" class="showDeleteModal" data-action="{{ route('admin.images.destroy', $image) }}" data-remove="#image-{{ $image->id }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -51,25 +51,3 @@
         </x-slot>
     </x-modal>
 </x-layout>
-
-<script>
-    let buttons = document.querySelectorAll('.btn.btn-sm.btn-outline-danger');
-    let arr = [];
-    let oldImg = document.querySelector('#oldImg')
-    buttons.forEach((elem) => {
-        let id = elem.getAttribute('data-id');
-        arr.push(id)
-    });
-
-    oldImg.setAttribute('value', arr);
-
-    buttons.forEach((elem) => {
-        let idToRemove = elem.getAttribute('data-id');
-        elem.addEventListener('click', () => {
-            arr = arr.filter((id)=>id!==idToRemove);
-            document.querySelector(`#img_${idToRemove}`).remove()
-            oldImg.setAttribute('value', arr )
-        })
-    })
-
-</script>

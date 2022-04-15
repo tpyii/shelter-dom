@@ -22,16 +22,16 @@
             <th>Является админом</th>
             <th style="width: 0px"></th>
         </x-slot>
-        @foreach($users as $usersItem)
-            <tr id="row-{{$usersItem->id}}">
-                <td>{{$usersItem->id}}</td>
-                <td>{{$usersItem->name}}</td>
-                <td>{{$usersItem->email}}</td>
-                <td>{{$usersItem->is_admin}}</td>
+        @foreach($users as $user)
+            <tr id="row-{{ $user->id }}">
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->is_admin }}</td>
                 <td>
                     <div class="d-flex">
                         <a class="btn btn-outline-primary btn-sm me-2"
-                           href="{{ route('admin.users.edit', ['user' => $usersItem->id]) }}">
+                           href="{{ route('admin.users.edit', $user) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-pencil-fill"
                                  viewBox="0 0 16 16">
@@ -40,8 +40,8 @@
                             </svg>
                         </a>
                         <x-button color="outline-danger" class="showDeleteModal"
-                                  data-action="{{ route('admin.users.destroy', ['user' => $usersItem]) }}"
-                                  data-remove="#row-{{ $usersItem->id }}">
+                                  data-action="{{ route('admin.users.destroy', $user) }}"
+                                  data-remove="#row-{{ $user->id }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-x-lg"
                                  viewBox="0 0 16 16">
@@ -56,27 +56,13 @@
             </tr>
         @endforeach
     </x-table>
-    @if(method_exists($users, 'links'))
-        {{$users->links()}}
-    @endif
+
+    {{ $users->links() }}
 
     <x-modal id="filter" title="Фильтры">
         <x-form action="{{ route('admin.users.index') }}">
-            @if($searchParams)
-                @if(array_key_exists('name',$searchParams))
-                    <x-input name="name" label="Имя" value="{{ $searchParams['name'] }}" />
-                @else
-                    <x-input name="name" label="Имя" value="" />
-                @endif
-                @if(array_key_exists('email',$searchParams))
-                    <x-input name="email" label="Электронная почта" value="{{ $searchParams['name'] }}" />
-                @else
-                    <x-input name="email" label="Электронная почта" value="" />
-                @endif
-            @else
-                <x-input name="name" label="Имя" value="" />
-                <x-input name="email" label="Электронная почта" value="" />
-            @endif
+            <x-input name="name" label="Имя" value="{{ request('name') }}" />
+            <x-input name="email" label="Электронная почта" value="{{ request('email') }}" />
         </x-form>
         <x-slot name="footer">
             <a class="btn btn-sm btn-secondary" href="{{ route('admin.users.index') }}">Сбросить</a>

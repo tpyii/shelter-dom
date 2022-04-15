@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Disease\CreateRequest;
 use App\Http\Requests\Disease\EditRequest;
 use App\Models\Disease;
-use Illuminate\Http\Request;
 
 class DiseaseController extends Controller
 {
@@ -15,14 +14,12 @@ class DiseaseController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $searchParams = $request->all();
         $diseases = Disease::filter()->paginate(7)->withQueryString();
 
         return view('admin.diseases.index', [
             'diseases' => $diseases,
-            'searchParams' => $searchParams
         ]);
     }
 
@@ -71,7 +68,7 @@ class DiseaseController extends Controller
     public function edit(Disease $disease)
     {
         return view('admin.diseases.edit', [
-            'disease' => $disease
+            'disease' => $disease,
         ]);
     }
 

@@ -29,35 +29,35 @@
             <th>Фотографии</th>
             <th style="width: 0px"></th>
         </x-slot>
-        @foreach($animals as $animalsItem)
-            <tr id="row-{{$animalsItem->id}}">
-                <td>{{$animalsItem->id}}</td>
-                <td>{{$animalsItem->name}}</td>
-                <td>{{$animalsItem->description}}</td>
-                <td>{{$animalsItem->type->name}}</td>
-                <td>{{$animalsItem->breed->name}}</td>
+        @foreach($animals as $animal)
+            <tr id="row-{{ $animal->id }}">
+                <td>{{ $animal->id }}</td>
+                <td>{{ $animal->name }}</td>
+                <td>{{ $animal->description }}</td>
+                <td>{{ $animal->type->name }}</td>
+                <td>{{ $animal->breed->name }}</td>
                 <td>
-                    @foreach($animalsItem->disease AS $diseaseItem)
-                        <p>{{$diseaseItem->name}}</p>
+                    @foreach($animal->disease AS $disease)
+                        <p>{{ $disease->name }}</p>
                     @endforeach
                 </td>
                 <td>
-                    @foreach($animalsItem->inoculation AS $inoculationItem)
-                        <p>{{$inoculationItem->name}}</p>
+                    @foreach($animal->inoculation AS $inoculation)
+                        <p>{{ $inoculation->name }}</p>
                     @endforeach
                 </td>
-                <td>{{$animalsItem->treatment_of_parasites}}</td>
-                <td>{{$animalsItem->birthday_at}}</td>
+                <td>{{ $animal->treatment_of_parasites }}</td>
+                <td>{{ $animal->birthday_at }}</td>
                 <td>
-                    @foreach($animalsItem->images AS $imagesItem)
-                        <img src="{{Storage::url($imagesItem->path)}}" alt="#"
+                    @foreach($animal->images AS $image)
+                        <img src="{{ Storage::url($image->path) }}" alt="#"
                              style="max-width: 100px; height: auto">
                     @endforeach
                 </td>
                 <td>
                     <div class="d-flex">
                         <a class="btn btn-outline-primary btn-sm me-2"
-                           href="{{route('admin.animals.edit', ['animal' => $animalsItem])}}">
+                           href="{{ route('admin.animals.edit', $animal) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-pencil-fill" viewBox="0 0 16 16">
                                 <path
@@ -65,8 +65,8 @@
                             </svg>
                         </a>
                         <x-button color="outline-danger" class="showDeleteModal"
-                                  data-action="{{ route('admin.animals.destroy', $animalsItem) }}"
-                                  data-remove="#row-{{ $animalsItem->id }}">
+                                  data-action="{{ route('admin.animals.destroy', $animal) }}"
+                                  data-remove="#row-{{ $animal->id }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-x-lg" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -80,65 +80,15 @@
             </tr>
         @endforeach
     </x-table>
-    @if(method_exists($animals, 'links'))
-        {{$animals->links()}}
-    @endif
+
+    {{ $animals->links() }}
+
     <x-modal id="filter" title="Фильтры">
         <x-form action="{{ route('admin.animals.index') }}">
-            @if($searchParams)
-                @if(array_key_exists('name',$searchParams))
-                    <x-input name="name" label="Кличка" value="{{ $searchParams['name'] }}"/>
-                @else
-                    <x-input name="name" label="Кличка" value=""/>
-                @endif
-                @if(array_key_exists('type_id',$searchParams))
-                    <x-select name="type_id" label="Тип" :options="$animal_types"
-                              value="{{ $searchParams['type_id'] }}"/>
-                @else
-                    <x-select name="type_id" label="Тип" :options="$animal_types" value=""/>
-                @endif
-                @if(array_key_exists('breed_id',$searchParams))
-                    <x-select name="breed_id" label="Порода" :options="$breeds"
-                              value="{{ $searchParams['breed_id'] }}"/>
-                @else
-                    <x-select name="breed_id" label="Порода" :options="$breeds" value=""/>
-                @endif
-                @if(array_key_exists('age',$searchParams))
-                        <label for="age">Возраст</label>
-                        <select class="form-control" name="age" id="age" >
-                                <option value="{{ $searchParams['age'] }}">{{ $searchParams['age'] }}</option>
-                        </select>
-                @else
-{{--                    <x-select name="age" label="Возраст" :options="$age" value=""/>--}}
-                        <label for="age">Возраст</label>
-                        <select class="form-control" name="age" id="age" >
-                            <option value="1"> < 1</option>
-                            <option value="2">1 - 2</option>
-                            <option value="3">2 - 5</option>
-                            <option value="4"> > 5 </option>
-                        </select>
-                @endif
-            @else
-                <x-input name="name" label="Имя" value=""/>
-                <x-select name="type_id" label="Тип" :options="$animal_types" value=""/>
-                <x-select name="breed_id" label="Порода" :options="$breeds" value=""/>
-{{--                <x-select name="age" label="Возраст" :options="$age" value=""/>--}}
-                <label for="age">Возраст</label>
-                <select class="form-control" name="age" id="age" >
-                        <option value="1"> < 1</option>
-                        <option value="2">1 - 2</option>
-                        <option value="3">2 - 5</option>
-                        <option value="4"> > 5 </option>
-                </select>
-            @endif
-            {{--        <div class="mb-3">--}}
-            {{--            <x-label for="inp1">Паразиты</x-label>--}}
-            {{--            <x-input type="radio" name="treatment_of_parasites" id="inp1" value="YES" label="Да" />--}}
-            {{--            <x-input type="radio" name="treatment_of_parasites" id="inp2" value="NO" label="Нет" />--}}
-            {{--        </div>--}}
-            {{--        <x-select name="diseases[]" label="Diseases" :options="$diseases" multiple />--}}
-            {{--        <x-select name="inoculations[]" label="Inoculations" :options="$inoculations" multiple />--}}
-            {{--        <x-input type="date" name="birthday_at" label="Birthday" value="{{ old('birthday_at') }}" />--}}
+            <x-input name="name" label="Кличка" value="{{ request('name') }}" />
+            <x-select name="type_id" label="Тип" :options="$animal_types" value="{{ request('type_id') }}" />
+            <x-select name="breed_id" label="Порода" :options="$breeds" value="{{ request('breed_id') }}" />
+            <x-select name="age" label="Возраст" :options="$ages" value="{{ request('age') }}" />
         </x-form>
         <x-slot name="footer">
             <a class="btn btn-sm btn-secondary" href="{{ route('admin.animals.index') }}">Сбросить</a>

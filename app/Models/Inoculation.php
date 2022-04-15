@@ -9,11 +9,6 @@ class Inoculation extends Model
 {
     use HasFactory;
 
-    public static $availabeFiedls = [
-        'id',
-        'name'
-    ];
-
     protected $fillable = [
         'name'
     ];

@@ -24,4 +24,3 @@ class BreedSeeder extends Seeder
         ]);
     }
 }
-

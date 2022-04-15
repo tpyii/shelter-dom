@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Breed;
-use App\Models\Image;
 use App\Models\Animal;
 use App\Models\Disease;
 use App\Models\AnimalType;
@@ -23,16 +22,13 @@ class AnimalController extends Controller
      */
     public function index(Request $request)
     {
-//        $age = [];
         $searchParams = $request->all();
         $animals = Animal::filter()->paginate(7)->withQueryString();
         $breeds = Breed::all();
         $animal_types = AnimalType::all();
         $diseases = Disease::all();
         $inoculations = Inoculation::all();
-//        foreach ($diseases as $d){
-//            dd($d->getOriginal());
-//        }
+
         return view('admin.animals.index', [
             'animals' => $animals,
             'breeds' => $breeds,
@@ -40,7 +36,6 @@ class AnimalController extends Controller
             'diseases' => $diseases,
             'inoculations' => $inoculations,
             'searchParams' => $searchParams,
-//            'age' => $age,
         ]);
     }
 

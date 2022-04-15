@@ -9,12 +9,6 @@ class Breed extends Model
 {
     use HasFactory;
 
-    public static $availabeFiedls = [
-        'id',
-        'type_id',
-        'name'
-    ];
-
     protected $fillable = [
         'type_id',
         'name'

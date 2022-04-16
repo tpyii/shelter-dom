@@ -27,7 +27,7 @@
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->is_admin }}</td>
+                <td>{{ $user->is_admin ? 'YES' : 'NO' }}</td>
                 <td>
                     <div class="d-flex">
                         <a class="btn btn-outline-primary btn-sm me-2"

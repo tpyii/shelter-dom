@@ -89,6 +89,13 @@
             <x-select name="type_id" label="Тип" :options="$animal_types" value="{{ request('type_id') }}" />
             <x-select name="breed_id" label="Порода" :options="$breeds" value="{{ request('breed_id') }}" />
             <x-select name="age" label="Возраст" :options="$ages" value="{{ request('age') }}" />
+            <x-select name="diseases[]" label="Болезни" id="diseases" :options="$diseases" :value="request('diseases', [])" multiple />
+            <x-select name="inoculations[]" label="Прививки" :options="$inoculations" :value="request('inoculations', [])" multiple />
+            <div class="mb-3">
+                <x-label for="inp1">Паразиты</x-label>
+                <x-input type="radio" name="treatment_of_parasites" id="inp1" value="YES" label="Да" checked="{{ request('treatment_of_parasites') }}"/>
+                <x-input type="radio" name="treatment_of_parasites" id="inp2" value="NO" label="Нет" checked="{{ request('treatment_of_parasites') }}"/>
+            </div>
         </x-form>
         <x-slot name="footer">
             <a class="btn btn-sm btn-secondary" href="{{ route('admin.animals.index') }}">Сбросить</a>

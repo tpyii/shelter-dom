@@ -12,7 +12,9 @@
   $value = $multiple 
     ? empty($value)
       ? []
-      : $value->pluck('id')->toArray()
+      : is_object($value)
+        ? $value->pluck('id')->toArray()
+        : $value
     : $value;
   $value = old($n, $value);
 @endphp

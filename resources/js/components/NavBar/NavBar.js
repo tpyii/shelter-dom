@@ -1,6 +1,7 @@
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {useEffect} from 'react'
 import { slide as Menu } from 'react-burger-menu'
+import { useLocation,useRef } from 'react-router-dom';
 
 
 export const NavBar = () => {
@@ -10,6 +11,7 @@ export const NavBar = () => {
         const element = document.getElementById(value)
         element.scrollIntoView();
     }
+
 
     const goToRegist = () => {
         window.location.href='/user'
@@ -29,7 +31,7 @@ export const NavBar = () => {
                                 <li className="nav-item "><Link className='link__our' value='about' to='#about'
                                                                 onClick={scrollToComponent}>About the shelter</Link>
                                 </li>
-                                <li className="nav-item"><Link className='link__our' to="/our_pets" className="active">Our
+                                <li className="nav-item"><Link className='link__our' to="/our_pets" >Our
                                     pets</Link></li>
                                 <li className="nav-item"><Link value='help' className='link__our' to="#help"
                                                                onClick={scrollToComponent}>Help the shelter</Link></li>

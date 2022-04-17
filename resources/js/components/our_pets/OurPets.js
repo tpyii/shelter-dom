@@ -1,7 +1,7 @@
 import {axios} from 'axios'
 import {NavBar} from '../NavBar/NavBar'
 import {Footer} from '../footer_component/Footer'
-import {useState, useEffect} from 'react'
+import {useState, useEffect,useMemo} from 'react'
 import {Animals} from '../animals/Animals'
 import {NavBarLigth} from '../NavBarLigth/NavBarLigth'
 import {Pagination} from '../Pagination/Pagination'
@@ -14,6 +14,7 @@ export const OurPets = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [animalsPerPage] = useState(8);
     const [lastNumber, setLastNumber] = useState();
+    const [sortBy, setSortBy] = useState('ask');
     const dispatch = useDispatch()
     const animals = useSelector(selectAnimalsList)
 
@@ -24,9 +25,9 @@ export const OurPets = () => {
         });
     }, [])
 
-    useEffect(() => {
-        dispatch(getAnimals())
-    }, [])
+    useMemo(() => {
+        dispatch(getAnimals(currentPage, sortBy))
+    }, [currentPage])
 
 
 //     Get current posts

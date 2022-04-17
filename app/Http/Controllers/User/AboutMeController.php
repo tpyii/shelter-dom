@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\Http\Resources\AnimalResource;
-use App\Models\Animal;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class CatalogController extends Controller
+class AboutMeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,9 @@ class CatalogController extends Controller
      */
     public function index()
     {
-        return AnimalResource::collection(Animal::all());
+        return view('user_lk.aboutme.index', [
+            'userName' => Auth::user()->name
+        ]);
     }
 
     /**
@@ -31,7 +33,7 @@ class CatalogController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,18 +44,18 @@ class CatalogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Animal $animal
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Animal $animal)
+    public function show($id)
     {
-        return new AnimalResource($animal);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -64,8 +66,8 @@ class CatalogController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -76,7 +78,7 @@ class CatalogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

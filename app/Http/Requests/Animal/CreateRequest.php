@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Animal;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Enum;
 
 class CreateRequest extends FormRequest
 {
@@ -37,6 +36,14 @@ class CreateRequest extends FormRequest
             'treatment_of_parasites'=> ['required', 'in:YES,NO'],
             'files' => ['required', 'array'],
             'files.*' => ['image', 'file', 'mimes:png,jpg,jpeg']
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'name' => 'Имя',
+            'birthday_at' => 'День рождения'
         ];
     }
 }

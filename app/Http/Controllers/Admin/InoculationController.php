@@ -12,21 +12,21 @@ class InoculationController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        $inoculations = Inoculation::paginate(7);
+        $inoculations = Inoculation::filter()->paginate(7)->withQueryString();
 
         return view('admin.inoculations.index', [
-            'inoculations' => $inoculations
+            'inoculations' => $inoculations,
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -37,21 +37,15 @@ class InoculationController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(CreateRequest $request)
     {
         $data = $request->only('name');
 
-        $created = Inoculation::create($data);
-
-        if($created) {
-            return redirect()->route('admin.inoculations.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors( 'Не удалось добавить запись')
-            ->withInput();
+        return Inoculation::create($data)
+            ? redirect()->route('admin.inoculations.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors( 'Не удалось добавить запись')->withInput();
     }
 
     /**
@@ -69,12 +63,12 @@ class InoculationController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Inoculation $inoculation
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Inoculation $inoculation)
     {
         return view('admin.inoculations.edit', [
-            'inoculation' => $inoculation
+            'inoculation' => $inoculation,
         ]);
     }
 
@@ -83,39 +77,27 @@ class InoculationController extends Controller
      *
      * @param EditRequest $request
      * @param Inoculation $inoculation
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function update(EditRequest $request, Inoculation $inoculation)
     {
         $data = $request->only('name');
 
-        $updated = $inoculation->fill($data)->save();
-
-        if($updated) {
-            return redirect()->route('admin.inoculations.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors( 'Не удалось изменить запись')
-            ->withInput();
+        return $inoculation->fill($data)->save()
+            ? redirect()->route('admin.inoculations.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors( 'Не удалось изменить запись')->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Inoculation $inoculation
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(Inoculation $inoculation)
     {
-        $deleted = $inoculation->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.inoculations.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors( 'Не удалось удалить запись')
-            ->withInput();
+        return $inoculation->delete()
+            ? redirect()->route('admin.inoculations.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors( 'Не удалось удалить запись')->withInput();
     }
 }

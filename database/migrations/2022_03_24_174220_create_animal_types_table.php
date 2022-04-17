@@ -15,7 +15,7 @@ class CreateAnimalTypesTable extends Migration
     {
         Schema::create('animal_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->index();
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }

@@ -9,11 +9,6 @@ class Image extends Model
 {
     use HasFactory;
 
-    public static $availabeFiedls = [
-        'id',
-        'path'
-    ];
-
     protected $fillable = [
         'path'
     ];

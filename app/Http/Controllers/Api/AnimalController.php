@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AnimalStoreRequest;
 use App\Http\Resources\AnimalResource;
 use App\Models\Animal;
-use Illuminate\Auth\Events\Validated;
-use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 class AnimalController extends Controller
@@ -15,17 +13,17 @@ class AnimalController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection|Response
      */
     public function index()
     {
-        return AnimalResource::collection(Animal::all());
+        return AnimalResource::collection(Animal::filter()->paginate(4)->withQueryString());
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\AnimalStoreRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(AnimalStoreRequest $request)
@@ -37,7 +35,7 @@ class AnimalController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Animal  $animal
      * @return \Illuminate\Http\Response
      */
     public function show(Animal $animal)
@@ -48,8 +46,8 @@ class AnimalController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\AnimalStoreRequest  $request
+     * @param  \App\Models\Animal  $animal
      * @return \Illuminate\Http\Response
      */
     public function update(AnimalStoreRequest $request, Animal $animal)
@@ -62,7 +60,7 @@ class AnimalController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Animal  $animal
      * @return \Illuminate\Http\Response
      */
     public function destroy(Animal $animal)

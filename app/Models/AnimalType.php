@@ -9,12 +9,18 @@ class AnimalType extends Model
 {
     use HasFactory;
 
-    public static $availabeFiedls = [
-        'id',
-        'name'
-    ];
-
     protected $fillable = [
         'name'
     ];
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeFilter($query)
+    {
+        return $query->when(request("name"), function ($query, $value) {
+            return $query->where("name", "LIKE", "%" . $value . "%");
+        });
+    }
 }

@@ -12,21 +12,21 @@ class TypeController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        $types = AnimalType::paginate(7);
+        $types = AnimalType::filter()->paginate(7)->withQueryString();
 
         return view('admin.animal_types.index', [
-            'animal_types' => $types
+            'animal_types' => $types,
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -37,27 +37,21 @@ class TypeController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(CreateRequest $request)
     {
         $data = $request->only('name');
 
-        $created = AnimalType::create($data);
-
-        if($created) {
-            return redirect()->route('admin.animal_types.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors( 'Не удалось добавить запись')
-            ->withInput();
+        return AnimalType::create($data)
+            ? redirect()->route('admin.animal_types.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись')->withInput();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -69,12 +63,12 @@ class TypeController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param AnimalType $animal_type
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(AnimalType $animal_type)
     {
         return view('admin.animal_types.edit', [
-            'animal_type' => $animal_type
+            'animal_type' => $animal_type,
         ]);
     }
 
@@ -83,39 +77,27 @@ class TypeController extends Controller
      *
      * @param EditRequest $request
      * @param AnimalType $animal_type
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function update(EditRequest $request, AnimalType $animal_type)
     {
         $data = $request->only('name');
 
-        $updated = $animal_type->fill($data)->save();
-
-        if($updated) {
-            return redirect()->route('admin.animal_types.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors( 'Не удалось изменить запись')
-            ->withInput();
+        return $animal_type->fill($data)->save()
+            ? redirect()->route('admin.animal_types.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors('Не удалось изменить запись')->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param AnimalType $animal_type
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(AnimalType $animal_type)
     {
-        $deleted = $animal_type->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.animal_types.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors('Не удалось удалить запись')
-            ->withInput();
+        return $animal_type->delete()
+            ? redirect()->route('admin.animal_types.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

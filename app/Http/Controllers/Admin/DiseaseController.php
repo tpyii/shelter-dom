@@ -12,21 +12,21 @@ class DiseaseController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        $diseases = Disease::paginate(7);
+        $diseases = Disease::filter()->paginate(7)->withQueryString();
 
         return view('admin.diseases.index', [
-            'diseases' => $diseases
+            'diseases' => $diseases,
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function create()
     {
@@ -37,21 +37,15 @@ class DiseaseController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function store(CreateRequest $request)
     {
         $data = $request->only('name');
 
-        $created = Disease::create($data);
-
-        if($created) {
-            return redirect()->route('admin.diseases.index')
-                ->with('success', 'Запись успешно добавлена');
-        }
-
-        return back()->withErrors( 'Не удалось добавить запись')
-            ->withInput();
+        return Disease::create($data)
+            ? redirect()->route('admin.diseases.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors( 'Не удалось добавить запись')->withInput();
     }
 
     /**
@@ -69,12 +63,12 @@ class DiseaseController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param Disease $disease
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Disease $disease)
     {
         return view('admin.diseases.edit', [
-            'disease' => $disease
+            'disease' => $disease,
         ]);
     }
 
@@ -83,39 +77,27 @@ class DiseaseController extends Controller
      *
      * @param EditRequest $request
      * @param Disease $disease
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function update(EditRequest $request, Disease $disease)
     {
         $data = $request->only('name');
 
-        $updated = $disease->fill($data)->save();
-
-        if($updated) {
-            return redirect()->route('admin.diseases.index')
-                ->with('success', 'Запись успешно изменена');
-        }
-
-        return back()->withErrors( 'Не удалось изменить запись')
-            ->withInput();
+        return $disease->fill($data)->save()
+            ? redirect()->route('admin.diseases.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors( 'Не удалось изменить запись')->withInput();
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Disease $disease
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy(Disease $disease)
     {
-        $deleted = $disease->delete();
-
-        if ($deleted) {
-            return redirect()->route('admin.diseases.index')
-                ->with('success', 'Запись успешно удалена');
-        }
-
-        return back()->withErrors( 'Не удалось удалить запись')
-            ->withInput();
+        return $disease->delete()
+            ? redirect()->route('admin.diseases.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors( 'Не удалось удалить запись')->withInput();
     }
 }

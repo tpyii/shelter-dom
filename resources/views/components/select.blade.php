@@ -12,9 +12,11 @@
   $value = $multiple 
     ? empty($value)
       ? []
-      : $value->pluck('id')->toArray()
+      : is_object($value)
+        ? $value->pluck('id')->toArray()
+        : $value
     : $value;
-  $value = old($n, $value);
+  $value = old($n, $multiple && empty($value) ? [] : $value);
 @endphp
 
 <div class="mb-3">

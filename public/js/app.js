@@ -7072,11 +7072,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _main_page_Main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main_page/Main */ "./resources/js/components/main_page/Main.js");
 /* harmony import */ var _our_pets_OurPets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./our_pets/OurPets */ "./resources/js/components/our_pets/OurPets.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _components_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/store */ "./resources/js/components/store/index.js");
 /* harmony import */ var _templates_assets_css_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../templates/assets/css/style.css */ "./templates/assets/css/style.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_scroll_up_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-scroll-up-button */ "./node_modules/react-scroll-up-button/dist/react-scroll-up-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -7087,18 +7089,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
       store: _components_store__WEBPACK_IMPORTED_MODULE_3__.store,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_scroll_up_button__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        StopPosition: 0,
+        ShowAtPosition: 150,
+        AnimationDuration: 500
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
           path: "/",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_main_page_Main__WEBPACK_IMPORTED_MODULE_0__.Main, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_main_page_Main__WEBPACK_IMPORTED_MODULE_0__.Main, {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
           path: "/our_pets",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_our_pets_OurPets__WEBPACK_IMPORTED_MODULE_1__.OurPets, {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_our_pets_OurPets__WEBPACK_IMPORTED_MODULE_1__.OurPets, {})
         })]
-      })
+      })]
     })
   });
 };
@@ -7156,6 +7162,108 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
+/***/ "./resources/js/components/NavBarLigth/NavBarLigth.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/NavBarLigth/NavBarLigth.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NavBarLigth": () => (/* binding */ NavBarLigth)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/getAnimalsList/actions */ "./resources/js/components/store/getAnimalsList/actions.js");
+/* harmony import */ var _NavBarLight_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBarLight.css */ "./resources/js/components/NavBarLigth/NavBarLight.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var NavBarLigth = function NavBarLigth() {
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useDispatch)();
+
+  var getId = function getId(id) {
+    dispatch((0,_store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_1__.getIdToScroll)(id));
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("header", {
+      className: "navbar background-darkl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/",
+          className: "navbar-logo col-auto",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "logo-titlel cozy_light",
+            children: "Cozy House"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "logo-subtitlel",
+            children: "Shelter for pets in Boston"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "navbar-content col-auto align-self-center d-flex flex-column",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "navbar-content-container",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+              className: "nav flex-column flex-md-row align-content-center align-items-center",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: function onClick() {
+                    return window.location.href = '/#about';
+                  },
+                  className: "link__our",
+                  to: "#",
+                  children: "About the shelter"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  className: "link__our",
+                  to: "#",
+                  children: "Our pets"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: function onClick() {
+                    return window.location.href = '/#help';
+                  },
+                  className: "link__our",
+                  to: "#",
+                  children: "Help the shelter"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: function onClick() {
+                    return window.location.href = '/#contacts';
+                  },
+                  className: "link__our",
+                  value: "contacts",
+                  to: "",
+                  children: "Contacts"
+                })
+              })]
+            })
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "col-auto d-flex flex-column justify-content-between navbar-burger",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {})]
+        })]
+      })
+    })
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/NavBar/NavBar.js":
 /*!**************************************************!*\
   !*** ./resources/js/components/NavBar/NavBar.js ***!
@@ -7172,7 +7280,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-burger-menu */ "./node_modules/react-burger-menu/lib/BurgerMenu.js");
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -7180,8 +7287,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var NavBar = function NavBar() {
-  var _jsx2;
-
   var scrollToComponent = function scrollToComponent(e) {
     var value = e.currentTarget.getAttribute('value');
     var element = document.getElementById(value);
@@ -7224,10 +7329,11 @@ var NavBar = function NavBar() {
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                 className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, (_jsx2 = {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
                   className: "link__our",
-                  to: "/our_pets"
-                }, _defineProperty(_jsx2, "className", "active"), _defineProperty(_jsx2, "children", "Our pets"), _jsx2))
+                  to: "/our_pets",
+                  children: "Our pets"
+                })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                 className: "nav-item",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
@@ -7262,92 +7368,6 @@ var NavBar = function NavBar() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "col-auto d-flex flex-column justify-content-between navbar-burger",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {})]
-        })]
-      })
-    })
-  });
-};
-
-/***/ }),
-
-/***/ "./resources/js/components/NavBarLigth/NavBarLigth.js":
-/*!************************************************************!*\
-  !*** ./resources/js/components/NavBarLigth/NavBarLigth.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "NavBarLigth": () => (/* binding */ NavBarLigth)
-/* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _NavBarLight_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NavBarLight.css */ "./resources/js/components/NavBarLigth/NavBarLight.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
-
-
-
-var NavBarLigth = function NavBarLigth() {
-  var _jsx2;
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("header", {
-      className: "navbar background-darkl",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-          to: "/",
-          className: "navbar-logo col-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "logo-titlel cozy_light",
-            children: "Cozy House"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "logo-subtitlel",
-            children: "Shelter for pets in Boston"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "navbar-content col-auto align-self-center d-flex flex-column",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "navbar-content-container",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
-              className: "nav flex-column flex-md-row align-content-center align-items-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                  className: "link__our",
-                  to: "#",
-                  children: "About the shelter"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, (_jsx2 = {
-                  className: "link__our",
-                  to: "#"
-                }, _defineProperty(_jsx2, "className", "active"), _defineProperty(_jsx2, "children", "Our pets"), _jsx2))
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                  className: "link__our",
-                  to: "#",
-                  children: "Help the shelter"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
-                  className: "link__our",
-                  value: "contacts",
-                  to: "/#contacts",
-                  children: "Contacts"
-                })
-              })]
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "col-auto d-flex flex-column justify-content-between navbar-burger",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {})]
         })]
       })
     })
@@ -8014,30 +8034,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Footer = function Footer() {
-  var scrollUp = function scrollUp() {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-  };
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("footer", {
-    id: 'contacts',
+    id: "contacts",
     className: "footer",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        onClick: scrollUp,
-        style: {
-          color: 'white',
-          fontSize: '47px',
-          paddingTop: '10px',
-          "float": 'right'
-        },
-        className: "button button-circle button-paginator button-secondary",
-        children: " ^"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "row",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "col-12 col-md-6 col-lg-4 text-center text-md-start",
@@ -8160,7 +8162,7 @@ var Footer = function Footer() {
             alt: "footer-puppy"
           })
         })]
-      })]
+      })
     })
   });
 };
@@ -8954,6 +8956,11 @@ var OurPets = function OurPets() {
       lastNumber = _useState8[0],
       setLastNumber = _useState8[1];
 
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)('ask'),
+      _useState10 = _slicedToArray(_useState9, 2),
+      sortBy = _useState10[0],
+      setSortBy = _useState10[1];
+
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_8__.useDispatch)();
   var animals = (0,react_redux__WEBPACK_IMPORTED_MODULE_8__.useSelector)(_store_getAnimalsList_selectors__WEBPACK_IMPORTED_MODULE_7__.selectAnimalsList);
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
@@ -8962,9 +8969,9 @@ var OurPets = function OurPets() {
       behavior: "instant"
     });
   }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
-    dispatch((0,_store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_9__.getAnimals)());
-  }, []); //     Get current posts
+  (0,react__WEBPACK_IMPORTED_MODULE_3__.useMemo)(function () {
+    dispatch((0,_store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_9__.getAnimals)(currentPage, sortBy));
+  }, [currentPage]); //     Get current posts
 
   var indexOfLastAnimal = currentPage * animalsPerPage;
   var indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage;
@@ -9039,8 +9046,10 @@ var OurPets = function OurPets() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "REQUEST_ANIMALS_SUCCESS": () => (/* binding */ REQUEST_ANIMALS_SUCCESS),
+/* harmony export */   "SCROLL_TO_BLOCK": () => (/* binding */ SCROLL_TO_BLOCK),
 /* harmony export */   "getAnimals": () => (/* binding */ getAnimals),
-/* harmony export */   "getAnimalsSuccess": () => (/* binding */ getAnimalsSuccess)
+/* harmony export */   "getAnimalsSuccess": () => (/* binding */ getAnimalsSuccess),
+/* harmony export */   "getIdToScroll": () => (/* binding */ getIdToScroll)
 /* harmony export */ });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
@@ -9056,20 +9065,32 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 var REQUEST_ANIMALS_SUCCESS = 'GET_ANIMALS::REQUEST_ANIMALS_SUCCESS';
+var SCROLL_TO_BLOCK = 'GET_ANIMALS::SCROLL_TO_BLOCK';
 var getAnimalsSuccess = function getAnimalsSuccess(animals) {
   return {
     type: REQUEST_ANIMALS_SUCCESS,
     payload: animals
   };
 };
-var getAnimals = function getAnimals() {
+var getIdToScroll = function getIdToScroll(id) {
+  return {
+    type: SCROLL_TO_BLOCK,
+    payload: id
+  };
+};
+var getAnimals = function getAnimals(page, sortBy) {
   return /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(dispatch) {
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              axios__WEBPACK_IMPORTED_MODULE_2___default().get(_constants_Constants__WEBPACK_IMPORTED_MODULE_1__.apiURL).then(function (resp) {
+              axios__WEBPACK_IMPORTED_MODULE_2___default().get(_constants_Constants__WEBPACK_IMPORTED_MODULE_1__.apiURL, {
+                params: {
+                  page: page,
+                  sortBy: sortBy
+                }
+              }).then(function (resp) {
                 return dispatch({
                   type: REQUEST_ANIMALS_SUCCESS,
                   payload: resp.data.data
@@ -9118,6 +9139,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initialState = {
   animalsList: [],
+  id: '',
   request: {
     status: _constants_Constants__WEBPACK_IMPORTED_MODULE_0__.REQUEST_STATUS.IDLE,
     error: ''
@@ -9140,6 +9162,12 @@ var animalsReducer = function animalsReducer() {
         }
       });
 
+    case _actions__WEBPACK_IMPORTED_MODULE_1__.SCROLL_TO_BLOCK:
+      console.log(payload);
+      return {
+        id: payload
+      };
+
     default:
       return state;
   }
@@ -9156,10 +9184,14 @@ var animalsReducer = function animalsReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "selectAnimalsList": () => (/* binding */ selectAnimalsList)
+/* harmony export */   "selectAnimalsList": () => (/* binding */ selectAnimalsList),
+/* harmony export */   "selectId": () => (/* binding */ selectId)
 /* harmony export */ });
 var selectAnimalsList = function selectAnimalsList(state) {
   return state.animals.animalsList;
+};
+var selectId = function selectId(state) {
+  return state.id;
 };
 
 /***/ }),
@@ -14415,7 +14447,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_patterns_noise_transparent_2x_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/**\n *  1. Variables\n *  2. Defaults\n *  3. Buttons\n *  4. Typography\n *  5. Lists\n *  6. Logo\n *  7. Links\n *  8. Cards\n *  9. Modal\n *  10. Navbar\n *  11. Welcome\n *  12. About\n *  13. Help\n *  14. Donate\n *  15. Footer\n *  16. Slider\n */\n\n/* 1. Variables */\n\n:root {\n  --font-family-arial: Arial, sans-serif;\n  --font-family-georgia: Georgia, serif;\n  /*--color-dark-s: #CDCDCD;*/\n  /*--color-dark-m: #B2B2B2;*/\n  /*--color-dark-l: #545454;*/\n  /*--color-dark-xl: #4C4C4C;*/\n  /*--color-dark-3xl: #292929;*/\n  /*--color-light-s: #FAFAFA;*/\n  /*--color-light-l: #F6F6F6;*/\n  /*--color-light-xl: #FFFFFF;*/\n  /*--color-primary: #F1CDB3;*/\n  /*--color-primary-light: #FDDCC4;*/\n}\n\n.swiper-wrapper{\n    display: flex;\n    justify-content: space-between;\n}\n\n.welcome__img{\n    margin-top: 120px;\n}\n\na,\nbutton {\n  outline: none;\n}\n\n/* 2. Defaults */\n\n::-moz-selection {\n  background: #F1CDB3;\n  color: #292929;\n}\n\n::selection {\n  background: #F1CDB3;\n  color: #292929;\n}\n\nbody {\n  font-family: var(--font-family-arial);\n  font-size: normal;\n  font-weight: 400;\n  font-size: 15px;\n  line-height: 160%;\n}\n\nimg {\n  max-width: 100%;\n}\n\n.section {\n  padding: 80px 0 100px;\n  overflow: hidden;\n}\n\n.section-light {\n  background-color: #F6F6F6;\n}\n\n@media (max-width: 767px) {\n  .section {\n    padding: 45px 0;\n  }\n}\n\n/* 3. Buttons */\n\n.button {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  margin: 10px 0px;\n  padding: 13px 43px;\n  border-width: 2px;\n  border-style: solid;\n  border-radius: 100px;\n  box-sizing: border-box;\n  font-family: var(--font-family-georgia);\n  font-size: 17px;\n  line-height: 130%;\n  letter-spacing: 0.06em;\n  color: #292929;\n  transition: all 0.2s ease-out;\n}\n\n.button:disabled,\n.button:disabled:hover {\n  border-color: #CDCDCD;\n  background-color: transparent;\n  color: #CDCDCD;\n  cursor: not-allowed;\n}\n\n.button:disabled svg * {\n  fill: #CDCDCD;\n}\n\n.button-primary:hover,\n.button.active:hover {\n  border-color: #FDDCC4;\n  background-color: #FDDCC4;\n}\n\n.button-secondary {\n  border-color: #FDDCC4;\n  background-color: transparent;\n}\n\n.button-secondary:hover {\n  background-color: #FDDCC4;\n}\n\n.button-circle {\n  padding: 0;\n  width: 52px;\n  height: 52px;\n}\n\n.button-paginator {\n  font-size: 20px;\n  line-height: 120%;\n  text-align: center;\n  padding: 0;\n}\n\n.button:active,\n.button:focus,\n.button-primary,\n.button.active {\n  border-color: #F1CDB3;\n  background-color: #F1CDB3;\n}\n\n/* 4. Typography */\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  line-height: 130%;\n  color: #545454;\n}\n\nh2 {\n  font-size: 44px;\n}\n\nh3 {\n  font-size: 35px;\n  letter-spacing: 0.06em;\n}\n\nh4 {\n  font-size: 20px;\n  line-height: 115%;\n  letter-spacing: 0.06em;\n}\n\nh5 {\n  font-size: 15px;\n  line-height: 110%;\n  letter-spacing: 0.06em;\n}\n\np {\n  color: #4C4C4C;\n}\n\nsmall {\n  font-style: italic;\n  font-weight: 400;\n  font-size: 12px;\n  line-height: 150%;\n  color: #B2B2B2;\n}\n\n/*  5. Lists  */\n\n.list {\n  padding-left: 15px;\n  list-style: none;\n  font-family: 'Georgia';\n  font-style: normal;\n  font-weight: 400;\n  font-size: 15px;\n  line-height: 110%;\n  letter-spacing: 0.06em;\n  color: #000000;\n}\n\n.list-item {\n  position: relative;\n  margin-bottom: 6px;\n}\n\n.list-item::before {\n  content: '';\n  padding: 2px;\n  border-radius: 50%;\n  background-color: #F1CDB3;\n  position: absolute;\n  left: -15px;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n  /*6. Logo  */\n\n.logo::after {\n  content: none !important;\n}\n\n.logo-title {\n  margin-bottom: 10px;\n  font-family: var(--font-family-georgia);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 32px;\n  line-height: 110%;\n  letter-spacing: 0.06em;\n  color: #F1CDB3;;\n  transition: color 0.2s ease-out;\n}\n\n.logo-subtitle {\n  font-family: var(--font-family-arial);\n  font-style: normal;\n  font-weight: 400;\n  font-size: 13px;\n  line-height: 15px;\n  letter-spacing: 0.1em;\n  color: #CDCDCD;\n  transition: color 0.2s ease-out;\n}\n\n.background-dark .logo-title,\n.background-dark .logo-title:hover {\n  color: #F1CDB3;\n}\n\n.background-dark .logo-subtitle {\n  color: #FFFFFF;\n}\n\n/*!*  7. Links *!*/\n\na {\n  position: relative;\n  text-decoration: none;\n  color: #545454;\n}\n\na:hover,\na.active {\n  color: #292929;\n}\n\na:active,\na:focus {\n  color: #545454;\n}\n\na:active::after,\na:focus::after,\na.active::after {\n  content: '';\n  display: block;\n  position: absolute;\n  bottom: -5px;\n  width: 100%;\n  height: 3px;\n  background-color: #F1CDB3;\n}\n\n.background-dark a {\n  color: #CDCDCD;\n}\n\n.background-dark a:hover,\n.background-dark a:active::after,\n.background-dark a:focus::after,\n.background-dark a.active {\n  color: #FAFAFA;\n}\n\n/*  8. Cards  */\n\n.card {\n  max-width: 270px;\n  margin: 0 auto;\n  border: none;\n  border-radius: 9px;\n  overflow: hidden;\n  background: #FAFAFA;\n}\n\n.card:hover .card-content {\n  background-color: #FFFFFF;\n}\n\n.card img {\n  -o-object-fit: contain;\n     object-fit: contain;\n  width: 100%;\n  height: 270px;\n}\n\n.card-content {\n  padding: 30px;\n  transition: all 0.2s ease-out;\n}\n\n.card.active {\n  max-width: 900px;\n  max-height: 500px;\n  height: auto;\n}\n\n.card.active img {\n  max-width: 500px;\n  height: auto;\n}\n\n.card.active .card-content {\n  padding: 50px 20px 20px;\n  overflow-y: auto;\n}\n\n.card.active .card-content * {\n  color: #000000;\n}\n\n@media (max-width: 992px) {\n  .card.active img {\n    max-width: 400px;\n  }\n}\n\n@media (max-width: 768px) {\n  .card.active {\n    max-height: 350px;\n  }\n\n  .card.active img {\n    max-width: 300px;\n  }\n}\n\n@media (max-width: 575px) {\n  .card.active {\n    max-height: initial;\n    height: 90vh;\n    overflow-y: auto;\n  }\n\n  .card.active .card-content {\n    overflow-y: visible;\n  }\n\n  .card.active img {\n    max-width: 100%;\n  }\n}\n\n/*  9. Modal  */\n\n.modal-dialog {\n  max-width: 900px;\n  margin: 70px auto 20px;\n}\n\n.modal-content {\n  border-radius: 9px;\n  background: #FAFAFA;\n  height: 500px;\n  border: 0;\n}\n\n.modal-header {\n  padding: 0;\n  border: 0;\n}\n\n.modal-header .button-circle {\n  position: absolute;\n  bottom: 100%;\n  left: 100%;\n}\n\n.modal-body {\n  padding: 0;\n  overflow: hidden;\n}\n\n.modal-image {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n\n.modal-text {\n  overflow-y: auto;\n}\n\n@media (max-width: 1024px) {\n  .modal-dialog {\n    margin: 70px 60px 20px;\n  }\n}\n\n@media (max-width: 575px) {\n  .modal-dialog {\n    margin: 70px 20px 20px;\n  }\n\n  .modal-content {\n    height: auto;\n  }\n\n  .modal-header .button-circle {\n    transform: translateX(-100%);\n  }\n}\n\n/*!*  10. Navbar  *!*/\n\n.navbar {\n  position: relative;\n  padding: 30px 0;\n  z-index: 2;\n}\n\n.navbar-burger {\n  display: none !important;\n  width: 30px;\n  height: 22px;\n  cursor: pointer;\n  transition: transform 0.2s ease-out;\n}\n\n.nav-item {\n  margin-left: 35px;\n}\n\n@media (max-width: 767px) {\n  .navbar.active .navbar-logo {\n    z-index: 1;\n  }\n\n  .navbar-content {\n    position: fixed;\n    top: 0;\n    left: 0;\n    transform: translateX(100%);\n    width: 100%;\n    height: 100vh;\n    padding-top: 120px;\n    z-index: 1;\n    background: #292929;\n    transition: transform 0.2s ease-out;\n  }\n\n  .navbar-content-container {\n    padding-top: 100px;\n    overflow-y: auto;\n  }\n\n  .navbar.active .navbar-content {\n    transform: translateX(0);\n  }\n\n  .nav-item {\n    margin-bottom: 50px;\n    margin-left: 0;\n    font-size: 32px;\n  }\n\n  .navbar-burger {\n    display: flex !important;\n  }\n\n  .navbar.active .navbar-burger {\n    transform: rotate(90deg);\n  }\n\n  .navbar-burger > div {\n    height: 2px;\n    background-color: #545454;\n    transition: background-color 0.2s ease-out;\n  }\n\n  .background-dark .navbar-burger > div {\n    background-color: #F1CDB3;\n  }\n}\n\n/*  11. Welcome  */\n\n.welcome {\n  padding-top: 120px;\n  transform: translateY(-120px);\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n              radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\n              #211F20;\n}\n\n.welcome h2 {\n  color: #FFFFFF;\n  max-width: 310px;\n  margin-bottom: 45px;\n}\n\n.welcome p {\n  color: #CDCDCD;\n  margin-bottom: 55px;\n}\n\n@media (max-width: 767px) {\n  .welcome {\n    padding-top: 135px;\n  }\n}\n\n/*  12. About  */\n\n.about {\n  max-width: 850px;\n  margin: 0 auto;\n}\n\n@media (max-width: 767px) {\n  .about {\n    text-align: justify;\n  }\n}\n\n/*  13. Help  */\n\n.help svg {\n  margin-bottom: 30px;\n}\n\n.help-item {\n  text-align: center;\n  margin-bottom: 60px;\n}\n\n/*  14. Donate  */\n\n.donate {\n  max-width: 890px;\n  margin: 0 auto;\n}\n\n.donate-content {\n  max-width: 380px;\n  margin: 0 auto;\n}\n\n/*  15. Footer  */\n\n.footer {\n  padding: 60px 0;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n              radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\n              #211F20;\n}\n\n.footer h3 {\n  color: #FFFFFF;\n  margin-bottom: 40px;\n}\n\n.footer h4 {\n  color: #F1CDB3;\n  margin-bottom: 40px;\n}\n\n.footer h4:last-child {\n  margin-bottom: 0;\n}\n\n.footer img {\n  /*position: absolute;*/\n  right: 0;\n  bottom: 0;\n  transform: translateY(60px);\n}\n\n@media (max-width: 991px) {\n  .footer img {\n    position: static;\n  }\n}\n\n@media (max-width: 767px) {\n  .footer > .container {\n    max-width: 320px;\n  }\n}\n\n/*  16. Slider  */\n\n.slider {\n  overflow: visible;\n}\n\n.slider-button {\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 1;\n}\n\n.slider-button-next {\n  right: 0;\n}\n\n.slider-button-prev {\n  left: 0;\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/**\r\n *  1. Variables\r\n *  2. Defaults\r\n *  3. Buttons\r\n *  4. Typography\r\n *  5. Lists\r\n *  6. Logo\r\n *  7. Links\r\n *  8. Cards\r\n *  9. Modal\r\n *  10. Navbar\r\n *  11. Welcome\r\n *  12. About\r\n *  13. Help\r\n *  14. Donate\r\n *  15. Footer\r\n *  16. Slider\r\n */\r\n\r\n/* 1. Variables */\r\n\r\n:root {\r\n  --font-family-arial: Arial, sans-serif;\r\n  --font-family-georgia: Georgia, serif;\r\n  /*--color-dark-s: #CDCDCD;*/\r\n  /*--color-dark-m: #B2B2B2;*/\r\n  /*--color-dark-l: #545454;*/\r\n  /*--color-dark-xl: #4C4C4C;*/\r\n  /*--color-dark-3xl: #292929;*/\r\n  /*--color-light-s: #FAFAFA;*/\r\n  /*--color-light-l: #F6F6F6;*/\r\n  /*--color-light-xl: #FFFFFF;*/\r\n  /*--color-primary: #F1CDB3;*/\r\n  /*--color-primary-light: #FDDCC4;*/\r\n}\r\n\r\n.swiper-wrapper{\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.welcome__img{\r\n    margin-top: 120px;\r\n}\r\n\r\na,\r\nbutton {\r\n  outline: none;\r\n}\r\n\r\n/* 2. Defaults */\r\n\r\n::-moz-selection {\r\n  background: #F1CDB3;\r\n  color: #292929;\r\n}\r\n\r\n::selection {\r\n  background: #F1CDB3;\r\n  color: #292929;\r\n}\r\n\r\nbody {\r\n  font-family: var(--font-family-arial);\r\n  font-size: normal;\r\n  font-weight: 400;\r\n  font-size: 15px;\r\n  line-height: 160%;\r\n}\r\n\r\nimg {\r\n  max-width: 100%;\r\n}\r\n\r\n.section {\r\n  padding: 80px 0 100px;\r\n  overflow: hidden;\r\n}\r\n\r\n.section-light {\r\n  background-color: #F6F6F6;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .section {\r\n    padding: 45px 0;\r\n  }\r\n}\r\n\r\n/* 3. Buttons */\r\n\r\n.button {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: 10px 0px;\r\n  padding: 13px 43px;\r\n  border-width: 2px;\r\n  border-style: solid;\r\n  border-radius: 100px;\r\n  box-sizing: border-box;\r\n  font-family: var(--font-family-georgia);\r\n  font-size: 17px;\r\n  line-height: 130%;\r\n  letter-spacing: 0.06em;\r\n  color: #292929;\r\n  transition: all 0.2s ease-out;\r\n}\r\n\r\n.button:disabled,\r\n.button:disabled:hover {\r\n  border-color: #CDCDCD;\r\n  background-color: transparent;\r\n  color: #CDCDCD;\r\n  cursor: not-allowed;\r\n}\r\n\r\n.button:disabled svg * {\r\n  fill: #CDCDCD;\r\n}\r\n\r\n.button-primary:hover,\r\n.button.active:hover {\r\n  border-color: #FDDCC4;\r\n  background-color: #FDDCC4;\r\n}\r\n\r\n.button-secondary {\r\n  border-color: #FDDCC4;\r\n  background-color: transparent;\r\n}\r\n\r\n.button-secondary:hover {\r\n  background-color: #FDDCC4;\r\n}\r\n\r\n.button-circle {\r\n  padding: 0;\r\n  width: 52px;\r\n  height: 52px;\r\n}\r\n\r\n.button-paginator {\r\n  font-size: 20px;\r\n  line-height: 120%;\r\n  text-align: center;\r\n  padding: 0;\r\n}\r\n\r\n.button:active,\r\n.button:focus,\r\n.button-primary,\r\n.button.active {\r\n  border-color: #F1CDB3;\r\n  background-color: #F1CDB3;\r\n}\r\n\r\n/* 4. Typography */\r\n\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6 {\r\n  font-family: 'Georgia';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  line-height: 130%;\r\n  color: #545454;\r\n}\r\n\r\nh2 {\r\n  font-size: 44px;\r\n}\r\n\r\nh3 {\r\n  font-size: 35px;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\nh4 {\r\n  font-size: 20px;\r\n  line-height: 115%;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\nh5 {\r\n  font-size: 15px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\np {\r\n  color: #4C4C4C;\r\n}\r\n\r\nsmall {\r\n  font-style: italic;\r\n  font-weight: 400;\r\n  font-size: 12px;\r\n  line-height: 150%;\r\n  color: #B2B2B2;\r\n}\r\n\r\n/*  5. Lists  */\r\n\r\n.list {\r\n  padding-left: 15px;\r\n  list-style: none;\r\n  font-family: 'Georgia';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 15px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n  color: #000000;\r\n}\r\n\r\n.list-item {\r\n  position: relative;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.list-item::before {\r\n  content: '';\r\n  padding: 2px;\r\n  border-radius: 50%;\r\n  background-color: #F1CDB3;\r\n  position: absolute;\r\n  left: -15px;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n}\r\n\r\n  /*6. Logo  */\r\n\r\n.logo::after {\r\n  content: none !important;\r\n}\r\n\r\n.logo-title {\r\n  margin-bottom: 10px;\r\n  font-family: var(--font-family-georgia);\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 32px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n  color: #F1CDB3;;\r\n  transition: color 0.2s ease-out;\r\n}\r\n\r\n.logo-subtitle {\r\n  font-family: var(--font-family-arial);\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 13px;\r\n  line-height: 15px;\r\n  letter-spacing: 0.1em;\r\n  color: #CDCDCD;\r\n  transition: color 0.2s ease-out;\r\n}\r\n\r\n.background-dark .logo-title,\r\n.background-dark .logo-title:hover {\r\n  color: #F1CDB3;\r\n}\r\n\r\n.background-dark .logo-subtitle {\r\n  color: #FFFFFF;\r\n}\r\n\r\n/*!*  7. Links *!*/\r\n\r\na {\r\n  position: relative;\r\n  text-decoration: none;\r\n  color: #545454;\r\n}\r\n\r\na:hover,\r\na.active {\r\n  color: #292929;\r\n}\r\n\r\na:active,\r\na:focus {\r\n  color: #545454;\r\n}\r\n\r\na:active::after,\r\na:focus::after,\r\na.active::after {\r\n  content: '';\r\n  display: block;\r\n  position: absolute;\r\n  bottom: -5px;\r\n  width: 100%;\r\n  height: 3px;\r\n  background-color: #F1CDB3;\r\n}\r\n\r\n.background-dark a {\r\n  color: #CDCDCD;\r\n}\r\n\r\n.background-dark a:hover,\r\n.background-dark a:active::after,\r\n.background-dark a:focus::after,\r\n.background-dark a.active {\r\n  color: #FAFAFA;\r\n}\r\n\r\n/*  8. Cards  */\r\n\r\n.card {\r\n  max-width: 270px;\r\n  margin: 0 auto;\r\n  border: none;\r\n  border-radius: 9px;\r\n  overflow: hidden;\r\n  background: #FAFAFA;\r\n}\r\n\r\n.card:hover .card-content {\r\n  background-color: #FFFFFF;\r\n}\r\n\r\n.card img {\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\r\n  width: 100%;\r\n  height: 270px;\r\n}\r\n\r\n.card-content {\r\n  padding: 30px;\r\n  transition: all 0.2s ease-out;\r\n}\r\n\r\n.card.active {\r\n  max-width: 900px;\r\n  max-height: 500px;\r\n  height: auto;\r\n}\r\n\r\n.card.active img {\r\n  max-width: 500px;\r\n  height: auto;\r\n}\r\n\r\n.card.active .card-content {\r\n  padding: 50px 20px 20px;\r\n  overflow-y: auto;\r\n}\r\n\r\n.card.active .card-content * {\r\n  color: #000000;\r\n}\r\n\r\n@media (max-width: 992px) {\r\n  .card.active img {\r\n    max-width: 400px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .card.active {\r\n    max-height: 350px;\r\n  }\r\n\r\n  .card.active img {\r\n    max-width: 300px;\r\n  }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n  .card.active {\r\n    max-height: initial;\r\n    height: 90vh;\r\n    overflow-y: auto;\r\n  }\r\n\r\n  .card.active .card-content {\r\n    overflow-y: visible;\r\n  }\r\n\r\n  .card.active img {\r\n    max-width: 100%;\r\n  }\r\n}\r\n\r\n/*  9. Modal  */\r\n\r\n.modal-dialog {\r\n  max-width: 900px;\r\n  margin: 70px auto 20px;\r\n}\r\n\r\n.modal-content {\r\n  border-radius: 9px;\r\n  background: #FAFAFA;\r\n  height: 500px;\r\n  border: 0;\r\n}\r\n\r\n.modal-header {\r\n  padding: 0;\r\n  border: 0;\r\n}\r\n\r\n.modal-header .button-circle {\r\n  position: absolute;\r\n  bottom: 100%;\r\n  left: 100%;\r\n}\r\n\r\n.modal-body {\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\n.modal-image {\r\n  width: 100%;\r\n  height: 100%;\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\r\n}\r\n\r\n.modal-text {\r\n  overflow-y: auto;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n  .modal-dialog {\r\n    margin: 70px 60px 20px;\r\n  }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n  .modal-dialog {\r\n    margin: 70px 20px 20px;\r\n  }\r\n\r\n  .modal-content {\r\n    height: auto;\r\n  }\r\n\r\n  .modal-header .button-circle {\r\n    transform: translateX(-100%);\r\n  }\r\n}\r\n\r\n/*!*  10. Navbar  *!*/\r\n\r\n.navbar {\r\n  position: relative;\r\n  padding: 30px 0;\r\n  z-index: 2;\r\n}\r\n\r\n.navbar-burger {\r\n  display: none !important;\r\n  width: 30px;\r\n  height: 22px;\r\n  cursor: pointer;\r\n  transition: transform 0.2s ease-out;\r\n}\r\n\r\n.nav-item {\r\n  margin-left: 35px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .navbar.active .navbar-logo {\r\n    z-index: 1;\r\n  }\r\n\r\n  .navbar-content {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    transform: translateX(100%);\r\n    width: 100%;\r\n    height: 100vh;\r\n    padding-top: 120px;\r\n    z-index: 1;\r\n    background: #292929;\r\n    transition: transform 0.2s ease-out;\r\n  }\r\n\r\n  .navbar-content-container {\r\n    padding-top: 100px;\r\n    overflow-y: auto;\r\n  }\r\n\r\n  .navbar.active .navbar-content {\r\n    transform: translateX(0);\r\n  }\r\n\r\n  .nav-item {\r\n    margin-bottom: 50px;\r\n    margin-left: 0;\r\n    font-size: 32px;\r\n  }\r\n\r\n  .navbar-burger {\r\n    display: flex !important;\r\n  }\r\n\r\n  .navbar.active .navbar-burger {\r\n    transform: rotate(90deg);\r\n  }\r\n\r\n  .navbar-burger > div {\r\n    height: 2px;\r\n    background-color: #545454;\r\n    transition: background-color 0.2s ease-out;\r\n  }\r\n\r\n  .background-dark .navbar-burger > div {\r\n    background-color: #F1CDB3;\r\n  }\r\n}\r\n\r\n/*  11. Welcome  */\r\n\r\n.welcome {\r\n  padding-top: 120px;\r\n  transform: translateY(-120px);\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n              radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\r\n              #211F20;\r\n}\r\n\r\n.welcome h2 {\r\n  color: #FFFFFF;\r\n  max-width: 310px;\r\n  margin-bottom: 45px;\r\n}\r\n\r\n.welcome p {\r\n  color: #CDCDCD;\r\n  margin-bottom: 55px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .welcome {\r\n    padding-top: 135px;\r\n  }\r\n}\r\n\r\n/*  12. About  */\r\n\r\n.about {\r\n  max-width: 850px;\r\n  margin: 0 auto;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .about {\r\n    text-align: justify;\r\n  }\r\n}\r\n\r\n/*  13. Help  */\r\n\r\n.help svg {\r\n  margin-bottom: 30px;\r\n}\r\n\r\n.help-item {\r\n  text-align: center;\r\n  margin-bottom: 60px;\r\n}\r\n\r\n/*  14. Donate  */\r\n\r\n.donate {\r\n  max-width: 890px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.donate-content {\r\n  max-width: 380px;\r\n  margin: 0 auto;\r\n}\r\n\r\n/*  15. Footer  */\r\n\r\n.footer {\r\n  padding: 60px 0;\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n              radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\r\n              #211F20;\r\n}\r\n\r\n.footer h3 {\r\n  color: #FFFFFF;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.footer h4 {\r\n  color: #F1CDB3;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.footer h4:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.footer img {\r\n  /*position: absolute;*/\r\n  right: 0;\r\n  bottom: 0;\r\n  transform: translateY(60px);\r\n}\r\n\r\n@media (max-width: 991px) {\r\n  .footer img {\r\n    position: static;\r\n  }\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .footer > .container {\r\n    max-width: 320px;\r\n  }\r\n}\r\n\r\n/*  16. Slider  */\r\n\r\n.slider {\r\n  overflow: visible;\r\n}\r\n\r\n.slider-button {\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  z-index: 1;\r\n}\r\n\r\n.slider-button-next {\r\n  right: 0;\r\n}\r\n\r\n.slider-button-prev {\r\n  left: 0;\r\n}\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14539,6 +14571,45 @@ module.exports = function (url, options) {
 
   return url;
 };
+
+/***/ }),
+
+/***/ "./node_modules/detect-passive-events/lib/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/detect-passive-events/lib/index.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+// adapted from https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+var detectPassiveEvents = {
+  update: function update() {
+    if (typeof window !== 'undefined' && typeof window.addEventListener === 'function') {
+      var passive = false;
+      var options = Object.defineProperty({}, 'passive', {
+        get: function get() {
+          passive = true;
+        }
+      });
+      // note: have to set and remove a no-op listener instead of null
+      // (which was used previously), becasue Edge v15 throws an error
+      // when providing a null callback.
+      // https://github.com/rafgraph/detect-passive-events/pull/3
+      var noop = function noop() {};
+      window.addEventListener('testPassiveEventSupport', noop, options);
+      window.removeEventListener('testPassiveEventSupport', noop, options);
+      detectPassiveEvents.hasSupport = passive;
+    }
+  }
+};
+
+detectPassiveEvents.update();
+exports["default"] = detectPassiveEvents;
 
 /***/ }),
 
@@ -70784,6 +70855,429 @@ const normalizeHash = hash => !hash || hash === "#" ? "" : hash.startsWith("#") 
 
 /***/ }),
 
+/***/ "./node_modules/react-scroll-up-button/dist/react-scroll-up-button.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/react-scroll-up-button/dist/react-scroll-up-button.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.VerticleButton = exports.CircleArrow = exports.TinyButton = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _tweenFunctions = __webpack_require__(/*! tween-functions */ "./node_modules/tween-functions/index.js");
+
+var _tweenFunctions2 = _interopRequireDefault(_tweenFunctions);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _detectPassiveEvents = __webpack_require__(/*! detect-passive-events */ "./node_modules/detect-passive-events/lib/index.js");
+
+var _detectPassiveEvents2 = _interopRequireDefault(_detectPassiveEvents);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ScrollUpButton = function (_React$Component) {
+  _inherits(ScrollUpButton, _React$Component);
+
+  function ScrollUpButton(props) {
+    _classCallCheck(this, ScrollUpButton);
+
+    var _this = _possibleConstructorReturn(this, (ScrollUpButton.__proto__ || Object.getPrototypeOf(ScrollUpButton)).call(this, props));
+
+    _this.state = { ToggleScrollUp: '' };
+    _this.Animation = {
+      StartPosition: 0,
+      CurrentAnimationTime: 0,
+      StartTime: null,
+      AnimationFrame: null
+    };
+    _this.HandleScroll = _this.HandleScroll.bind(_this);
+    _this.StopScrollingFrame = _this.StopScrollingFrame.bind(_this);
+    _this.ScrollingFrame = _this.ScrollingFrame.bind(_this);
+    _this.HandleClick = _this.HandleClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(ScrollUpButton, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.HandleScroll(); // run HandleScroll() at mount incase we are already scrolled down
+      window.addEventListener('scroll', this.HandleScroll);
+      window.addEventListener('wheel', this.StopScrollingFrame, _detectPassiveEvents2.default.hasSupport ? { passive: true } : false); // Stop animation if user mouse wheels during animation.
+      window.addEventListener('touchstart', this.StopScrollingFrame, _detectPassiveEvents2.default.hasSupport ? { passive: true } : false); // Stop animation if user touches the screen during animation.
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      // Remove all events, since component is no longer mounted.
+      window.removeEventListener('scroll', this.HandleScroll);
+      window.removeEventListener('wheel', this.StopScrollingFrame, false);
+      window.removeEventListener('touchstart', this.StopScrollingFrame, false);
+    }
+  }, {
+    key: 'HandleScroll',
+    value: function HandleScroll() {
+      var _props = this.props,
+          ShowAtPosition = _props.ShowAtPosition,
+          TransitionClassName = _props.TransitionClassName;
+      // window.pageYOffset = current scroll position
+      // ShowAtPosition = position at which we want the button to show.
+
+      if (window.pageYOffset > ShowAtPosition) {
+        // styles.Toggled = the class name we want applied to transition the button in.
+        this.setState({ ToggleScrollUp: TransitionClassName });
+      } else {
+        // remove the class name
+        this.setState({ ToggleScrollUp: '' });
+      }
+    }
+  }, {
+    key: 'HandleClick',
+    value: function HandleClick() {
+      // Is this needed?
+      // const { ShowAtPosition } = this.props
+      // // For some reason the user was able to click the button.
+      // if (window.pageYOffset < ShowAtPosition) {
+      //   event.preventDefault()
+      //   this.HandleScroll()
+      // }
+      // Scroll to StopPosition
+      this.StopScrollingFrame(); // Stoping all AnimationFrames
+      this.Animation.StartPosition = window.pageYOffset; // current scroll position
+      this.Animation.CurrentAnimationTime = 0;
+      this.Animation.StartTime = null;
+      // Start the scrolling animation.
+      this.Animation.AnimationFrame = window.requestAnimationFrame(this.ScrollingFrame);
+    }
+  }, {
+    key: 'ScrollingFrame',
+    value: function ScrollingFrame() {
+      var _props2 = this.props,
+          StopPosition = _props2.StopPosition,
+          EasingType = _props2.EasingType,
+          AnimationDuration = _props2.AnimationDuration;
+
+      var timestamp = Math.floor(Date.now());
+      // If StartTime has not been assigned a value, assign it the start timestamp.
+      if (!this.Animation.StartTime) {
+        this.Animation.StartTime = timestamp;
+      }
+
+      // set CurrentAnimationTime every iteration of ScrollingFrame()
+      this.Animation.CurrentAnimationTime = timestamp - this.Animation.StartTime;
+      // if we hit the StopPosition, StopScrollingFrame()
+      if (window.pageYOffset <= StopPosition) {
+        this.StopScrollingFrame();
+      } else {
+        // Otherwise continue ScrollingFrame to the StopPosition.
+        // Does not support horizontal ScrollingFrame.
+        // Let TweenFunctions handle the math to give us a new position based on AnimationDuration and EasingType type
+        var YPos = _tweenFunctions2.default[EasingType](this.Animation.CurrentAnimationTime, this.Animation.StartPosition, StopPosition, AnimationDuration);
+        if (YPos <= StopPosition) {
+          YPos = StopPosition;
+        }
+        window.scrollTo(0, YPos);
+        // Request another frame to be painted
+        this.Animation.AnimationFrame = window.requestAnimationFrame(this.ScrollingFrame);
+      }
+    }
+  }, {
+    key: 'StopScrollingFrame',
+    value: function StopScrollingFrame() {
+      // Stop the Animation Frames.
+      window.cancelAnimationFrame(this.Animation.AnimationFrame);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var styles = {
+        MainStyle: {
+          backgroundColor: 'rgba(50, 50, 50, 0.5)',
+          height: 50,
+          position: 'fixed',
+          bottom: 20,
+          width: 50,
+          WebkitTransition: 'all 0.5s ease-in-out',
+          transition: 'all 0.5s ease-in-out',
+          transitionProperty: 'opacity, right',
+          cursor: 'pointer',
+          opacity: 0,
+          right: -50,
+          zIndex: 1000
+        },
+        SvgStyle: {
+          display: 'inline-block',
+          width: '100%',
+          height: '100%',
+          strokeWidth: 0,
+          stroke: 'white',
+          fill: 'white'
+        },
+        ToggledStyle: {
+          opacity: 1,
+          right: 20
+        }
+      };
+      var _props3 = this.props,
+          children = _props3.children,
+          style = _props3.style,
+          ToggledStyle = _props3.ToggledStyle,
+          ContainerClassName = _props3.ContainerClassName;
+      var ToggleScrollUp = this.state.ToggleScrollUp;
+
+      if (children) {
+        var childrenWithProps = _react2.default.Children.map(children, function (child) {
+          return _react2.default.cloneElement(child, {
+            className: _this2.className
+          });
+        });
+        return _react2.default.createElement(
+          'aside',
+          {
+            role: 'button',
+            'aria-label': 'Scroll to top of page',
+            tabIndex: ToggleScrollUp ? 0 : -1,
+            'data-testid': 'react-scroll-up-button',
+            style: _extends({}, style, ToggleScrollUp && ToggledStyle),
+            className: ContainerClassName + ' ' + ToggleScrollUp,
+            onClick: this.HandleClick,
+            onKeyPress: this.HandleClick
+          },
+          childrenWithProps
+        );
+      }
+      return _react2.default.createElement(
+        'aside',
+        {
+          role: 'button',
+          'aria-label': 'Scroll to top of page',
+          tabIndex: ToggleScrollUp ? 0 : -1,
+          'data-testid': 'react-scroll-up-button',
+          className: ContainerClassName + ' ' + ToggleScrollUp,
+          style: _extends({}, styles.MainStyle, style, ToggleScrollUp && styles.ToggledStyle, ToggleScrollUp && ToggledStyle),
+          onClick: this.HandleClick,
+          onKeyPress: this.HandleClick
+        },
+        _react2.default.createElement(
+          'svg',
+          {
+            viewBox: '0 0 32 32',
+            version: '1.1',
+            xmlns: 'http://www.w3.org/2000/svg',
+            x: '0',
+            y: '0',
+            xmlSpace: 'preserve',
+            style: styles.SvgStyle
+          },
+          _react2.default.createElement('path', {
+            transform: 'scale(1.4) translate(1,-5)',
+            d: 'M19.196 23.429q0 0.232-0.179 0.411l-0.893 0.893q-0.179 0.179-0.411 0.179t-0.411-0.179l-7.018-7.018-7.018 7.018q-0.179 0.179-0.411 0.179t-0.411-0.179l-0.893-0.893q-0.179-0.179-0.179-0.411t0.179-0.411l8.321-8.321q0.179-0.179 0.411-0.179t0.411 0.179l8.321 8.321q0.179 0.179 0.179 0.411zM19.196 16.571q0 0.232-0.179 0.411l-0.893 0.893q-0.179 0.179-0.411 0.179t-0.411-0.179l-7.018-7.018-7.018 7.018q-0.179 0.179-0.411 0.179t-0.411-0.179l-0.893-0.893q-0.179-0.179-0.179-0.411t0.179-0.411l8.321-8.321q0.179-0.179 0.411-0.179t0.411 0.179l8.321 8.321q0.179 0.179 0.179 0.411z' // eslint-disable-line
+          })
+        )
+      );
+    }
+  }]);
+
+  return ScrollUpButton;
+}(_react2.default.Component);
+
+exports["default"] = ScrollUpButton;
+var TinyButton = exports.TinyButton = function TinyButton(props) {
+  var styles = {
+    MainStyle: {
+      backgroundColor: 'rgb(87, 86, 86)',
+      height: 30,
+      position: 'fixed',
+      bottom: 20,
+      width: 30,
+      WebkitTransition: 'all 0.5s ease-in-out',
+      transition: 'all 0.5s ease-in-out',
+      transitionProperty: 'opacity, right',
+      cursor: 'pointer',
+      opacity: 0,
+      right: -75,
+      zIndex: 1000,
+      fill: '#292929',
+      paddingBottom: 1,
+      paddingLeft: 1,
+      paddingRight: 1
+    },
+    ToggledStyle: {
+      opacity: 1,
+      right: 30
+    }
+  };
+  var style = props.style,
+      ToggledStyle = props.ToggledStyle;
+
+  return _react2.default.createElement(
+    ScrollUpButton,
+    _extends({}, props, {
+      style: _extends({}, styles.MainStyle, style),
+      ToggledStyle: _extends({}, styles.ToggledStyle, ToggledStyle)
+    }),
+    _react2.default.createElement(
+      'svg',
+      {
+        viewBox: '0 0 28 28',
+        version: '1.1',
+        xmlns: 'http://www.w3.org/2000/svg',
+        x: '0',
+        y: '0',
+        xmlSpace: 'preserve'
+      },
+      _react2.default.createElement('path', {
+        d: 'M26.297 20.797l-2.594 2.578c-0.391 0.391-1.016 0.391-1.406 0l-8.297-8.297-8.297 8.297c-0.391 0.391-1.016 0.391-1.406 0l-2.594-2.578c-0.391-0.391-0.391-1.031 0-1.422l11.594-11.578c0.391-0.391 1.016-0.391 1.406 0l11.594 11.578c0.391 0.391 0.391 1.031 0 1.422z' // eslint-disable-line
+      })
+    )
+  );
+};
+
+var CircleArrow = exports.CircleArrow = function CircleArrow(props) {
+  var styles = {
+    MainStyle: {
+      backgroundColor: 'rgb(255, 255, 255)',
+      borderRadius: '50%',
+      border: '5px solid black',
+      height: 50,
+      position: 'fixed',
+      bottom: 20,
+      width: 50,
+      WebkitTransition: 'all 0.5s ease-in-out',
+      transition: 'all 0.5s ease-in-out',
+      transitionProperty: 'opacity, right',
+      cursor: 'pointer',
+      opacity: 0,
+      right: -75
+    },
+    ToggledStyle: {
+      opacity: 1,
+      right: 20
+    }
+  };
+  var style = props.style,
+      ToggledStyle = props.ToggledStyle;
+
+  return _react2.default.createElement(
+    ScrollUpButton,
+    _extends({}, props, {
+      style: _extends({}, styles.MainStyle, style),
+      ToggledStyle: _extends({}, styles.ToggledStyle, ToggledStyle)
+    }),
+    _react2.default.createElement(
+      'svg',
+      { viewBox: '0 0 32 32' },
+      _react2.default.createElement('path', {
+        d: 'M27.414 12.586l-10-10c-0.781-0.781-2.047-0.781-2.828 0l-10 10c-0.781 0.781-0.781 2.047 0 2.828s2.047 0.781 2.828 0l6.586-6.586v19.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-19.172l6.586 6.586c0.39 0.39 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586c0.781-0.781 0.781-2.047 0-2.828z' // eslint-disable-line
+      })
+    )
+  );
+};
+
+var VerticleButton = exports.VerticleButton = function VerticleButton(props) {
+  var styles = {
+    MainStyle: {
+      backgroundColor: 'rgb(58, 56, 56)',
+      position: 'fixed',
+      bottom: 40,
+      padding: '5px 10px',
+      WebkitTransition: 'all 0.5s ease-in-out',
+      transition: 'all 0.5s ease-in-out',
+      transitionProperty: 'opacity, right',
+      cursor: 'pointer',
+      opacity: 0,
+      right: -75,
+      transform: 'rotate(-90deg)'
+    },
+    ToggledStyle: {
+      opacity: 1,
+      right: 10
+    }
+  };
+  var style = props.style,
+      ToggledStyle = props.ToggledStyle;
+
+  return _react2.default.createElement(
+    ScrollUpButton,
+    _extends({}, props, {
+      style: _extends({}, styles.MainStyle, style),
+      ToggledStyle: _extends({}, styles.ToggledStyle, ToggledStyle)
+    }),
+    _react2.default.createElement(
+      'span',
+      { style: { fontSize: 23, color: 'white' } },
+      'UP \u2192'
+    )
+  );
+};
+
+ScrollUpButton.defaultProps = {
+  ContainerClassName: 'ScrollUpButton__Container',
+  StopPosition: 0,
+  ShowAtPosition: 150,
+  EasingType: 'easeOutCubic',
+  AnimationDuration: 500,
+  TransitionClassName: 'ScrollUpButton__Toggled',
+  style: {},
+  ToggledStyle: {},
+  children: null
+};
+
+function LessThanShowAtPosition(props, propName, componentName) {
+  var ShowAtPosition = props.ShowAtPosition;
+
+  if (props[propName]) {
+    // eslint-disable-line
+    var value = props[propName];
+    if (typeof value === 'number') {
+      if (value >= ShowAtPosition) {
+        // Validate the incoming prop value againt the ShowAtPosition prop
+        return new Error(propName + ' (' + value + ') in ' + componentName + ' must be less then prop: ShowAtPosition (' + ShowAtPosition + ')');
+      }
+      return null;
+    }
+    return new Error(propName + ' in ' + componentName + ' must be a number.');
+  }
+  return null;
+}
+
+ScrollUpButton.propTypes = {
+  children: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.node), _propTypes2.default.node]),
+  StopPosition: LessThanShowAtPosition,
+  ShowAtPosition: _propTypes2.default.number, // show button under this position,
+  EasingType: _propTypes2.default.oneOf(['linear', 'easeInQuad', 'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeOutCubic', 'easeInOutCubic', 'easeInQuart', 'easeOutQuart', 'easeInOutQuart', 'easeInQuint', 'easeOutQuint', 'easeInOutQuint', 'easeInSine', 'easeOutSine', 'easeInOutSine', 'easeInExpo', 'easeOutExpo', 'easeInOutExpo', 'easeInCirc', 'easeOutCirc', 'easeInOutCirc', 'easeInElastic', 'easeOutElastic', 'easeInOutElastic', 'easeInBack', 'easeOutBack', 'easeInOutBack', 'easeInBounce', 'easeOutBounce', 'easeInOutBounce']),
+  AnimationDuration: _propTypes2.default.number, // seconds
+  style: _propTypes2.default.object, // eslint-disable-line react/forbid-prop-types
+  ToggledStyle: _propTypes2.default.object, // eslint-disable-line react/forbid-prop-types
+  ContainerClassName: _propTypes2.default.string,
+  TransitionClassName: _propTypes2.default.string
+};
+
+/***/ }),
+
 /***/ "./node_modules/react-transition-group/esm/Transition.js":
 /*!***************************************************************!*\
   !*** ./node_modules/react-transition-group/esm/Transition.js ***!
@@ -87324,6 +87818,266 @@ __webpack_require__.r(__webpack_exports__);
 /* provided dependency */ var process = __webpack_require__(/*! process/browser.js */ "./node_modules/process/browser.js");
 function v(){return(v=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e}).apply(this,arguments)}var g=function(e,t){for(var n=[e[0]],r=0,o=t.length;r<o;r+=1)n.push(t[r],e[r+1]);return n},S=function(t){return null!==t&&"object"==typeof t&&"[object Object]"===(t.toString?t.toString():Object.prototype.toString.call(t))&&!(0,react_is__WEBPACK_IMPORTED_MODULE_0__.typeOf)(t)},w=Object.freeze([]),E=Object.freeze({});function b(e){return"function"==typeof e}function _(e){return true&&"string"==typeof e&&e||e.displayName||e.name||"Component"}function N(e){return e&&"string"==typeof e.styledComponentId}var A="undefined"!=typeof process&&(process.env.REACT_APP_SC_ATTR||process.env.SC_ATTR)||"data-styled",C="5.3.5",I="undefined"!=typeof window&&"HTMLElement"in window,P=Boolean("boolean"==typeof SC_DISABLE_SPEEDY?SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&""!==process.env.REACT_APP_SC_DISABLE_SPEEDY?"false"!==process.env.REACT_APP_SC_DISABLE_SPEEDY&&process.env.REACT_APP_SC_DISABLE_SPEEDY:"undefined"!=typeof process&&void 0!==process.env.SC_DISABLE_SPEEDY&&""!==process.env.SC_DISABLE_SPEEDY?"false"!==process.env.SC_DISABLE_SPEEDY&&process.env.SC_DISABLE_SPEEDY:"production"!=="development"),O={},R= true?{1:"Cannot create styled-component for component: %s.\n\n",2:"Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",3:"Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",4:"The `StyleSheetManager` expects a valid target or sheet prop!\n\n- Does this error occur on the client and is your target falsy?\n- Does this error occur on the server and is the sheet falsy?\n\n",5:"The clone method cannot be used on the client!\n\n- Are you running in a client-like environment on the server?\n- Are you trying to run SSR on the client?\n\n",6:"Trying to insert a new style tag, but the given Node is unmounted!\n\n- Are you using a custom target that isn't mounted?\n- Does your document not have a valid head element?\n- Have you accidentally removed a style tag manually?\n\n",7:'ThemeProvider: Please return an object from your "theme" prop function, e.g.\n\n```js\ntheme={() => ({})}\n```\n\n',8:'ThemeProvider: Please make your "theme" prop an object.\n\n',9:"Missing document `<head>`\n\n",10:"Cannot find a StyleSheet instance. Usually this happens if there are multiple copies of styled-components loaded at once. Check out this issue for how to troubleshoot and fix the common cases where this situation can happen: https://github.com/styled-components/styled-components/issues/1941#issuecomment-417862021\n\n",11:"_This error was replaced with a dev-time warning, it will be deleted for v4 final._ [createGlobalStyle] received children which will not be rendered. Please use the component without passing children elements.\n\n",12:"It seems you are interpolating a keyframe declaration (%s) into an untagged string. This was supported in styled-components v3, but is not longer supported in v4 as keyframes are now injected on-demand. Please wrap your string in the css\\`\\` helper which ensures the styles are injected correctly. See https://www.styled-components.com/docs/api#css\n\n",13:"%s is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.\n\n",14:'ThemeProvider: "theme" prop is required.\n\n',15:"A stylis plugin has been supplied that is not named. We need a name for each plugin to be able to prevent styling collisions between different stylis configurations within the same app. Before you pass your plugin to `<StyleSheetManager stylisPlugins={[]}>`, please make sure each plugin is uniquely-named, e.g.\n\n```js\nObject.defineProperty(importedPlugin, 'name', { value: 'some-unique-name' });\n```\n\n",16:"Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",17:"CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n"}:0;function D(){for(var e=arguments.length<=0?void 0:arguments[0],t=[],n=1,r=arguments.length;n<r;n+=1)t.push(n<0||arguments.length<=n?void 0:arguments[n]);return t.forEach((function(t){e=e.replace(/%[a-z]/,t)})),e}function j(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];throw false?0:new Error(D.apply(void 0,[R[e]].concat(n)).trim())}var T=function(){function e(e){this.groupSizes=new Uint32Array(512),this.length=512,this.tag=e}var t=e.prototype;return t.indexOfGroup=function(e){for(var t=0,n=0;n<e;n++)t+=this.groupSizes[n];return t},t.insertRules=function(e,t){if(e>=this.groupSizes.length){for(var n=this.groupSizes,r=n.length,o=r;e>=o;)(o<<=1)<0&&j(16,""+e);this.groupSizes=new Uint32Array(o),this.groupSizes.set(n),this.length=o;for(var s=r;s<o;s++)this.groupSizes[s]=0}for(var i=this.indexOfGroup(e+1),a=0,c=t.length;a<c;a++)this.tag.insertRule(i,t[a])&&(this.groupSizes[e]++,i++)},t.clearGroup=function(e){if(e<this.length){var t=this.groupSizes[e],n=this.indexOfGroup(e),r=n+t;this.groupSizes[e]=0;for(var o=n;o<r;o++)this.tag.deleteRule(n)}},t.getGroup=function(e){var t="";if(e>=this.length||0===this.groupSizes[e])return t;for(var n=this.groupSizes[e],r=this.indexOfGroup(e),o=r+n,s=r;s<o;s++)t+=this.tag.getRule(s)+"/*!sc*/\n";return t},e}(),x=new Map,k=new Map,V=1,B=function(e){if(x.has(e))return x.get(e);for(;k.has(V);)V++;var t=V++;return true&&((0|t)<0||t>1<<30)&&j(16,""+t),x.set(e,t),k.set(t,e),t},z=function(e){return k.get(e)},M=function(e,t){t>=V&&(V=t+1),x.set(e,t),k.set(t,e)},G="style["+A+'][data-styled-version="5.3.5"]',L=new RegExp("^"+A+'\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'),F=function(e,t,n){for(var r,o=n.split(","),s=0,i=o.length;s<i;s++)(r=o[s])&&e.registerName(t,r)},Y=function(e,t){for(var n=(t.textContent||"").split("/*!sc*/\n"),r=[],o=0,s=n.length;o<s;o++){var i=n[o].trim();if(i){var a=i.match(L);if(a){var c=0|parseInt(a[1],10),u=a[2];0!==c&&(M(u,c),F(e,u,a[3]),e.getTag().insertRules(c,r)),r.length=0}else r.push(i)}}},q=function(){return"undefined"!=typeof window&&void 0!==window.__webpack_nonce__?window.__webpack_nonce__:null},H=function(e){var t=document.head,n=e||t,r=document.createElement("style"),o=function(e){for(var t=e.childNodes,n=t.length;n>=0;n--){var r=t[n];if(r&&1===r.nodeType&&r.hasAttribute(A))return r}}(n),s=void 0!==o?o.nextSibling:null;r.setAttribute(A,"active"),r.setAttribute("data-styled-version","5.3.5");var i=q();return i&&r.setAttribute("nonce",i),n.insertBefore(r,s),r},$=function(){function e(e){var t=this.element=H(e);t.appendChild(document.createTextNode("")),this.sheet=function(e){if(e.sheet)return e.sheet;for(var t=document.styleSheets,n=0,r=t.length;n<r;n++){var o=t[n];if(o.ownerNode===e)return o}j(17)}(t),this.length=0}var t=e.prototype;return t.insertRule=function(e,t){try{return this.sheet.insertRule(t,e),this.length++,!0}catch(e){return!1}},t.deleteRule=function(e){this.sheet.deleteRule(e),this.length--},t.getRule=function(e){var t=this.sheet.cssRules[e];return void 0!==t&&"string"==typeof t.cssText?t.cssText:""},e}(),W=function(){function e(e){var t=this.element=H(e);this.nodes=t.childNodes,this.length=0}var t=e.prototype;return t.insertRule=function(e,t){if(e<=this.length&&e>=0){var n=document.createTextNode(t),r=this.nodes[e];return this.element.insertBefore(n,r||null),this.length++,!0}return!1},t.deleteRule=function(e){this.element.removeChild(this.nodes[e]),this.length--},t.getRule=function(e){return e<this.length?this.nodes[e].textContent:""},e}(),U=function(){function e(e){this.rules=[],this.length=0}var t=e.prototype;return t.insertRule=function(e,t){return e<=this.length&&(this.rules.splice(e,0,t),this.length++,!0)},t.deleteRule=function(e){this.rules.splice(e,1),this.length--},t.getRule=function(e){return e<this.length?this.rules[e]:""},e}(),J=I,X={isServer:!I,useCSSOMInjection:!P},Z=function(){function e(e,t,n){void 0===e&&(e=E),void 0===t&&(t={}),this.options=v({},X,{},e),this.gs=t,this.names=new Map(n),this.server=!!e.isServer,!this.server&&I&&J&&(J=!1,function(e){for(var t=document.querySelectorAll(G),n=0,r=t.length;n<r;n++){var o=t[n];o&&"active"!==o.getAttribute(A)&&(Y(e,o),o.parentNode&&o.parentNode.removeChild(o))}}(this))}e.registerId=function(e){return B(e)};var t=e.prototype;return t.reconstructWithOptions=function(t,n){return void 0===n&&(n=!0),new e(v({},this.options,{},t),this.gs,n&&this.names||void 0)},t.allocateGSInstance=function(e){return this.gs[e]=(this.gs[e]||0)+1},t.getTag=function(){return this.tag||(this.tag=(n=(t=this.options).isServer,r=t.useCSSOMInjection,o=t.target,e=n?new U(o):r?new $(o):new W(o),new T(e)));var e,t,n,r,o},t.hasNameForId=function(e,t){return this.names.has(e)&&this.names.get(e).has(t)},t.registerName=function(e,t){if(B(e),this.names.has(e))this.names.get(e).add(t);else{var n=new Set;n.add(t),this.names.set(e,n)}},t.insertRules=function(e,t,n){this.registerName(e,t),this.getTag().insertRules(B(e),n)},t.clearNames=function(e){this.names.has(e)&&this.names.get(e).clear()},t.clearRules=function(e){this.getTag().clearGroup(B(e)),this.clearNames(e)},t.clearTag=function(){this.tag=void 0},t.toString=function(){return function(e){for(var t=e.getTag(),n=t.length,r="",o=0;o<n;o++){var s=z(o);if(void 0!==s){var i=e.names.get(s),a=t.getGroup(o);if(i&&a&&i.size){var c=A+".g"+o+'[id="'+s+'"]',u="";void 0!==i&&i.forEach((function(e){e.length>0&&(u+=e+",")})),r+=""+a+c+'{content:"'+u+'"}/*!sc*/\n'}}}return r}(this)},e}(),K=/(a)(d)/gi,Q=function(e){return String.fromCharCode(e+(e>25?39:97))};function ee(e){var t,n="";for(t=Math.abs(e);t>52;t=t/52|0)n=Q(t%52)+n;return(Q(t%52)+n).replace(K,"$1-$2")}var te=function(e,t){for(var n=t.length;n;)e=33*e^t.charCodeAt(--n);return e},ne=function(e){return te(5381,e)};function re(e){for(var t=0;t<e.length;t+=1){var n=e[t];if(b(n)&&!N(n))return!1}return!0}var oe=ne("5.3.5"),se=function(){function e(e,t,n){this.rules=e,this.staticRulesId="",this.isStatic= false&&0,this.componentId=t,this.baseHash=te(oe,t),this.baseStyle=n,Z.registerId(t)}return e.prototype.generateAndInjectStyles=function(e,t,n){var r=this.componentId,o=[];if(this.baseStyle&&o.push(this.baseStyle.generateAndInjectStyles(e,t,n)),this.isStatic&&!n.hash)if(this.staticRulesId&&t.hasNameForId(r,this.staticRulesId))o.push(this.staticRulesId);else{var s=Ne(this.rules,e,t,n).join(""),i=ee(te(this.baseHash,s)>>>0);if(!t.hasNameForId(r,i)){var a=n(s,"."+i,void 0,r);t.insertRules(r,i,a)}o.push(i),this.staticRulesId=i}else{for(var c=this.rules.length,u=te(this.baseHash,n.hash),l="",d=0;d<c;d++){var h=this.rules[d];if("string"==typeof h)l+=h, true&&(u=te(u,h+d));else if(h){var p=Ne(h,e,t,n),f=Array.isArray(p)?p.join(""):p;u=te(u,f+d),l+=f}}if(l){var m=ee(u>>>0);if(!t.hasNameForId(r,m)){var y=n(l,"."+m,void 0,r);t.insertRules(r,m,y)}o.push(m)}}return o.join(" ")},e}(),ie=/^\s*\/\/.*$/gm,ae=[":","[",".","#"];function ce(e){var t,n,r,o,s=void 0===e?E:e,i=s.options,a=void 0===i?E:i,c=s.plugins,u=void 0===c?w:c,l=new _emotion_stylis__WEBPACK_IMPORTED_MODULE_3__["default"](a),d=[],h=function(e){function t(t){if(t)try{e(t+"}")}catch(e){}}return function(n,r,o,s,i,a,c,u,l,d){switch(n){case 1:if(0===l&&64===r.charCodeAt(0))return e(r+";"),"";break;case 2:if(0===u)return r+"/*|*/";break;case 3:switch(u){case 102:case 112:return e(o[0]+r),"";default:return r+(0===d?"/*|*/":"")}case-2:r.split("/*|*/}").forEach(t)}}}((function(e){d.push(e)})),f=function(e,r,s){return 0===r&&-1!==ae.indexOf(s[n.length])||s.match(o)?e:"."+t};function m(e,s,i,a){void 0===a&&(a="&");var c=e.replace(ie,""),u=s&&i?i+" "+s+" { "+c+" }":c;return t=a,n=s,r=new RegExp("\\"+n+"\\b","g"),o=new RegExp("(\\"+n+"\\b){2,}"),l(i||!s?"":s,u)}return l.use([].concat(u,[function(e,t,o){2===e&&o.length&&o[0].lastIndexOf(n)>0&&(o[0]=o[0].replace(r,f))},h,function(e){if(-2===e){var t=d;return d=[],t}}])),m.hash=u.length?u.reduce((function(e,t){return t.name||j(15),te(e,t.name)}),5381).toString():"",m}var ue=react__WEBPACK_IMPORTED_MODULE_1__.createContext(),le=ue.Consumer,de=react__WEBPACK_IMPORTED_MODULE_1__.createContext(),he=(de.Consumer,new Z),pe=ce();function fe(){return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(ue)||he}function me(){return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(de)||pe}function ye(e){var t=(0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(e.stylisPlugins),n=t[0],s=t[1],c=fe(),u=(0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)((function(){var t=c;return e.sheet?t=e.sheet:e.target&&(t=t.reconstructWithOptions({target:e.target},!1)),e.disableCSSOMInjection&&(t=t.reconstructWithOptions({useCSSOMInjection:!1})),t}),[e.disableCSSOMInjection,e.sheet,e.target]),l=(0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)((function(){return ce({options:{prefix:!e.disableVendorPrefixes},plugins:n})}),[e.disableVendorPrefixes,n]);return (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)((function(){shallowequal__WEBPACK_IMPORTED_MODULE_2___default()(n,e.stylisPlugins)||s(e.stylisPlugins)}),[e.stylisPlugins]),react__WEBPACK_IMPORTED_MODULE_1__.createElement(ue.Provider,{value:u},react__WEBPACK_IMPORTED_MODULE_1__.createElement(de.Provider,{value:l}, true?react__WEBPACK_IMPORTED_MODULE_1__.Children.only(e.children):0))}var ve=function(){function e(e,t){var n=this;this.inject=function(e,t){void 0===t&&(t=pe);var r=n.name+t.hash;e.hasNameForId(n.id,r)||e.insertRules(n.id,r,t(n.rules,r,"@keyframes"))},this.toString=function(){return j(12,String(n.name))},this.name=e,this.id="sc-keyframes-"+e,this.rules=t}return e.prototype.getName=function(e){return void 0===e&&(e=pe),this.name+e.hash},e}(),ge=/([A-Z])/,Se=/([A-Z])/g,we=/^ms-/,Ee=function(e){return"-"+e.toLowerCase()};function be(e){return ge.test(e)?e.replace(Se,Ee).replace(we,"-ms-"):e}var _e=function(e){return null==e||!1===e||""===e};function Ne(e,n,r,o){if(Array.isArray(e)){for(var s,i=[],a=0,c=e.length;a<c;a+=1)""!==(s=Ne(e[a],n,r,o))&&(Array.isArray(s)?i.push.apply(i,s):i.push(s));return i}if(_e(e))return"";if(N(e))return"."+e.styledComponentId;if(b(e)){if("function"!=typeof(l=e)||l.prototype&&l.prototype.isReactComponent||!n)return e;var u=e(n);return true&&(0,react_is__WEBPACK_IMPORTED_MODULE_0__.isElement)(u)&&console.warn(_(e)+" is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details."),Ne(u,n,r,o)}var l;return e instanceof ve?r?(e.inject(r,o),e.getName(o)):e:S(e)?function e(t,n){var r,o,s=[];for(var i in t)t.hasOwnProperty(i)&&!_e(t[i])&&(Array.isArray(t[i])&&t[i].isCss||b(t[i])?s.push(be(i)+":",t[i],";"):S(t[i])?s.push.apply(s,e(t[i],i)):s.push(be(i)+": "+(r=i,null==(o=t[i])||"boolean"==typeof o||""===o?"":"number"!=typeof o||0===o||r in _emotion_unitless__WEBPACK_IMPORTED_MODULE_4__["default"]?String(o).trim():o+"px")+";"));return n?[n+" {"].concat(s,["}"]):s}(e):e.toString()}var Ae=function(e){return Array.isArray(e)&&(e.isCss=!0),e};function Ce(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];return b(e)||S(e)?Ae(Ne(g(w,[e].concat(n)))):0===n.length&&1===e.length&&"string"==typeof e[0]?e:Ae(Ne(g(e,n)))}var Ie=/invalid hook call/i,Pe=new Set,Oe=function(e,t){if(true){var n="The component "+e+(t?' with the id of "'+t+'"':"")+" has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.",r=console.error;try{var o=!0;console.error=function(e){if(Ie.test(e))o=!1,Pe.delete(n);else{for(var t=arguments.length,s=new Array(t>1?t-1:0),i=1;i<t;i++)s[i-1]=arguments[i];r.apply(void 0,[e].concat(s))}},(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(),o&&!Pe.has(n)&&(console.warn(n),Pe.add(n))}catch(e){Ie.test(e.message)&&Pe.delete(n)}finally{console.error=r}}},Re=function(e,t,n){return void 0===n&&(n=E),e.theme!==n.theme&&e.theme||t||n.theme},De=/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,je=/(^-|-$)/g;function Te(e){return e.replace(De,"-").replace(je,"")}var xe=function(e){return ee(ne(e)>>>0)};function ke(e){return"string"==typeof e&&( false||e.charAt(0)===e.charAt(0).toLowerCase())}var Ve=function(e){return"function"==typeof e||"object"==typeof e&&null!==e&&!Array.isArray(e)},Be=function(e){return"__proto__"!==e&&"constructor"!==e&&"prototype"!==e};function ze(e,t,n){var r=e[n];Ve(t)&&Ve(r)?Me(r,t):e[n]=t}function Me(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];for(var o=0,s=n;o<s.length;o++){var i=s[o];if(Ve(i))for(var a in i)Be(a)&&ze(e,i[a],a)}return e}var Ge=react__WEBPACK_IMPORTED_MODULE_1__.createContext(),Le=Ge.Consumer;function Fe(e){var t=(0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(Ge),n=(0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)((function(){return function(e,t){if(!e)return j(14);if(b(e)){var n=e(t);return false||null!==n&&!Array.isArray(n)&&"object"==typeof n?n:j(7)}return Array.isArray(e)||"object"!=typeof e?j(8):t?v({},t,{},e):e}(e.theme,t)}),[e.theme,t]);return e.children?react__WEBPACK_IMPORTED_MODULE_1__.createElement(Ge.Provider,{value:n},e.children):null}var Ye={};function qe(e,t,n){var o=N(e),i=!ke(e),a=t.attrs,c=void 0===a?w:a,d=t.componentId,h=void 0===d?function(e,t){var n="string"!=typeof e?"sc":Te(e);Ye[n]=(Ye[n]||0)+1;var r=n+"-"+xe("5.3.5"+n+Ye[n]);return t?t+"-"+r:r}(t.displayName,t.parentComponentId):d,p=t.displayName,f=void 0===p?function(e){return ke(e)?"styled."+e:"Styled("+_(e)+")"}(e):p,g=t.displayName&&t.componentId?Te(t.displayName)+"-"+t.componentId:t.componentId||h,S=o&&e.attrs?Array.prototype.concat(e.attrs,c).filter(Boolean):c,A=t.shouldForwardProp;o&&e.shouldForwardProp&&(A=t.shouldForwardProp?function(n,r,o){return e.shouldForwardProp(n,r,o)&&t.shouldForwardProp(n,r,o)}:e.shouldForwardProp);var C,I=new se(n,g,o?e.componentStyle:void 0),P=I.isStatic&&0===c.length,O=function(e,t){return function(e,t,n,r){var o=e.attrs,i=e.componentStyle,a=e.defaultProps,c=e.foldedComponentIds,d=e.shouldForwardProp,h=e.styledComponentId,p=e.target; true&&(0,react__WEBPACK_IMPORTED_MODULE_1__.useDebugValue)(h);var f=function(e,t,n){void 0===e&&(e=E);var r=v({},t,{theme:e}),o={};return n.forEach((function(e){var t,n,s,i=e;for(t in b(i)&&(i=i(r)),i)r[t]=o[t]="className"===t?(n=o[t],s=i[t],n&&s?n+" "+s:n||s):i[t]})),[r,o]}(Re(t,(0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(Ge),a)||E,t,o),y=f[0],g=f[1],S=function(e,t,n,r){var o=fe(),s=me(),i=t?e.generateAndInjectStyles(E,o,s):e.generateAndInjectStyles(n,o,s);return true&&(0,react__WEBPACK_IMPORTED_MODULE_1__.useDebugValue)(i), true&&!t&&r&&r(i),i}(i,r,y, true?e.warnTooManyClasses:0),w=n,_=g.$as||t.$as||g.as||t.as||p,N=ke(_),A=g!==t?v({},t,{},g):t,C={};for(var I in A)"$"!==I[0]&&"as"!==I&&("forwardedAs"===I?C.as=A[I]:(d?d(I,_emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_5__["default"],_):!N||(0,_emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_5__["default"])(I))&&(C[I]=A[I]));return t.style&&g.style!==t.style&&(C.style=v({},t.style,{},g.style)),C.className=Array.prototype.concat(c,h,S!==h?S:null,t.className,g.className).filter(Boolean).join(" "),C.ref=w,(0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_,C)}(C,e,t,P)};return O.displayName=f,(C=react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(O)).attrs=S,C.componentStyle=I,C.displayName=f,C.shouldForwardProp=A,C.foldedComponentIds=o?Array.prototype.concat(e.foldedComponentIds,e.styledComponentId):w,C.styledComponentId=g,C.target=o?e.target:e,C.withComponent=function(e){var r=t.componentId,o=function(e,t){if(null==e)return{};var n,r,o={},s=Object.keys(e);for(r=0;r<s.length;r++)n=s[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(t,["componentId"]),s=r&&r+"-"+(ke(e)?e:Te(_(e)));return qe(e,v({},o,{attrs:S,componentId:s}),n)},Object.defineProperty(C,"defaultProps",{get:function(){return this._foldedDefaultProps},set:function(t){this._foldedDefaultProps=o?Me({},e.defaultProps,t):t}}), true&&(Oe(f,g),C.warnTooManyClasses=function(e,t){var n={},r=!1;return function(o){if(!r&&(n[o]=!0,Object.keys(n).length>=200)){var s=t?' with the id of "'+t+'"':"";console.warn("Over 200 classes were generated for component "+e+s+".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"),r=!0,n={}}}}(f,g)),C.toString=function(){return"."+C.styledComponentId},i&&hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6___default()(C,e,{attrs:!0,componentStyle:!0,displayName:!0,foldedComponentIds:!0,shouldForwardProp:!0,styledComponentId:!0,target:!0,withComponent:!0}),C}var He=function(e){return function e(t,r,o){if(void 0===o&&(o=E),!(0,react_is__WEBPACK_IMPORTED_MODULE_0__.isValidElementType)(r))return j(1,String(r));var s=function(){return t(r,o,Ce.apply(void 0,arguments))};return s.withConfig=function(n){return e(t,r,v({},o,{},n))},s.attrs=function(n){return e(t,r,v({},o,{attrs:Array.prototype.concat(o.attrs,n).filter(Boolean)}))},s}(qe,e)};["a","abbr","address","area","article","aside","audio","b","base","bdi","bdo","big","blockquote","body","br","button","canvas","caption","cite","code","col","colgroup","data","datalist","dd","del","details","dfn","dialog","div","dl","dt","em","embed","fieldset","figcaption","figure","footer","form","h1","h2","h3","h4","h5","h6","head","header","hgroup","hr","html","i","iframe","img","input","ins","kbd","keygen","label","legend","li","link","main","map","mark","marquee","menu","menuitem","meta","meter","nav","noscript","object","ol","optgroup","option","output","p","param","picture","pre","progress","q","rp","rt","ruby","s","samp","script","section","select","small","source","span","strong","style","sub","summary","sup","table","tbody","td","textarea","tfoot","th","thead","time","title","tr","track","u","ul","var","video","wbr","circle","clipPath","defs","ellipse","foreignObject","g","image","line","linearGradient","marker","mask","path","pattern","polygon","polyline","radialGradient","rect","stop","svg","text","textPath","tspan"].forEach((function(e){He[e]=He(e)}));var $e=function(){function e(e,t){this.rules=e,this.componentId=t,this.isStatic=re(e),Z.registerId(this.componentId+1)}var t=e.prototype;return t.createStyles=function(e,t,n,r){var o=r(Ne(this.rules,t,n,r).join(""),""),s=this.componentId+e;n.insertRules(s,s,o)},t.removeStyles=function(e,t){t.clearRules(this.componentId+e)},t.renderStyles=function(e,t,n,r){e>2&&Z.registerId(this.componentId+e),this.removeStyles(e,n),this.createStyles(e,t,n,r)},e}();function We(e){for(var t=arguments.length,n=new Array(t>1?t-1:0),o=1;o<t;o++)n[o-1]=arguments[o];var i=Ce.apply(void 0,[e].concat(n)),a="sc-global-"+xe(JSON.stringify(i)),u=new $e(i,a);function l(e){var t=fe(),n=me(),o=(0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(Ge),l=(0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(t.allocateGSInstance(a)).current;return true&&react__WEBPACK_IMPORTED_MODULE_1__.Children.count(e.children)&&console.warn("The global style component "+a+" was given child JSX. createGlobalStyle does not render children."), true&&i.some((function(e){return"string"==typeof e&&-1!==e.indexOf("@import")}))&&console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."),t.server&&h(l,e,t,o,n),(0,react__WEBPACK_IMPORTED_MODULE_1__.useLayoutEffect)((function(){if(!t.server)return h(l,e,t,o,n),function(){return u.removeStyles(l,t)}}),[l,e,t,o,n]),null}function h(e,t,n,r,o){if(u.isStatic)u.renderStyles(e,O,n,o);else{var s=v({},t,{theme:Re(t,r,l.defaultProps)});u.renderStyles(e,s,n,o)}}return true&&Oe(a),react__WEBPACK_IMPORTED_MODULE_1__.memo(l)}function Ue(e){ true&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");for(var t=arguments.length,n=new Array(t>1?t-1:0),r=1;r<t;r++)n[r-1]=arguments[r];var o=Ce.apply(void 0,[e].concat(n)).join(""),s=xe(o);return new ve(s,o)}var Je=function(){function e(){var e=this;this._emitSheetCSS=function(){var t=e.instance.toString();if(!t)return"";var n=q();return"<style "+[n&&'nonce="'+n+'"',A+'="true"','data-styled-version="5.3.5"'].filter(Boolean).join(" ")+">"+t+"</style>"},this.getStyleTags=function(){return e.sealed?j(2):e._emitSheetCSS()},this.getStyleElement=function(){var t;if(e.sealed)return j(2);var n=((t={})[A]="",t["data-styled-version"]="5.3.5",t.dangerouslySetInnerHTML={__html:e.instance.toString()},t),o=q();return o&&(n.nonce=o),[react__WEBPACK_IMPORTED_MODULE_1__.createElement("style",v({},n,{key:"sc-0-0"}))]},this.seal=function(){e.sealed=!0},this.instance=new Z({isServer:!0}),this.sealed=!1}var t=e.prototype;return t.collectStyles=function(e){return this.sealed?j(2):react__WEBPACK_IMPORTED_MODULE_1__.createElement(ye,{sheet:this.instance},e)},t.interleaveWithNodeStream=function(e){return j(3)},e}(),Xe=function(e){var t=react__WEBPACK_IMPORTED_MODULE_1__.forwardRef((function(t,n){var o=(0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(Ge),i=e.defaultProps,a=Re(t,o,i);return true&&void 0===a&&console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "'+_(e)+'"'),react__WEBPACK_IMPORTED_MODULE_1__.createElement(e,v({},t,{theme:a,ref:n}))}));return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_6___default()(t,e),t.displayName="WithTheme("+_(e)+")",t},Ze=function(){return (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(Ge)},Ke={StyleSheet:Z,masterSheet:he}; true&&"undefined"!=typeof navigator&&"ReactNative"===navigator.product&&console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), true&&"undefined"!=typeof window&&(window["__styled-components-init__"]=window["__styled-components-init__"]||0,1===window["__styled-components-init__"]&&console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."),window["__styled-components-init__"]+=1);/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (He);
 //# sourceMappingURL=styled-components.browser.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/tween-functions/index.js":
+/*!***********************************************!*\
+  !*** ./node_modules/tween-functions/index.js ***!
+  \***********************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+// t: current time, b: beginning value, _c: final value, d: total duration
+var tweenFunctions = {
+  linear: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * t / d + b;
+  },
+  easeInQuad: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * (t /= d) * t + b;
+  },
+  easeOutQuad: function(t, b, _c, d) {
+    var c = _c - b;
+    return -c * (t /= d) * (t - 2) + b;
+  },
+  easeInOutQuad: function(t, b, _c, d) {
+    var c = _c - b;
+    if ((t /= d / 2) < 1) {
+      return c / 2 * t * t + b;
+    } else {
+      return -c / 2 * ((--t) * (t - 2) - 1) + b;
+    }
+  },
+  easeInCubic: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * (t /= d) * t * t + b;
+  },
+  easeOutCubic: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * ((t = t / d - 1) * t * t + 1) + b;
+  },
+  easeInOutCubic: function(t, b, _c, d) {
+    var c = _c - b;
+    if ((t /= d / 2) < 1) {
+      return c / 2 * t * t * t + b;
+    } else {
+      return c / 2 * ((t -= 2) * t * t + 2) + b;
+    }
+  },
+  easeInQuart: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * (t /= d) * t * t * t + b;
+  },
+  easeOutQuart: function(t, b, _c, d) {
+    var c = _c - b;
+    return -c * ((t = t / d - 1) * t * t * t - 1) + b;
+  },
+  easeInOutQuart: function(t, b, _c, d) {
+    var c = _c - b;
+    if ((t /= d / 2) < 1) {
+      return c / 2 * t * t * t * t + b;
+    } else {
+      return -c / 2 * ((t -= 2) * t * t * t - 2) + b;
+    }
+  },
+  easeInQuint: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * (t /= d) * t * t * t * t + b;
+  },
+  easeOutQuint: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * ((t = t / d - 1) * t * t * t * t + 1) + b;
+  },
+  easeInOutQuint: function(t, b, _c, d) {
+    var c = _c - b;
+    if ((t /= d / 2) < 1) {
+      return c / 2 * t * t * t * t * t + b;
+    } else {
+      return c / 2 * ((t -= 2) * t * t * t * t + 2) + b;
+    }
+  },
+  easeInSine: function(t, b, _c, d) {
+    var c = _c - b;
+    return -c * Math.cos(t / d * (Math.PI / 2)) + c + b;
+  },
+  easeOutSine: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * Math.sin(t / d * (Math.PI / 2)) + b;
+  },
+  easeInOutSine: function(t, b, _c, d) {
+    var c = _c - b;
+    return -c / 2 * (Math.cos(Math.PI * t / d) - 1) + b;
+  },
+  easeInExpo: function(t, b, _c, d) {
+    var c = _c - b;
+    return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+  },
+  easeOutExpo: function(t, b, _c, d) {
+    var c = _c - b;
+    return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+  },
+  easeInOutExpo: function(t, b, _c, d) {
+    var c = _c - b;
+    if (t === 0) {
+      return b;
+    }
+    if (t === d) {
+      return b + c;
+    }
+    if ((t /= d / 2) < 1) {
+      return c / 2 * Math.pow(2, 10 * (t - 1)) + b;
+    } else {
+      return c / 2 * (-Math.pow(2, -10 * --t) + 2) + b;
+    }
+  },
+  easeInCirc: function(t, b, _c, d) {
+    var c = _c - b;
+    return -c * (Math.sqrt(1 - (t /= d) * t) - 1) + b;
+  },
+  easeOutCirc: function(t, b, _c, d) {
+    var c = _c - b;
+    return c * Math.sqrt(1 - (t = t / d - 1) * t) + b;
+  },
+  easeInOutCirc: function(t, b, _c, d) {
+    var c = _c - b;
+    if ((t /= d / 2) < 1) {
+      return -c / 2 * (Math.sqrt(1 - t * t) - 1) + b;
+    } else {
+      return c / 2 * (Math.sqrt(1 - (t -= 2) * t) + 1) + b;
+    }
+  },
+  easeInElastic: function(t, b, _c, d) {
+    var c = _c - b;
+    var a, p, s;
+    s = 1.70158;
+    p = 0;
+    a = c;
+    if (t === 0) {
+      return b;
+    } else if ((t /= d) === 1) {
+      return b + c;
+    }
+    if (!p) {
+      p = d * 0.3;
+    }
+    if (a < Math.abs(c)) {
+      a = c;
+      s = p / 4;
+    } else {
+      s = p / (2 * Math.PI) * Math.asin(c / a);
+    }
+    return -(a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
+  },
+  easeOutElastic: function(t, b, _c, d) {
+    var c = _c - b;
+    var a, p, s;
+    s = 1.70158;
+    p = 0;
+    a = c;
+    if (t === 0) {
+      return b;
+    } else if ((t /= d) === 1) {
+      return b + c;
+    }
+    if (!p) {
+      p = d * 0.3;
+    }
+    if (a < Math.abs(c)) {
+      a = c;
+      s = p / 4;
+    } else {
+      s = p / (2 * Math.PI) * Math.asin(c / a);
+    }
+    return a * Math.pow(2, -10 * t) * Math.sin((t * d - s) * (2 * Math.PI) / p) + c + b;
+  },
+  easeInOutElastic: function(t, b, _c, d) {
+    var c = _c - b;
+    var a, p, s;
+    s = 1.70158;
+    p = 0;
+    a = c;
+    if (t === 0) {
+      return b;
+    } else if ((t /= d / 2) === 2) {
+      return b + c;
+    }
+    if (!p) {
+      p = d * (0.3 * 1.5);
+    }
+    if (a < Math.abs(c)) {
+      a = c;
+      s = p / 4;
+    } else {
+      s = p / (2 * Math.PI) * Math.asin(c / a);
+    }
+    if (t < 1) {
+      return -0.5 * (a * Math.pow(2, 10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p)) + b;
+    } else {
+      return a * Math.pow(2, -10 * (t -= 1)) * Math.sin((t * d - s) * (2 * Math.PI) / p) * 0.5 + c + b;
+    }
+  },
+  easeInBack: function(t, b, _c, d, s) {
+    var c = _c - b;
+    if (s === void 0) {
+      s = 1.70158;
+    }
+    return c * (t /= d) * t * ((s + 1) * t - s) + b;
+  },
+  easeOutBack: function(t, b, _c, d, s) {
+    var c = _c - b;
+    if (s === void 0) {
+      s = 1.70158;
+    }
+    return c * ((t = t / d - 1) * t * ((s + 1) * t + s) + 1) + b;
+  },
+  easeInOutBack: function(t, b, _c, d, s) {
+    var c = _c - b;
+    if (s === void 0) {
+      s = 1.70158;
+    }
+    if ((t /= d / 2) < 1) {
+      return c / 2 * (t * t * (((s *= 1.525) + 1) * t - s)) + b;
+    } else {
+      return c / 2 * ((t -= 2) * t * (((s *= 1.525) + 1) * t + s) + 2) + b;
+    }
+  },
+  easeInBounce: function(t, b, _c, d) {
+    var c = _c - b;
+    var v;
+    v = tweenFunctions.easeOutBounce(d - t, 0, c, d);
+    return c - v + b;
+  },
+  easeOutBounce: function(t, b, _c, d) {
+    var c = _c - b;
+    if ((t /= d) < 1 / 2.75) {
+      return c * (7.5625 * t * t) + b;
+    } else if (t < 2 / 2.75) {
+      return c * (7.5625 * (t -= 1.5 / 2.75) * t + 0.75) + b;
+    } else if (t < 2.5 / 2.75) {
+      return c * (7.5625 * (t -= 2.25 / 2.75) * t + 0.9375) + b;
+    } else {
+      return c * (7.5625 * (t -= 2.625 / 2.75) * t + 0.984375) + b;
+    }
+  },
+  easeInOutBounce: function(t, b, _c, d) {
+    var c = _c - b;
+    var v;
+    if (t < d / 2) {
+      v = tweenFunctions.easeInBounce(t * 2, 0, c, d);
+      return v * 0.5 + b;
+    } else {
+      v = tweenFunctions.easeOutBounce(t * 2 - d, 0, c, d);
+      return v * 0.5 + c * 0.5 + b;
+    }
+  }
+};
+
+module.exports = tweenFunctions;
 
 
 /***/ }),

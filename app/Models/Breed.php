@@ -9,16 +9,15 @@ class Breed extends Model
 {
     use HasFactory;
 
-    public static $availabeFiedls = [
-        'id',
-        'type_id',
-        'name'
-    ];
-
     protected $fillable = [
         'type_id',
         'name'
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(AnimalType::class);
+    }
 
     /**
      * @param $query

@@ -8,13 +8,13 @@ use Faker\Factory as Faker;
 
 class AnimalTypeSeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run(){
+    public function run()
+    {
         $this->faker = Faker::create();
         DB::table('animal_types')->insert([
             'name' =>$this->faker->lastName,

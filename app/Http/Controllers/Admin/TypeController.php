@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AnimalType\CreateRequest;
 use App\Http\Requests\AnimalType\EditRequest;
 use App\Models\AnimalType;
-use Illuminate\Http\Request;
 
 class TypeController extends Controller
 {
@@ -15,14 +14,12 @@ class TypeController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $searchParams = $request->all();
         $types = AnimalType::filter()->paginate(7)->withQueryString();
 
         return view('admin.animal_types.index', [
             'animal_types' => $types,
-            'searchParams' => $searchParams
         ]);
     }
 
@@ -71,7 +68,7 @@ class TypeController extends Controller
     public function edit(AnimalType $animal_type)
     {
         return view('admin.animal_types.edit', [
-            'animal_type' => $animal_type
+            'animal_type' => $animal_type,
         ]);
     }
 

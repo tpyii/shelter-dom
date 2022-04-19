@@ -5,21 +5,9 @@ import pin from './assets/images/pin.png'
 
 export const Footer = () => {
 
-    const scrollUp = () => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-        });
-    }
-
     return (
-        <footer id={'contacts'} className="footer">
+        <footer id='contacts' className="footer">
             <div className="container">
-                <button onClick={scrollUp}
-                        style={{color: 'white', fontSize: '47px', paddingTop: '10px', float: 'right'}}
-                        className="button button-circle button-paginator button-secondary"> ^
-                </button>
                 <div className="row">
                     <div className="col-12 col-md-6 col-lg-4 text-center text-md-start">
                         <h3 className="text-center text-md-start">For questions and suggestions</h3>

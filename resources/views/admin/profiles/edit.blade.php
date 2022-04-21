@@ -7,7 +7,6 @@
 
     <x-form action="{{ route('admin.profiles.update', $profile) }}" method="POST">
         @method('PUT')
-        <x-select name="user_id" label="Пользователь" :options="$users" :value="$profile->user_id" required />
         <x-input type="tel" name="phone" label="Номер телефона" value="{{ $profile->phone }}" required />
         <x-input name="name" label="Имя" value="{{ $profile->name }}" required />
         <x-input name="surname" label="Фамилия" value="{{ $profile->surname }}" required />

@@ -98,13 +98,8 @@ class ProfilesController extends Controller
      */
     public function edit(Profile $profile)
     {
-        $profiles = Profile::query()->select('user_id')->get();
-
-        $users = User::whereNotIn('id', $profiles)->get();
-
         return view('admin.profiles.edit', [
-            'profile' => $profile,
-            'users' => $users
+            'profile' => $profile
         ]);
     }
 

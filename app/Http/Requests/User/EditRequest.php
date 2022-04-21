@@ -3,6 +3,7 @@
 namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class EditRequest extends FormRequest
 {
@@ -25,7 +26,7 @@ class EditRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
-            'email' => ['required', 'string', 'email', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($this->user)],
             'is_admin' => ['required', 'in:0,1']
         ];
     }

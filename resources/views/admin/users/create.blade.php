@@ -15,6 +15,7 @@
             <x-input type="radio" name="is_admin" id="inp1" value="1" label="Да" />
             <x-input type="radio" name="is_admin" id="inp2" value="0" label="Нет" />
         </div>
+        <x-input type="checkbox" name="without_profile" id="without_profile" label="Создать без профиля" value="yes"/>
         <x-button type="submit" color="outline-success">Сохранить</x-button>
     </x-form>
 </x-layout>

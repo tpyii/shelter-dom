@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CreateRequest;
 use App\Http\Requests\User\EditRequest;
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -43,16 +46,26 @@ class UserController extends Controller
     public function store(CreateRequest $request)
     {
         $data = $request->only('name', 'email', 'password', 'is_admin');
+        $without_profile = $request->only('without_profile');
 
         // TODO: Переделать формирование пароля в CreateRequest после проверки
-        return User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'is_admin' => $data['is_admin'],
-                'password' => Hash::make($data['password']),
-        ])
-            ? redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена')
-            : back()->withErrors('Не удалось добавить запись') ->withInput();
+        $created = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'is_admin' => $data['is_admin'],
+            'password' => Hash::make($data['password']),
+        ]);
+
+        if ($created && $without_profile['without_profile'] === 'yes') {
+            return redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена');
+        } else if ($created) {
+            $email = User::query()->select('id')->where('email', '=', $data['email'])->get();
+
+            Profile::create(['user_id' => $email[0]['id']]);
+            return redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена');
+        } else {
+            return back()->withErrors('Не удалось добавить запись')->withInput();
+        }
     }
 
     /**

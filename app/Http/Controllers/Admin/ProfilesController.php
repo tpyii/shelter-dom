@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Profile\CreateRequest;
-use App\Http\Requests\Profile\EditRequest;
-use App\Models\Profile;
 use App\Models\User;
-use App\Services\ImageUploadService;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Profile;
+use App\Http\Controllers\Controller;
+use App\Services\UserImageUploadService;
+use App\Http\Requests\Profile\EditRequest;
+use App\Http\Requests\Profile\CreateRequest;
 
 class ProfilesController extends Controller
 {
@@ -66,13 +64,18 @@ class ProfilesController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
+     * @param \App\Services\UserImageUploadService $upload
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CreateRequest $request)
+    public function store(CreateRequest $request, UserImageUploadService $upload)
     {
         $data = $request->only('user_id', 'name', 'surname', 'description', 'phone', 'address', 'birthday_at');
 
         $profile = Profile::create($data);
+
+        if ($request->hasFile('avatar')) {
+            $upload->saveUploadedFile($request->file('avatar'), $profile);
+        }
 
         return $profile
             ? redirect()->route('admin.profiles.index')->with('success', 'Запись успешно добавлена')
@@ -110,11 +113,15 @@ class ProfilesController extends Controller
      * @param Profile $profile
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(EditRequest $request, Profile $profile)
+    public function update(EditRequest $request, Profile $profile, UserImageUploadService $upload)
     {
-        $data = $request->only('user_id', 'name', 'surname', 'description', 'phone', 'address', 'birthday_at');
+        $data = $request->only('name', 'surname', 'description', 'phone', 'address', 'birthday_at');
 
         $updated = $profile->fill($data)->save();
+
+        if ($request->hasFile('avatar')) {
+            $upload->saveUploadedFile($request->file('avatar'), $profile);
+        }
 
         return $updated
             ? redirect()->route('admin.profiles.index')->with('success', 'Запись успешно изменена')

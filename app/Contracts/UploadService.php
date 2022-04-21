@@ -3,13 +3,14 @@
 namespace App\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\UploadedFile;
 
 interface UploadService
 {
     /**
-     * @param array $files
+     * @param array|UploadedFile $files
      * @param \Illuminate\Database\Eloquent\Model $model
      * @return void
      */
-    public function saveUploadedFile(array $files, Model $model);
+    public function saveUploadedFile($files, Model $model);
 }

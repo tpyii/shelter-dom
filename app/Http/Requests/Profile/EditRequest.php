@@ -25,7 +25,6 @@ class EditRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => ['required', 'integer', Rule::unique('profiles')->ignore($this->profile)],
             'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
             'surname' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
             'description' => ['nullable', 'string', 'min:24', 'max:1024'],

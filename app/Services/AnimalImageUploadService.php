@@ -7,14 +7,14 @@ use Illuminate\Support\Arr;
 use App\Contracts\UploadService;
 use Illuminate\Database\Eloquent\Model;
 
-class ImageUploadService implements UploadService
+class AnimalImageUploadService implements UploadService
 {
     /**
      * @param array $files
      * @param \Illuminate\Database\Eloquent\Model $model
      * @return void
      */
-    public function saveUploadedFile(array $files, Model $model)
+    public function saveUploadedFile($files, Model $model)
     {
         $path = implode('/', [
             'image',

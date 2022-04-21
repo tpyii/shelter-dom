@@ -20,6 +20,19 @@ class Profile extends Model
         'avatar'
     ];
 
+    /**
+     * Get the profile's avatar.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getAvatarAttribute($value)
+    {
+        return empty($value) 
+            ? 'image/Avatars/1/default-user.png' 
+            : $value;
+    }
+
     public function scopeFilter($query)
     {
         return $query

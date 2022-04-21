@@ -71,7 +71,12 @@
 
     <x-modal id="filter" title="Фильтры">
         <x-form action="{{ route('admin.profiles.index') }}">
-
+            <x-input name="name" label="Имя" value="{{ request('name') }}" />
+            <x-input name="surname" label="Фамилия" value="{{ request('surname') }}" />
+            <x-select name="user_id" label="Пользователь" :options="$users" value="{{ request('user_id') }}" />
+            <x-select name="age" label="Возраст" :options="$ages" value="{{ request('age') }}" />
+            <x-input name="address" label="Домашний адрес" value="{{ request('address') }}" />
+            <x-input type="tel" name="phone" label="Номер телефона" value="{{ request('phone') }}" />
         </x-form>
         <x-slot name="footer">
             <a class="btn btn-sm btn-secondary" href="{{ route('admin.profiles.index') }}">Сбросить</a>

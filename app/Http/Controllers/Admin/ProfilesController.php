@@ -23,9 +23,26 @@ class ProfilesController extends Controller
         $profiles = Profile::filter()->paginate(7)->withQueryString();
         $users = User::all();
 
+        $ages_array = [
+            '< 18',
+            '> 18'
+        ];
+
+        $ages = array_map(
+            function($value, $key) {
+                return (object) [
+                    'id' => $key,
+                    'name' => $value,
+                ];
+            },
+            $ages_array,
+            range(1, count($ages_array))
+        );
+
         return view('admin.profiles.index', [
             'profiles' => $profiles,
-            'users' => $users
+            'users' => $users,
+            'ages' => $ages
         ]);
     }
 

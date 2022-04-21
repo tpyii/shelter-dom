@@ -20,9 +20,38 @@ class Profile extends Model
         'avatar'
     ];
 
-    public function scopeFilter()
+    public function scopeFilter($query)
     {
-        //
+        return $query
+            ->when(request("name"), function ($query, $value) {
+                return $query->where("name", "LIKE", "%" . $value . "%");
+            })
+            ->when(request("surname"), function ($query, $value) {
+                return $query->where("surname", "LIKE", "%" . $value . "%");
+            })
+            ->when(request("user_id"), function ($query, $value) {
+                return $query->where('user_id', $value);
+            })
+            ->when(request("user"), function ($query, $value) {
+                return $query->whereRelation('user', 'name', "LIKE", "%" . $value . "%");
+            })
+            ->when(request("address"), function ($query, $value) {
+                return $query->where("address", "LIKE", "%" . $value . "%");
+            })
+            ->when(request("phone"), function ($query, $value) {
+                return $query->where("phone", "LIKE", "%" . $value . "%");
+            })
+            ->when(request("age"), function ($query, $value) {
+
+                $yearQuery = '(YEAR(CURRENT_DATE)-YEAR(birthday_at))-(RIGHT(CURRENT_DATE,5)<RIGHT(birthday_at,5))';
+
+                switch ($value) {
+                    case ($value == 1):
+                        return $query->whereRaw($yearQuery . '< ?', [18]);
+                    case ($value == 2):
+                        return $query->whereRaw($yearQuery . ' >= ?', [18]);
+                }
+            });
     }
 
     public function user()

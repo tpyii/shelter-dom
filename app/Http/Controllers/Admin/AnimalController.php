@@ -77,9 +77,10 @@ class AnimalController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
+     * @param \App\Services\ImageUploadService $upload
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function store(CreateRequest $request)
+    public function store(CreateRequest $request, ImageUploadService $upload)
     {
         $data = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description');
         $animal = Animal::create($data);
@@ -87,7 +88,7 @@ class AnimalController extends Controller
         $animal->inoculation()->attach($request->input('inoculations'));
 
         if ($request->hasfile('files')) {
-            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $animal, []);
+            $upload->saveUploadedFile($request->file('files'), $animal);
         }
 
         return $animal

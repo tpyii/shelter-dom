@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\User;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CreateRequest extends FormRequest
@@ -38,5 +39,15 @@ class CreateRequest extends FormRequest
             'password' => 'Пароль',
             'is_admin' => 'Является админом'
         ];
+    }
+
+    public function validated()
+    {
+        return array_merge(
+            parent::validated(),
+            [
+                'password' => Hash::make($this->password),
+            ]
+        );
     }
 }

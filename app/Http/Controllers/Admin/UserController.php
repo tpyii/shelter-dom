@@ -42,15 +42,9 @@ class UserController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->only('name', 'email', 'password', 'is_admin');
+        $validated = $request->validated();
 
-        // TODO: Переделать формирование пароля в CreateRequest после проверки
-        return User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'is_admin' => $data['is_admin'],
-                'password' => Hash::make($data['password']),
-        ])
+        return User::create($validated)
             ? redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена')
             : back()->withErrors('Не удалось добавить запись') ->withInput();
     }

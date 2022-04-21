@@ -25,7 +25,7 @@ class ProfileSeeder extends Seeder
                 'description' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                 'address' => $this->faker->address,
                 'birthday_at' => $this->faker->date(),
-                'avatar' => 'image/Avatar/1/default-user.png',
+                'avatar' => 'image/Avatars/1/default-user.png',
                 'created_at' => $this->faker->dateTime,
                 'updated_at' => $this->faker->dateTime,
             ]);

@@ -19,10 +19,10 @@ class CreateProfilesTable extends Migration
             $table->string('phone')->unique()->index();
             $table->string('name');
             $table->string('surname');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->mediumText('address');
             $table->date('birthday_at');
-            $table->string('avatar');
+            $table->string('avatar')->default('image/Avatar/1/default-user.png');
             $table->timestamps();
         });
     }

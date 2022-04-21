@@ -7,6 +7,8 @@ use App\Http\Requests\User\CreateRequest;
 use App\Http\Requests\User\EditRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {

@@ -111,6 +111,7 @@ class ProfilesController extends Controller
      *
      * @param EditRequest $request
      * @param Profile $profile
+     * @param \App\Services\UserImageUploadService $upload
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(EditRequest $request, Profile $profile, UserImageUploadService $upload)
@@ -139,5 +140,20 @@ class ProfilesController extends Controller
         return $profile->delete()
             ? redirect()->route('admin.profiles.index')->with('success', 'Запись успешно удалена')
             : back()->withErrors( 'Не удалось удалить запись')->withInput();
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Profile $profile
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function avatar(Profile $profile)
+    {
+        return $profile->update([
+            'avatar' => '',
+        ])
+            ? redirect()->route('admin.profiles.index')->with('success', 'Запись успешно изменена')
+            : back()->withErrors('Не удалось добавить запись') ->withInput();
     }
 }

@@ -5,6 +5,8 @@
 
     <x-errors />
 
+    <x-alert type="danger" class="alert-ajax d-none">Ошибка при удалении Аватарки</x-alert>
+
     <x-form action="{{ route('admin.profiles.update', $profile) }}" method="POST" enctype="multipart/form-data">
         @method('PUT')
         <x-input type="tel" name="phone" label="Номер телефона" value="{{ $profile->phone }}" required />

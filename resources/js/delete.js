@@ -11,8 +11,16 @@ if (deleteModal) {
     .querySelector('.delete')
     .addEventListener('click', event => 
       send(event.target.dataset.action)
-        .then(() => document.querySelector(event.target.dataset.remove).remove())
-        .catch(error => console.log(error))
+        .then(response => {
+          const alert = document.querySelector('.alert-ajax')
+
+          if (response.ok) {
+            document.querySelector(event.target.dataset.remove).remove()
+            alert.classList.add('d-none')
+          } else {
+            alert.classList.remove('d-none')
+          }
+        })
     )
 
   document

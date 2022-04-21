@@ -146,14 +146,14 @@ class ProfilesController extends Controller
      * Update the specified resource in storage.
      *
      * @param Profile $profile
-     * @return \Illuminate\Http\RedirectResponse
+     * @return array
      */
     public function avatar(Profile $profile)
     {
-        return $profile->update([
-            'avatar' => '',
-        ])
-            ? redirect()->route('admin.profiles.index')->with('success', 'Запись успешно изменена')
-            : back()->withErrors('Не удалось добавить запись') ->withInput();
+        return [
+            'status' => $profile->update([
+                'avatar' => '',
+            ]),
+        ];
     }
 }

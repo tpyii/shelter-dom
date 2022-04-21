@@ -5380,10 +5380,15 @@ if (deleteModal) {
     dataset.remove = event.relatedTarget.dataset.remove;
   });
   deleteModal.querySelector('.delete').addEventListener('click', function (event) {
-    return send(event.target.dataset.action).then(function () {
-      return document.querySelector(event.target.dataset.remove).remove();
-    })["catch"](function (error) {
-      return console.log(error);
+    return send(event.target.dataset.action).then(function (response) {
+      var alert = document.querySelector('.alert-ajax');
+
+      if (response.ok) {
+        document.querySelector(event.target.dataset.remove).remove();
+        alert.classList.add('d-none');
+      } else {
+        alert.classList.remove('d-none');
+      }
     });
   });
   document.querySelectorAll('.showDeleteModal').forEach(function (element) {

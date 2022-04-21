@@ -15,7 +15,6 @@ use App\Http\Controllers\User\DonnationsController as UserDonnationsController;
 use App\Http\Controllers\User\FavoritesController as UserFavoritesController;
 use App\Http\Controllers\User\RequestsController as UserRequestsController;
 
-use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -49,6 +48,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/users',   AdminUserController::class);
         Route::resource('/images', AdminImageController::class);
         Route::resource('/profiles', AdminProfilesController::class);
+        Route::delete('/avatar/{profile}', [AdminProfilesController::class, 'avatar'])->name('avatar.destroy');
     });
     Route::group(['prefix' => 'user', 'as' => 'user.'], function (){
         Route::resource('/', UserController::class);

@@ -45,16 +45,10 @@ class UserController extends Controller
      */
     public function store(CreateRequest $request)
     {
-        $data = $request->only('name', 'email', 'password', 'is_admin');
+        $validated = $request->validated();
         $without_profile = $request->only('without_profile');
 
-        // TODO: Переделать формирование пароля в CreateRequest после проверки
-        $created = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'is_admin' => $data['is_admin'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $created = User::create($validated);
 
         if ($created && $without_profile['without_profile'] === 'yes') {
             return redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена');

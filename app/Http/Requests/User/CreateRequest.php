@@ -27,7 +27,7 @@ class CreateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'alpha_dash'],
+            'password' => ['required', 'string', 'min:8', 'alpha_dash', 'confirmed'],
             'is_admin' => ['required', 'in:0,1']
         ];
     }

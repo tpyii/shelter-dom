@@ -8,7 +8,8 @@
     <x-form action="{{ route('admin.users.store') }}" method="POST">
         <x-input type="text" name="name" label="Имя" required />
         <x-input type="email" name="email" label="Почта" required />
-        <x-input type="text" name="password" label="Пароль" required />
+        <x-input type="password" name="password" label="Пароль" required />
+        <x-input type="password" name="password_confirmation" label="Подтвердить пароль" required />
         <br>
         <div class="md-3">
             <x-label for="inp1">Является админом</x-label>

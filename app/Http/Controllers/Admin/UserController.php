@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\CreateRequest;
 use App\Http\Requests\User\EditRequest;
+use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -43,10 +46,20 @@ class UserController extends Controller
     public function store(CreateRequest $request)
     {
         $validated = $request->validated();
+        $without_profile = $request->only('without_profile');
 
-        return User::create($validated)
-            ? redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена')
-            : back()->withErrors('Не удалось добавить запись') ->withInput();
+        $created = User::create($validated);
+
+        if ($created && $without_profile['without_profile'] === 'yes') {
+            return redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена');
+        } else if ($created) {
+            $email = User::query()->select('id')->where('email', '=', $data['email'])->get();
+
+            Profile::create(['user_id' => $email[0]['id']]);
+            return redirect()->route('admin.users.index')->with('success', 'Запись успешно добавлена');
+        } else {
+            return back()->withErrors('Не удалось добавить запись')->withInput();
+        }
     }
 
     /**

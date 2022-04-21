@@ -13,11 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(AdminSeeder::class);
+
         for ($i = 0; $i < 10; $i++) {
             $this->call([
                 AnimalTypeSeeder::class,
                 InoculationSeeder::class,
                 DiseaseSeeder::class,
+                UserSeeder::class
             ]);
         }
 
@@ -35,10 +38,10 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->call([
+            ProfileSeeder::class,
             AnimalInoculationSeeder::class,
             AnimalDiseaseSeeder::class,
             AnimalImagesSeeder::class,
-            AdminSeeder::class
         ]);
     }
 }

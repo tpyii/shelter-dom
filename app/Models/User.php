@@ -47,7 +47,12 @@ class User extends Authenticatable
         when(request("name"), function ($query, $value) {
             return $query->where("name", "LIKE", "%" . $value . "%");
         })->when(request("email"), function ($query, $value) {
-            return $query->where('email', "LIKE", "%". $value . "%");
+            return $query->where('email', "LIKE", "%" . $value . "%");
         });
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 }

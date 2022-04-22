@@ -9,10 +9,10 @@
 
 @php
   $n = $multiple ? substr($name, 0, -2) : $name;
-  $value = $multiple 
-    ? empty($value)
+  $value = $multiple
+    ? (empty($value)
       ? []
-      : is_object($value)
+      : is_object($value))
         ? $value->pluck('id')->toArray()
         : $value
     : $value;
@@ -36,12 +36,12 @@
     @if($multiple) multiple @endif
     @if($required) required @endif
   >
-    @if(!$multiple) 
+    @if(!$multiple)
       <option value=""></option>
     @endif
 
     @foreach($options as $option)
-      <option 
+      <option
         value="{{ $option->id }}"
         @if($multiple)
           @if(in_array($option->id, $value)) selected @endif

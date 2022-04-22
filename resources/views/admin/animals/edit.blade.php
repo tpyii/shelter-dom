@@ -5,6 +5,8 @@
 
     <x-errors/>
 
+    <x-alert type="danger" class="alert-ajax d-none">Ошибка при удалении Изображения</x-alert>
+
     <x-form method="POST" action="{{ route('admin.animals.update', $animal) }}" enctype="multipart/form-data">
         @method('PUT')
         <x-select name="type_id" label="Тип" :options="$animal_types" :value="$animal->type_id" required />

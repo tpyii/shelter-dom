@@ -8,7 +8,7 @@ use App\Models\Disease;
 use App\Models\AnimalType;
 use App\Models\Inoculation;
 use App\Http\Controllers\Controller;
-use App\Services\ImageUploadService;
+use App\Services\AnimalImageUploadService;
 use App\Http\Requests\Animal\EditRequest;
 use App\Http\Requests\Animal\CreateRequest;
 
@@ -77,9 +77,10 @@ class AnimalController extends Controller
      * Store a newly created resource in storage.
      *
      * @param CreateRequest $request
+     * @param \App\Services\AnimalImageUploadService $upload
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function store(CreateRequest $request)
+    public function store(CreateRequest $request, AnimalImageUploadService $upload)
     {
         $data = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description');
         $animal = Animal::create($data);
@@ -87,7 +88,7 @@ class AnimalController extends Controller
         $animal->inoculation()->attach($request->input('inoculations'));
 
         if ($request->hasfile('files')) {
-            app(ImageUploadService::class)->saveUploadedFile($request->file('files'), $animal, []);
+            $upload->saveUploadedFile($request->file('files'), $animal);
         }
 
         return $animal
@@ -134,10 +135,10 @@ class AnimalController extends Controller
      *
      * @param EditRequest $request
      * @param Animal $animal
-     * @param \App\Services\ImageUploadService $upload
+     * @param \App\Services\AnimalImageUploadService $upload
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(EditRequest $request, Animal $animal, ImageUploadService $upload)
+    public function update(EditRequest $request, Animal $animal, AnimalImageUploadService $upload)
     {
         $data = $request->only('name', 'type_id', 'breed_id', 'birthday_at', 'treatment_of_parasites', 'description');
         $updated_animal = $animal->fill($data)->save();

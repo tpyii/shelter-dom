@@ -1,22 +1,23 @@
 import {axios} from 'axios'
 import {NavBar} from '../NavBar/NavBar'
 import {Footer} from '../footer_component/Footer'
-import {useState, useEffect,useMemo} from 'react'
+import {useState, useEffect, useMemo} from 'react'
 import {Animals} from '../animals/Animals'
 import {NavBarLigth} from '../NavBarLigth/NavBarLigth'
 import {Pagination} from '../Pagination/Pagination'
-import {selectAnimalsList} from '../store/getAnimalsList/selectors'
+import {selectAnimalsList, selectPerPage, selectTotal} from '../store/getAnimalsList/selectors'
 import {useDispatch, useSelector} from "react-redux";
 import {getAnimals} from '../store/getAnimalsList/actions'
 
 export const OurPets = () => {
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [animalsPerPage] = useState(8);
     const [lastNumber, setLastNumber] = useState();
     const [sortBy, setSortBy] = useState('ask');
     const dispatch = useDispatch()
     const animals = useSelector(selectAnimalsList)
+    const total = useSelector(selectTotal)
+    const animalsPerPage = useSelector(selectPerPage)
 
     useEffect(() => {
         window.scrollTo({
@@ -29,12 +30,10 @@ export const OurPets = () => {
         dispatch(getAnimals(currentPage, sortBy))
     }, [currentPage])
 
-
 //     Get current posts
     const indexOfLastAnimal = currentPage * animalsPerPage;
     const indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage;
-    const currentAnimal = animals.slice(indexOfFirstAnimal, indexOfLastAnimal);
-//
+
 //     // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
@@ -52,18 +51,21 @@ export const OurPets = () => {
             <NavBarLigth/>
             <div className="section section-light">
                 <div className="container">
-                    <h3 className="mb-5 text-center">Our friends who<br/>are looking for a house</h3>
-                    <Animals animals={currentAnimal} loading={loading}/>
-                    <Pagination
-                        animalsPerPage={animalsPerPage}
-                        totalAnimals={animals.length}
-                        paginate={paginate}
-                        nextPage={nextPage}
-                        prevPage={prevPage}
-                        firstPage={firstPage}
-                        lastPage={lastPage}
-                        lastNum={getLastNumber}
-                    />
+                    <div className='pets'>
+                        <h3 className="mb-5 text-center">Our friends who<br/>are looking for a house</h3>
+                        <Animals animals={animals} loading={loading}/>
+                        <Pagination
+                            animalsPerPage={animalsPerPage}
+                            totalAnimals={total}
+                            paginate={paginate}
+                            nextPage={nextPage}
+                            prevPage={prevPage}
+                            firstPage={firstPage}
+                            lastPage={lastPage}
+                            lastNum={getLastNumber}
+                            currentPage={currentPage}
+                        />
+                    </div>
                 </div>
             </div>
             <Footer/>

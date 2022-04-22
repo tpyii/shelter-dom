@@ -7072,12 +7072,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _main_page_Main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main_page/Main */ "./resources/js/components/main_page/Main.js");
 /* harmony import */ var _our_pets_OurPets__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./our_pets/OurPets */ "./resources/js/components/our_pets/OurPets.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _components_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/store */ "./resources/js/components/store/index.js");
 /* harmony import */ var _templates_assets_css_style_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../templates/assets/css/style.css */ "./templates/assets/css/style.css");
 /* harmony import */ var react_scroll_up_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-scroll-up-button */ "./node_modules/react-scroll-up-button/dist/react-scroll-up-button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/sidebar/Sidebar */ "./resources/js/components/sidebar/Sidebar.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -7089,20 +7091,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
+  var topScroll = function topScroll() {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_2__.Provider, {
       store: _components_store__WEBPACK_IMPORTED_MODULE_3__.store,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_scroll_up_button__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        StopPosition: 0,
-        ShowAtPosition: 150,
-        AnimationDuration: 500
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_sidebar_Sidebar__WEBPACK_IMPORTED_MODULE_6__.Sidebar, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
+        style: {
+          position: 'absolute'
+        },
+        onClick: topScroll,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_scroll_up_button__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
           path: "/",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_main_page_Main__WEBPACK_IMPORTED_MODULE_0__.Main, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, {
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_main_page_Main__WEBPACK_IMPORTED_MODULE_0__.Main, {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
           path: "/our_pets",
-          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_our_pets_OurPets__WEBPACK_IMPORTED_MODULE_1__.OurPets, {})
+          element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_our_pets_OurPets__WEBPACK_IMPORTED_MODULE_1__.OurPets, {})
         })]
       })]
     })
@@ -7174,10 +7185,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NavBarLigth": () => (/* binding */ NavBarLigth)
 /* harmony export */ });
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/getAnimalsList/actions */ "./resources/js/components/store/getAnimalsList/actions.js");
-/* harmony import */ var _NavBarLight_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavBarLight.css */ "./resources/js/components/NavBarLigth/NavBarLight.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/getAnimalsList/actions */ "./resources/js/components/store/getAnimalsList/actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavBarLight.css */ "./resources/js/components/NavBarLigth/NavBarLight.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -7185,77 +7196,88 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NavBarLigth = function NavBarLigth() {
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useDispatch)();
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
 
-  var getId = function getId(id) {
-    dispatch((0,_store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_1__.getIdToScroll)(id));
+  var goToRegist = function goToRegist() {
+    window.location.href = '/user';
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("header", {
+  var scrollToComponent = function scrollToComponent(e) {
+    var value = e.currentTarget.getAttribute('value');
+    var element = document.getElementById(value);
+    element.scrollIntoView();
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("header", {
       className: "navbar background-darkl",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: "/",
           className: "navbar-logo col-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "logo-titlel cozy_light",
             children: "Cozy House"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "logo-subtitlel",
             children: "Shelter for pets in Boston"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "navbar-content col-auto align-self-center d-flex flex-column",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "navbar-content-container",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
               className: "nav flex-column flex-md-row align-content-center align-items-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                 className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
                   onClick: function onClick() {
                     return window.location.href = '/#about';
                   },
-                  className: "link__our",
-                  to: "#",
+                  className: location.hash.includes('/#about') ? 'active' : '',
+                  to: "/#about",
                   children: "About the shelter"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                 className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                  className: "link__our",
-                  to: "#",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  className: location.hash === '#our_pets' || location.hash === '' ? 'active' : '',
+                  to: "#our_pets",
                   children: "Our pets"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                 className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
                   onClick: function onClick() {
                     return window.location.href = '/#help';
                   },
-                  className: "link__our",
-                  to: "#",
+                  className: location.hash.includes('#help') ? 'active' : '',
+                  to: "",
                   children: "Help the shelter"
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                 className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                  onClick: function onClick() {
-                    return window.location.href = '/#contacts';
-                  },
-                  className: "link__our",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: scrollToComponent,
+                  className: location.hash.includes('#contacts') ? 'active' : '',
                   value: "contacts",
-                  to: "",
+                  to: "#contacts",
                   children: "Contacts"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                style: {
+                  marginLeft: '35px'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: goToRegist,
+                  className: "link__our",
+                  to: "",
+                  children: "Register / Login"
                 })
               })]
             })
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "col-auto d-flex flex-column justify-content-between navbar-burger",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {})]
         })]
       })
     })
@@ -7275,11 +7297,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NavBar": () => (/* binding */ NavBar)
 /* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-burger-menu */ "./node_modules/react-burger-menu/lib/BurgerMenu.js");
 /* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_burger_menu__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-sidebar */ "./node_modules/react-sidebar/dist/react-sidebar.esm.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -7287,6 +7312,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var NavBar = function NavBar() {
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
+
   var scrollToComponent = function scrollToComponent(e) {
     var value = e.currentTarget.getAttribute('value');
     var element = document.getElementById(value);
@@ -7297,79 +7324,77 @@ var NavBar = function NavBar() {
     window.location.href = '/user';
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("header", {
-      className: "navbar background-dark",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-          to: "/",
-          className: "navbar-logo col-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("header", {
+    className: "navbar background-dark",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "navbar-logo col-auto",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+          to: "",
+          className: location.hash.includes('') ? 'active' : !'active',
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "logo-title",
             children: "Cozy House"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "logo-subtitle",
             children: "Shelter for pets in Boston"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "navbar-content col-auto align-self-center d-flex flex-column",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "navbar-content-container",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
-              className: "nav flex-column flex-md-row align-content-center align-items-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item ",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-                  className: "link__our",
-                  value: "about",
-                  to: "#about",
-                  onClick: scrollToComponent,
-                  children: "About the shelter"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-                  className: "link__our",
-                  to: "/our_pets",
-                  children: "Our pets"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-                  value: "help",
-                  className: "link__our",
-                  to: "#help",
-                  onClick: scrollToComponent,
-                  children: "Help the shelter"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.Link, {
-                  onClick: scrollToComponent,
-                  value: "contacts",
-                  className: "link__our",
-                  to: "#contacts",
-                  children: "Contacts"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-                style: {
-                  padding: '5px',
-                  marginLeft: '35px',
-                  fontSize: '15px'
-                },
-                className: "button button-primary",
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "navbar-content col-auto align-self-center d-flex flex-column",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "navbar-content-container",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+            className: "nav flex-column flex-md-row align-content-center align-items-center",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              className: "nav-item ",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                className: location.hash.includes('#about') ? 'active' : '',
+                value: "about",
+                to: "#about",
+                onClick: scrollToComponent,
+                children: "About the shelter"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              className: "nav-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                className: location.hash.includes('/our_pets') ? 'active' : '',
+                to: "/our_pets",
+                children: "Our pets"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              className: "nav-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                value: "help",
+                className: location.hash.includes('#help') ? 'active' : '',
+                to: "#help",
+                onClick: scrollToComponent,
+                children: "Help the shelter"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              className: "nav-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
+                onClick: scrollToComponent,
+                value: "contacts",
+                className: location.hash.includes('#contacts') ? 'active' : '',
+                to: "#contacts",
+                children: "Contacts"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+              style: {
+                marginLeft: '35px'
+              },
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Link, {
                 onClick: goToRegist,
-                to: "",
-                children: "Registration"
-              })]
-            })
+                className: location.hash.includes('#registration') ? 'active' : '',
+                to: "#registration",
+                children: "Register / Login"
+              })
+            })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "col-auto d-flex flex-column justify-content-between navbar-burger",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {})]
-        })]
-      })
+        })
+      })]
     })
   });
 };
@@ -7400,7 +7425,8 @@ var Pagination = function Pagination(_ref) {
       firstPage = _ref.firstPage,
       prevPage = _ref.prevPage,
       lastPage = _ref.lastPage,
-      lastNum = _ref.lastNum;
+      lastNum = _ref.lastNum,
+      currentPage = _ref.currentPage;
   var pageNumbers = [];
   var leftArr = '<<';
   var rightArr = '>>';
@@ -7422,6 +7448,7 @@ var Pagination = function Pagination(_ref) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
         className: "col-auto d-flex mr-3",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+          disabled: currentPage === 1,
           onClick: firstPage,
           style: {
             marginRight: '10px'
@@ -7429,6 +7456,7 @@ var Pagination = function Pagination(_ref) {
           className: "button button-circle button-paginator button-secondary",
           children: [" ", leftArr, " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+          disabled: currentPage === 1,
           onClick: prevPage,
           style: {
             marginRight: '10px'
@@ -7443,10 +7471,11 @@ var Pagination = function Pagination(_ref) {
             style: {
               marginRight: '10px'
             },
-            className: "button button-circle button-paginator button-secondary",
+            className: currentPage === number ? 'active button button-circle button-paginator button-secondary' : 'button button-circle button-paginator button-secondary',
             children: number
           }, index);
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+          disabled: currentPage === lastPageNumb,
           onClick: nextPage,
           style: {
             marginRight: '10px'
@@ -7454,6 +7483,7 @@ var Pagination = function Pagination(_ref) {
           className: "button button-circle button-paginator button-secondary",
           children: [" ", arr, " "]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
+          disabled: currentPage === lastPageNumb,
           onClick: lastPage,
           style: {
             marginRight: '10px'
@@ -7463,18 +7493,7 @@ var Pagination = function Pagination(_ref) {
         })]
       })
     })
-  }) // <nav>
-  //     <ul className='pagination'>
-  //         {pageNumbers.map(number => (
-  //             <li key={number} className='page-item'>
-  //                 <button onClick={() => paginate(number)} className='page-link'>
-  //                     {number}
-  //                 </button>
-  //             </li>
-  //         ))}
-  //     </ul>
-  // </nav>
-  ;
+  });
 };
 
 /***/ }),
@@ -7633,7 +7652,7 @@ var Animals = function Animals(_ref) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: " flex-wrap mb-4 d-flex",
+    className: "row mb-5",
     children: [animals.map(function (_ref2) {
       var _images$;
 
@@ -7643,7 +7662,7 @@ var Animals = function Animals(_ref) {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "col col-lg-3 mb-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "card d-flex flex-column mr-3 p-3",
+          className: "card d-flex flex-column mr-3",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
             src: "".concat((images === null || images === void 0 ? void 0 : images.length) === 0 ? placeholder : (images === null || images === void 0 ? void 0 : images.length) && ((_images$ = images[0]) === null || _images$ === void 0 ? void 0 : _images$.path.replace('public/', '').replace('\\', '/').replace('tmp_db/', ''))),
             alt: name
@@ -8739,13 +8758,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_elastic_carousel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-elastic-carousel */ "./node_modules/react-elastic-carousel/dist/index.es.js");
 /* harmony import */ var _Item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Item */ "./resources/js/components/our_friends/Item.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
 /* harmony import */ var _modal_window_Modal_window__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modal_window/Modal_window */ "./resources/js/components/modal_window/Modal_window.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _store_getAnimalsList_selectors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../store/getAnimalsList/selectors */ "./resources/js/components/store/getAnimalsList/selectors.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../store/getAnimalsList/actions */ "./resources/js/components/store/getAnimalsList/actions.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _assets_Arrow_2_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/Arrow (2).png */ "./resources/js/components/our_friends/assets/Arrow (2).png");
+/* harmony import */ var _assets_Arrow_1_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/Arrow (1).png */ "./resources/js/components/our_friends/assets/Arrow (1).png");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -8757,6 +8778,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -8821,42 +8844,65 @@ var Our_friends = function Our_friends() {
     width: 1200,
     itemsToShow: 4
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+
+  var myArrow = function myArrow(_ref) {
+    var type = _ref.type,
+        onClick = _ref.onClick,
+        isEdge = _ref.isEdge;
+    var pointer = type === react_elastic_carousel__WEBPACK_IMPORTED_MODULE_0__.consts.PREV ? _assets_Arrow_2_png__WEBPACK_IMPORTED_MODULE_7__["default"].toString() : _assets_Arrow_1_png__WEBPACK_IMPORTED_MODULE_8__["default"].toString();
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
+      style: {
+        width: '58px',
+        marginTop: '184px'
+      },
+      className: "slider-button-next button button-circle button-secondary",
+      onClick: onClick,
+      disabled: isEdge,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+        src: pointer,
+        alt: "arrow"
+      })
+    });
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
     className: "text-center ",
     style: {
       background: '#F6F6F6',
       paddingBottom: '100px'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("h3", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("h3", {
       style: {
         paddingTop: '80px'
       },
       className: "mb-5 text-center",
-      children: ["Our friends who", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), "are looking for a house"]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      children: ["Our friends who", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("br", {}), "are looking for a house"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
       className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_elastic_carousel__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_elastic_carousel__WEBPACK_IMPORTED_MODULE_0__["default"], {
+        renderArrow: myArrow,
         breakPoints: breakPoints,
-        children: animals === null || animals === void 0 ? void 0 : animals.map(function (_ref) {
+        pagination: false,
+        children: animals === null || animals === void 0 ? void 0 : animals.map(function (_ref2) {
           var _images$;
 
-          var images = _ref.images,
-              name = _ref.name,
-              id = _ref.id;
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          var images = _ref2.images,
+              name = _ref2.name,
+              id = _ref2.id;
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             className: "d-flex justify-content-around",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
               className: "swiper-slide",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                 className: "card d-flex flex-column",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
                   src: "".concat((images === null || images === void 0 ? void 0 : images.length) === 0 ? placeholder : (images === null || images === void 0 ? void 0 : images.length) && ((_images$ = images[0]) === null || _images$ === void 0 ? void 0 : _images$.path.replace('public/', '').replace('\\', '/').replace('tmp_db/', ''))),
                   alt: name
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
                   className: "card-content d-flex flex-column justify-content-center align-items-center",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h4", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("h4", {
                     children: name
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("button", {
                     id: id,
                     onClick: functionWrapper,
                     className: "button button-secondary",
@@ -8870,7 +8916,7 @@ var Our_friends = function Our_friends() {
           }, id);
         })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
       to: "/our_pets",
       style: {
         marginTop: '60px',
@@ -8879,7 +8925,7 @@ var Our_friends = function Our_friends() {
       },
       className: "button button-primary mx-auto mt-60 mb-100",
       children: "Get to know the rest"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_modal_window_Modal_window__WEBPACK_IMPORTED_MODULE_2__.Modal_window, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_modal_window_Modal_window__WEBPACK_IMPORTED_MODULE_2__.Modal_window, {
       show: show,
       hide: handleClose,
       animalData: animalData
@@ -8947,22 +8993,20 @@ var OurPets = function OurPets() {
       currentPage = _useState4[0],
       setCurrentPage = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(8),
-      _useState6 = _slicedToArray(_useState5, 1),
-      animalsPerPage = _useState6[0];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(),
+      _useState6 = _slicedToArray(_useState5, 2),
+      lastNumber = _useState6[0],
+      setLastNumber = _useState6[1];
 
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)('ask'),
       _useState8 = _slicedToArray(_useState7, 2),
-      lastNumber = _useState8[0],
-      setLastNumber = _useState8[1];
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)('ask'),
-      _useState10 = _slicedToArray(_useState9, 2),
-      sortBy = _useState10[0],
-      setSortBy = _useState10[1];
+      sortBy = _useState8[0],
+      setSortBy = _useState8[1];
 
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_8__.useDispatch)();
   var animals = (0,react_redux__WEBPACK_IMPORTED_MODULE_8__.useSelector)(_store_getAnimalsList_selectors__WEBPACK_IMPORTED_MODULE_7__.selectAnimalsList);
+  var total = (0,react_redux__WEBPACK_IMPORTED_MODULE_8__.useSelector)(_store_getAnimalsList_selectors__WEBPACK_IMPORTED_MODULE_7__.selectTotal);
+  var animalsPerPage = (0,react_redux__WEBPACK_IMPORTED_MODULE_8__.useSelector)(_store_getAnimalsList_selectors__WEBPACK_IMPORTED_MODULE_7__.selectPerPage);
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
     window.scrollTo({
       top: 0,
@@ -8974,9 +9018,7 @@ var OurPets = function OurPets() {
   }, [currentPage]); //     Get current posts
 
   var indexOfLastAnimal = currentPage * animalsPerPage;
-  var indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage;
-  var currentAnimal = animals.slice(indexOfFirstAnimal, indexOfLastAnimal); //
-  //     // Change page
+  var indexOfFirstAnimal = indexOfLastAnimal - animalsPerPage; //     // Change page
 
   var paginate = function paginate(pageNumber) {
     return setCurrentPage(pageNumber);
@@ -9011,26 +9053,99 @@ var OurPets = function OurPets() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_NavBarLigth_NavBarLigth__WEBPACK_IMPORTED_MODULE_5__.NavBarLigth, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
       className: "section section-light",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
         className: "container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("h3", {
-          className: "mb-5 text-center",
-          children: ["Our friends who", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), "are looking for a house"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_animals_Animals__WEBPACK_IMPORTED_MODULE_4__.Animals, {
-          animals: currentAnimal,
-          loading: loading
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_6__.Pagination, {
-          animalsPerPage: animalsPerPage,
-          totalAnimals: animals.length,
-          paginate: paginate,
-          nextPage: nextPage,
-          prevPage: prevPage,
-          firstPage: firstPage,
-          lastPage: lastPage,
-          lastNum: getLastNumber
-        })]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+          className: "pets",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("h3", {
+            className: "mb-5 text-center",
+            children: ["Our friends who", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("br", {}), "are looking for a house"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_animals_Animals__WEBPACK_IMPORTED_MODULE_4__.Animals, {
+            animals: animals,
+            loading: loading
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_6__.Pagination, {
+            animalsPerPage: animalsPerPage,
+            totalAnimals: total,
+            paginate: paginate,
+            nextPage: nextPage,
+            prevPage: prevPage,
+            firstPage: firstPage,
+            lastPage: lastPage,
+            lastNum: getLastNumber,
+            currentPage: currentPage
+          })]
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_footer_component_Footer__WEBPACK_IMPORTED_MODULE_2__.Footer, {})]
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/sidebar/Sidebar.js":
+/*!****************************************************!*\
+  !*** ./resources/js/components/sidebar/Sidebar.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Sidebar": () => (/* binding */ Sidebar)
+/* harmony export */ });
+/* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-burger-menu */ "./node_modules/react-burger-menu/lib/BurgerMenu.js");
+/* harmony import */ var react_burger_menu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_burger_menu__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _sidebar_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebar.css */ "./resources/js/components/sidebar/sidebar.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+var Sidebar = function Sidebar() {
+  /*поработать со сменой цвета бургера*/
+  // useEffect(() => {
+  //     setTimeout(() => {
+  //         const burgerBars = Array.from(document.querySelectorAll('.bm-burger-bars'))
+  //         burgerBars.forEach(spanEl => {
+  //                 location.pathname.includes('/our_pets') ?spanEl.classList.toggle('bm-burger-bars darkClass') : spanEl.classList.remove('darkClass bm-burger-bars')
+  //             }
+  //         )
+  //     }, 0)
+  // }, [location.hash])
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_burger_menu__WEBPACK_IMPORTED_MODULE_0__.slide, {
+    className: "myMenu",
+    style: {
+      display: 'none'
+    },
+    right: true,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+      className: "menu-item",
+      href: "/",
+      children: "Home"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+      className: location.hash.includes('#about') ? 'active' : '',
+      value: "about",
+      href: "/#about",
+      children: "About the shelter"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+      className: "menu-item",
+      href: "/our_pets",
+      children: "Our pets"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+      className: "menu-item",
+      href: "/#help",
+      children: "Help the shelter"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+      className: "menu-item",
+      href: "#contacts",
+      children: "Contacts"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+      className: "menu-item",
+      href: "/user",
+      children: "Registration"
+    })]
   });
 };
 
@@ -9093,7 +9208,7 @@ var getAnimals = function getAnimals(page, sortBy) {
               }).then(function (resp) {
                 return dispatch({
                   type: REQUEST_ANIMALS_SUCCESS,
-                  payload: resp.data.data
+                  payload: resp.data
                 });
               })["catch"](function (err) {
                 return console.warn(err);
@@ -9140,6 +9255,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var initialState = {
   animalsList: [],
   id: '',
+  total: 0,
+  animalsPerPage: 0,
   request: {
     status: _constants_Constants__WEBPACK_IMPORTED_MODULE_0__.REQUEST_STATUS.IDLE,
     error: ''
@@ -9155,18 +9272,14 @@ var animalsReducer = function animalsReducer() {
   switch (type) {
     case _actions__WEBPACK_IMPORTED_MODULE_1__.REQUEST_ANIMALS_SUCCESS:
       return _objectSpread(_objectSpread({}, state), {}, {
-        animalsList: payload,
+        animalsList: payload.data,
+        total: payload.meta.total,
+        animalsPerPage: payload.meta.per_page,
         request: {
           error: '',
           status: _constants_Constants__WEBPACK_IMPORTED_MODULE_0__.REQUEST_STATUS.SUCCESS
         }
       });
-
-    case _actions__WEBPACK_IMPORTED_MODULE_1__.SCROLL_TO_BLOCK:
-      console.log(payload);
-      return {
-        id: payload
-      };
 
     default:
       return state;
@@ -9185,13 +9298,17 @@ var animalsReducer = function animalsReducer() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "selectAnimalsList": () => (/* binding */ selectAnimalsList),
-/* harmony export */   "selectId": () => (/* binding */ selectId)
+/* harmony export */   "selectPerPage": () => (/* binding */ selectPerPage),
+/* harmony export */   "selectTotal": () => (/* binding */ selectTotal)
 /* harmony export */ });
 var selectAnimalsList = function selectAnimalsList(state) {
   return state.animals.animalsList;
 };
-var selectId = function selectId(state) {
-  return state.id;
+var selectPerPage = function selectPerPage(state) {
+  return state.animals.animalsPerPage;
+};
+var selectTotal = function selectTotal(state) {
+  return state.animals.total;
 };
 
 /***/ }),
@@ -14424,6 +14541,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".modal-header .btn-close {\n    margin
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/sidebar/sidebar.css":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/sidebar/sidebar.css ***!
+  \***************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n.bm-item {\n    display: inline-block;\n    text-decoration: none;\n    margin-bottom: 10px;\n    color: #d1d1d1;\n    transition: color 0.2s;\n}\n\n.bm-item:hover {\n    color: white;\n}\n\n.bm-burger-button {\n    display: none;\n    position: fixed;\n    width: 36px;\n    height: 30px;\n    right: 36px;\n    top: 36px;\n}\n\n.bm-burger-bars {\n    /*background: #373a47;*/\n    background: #b8b7ad;\n}\n\n.bm-cross-button {\n    height: 24px;\n    width: 24px;\n}\n\n.bm-cross {\n    background: #bdc3c7;\n}\n\n.bm-menu {\n    background: #373a47;\n    padding: 2.5em 1.5em 0;\n    font-size: 1.15em;\n}\n\n.bm-morph-shape {\n    fill: #373a47;\n}\n\n.bm-item-list {\n    color: #b8b7ad;\n}\n\n.bm-overlay {\n    background: rgba(0, 0, 0, 0.3);\n}\n\n.dark{\n    background: #b8b7ad;\n}\n\n@media (max-width: 767px) {\n    .myMenu {\n        display: block;\n        z-index: 0;\n    }\n    .bm-burger-button{\n        display: flex;\n    }\n}\n\n.darkClass{\n    background: #545454;\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./templates/assets/css/style.css":
 /*!**************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./templates/assets/css/style.css ***!
@@ -14447,7 +14588,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_patterns_noise_transparent_2x_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/**\r\n *  1. Variables\r\n *  2. Defaults\r\n *  3. Buttons\r\n *  4. Typography\r\n *  5. Lists\r\n *  6. Logo\r\n *  7. Links\r\n *  8. Cards\r\n *  9. Modal\r\n *  10. Navbar\r\n *  11. Welcome\r\n *  12. About\r\n *  13. Help\r\n *  14. Donate\r\n *  15. Footer\r\n *  16. Slider\r\n */\r\n\r\n/* 1. Variables */\r\n\r\n:root {\r\n  --font-family-arial: Arial, sans-serif;\r\n  --font-family-georgia: Georgia, serif;\r\n  /*--color-dark-s: #CDCDCD;*/\r\n  /*--color-dark-m: #B2B2B2;*/\r\n  /*--color-dark-l: #545454;*/\r\n  /*--color-dark-xl: #4C4C4C;*/\r\n  /*--color-dark-3xl: #292929;*/\r\n  /*--color-light-s: #FAFAFA;*/\r\n  /*--color-light-l: #F6F6F6;*/\r\n  /*--color-light-xl: #FFFFFF;*/\r\n  /*--color-primary: #F1CDB3;*/\r\n  /*--color-primary-light: #FDDCC4;*/\r\n}\r\n\r\n.swiper-wrapper{\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.welcome__img{\r\n    margin-top: 120px;\r\n}\r\n\r\na,\r\nbutton {\r\n  outline: none;\r\n}\r\n\r\n/* 2. Defaults */\r\n\r\n::-moz-selection {\r\n  background: #F1CDB3;\r\n  color: #292929;\r\n}\r\n\r\n::selection {\r\n  background: #F1CDB3;\r\n  color: #292929;\r\n}\r\n\r\nbody {\r\n  font-family: var(--font-family-arial);\r\n  font-size: normal;\r\n  font-weight: 400;\r\n  font-size: 15px;\r\n  line-height: 160%;\r\n}\r\n\r\nimg {\r\n  max-width: 100%;\r\n}\r\n\r\n.section {\r\n  padding: 80px 0 100px;\r\n  overflow: hidden;\r\n}\r\n\r\n.section-light {\r\n  background-color: #F6F6F6;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .section {\r\n    padding: 45px 0;\r\n  }\r\n}\r\n\r\n/* 3. Buttons */\r\n\r\n.button {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: 10px 0px;\r\n  padding: 13px 43px;\r\n  border-width: 2px;\r\n  border-style: solid;\r\n  border-radius: 100px;\r\n  box-sizing: border-box;\r\n  font-family: var(--font-family-georgia);\r\n  font-size: 17px;\r\n  line-height: 130%;\r\n  letter-spacing: 0.06em;\r\n  color: #292929;\r\n  transition: all 0.2s ease-out;\r\n}\r\n\r\n.button:disabled,\r\n.button:disabled:hover {\r\n  border-color: #CDCDCD;\r\n  background-color: transparent;\r\n  color: #CDCDCD;\r\n  cursor: not-allowed;\r\n}\r\n\r\n.button:disabled svg * {\r\n  fill: #CDCDCD;\r\n}\r\n\r\n.button-primary:hover,\r\n.button.active:hover {\r\n  border-color: #FDDCC4;\r\n  background-color: #FDDCC4;\r\n}\r\n\r\n.button-secondary {\r\n  border-color: #FDDCC4;\r\n  background-color: transparent;\r\n}\r\n\r\n.button-secondary:hover {\r\n  background-color: #FDDCC4;\r\n}\r\n\r\n.button-circle {\r\n  padding: 0;\r\n  width: 52px;\r\n  height: 52px;\r\n}\r\n\r\n.button-paginator {\r\n  font-size: 20px;\r\n  line-height: 120%;\r\n  text-align: center;\r\n  padding: 0;\r\n}\r\n\r\n.button:active,\r\n.button:focus,\r\n.button-primary,\r\n.button.active {\r\n  border-color: #F1CDB3;\r\n  background-color: #F1CDB3;\r\n}\r\n\r\n/* 4. Typography */\r\n\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6 {\r\n  font-family: 'Georgia';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  line-height: 130%;\r\n  color: #545454;\r\n}\r\n\r\nh2 {\r\n  font-size: 44px;\r\n}\r\n\r\nh3 {\r\n  font-size: 35px;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\nh4 {\r\n  font-size: 20px;\r\n  line-height: 115%;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\nh5 {\r\n  font-size: 15px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n}\r\n\r\np {\r\n  color: #4C4C4C;\r\n}\r\n\r\nsmall {\r\n  font-style: italic;\r\n  font-weight: 400;\r\n  font-size: 12px;\r\n  line-height: 150%;\r\n  color: #B2B2B2;\r\n}\r\n\r\n/*  5. Lists  */\r\n\r\n.list {\r\n  padding-left: 15px;\r\n  list-style: none;\r\n  font-family: 'Georgia';\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 15px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n  color: #000000;\r\n}\r\n\r\n.list-item {\r\n  position: relative;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.list-item::before {\r\n  content: '';\r\n  padding: 2px;\r\n  border-radius: 50%;\r\n  background-color: #F1CDB3;\r\n  position: absolute;\r\n  left: -15px;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n}\r\n\r\n  /*6. Logo  */\r\n\r\n.logo::after {\r\n  content: none !important;\r\n}\r\n\r\n.logo-title {\r\n  margin-bottom: 10px;\r\n  font-family: var(--font-family-georgia);\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 32px;\r\n  line-height: 110%;\r\n  letter-spacing: 0.06em;\r\n  color: #F1CDB3;;\r\n  transition: color 0.2s ease-out;\r\n}\r\n\r\n.logo-subtitle {\r\n  font-family: var(--font-family-arial);\r\n  font-style: normal;\r\n  font-weight: 400;\r\n  font-size: 13px;\r\n  line-height: 15px;\r\n  letter-spacing: 0.1em;\r\n  color: #CDCDCD;\r\n  transition: color 0.2s ease-out;\r\n}\r\n\r\n.background-dark .logo-title,\r\n.background-dark .logo-title:hover {\r\n  color: #F1CDB3;\r\n}\r\n\r\n.background-dark .logo-subtitle {\r\n  color: #FFFFFF;\r\n}\r\n\r\n/*!*  7. Links *!*/\r\n\r\na {\r\n  position: relative;\r\n  text-decoration: none;\r\n  color: #545454;\r\n}\r\n\r\na:hover,\r\na.active {\r\n  color: #292929;\r\n}\r\n\r\na:active,\r\na:focus {\r\n  color: #545454;\r\n}\r\n\r\na:active::after,\r\na:focus::after,\r\na.active::after {\r\n  content: '';\r\n  display: block;\r\n  position: absolute;\r\n  bottom: -5px;\r\n  width: 100%;\r\n  height: 3px;\r\n  background-color: #F1CDB3;\r\n}\r\n\r\n.background-dark a {\r\n  color: #CDCDCD;\r\n}\r\n\r\n.background-dark a:hover,\r\n.background-dark a:active::after,\r\n.background-dark a:focus::after,\r\n.background-dark a.active {\r\n  color: #FAFAFA;\r\n}\r\n\r\n/*  8. Cards  */\r\n\r\n.card {\r\n  max-width: 270px;\r\n  margin: 0 auto;\r\n  border: none;\r\n  border-radius: 9px;\r\n  overflow: hidden;\r\n  background: #FAFAFA;\r\n}\r\n\r\n.card:hover .card-content {\r\n  background-color: #FFFFFF;\r\n}\r\n\r\n.card img {\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\r\n  width: 100%;\r\n  height: 270px;\r\n}\r\n\r\n.card-content {\r\n  padding: 30px;\r\n  transition: all 0.2s ease-out;\r\n}\r\n\r\n.card.active {\r\n  max-width: 900px;\r\n  max-height: 500px;\r\n  height: auto;\r\n}\r\n\r\n.card.active img {\r\n  max-width: 500px;\r\n  height: auto;\r\n}\r\n\r\n.card.active .card-content {\r\n  padding: 50px 20px 20px;\r\n  overflow-y: auto;\r\n}\r\n\r\n.card.active .card-content * {\r\n  color: #000000;\r\n}\r\n\r\n@media (max-width: 992px) {\r\n  .card.active img {\r\n    max-width: 400px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .card.active {\r\n    max-height: 350px;\r\n  }\r\n\r\n  .card.active img {\r\n    max-width: 300px;\r\n  }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n  .card.active {\r\n    max-height: initial;\r\n    height: 90vh;\r\n    overflow-y: auto;\r\n  }\r\n\r\n  .card.active .card-content {\r\n    overflow-y: visible;\r\n  }\r\n\r\n  .card.active img {\r\n    max-width: 100%;\r\n  }\r\n}\r\n\r\n/*  9. Modal  */\r\n\r\n.modal-dialog {\r\n  max-width: 900px;\r\n  margin: 70px auto 20px;\r\n}\r\n\r\n.modal-content {\r\n  border-radius: 9px;\r\n  background: #FAFAFA;\r\n  height: 500px;\r\n  border: 0;\r\n}\r\n\r\n.modal-header {\r\n  padding: 0;\r\n  border: 0;\r\n}\r\n\r\n.modal-header .button-circle {\r\n  position: absolute;\r\n  bottom: 100%;\r\n  left: 100%;\r\n}\r\n\r\n.modal-body {\r\n  padding: 0;\r\n  overflow: hidden;\r\n}\r\n\r\n.modal-image {\r\n  width: 100%;\r\n  height: 100%;\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\r\n}\r\n\r\n.modal-text {\r\n  overflow-y: auto;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n  .modal-dialog {\r\n    margin: 70px 60px 20px;\r\n  }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n  .modal-dialog {\r\n    margin: 70px 20px 20px;\r\n  }\r\n\r\n  .modal-content {\r\n    height: auto;\r\n  }\r\n\r\n  .modal-header .button-circle {\r\n    transform: translateX(-100%);\r\n  }\r\n}\r\n\r\n/*!*  10. Navbar  *!*/\r\n\r\n.navbar {\r\n  position: relative;\r\n  padding: 30px 0;\r\n  z-index: 2;\r\n}\r\n\r\n.navbar-burger {\r\n  display: none !important;\r\n  width: 30px;\r\n  height: 22px;\r\n  cursor: pointer;\r\n  transition: transform 0.2s ease-out;\r\n}\r\n\r\n.nav-item {\r\n  margin-left: 35px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .navbar.active .navbar-logo {\r\n    z-index: 1;\r\n  }\r\n\r\n  .navbar-content {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    transform: translateX(100%);\r\n    width: 100%;\r\n    height: 100vh;\r\n    padding-top: 120px;\r\n    z-index: 1;\r\n    background: #292929;\r\n    transition: transform 0.2s ease-out;\r\n  }\r\n\r\n  .navbar-content-container {\r\n    padding-top: 100px;\r\n    overflow-y: auto;\r\n  }\r\n\r\n  .navbar.active .navbar-content {\r\n    transform: translateX(0);\r\n  }\r\n\r\n  .nav-item {\r\n    margin-bottom: 50px;\r\n    margin-left: 0;\r\n    font-size: 32px;\r\n  }\r\n\r\n  .navbar-burger {\r\n    display: flex !important;\r\n  }\r\n\r\n  .navbar.active .navbar-burger {\r\n    transform: rotate(90deg);\r\n  }\r\n\r\n  .navbar-burger > div {\r\n    height: 2px;\r\n    background-color: #545454;\r\n    transition: background-color 0.2s ease-out;\r\n  }\r\n\r\n  .background-dark .navbar-burger > div {\r\n    background-color: #F1CDB3;\r\n  }\r\n}\r\n\r\n/*  11. Welcome  */\r\n\r\n.welcome {\r\n  padding-top: 120px;\r\n  transform: translateY(-120px);\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n              radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\r\n              #211F20;\r\n}\r\n\r\n.welcome h2 {\r\n  color: #FFFFFF;\r\n  max-width: 310px;\r\n  margin-bottom: 45px;\r\n}\r\n\r\n.welcome p {\r\n  color: #CDCDCD;\r\n  margin-bottom: 55px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .welcome {\r\n    padding-top: 135px;\r\n  }\r\n}\r\n\r\n/*  12. About  */\r\n\r\n.about {\r\n  max-width: 850px;\r\n  margin: 0 auto;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .about {\r\n    text-align: justify;\r\n  }\r\n}\r\n\r\n/*  13. Help  */\r\n\r\n.help svg {\r\n  margin-bottom: 30px;\r\n}\r\n\r\n.help-item {\r\n  text-align: center;\r\n  margin-bottom: 60px;\r\n}\r\n\r\n/*  14. Donate  */\r\n\r\n.donate {\r\n  max-width: 890px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.donate-content {\r\n  max-width: 380px;\r\n  margin: 0 auto;\r\n}\r\n\r\n/*  15. Footer  */\r\n\r\n.footer {\r\n  padding: 60px 0;\r\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n              radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\r\n              #211F20;\r\n}\r\n\r\n.footer h3 {\r\n  color: #FFFFFF;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.footer h4 {\r\n  color: #F1CDB3;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.footer h4:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.footer img {\r\n  /*position: absolute;*/\r\n  right: 0;\r\n  bottom: 0;\r\n  transform: translateY(60px);\r\n}\r\n\r\n@media (max-width: 991px) {\r\n  .footer img {\r\n    position: static;\r\n  }\r\n}\r\n\r\n@media (max-width: 767px) {\r\n  .footer > .container {\r\n    max-width: 320px;\r\n  }\r\n}\r\n\r\n/*  16. Slider  */\r\n\r\n.slider {\r\n  overflow: visible;\r\n}\r\n\r\n.slider-button {\r\n  position: absolute;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  z-index: 1;\r\n}\r\n\r\n.slider-button-next {\r\n  right: 0;\r\n}\r\n\r\n.slider-button-prev {\r\n  left: 0;\r\n}\r\n\r\n\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/**\n *  1. Variables\n *  2. Defaults\n *  3. Buttons\n *  4. Typography\n *  5. Lists\n *  6. Logo\n *  7. Links\n *  8. Cards\n *  9. Modal\n *  10. Navbar\n *  11. Welcome\n *  12. About\n *  13. Help\n *  14. Donate\n *  15. Footer\n *  16. Slider\n */\n\n/* 1. Variables */\n\n:root {\n    --font-family-arial: Arial, sans-serif;\n    --font-family-georgia: Georgia, serif;\n    /*--color-dark-s: #CDCDCD;*/\n    /*--color-dark-m: #B2B2B2;*/\n    /*--color-dark-l: #545454;*/\n    /*--color-dark-xl: #4C4C4C;*/\n    /*--color-dark-3xl: #292929;*/\n    /*--color-light-s: #FAFAFA;*/\n    /*--color-light-l: #F6F6F6;*/\n    /*--color-light-xl: #FFFFFF;*/\n    /*--color-primary: #F1CDB3;*/\n    /*--color-primary-light: #FDDCC4;*/\n}\n\n.swiper-wrapper {\n    display: flex;\n    justify-content: space-between;\n}\n\n.welcome__img {\n    margin-top: 120px;\n}\n\na,\nbutton {\n    outline: none;\n}\n\n/* 2. Defaults */\n\n::-moz-selection {\n    background: #F1CDB3;\n    color: #292929;\n}\n\n::selection {\n    background: #F1CDB3;\n    color: #292929;\n}\n\nbody {\n    font-family: var(--font-family-arial);\n    font-weight: 400;\n    font-size: 15px;\n    line-height: 160%;\n}\n\nimg {\n    max-width: 100%;\n}\n\n.section {\n    padding: 80px 0 100px;\n    overflow: hidden;\n}\n\n.section-light {\n    background-color: #F6F6F6;\n}\n\n@media (max-width: 767px) {\n    .section {\n        padding: 45px 0;\n    }\n}\n\n/* 3. Buttons */\n\n.button {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    margin: 10px 0px;\n    padding: 13px 43px;\n    border-width: 2px;\n    border-style: solid;\n    border-radius: 100px;\n    box-sizing: border-box;\n    font-family: var(--font-family-georgia);\n    font-size: 17px;\n    line-height: 130%;\n    letter-spacing: 0.06em;\n    color: #292929;\n    transition: all 0.2s ease-out;\n}\n\n.button:disabled,\n.button:disabled:hover {\n    border-color: #CDCDCD;\n    background-color: transparent;\n    color: #CDCDCD;\n    cursor: not-allowed;\n}\n\n.button:disabled svg * {\n    fill: #CDCDCD;\n}\n\n.button-primary:hover,\n.button.active:hover {\n    border-color: #FDDCC4;\n    background-color: #FDDCC4;\n}\n\n.button-secondary {\n    border-color: #FDDCC4;\n    background-color: transparent;\n}\n\n.button-secondary:hover {\n    background-color: #FDDCC4;\n}\n\n.button-circle {\n    padding: 0;\n    width: 52px;\n    height: 52px;\n}\n\n.button-paginator {\n    font-size: 20px;\n    line-height: 120%;\n    text-align: center;\n    padding: 0;\n}\n\n.button:active,\n.button:focus,\n.button-primary,\n.button.active {\n    border-color: #F1CDB3;\n    background-color: #F1CDB3;\n}\n\n/* 4. Typography */\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    font-family: 'Georgia';\n    font-style: normal;\n    font-weight: 400;\n    line-height: 130%;\n    color: #545454;\n}\n\nh2 {\n    font-size: 44px;\n}\n\nh3 {\n    font-size: 35px;\n    letter-spacing: 0.06em;\n}\n\nh4 {\n    font-size: 20px;\n    line-height: 115%;\n    letter-spacing: 0.06em;\n}\n\nh5 {\n    font-size: 15px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n}\n\np {\n    color: #4C4C4C;\n}\n\nsmall {\n    font-style: italic;\n    font-weight: 400;\n    font-size: 12px;\n    line-height: 150%;\n    color: #B2B2B2;\n}\n\n/*  5. Lists  */\n\n.list {\n    padding-left: 15px;\n    list-style: none;\n    font-family: 'Georgia';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 15px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n    color: #000000;\n}\n\n.list-item {\n    position: relative;\n    margin-bottom: 6px;\n}\n\n.list-item::before {\n    content: '';\n    padding: 2px;\n    border-radius: 50%;\n    background-color: #F1CDB3;\n    position: absolute;\n    left: -15px;\n    top: 50%;\n    transform: translateY(-50%);\n}\n\n/*6. Logo  */\n\n.logo::after {\n    content: none !important;\n}\n\n.logo-title {\n    margin-bottom: 10px;\n    font-family: var(--font-family-georgia);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 32px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n    color: #F1CDB3;;\n    transition: color 0.2s ease-out;\n}\n\n.logo-subtitle {\n    font-family: var(--font-family-arial);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    letter-spacing: 0.1em;\n    color: #CDCDCD;\n    transition: color 0.2s ease-out;\n}\n\n.background-dark .logo-title,\n.background-dark .logo-title:hover {\n    color: #F1CDB3;\n}\n\n.background-dark .logo-subtitle {\n    color: #FFFFFF;\n}\n\n/*!*  7. Links *!*/\n\na {\n    position: relative;\n    text-decoration: none;\n    color: #545454;\n}\n\na:hover,\na.active {\n    color: #292929;\n}\n\na:active,\na:focus {\n    color: #545454;\n}\n\na:active::after,\na:focus::after,\na.active::after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: -5px;\n    width: 100%;\n    height: 3px;\n    background-color: #F1CDB3;\n}\n\n.background-dark a {\n    color: #CDCDCD;\n}\n\n.background-dark a:hover,\n.background-dark a:active::after,\n.background-dark a:focus::after,\n.background-dark a.active {\n    color: #FAFAFA;\n}\n\n/*  8. Cards  */\n\n.card {\n    max-width: 270px;\n    margin: 0 auto;\n    border: none;\n    border-radius: 9px;\n    overflow: hidden;\n    background: #FAFAFA;\n}\n\n.card:hover .card-content {\n    background-color: #FFFFFF;\n}\n\n.card img {\n    -o-object-fit: contain;\n       object-fit: contain;\n    width: 100%;\n    height: 270px;\n}\n\n.card-content {\n    padding: 30px;\n    transition: all 0.2s ease-out;\n}\n\n.card.active {\n    max-width: 900px;\n    max-height: 500px;\n    height: auto;\n}\n\n.card.active img {\n    max-width: 500px;\n    height: auto;\n}\n\n.card.active .card-content {\n    padding: 50px 20px 20px;\n    overflow-y: auto;\n}\n\n.card.active .card-content * {\n    color: #000000;\n}\n\n@media (max-width: 992px) {\n    .card.active img {\n        max-width: 400px;\n    }\n}\n\n@media (max-width: 768px) {\n    .card.active {\n        max-height: 350px;\n    }\n\n    .card.active img {\n        max-width: 300px;\n    }\n}\n\n@media (max-width: 575px) {\n    .card.active {\n        max-height: initial;\n        height: 90vh;\n        overflow-y: auto;\n    }\n\n    .card.active .card-content {\n        overflow-y: visible;\n    }\n\n    .card.active img {\n        max-width: 100%;\n    }\n}\n\n/*  9. Modal  */\n\n.modal-dialog {\n    max-width: 900px;\n    margin: 70px auto 20px;\n}\n\n.modal-content {\n    border-radius: 9px;\n    background: #FAFAFA;\n    height: 500px;\n    border: 0;\n}\n\n.modal-header {\n    padding: 0;\n    border: 0;\n}\n\n.modal-header .button-circle {\n    position: absolute;\n    bottom: 100%;\n    left: 100%;\n}\n\n.modal-body {\n    padding: 0;\n    overflow: hidden;\n}\n\n.modal-image {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n\n.modal-text {\n    overflow-y: auto;\n}\n\n@media (max-width: 1024px) {\n    .modal-dialog {\n        margin: 70px 60px 20px;\n    }\n}\n\n@media (max-width: 575px) {\n    .modal-dialog {\n        margin: 70px 20px 20px;\n    }\n\n    .modal-content {\n        height: auto;\n    }\n\n    .modal-header .button-circle {\n        transform: translateX(-100%);\n    }\n}\n\n/*!*  10. Navbar  *!*/\n\n.navbar {\n    position: relative;\n    padding: 30px 0;\n    z-index: 2;\n}\n\n.navbar-burger {\n    display: none !important;\n    width: 30px;\n    height: 22px;\n    cursor: pointer;\n    transition: transform 0.2s ease-out;\n}\n\n.nav-item {\n    margin-left: 35px;\n}\n\n@media (max-width: 767px) {\n    .navbar.active .navbar-logo {\n        z-index: 1;\n    }\n    .navbar-content {\n        position: fixed;\n        top: 0;\n        left: 0;\n        transform: translateX(100%);\n        width: 100%;\n        height: 100vh;\n        padding-top: 120px;\n        z-index: 1;\n        background: #292929;\n        transition: transform 0.2s ease-out;\n    }\n\n    .navbar-content-container {\n        padding-top: 100px;\n        overflow-y: auto;\n    }\n\n    .navbar.active .navbar-content {\n        transform: translateX(0);\n    }\n\n    .nav-item {\n        margin-bottom: 50px;\n        margin-left: 0;\n        font-size: 32px;\n    }\n\n    .navbar-burger {\n        display: flex !important;\n    }\n\n    .navbar.active .navbar-burger {\n        transform: rotate(90deg);\n    }\n\n    .navbar-burger > div {\n        height: 2px;\n        background-color: #545454;\n        transition: background-color 0.2s ease-out;\n    }\n\n    .background-dark .navbar-burger > div {\n        background-color: #F1CDB3;\n    }\n}\n\n/*  11. Welcome  */\n\n.welcome {\n    padding-top: 120px;\n    transform: translateY(-120px);\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\n    #211F20;\n}\n\n.welcome h2 {\n    color: #FFFFFF;\n    max-width: 310px;\n    margin-bottom: 45px;\n}\n\n.welcome p {\n    color: #CDCDCD;\n    margin-bottom: 55px;\n}\n\n@media (max-width: 767px) {\n    .welcome {\n        padding-top: 135px;\n    }\n}\n\n/*  12. About  */\n\n.about {\n    max-width: 850px;\n    margin: 0 auto;\n}\n\n@media (max-width: 767px) {\n    .about {\n        text-align: justify;\n    }\n}\n\n/*  13. Help  */\n\n.help svg {\n    margin-bottom: 30px;\n}\n\n.help-item {\n    text-align: center;\n    margin-bottom: 60px;\n}\n\n/*  14. Donate  */\n\n.donate {\n    max-width: 890px;\n    margin: 0 auto;\n}\n\n.donate-content {\n    max-width: 380px;\n    margin: 0 auto;\n}\n\n/*  15. Footer  */\n\n.footer {\n    padding: 60px 0;\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\n    #211F20;\n}\n\n.footer h3 {\n    color: #FFFFFF;\n    margin-bottom: 40px;\n}\n\n.footer h4 {\n    color: #F1CDB3;\n    margin-bottom: 40px;\n}\n\n.footer h4:last-child {\n    margin-bottom: 0;\n}\n\n.footer img {\n    /*position: absolute;*/\n    right: 0;\n    bottom: 0;\n    transform: translateY(60px);\n}\n\n@media (max-width: 991px) {\n    .footer img {\n        position: static;\n    }\n}\n\n@media (max-width: 767px) {\n    .footer > .container {\n        max-width: 320px;\n    }\n}\n\n/*  16. Slider  */\n\n.slider {\n    overflow: visible;\n}\n\n.slider-button {\n    position: absolute;\n    top: 50%;\n    transform: translateY(-50%);\n    z-index: 1;\n}\n\n.slider-button-next {\n    right: 0;\n}\n\n.slider-button-prev {\n    left: 0;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15966,6 +16107,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/vitamins.png?ce0a14fe4d9ca8d3c14c310f03af31e3");
+
+/***/ }),
+
+/***/ "./resources/js/components/our_friends/assets/Arrow (1).png":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/our_friends/assets/Arrow (1).png ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/Arrow (1).png?ab482f1142d347ff53e308b71d723532");
+
+/***/ }),
+
+/***/ "./resources/js/components/our_friends/assets/Arrow (2).png":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/our_friends/assets/Arrow (2).png ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/Arrow (2).png?b67b7f1da191f6feb4da0fa7751e2742");
 
 /***/ }),
 
@@ -71278,6 +71449,441 @@ ScrollUpButton.propTypes = {
 
 /***/ }),
 
+/***/ "./node_modules/react-sidebar/dist/react-sidebar.esm.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-sidebar/dist/react-sidebar.esm.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/objectSpread */ "./node_modules/@babel/runtime/helpers/esm/objectSpread.js");
+/* harmony import */ var _babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
+/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+var CANCEL_DISTANCE_ON_SCROLL = 20;
+var defaultStyles = {
+  root: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    overflow: "hidden"
+  },
+  sidebar: {
+    zIndex: 2,
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    transition: "transform .3s ease-out",
+    WebkitTransition: "-webkit-transform .3s ease-out",
+    willChange: "transform",
+    overflowY: "auto"
+  },
+  content: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    overflowY: "auto",
+    WebkitOverflowScrolling: "touch",
+    transition: "left .3s ease-out, right .3s ease-out"
+  },
+  overlay: {
+    zIndex: 1,
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    opacity: 0,
+    visibility: "hidden",
+    transition: "opacity .3s ease-out, visibility .3s ease-out",
+    backgroundColor: "rgba(0,0,0,.3)"
+  },
+  dragHandle: {
+    zIndex: 1,
+    position: "fixed",
+    top: 0,
+    bottom: 0
+  }
+};
+
+var Sidebar =
+/*#__PURE__*/
+function (_Component) {
+  (0,_babel_runtime_helpers_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(Sidebar, _Component);
+
+  function Sidebar(props) {
+    var _this;
+
+    _this = _Component.call(this, props) || this;
+    _this.state = {
+      // the detected width of the sidebar in pixels
+      sidebarWidth: props.defaultSidebarWidth,
+      // keep track of touching params
+      touchIdentifier: null,
+      touchStartX: null,
+      touchCurrentX: null,
+      // if touch is supported by the browser
+      dragSupported: false
+    };
+    _this.overlayClicked = _this.overlayClicked.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)));
+    _this.onTouchStart = _this.onTouchStart.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)));
+    _this.onTouchMove = _this.onTouchMove.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)));
+    _this.onTouchEnd = _this.onTouchEnd.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)));
+    _this.onScroll = _this.onScroll.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)));
+    _this.saveSidebarRef = _this.saveSidebarRef.bind((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)));
+    return _this;
+  }
+
+  var _proto = Sidebar.prototype;
+
+  _proto.componentDidMount = function componentDidMount() {
+    var isIos = /iPad|iPhone|iPod/.test(navigator ? navigator.userAgent : "");
+    this.setState({
+      dragSupported: typeof window === "object" && "ontouchstart" in window && !isIos
+    });
+    this.saveSidebarWidth();
+  };
+
+  _proto.componentDidUpdate = function componentDidUpdate() {
+    // filter out the updates when we're touching
+    if (!this.isTouching()) {
+      this.saveSidebarWidth();
+    }
+  };
+
+  _proto.onTouchStart = function onTouchStart(ev) {
+    // filter out if a user starts swiping with a second finger
+    if (!this.isTouching()) {
+      var touch = ev.targetTouches[0];
+      this.setState({
+        touchIdentifier: touch.identifier,
+        touchStartX: touch.clientX,
+        touchCurrentX: touch.clientX
+      });
+    }
+  };
+
+  _proto.onTouchMove = function onTouchMove(ev) {
+    if (this.isTouching()) {
+      for (var ind = 0; ind < ev.targetTouches.length; ind++) {
+        // we only care about the finger that we are tracking
+        if (ev.targetTouches[ind].identifier === this.state.touchIdentifier) {
+          this.setState({
+            touchCurrentX: ev.targetTouches[ind].clientX
+          });
+          break;
+        }
+      }
+    }
+  };
+
+  _proto.onTouchEnd = function onTouchEnd() {
+    if (this.isTouching()) {
+      // trigger a change to open if sidebar has been dragged beyond dragToggleDistance
+      var touchWidth = this.touchSidebarWidth();
+
+      if (this.props.open && touchWidth < this.state.sidebarWidth - this.props.dragToggleDistance || !this.props.open && touchWidth > this.props.dragToggleDistance) {
+        this.props.onSetOpen(!this.props.open);
+      }
+
+      this.setState({
+        touchIdentifier: null,
+        touchStartX: null,
+        touchCurrentX: null
+      });
+    }
+  }; // This logic helps us prevents the user from sliding the sidebar horizontally
+  // while scrolling the sidebar vertically. When a scroll event comes in, we're
+  // cancelling the ongoing gesture if it did not move horizontally much.
+
+
+  _proto.onScroll = function onScroll() {
+    if (this.isTouching() && this.inCancelDistanceOnScroll()) {
+      this.setState({
+        touchIdentifier: null,
+        touchStartX: null,
+        touchCurrentX: null
+      });
+    }
+  }; // True if the on going gesture X distance is less than the cancel distance
+
+
+  _proto.inCancelDistanceOnScroll = function inCancelDistanceOnScroll() {
+    var cancelDistanceOnScroll;
+
+    if (this.props.pullRight) {
+      cancelDistanceOnScroll = Math.abs(this.state.touchCurrentX - this.state.touchStartX) < CANCEL_DISTANCE_ON_SCROLL;
+    } else {
+      cancelDistanceOnScroll = Math.abs(this.state.touchStartX - this.state.touchCurrentX) < CANCEL_DISTANCE_ON_SCROLL;
+    }
+
+    return cancelDistanceOnScroll;
+  };
+
+  _proto.isTouching = function isTouching() {
+    return this.state.touchIdentifier !== null;
+  };
+
+  _proto.overlayClicked = function overlayClicked() {
+    if (this.props.open) {
+      this.props.onSetOpen(false);
+    }
+  };
+
+  _proto.saveSidebarWidth = function saveSidebarWidth() {
+    var width = this.sidebar.offsetWidth;
+
+    if (width !== this.state.sidebarWidth) {
+      this.setState({
+        sidebarWidth: width
+      });
+    }
+  };
+
+  _proto.saveSidebarRef = function saveSidebarRef(node) {
+    this.sidebar = node;
+  }; // calculate the sidebarWidth based on current touch info
+
+
+  _proto.touchSidebarWidth = function touchSidebarWidth() {
+    // if the sidebar is open and start point of drag is inside the sidebar
+    // we will only drag the distance they moved their finger
+    // otherwise we will move the sidebar to be below the finger.
+    if (this.props.pullRight) {
+      if (this.props.open && window.innerWidth - this.state.touchStartX < this.state.sidebarWidth) {
+        if (this.state.touchCurrentX > this.state.touchStartX) {
+          return this.state.sidebarWidth + this.state.touchStartX - this.state.touchCurrentX;
+        }
+
+        return this.state.sidebarWidth;
+      }
+
+      return Math.min(window.innerWidth - this.state.touchCurrentX, this.state.sidebarWidth);
+    }
+
+    if (this.props.open && this.state.touchStartX < this.state.sidebarWidth) {
+      if (this.state.touchCurrentX > this.state.touchStartX) {
+        return this.state.sidebarWidth;
+      }
+
+      return this.state.sidebarWidth - this.state.touchStartX + this.state.touchCurrentX;
+    }
+
+    return Math.min(this.state.touchCurrentX, this.state.sidebarWidth);
+  };
+
+  _proto.render = function render() {
+    var sidebarStyle = (0,_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, defaultStyles.sidebar, this.props.styles.sidebar);
+
+    var contentStyle = (0,_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, defaultStyles.content, this.props.styles.content);
+
+    var overlayStyle = (0,_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, defaultStyles.overlay, this.props.styles.overlay);
+
+    var useTouch = this.state.dragSupported && this.props.touch;
+    var isTouching = this.isTouching();
+    var rootProps = {
+      className: this.props.rootClassName,
+      style: (0,_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, defaultStyles.root, this.props.styles.root),
+      role: "navigation",
+      id: this.props.rootId
+    };
+    var dragHandle;
+    var hasBoxShadow = this.props.shadow && (isTouching || this.props.open || this.props.docked); // sidebarStyle right/left
+
+    if (this.props.pullRight) {
+      sidebarStyle.right = 0;
+      sidebarStyle.transform = "translateX(100%)";
+      sidebarStyle.WebkitTransform = "translateX(100%)";
+
+      if (hasBoxShadow) {
+        sidebarStyle.boxShadow = "-2px 2px 4px rgba(0, 0, 0, 0.15)";
+      }
+    } else {
+      sidebarStyle.left = 0;
+      sidebarStyle.transform = "translateX(-100%)";
+      sidebarStyle.WebkitTransform = "translateX(-100%)";
+
+      if (hasBoxShadow) {
+        sidebarStyle.boxShadow = "2px 2px 4px rgba(0, 0, 0, 0.15)";
+      }
+    }
+
+    if (isTouching) {
+      var percentage = this.touchSidebarWidth() / this.state.sidebarWidth; // slide open to what we dragged
+
+      if (this.props.pullRight) {
+        sidebarStyle.transform = "translateX(" + (1 - percentage) * 100 + "%)";
+        sidebarStyle.WebkitTransform = "translateX(" + (1 - percentage) * 100 + "%)";
+      } else {
+        sidebarStyle.transform = "translateX(-" + (1 - percentage) * 100 + "%)";
+        sidebarStyle.WebkitTransform = "translateX(-" + (1 - percentage) * 100 + "%)";
+      } // fade overlay to match distance of drag
+
+
+      overlayStyle.opacity = percentage;
+      overlayStyle.visibility = "visible";
+    } else if (this.props.docked) {
+      // show sidebar
+      if (this.state.sidebarWidth !== 0) {
+        sidebarStyle.transform = "translateX(0%)";
+        sidebarStyle.WebkitTransform = "translateX(0%)";
+      } // make space on the left/right side of the content for the sidebar
+
+
+      if (this.props.pullRight) {
+        contentStyle.right = this.state.sidebarWidth + "px";
+      } else {
+        contentStyle.left = this.state.sidebarWidth + "px";
+      }
+    } else if (this.props.open) {
+      // slide open sidebar
+      sidebarStyle.transform = "translateX(0%)";
+      sidebarStyle.WebkitTransform = "translateX(0%)"; // show overlay
+
+      overlayStyle.opacity = 1;
+      overlayStyle.visibility = "visible";
+    }
+
+    if (isTouching || !this.props.transitions) {
+      sidebarStyle.transition = "none";
+      sidebarStyle.WebkitTransition = "none";
+      contentStyle.transition = "none";
+      overlayStyle.transition = "none";
+    }
+
+    if (useTouch) {
+      if (this.props.open) {
+        rootProps.onTouchStart = this.onTouchStart;
+        rootProps.onTouchMove = this.onTouchMove;
+        rootProps.onTouchEnd = this.onTouchEnd;
+        rootProps.onTouchCancel = this.onTouchEnd;
+        rootProps.onScroll = this.onScroll;
+      } else {
+        var dragHandleStyle = (0,_babel_runtime_helpers_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, defaultStyles.dragHandle, this.props.styles.dragHandle);
+
+        dragHandleStyle.width = this.props.touchHandleWidth; // dragHandleStyle right/left
+
+        if (this.props.pullRight) {
+          dragHandleStyle.right = 0;
+        } else {
+          dragHandleStyle.left = 0;
+        }
+
+        dragHandle = react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+          style: dragHandleStyle,
+          onTouchStart: this.onTouchStart,
+          onTouchMove: this.onTouchMove,
+          onTouchEnd: this.onTouchEnd,
+          onTouchCancel: this.onTouchEnd
+        });
+      }
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", rootProps, react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: this.props.sidebarClassName,
+      style: sidebarStyle,
+      ref: this.saveSidebarRef,
+      id: this.props.sidebarId
+    }, this.props.sidebar), react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: this.props.overlayClassName,
+      style: overlayStyle,
+      onClick: this.overlayClicked,
+      id: this.props.overlayId
+    }), react__WEBPACK_IMPORTED_MODULE_3__.createElement("div", {
+      className: this.props.contentClassName,
+      style: contentStyle,
+      id: this.props.contentId
+    }, dragHandle, this.props.children));
+  };
+
+  return Sidebar;
+}(react__WEBPACK_IMPORTED_MODULE_3__.Component);
+
+ true ? Sidebar.propTypes = {
+  // main content to render
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node.isRequired),
+  // styles
+  styles: prop_types__WEBPACK_IMPORTED_MODULE_4___default().shape({
+    root: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object),
+    sidebar: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object),
+    content: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object),
+    overlay: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object),
+    dragHandle: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().object)
+  }),
+  // root component optional class
+  rootClassName: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  // sidebar optional class
+  sidebarClassName: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  // content optional class
+  contentClassName: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  // overlay optional class
+  overlayClassName: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  // sidebar content to render
+  sidebar: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().node.isRequired),
+  // boolean if sidebar should be docked
+  docked: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  // boolean if sidebar should slide open
+  open: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  // boolean if transitions should be disabled
+  transitions: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  // boolean if touch gestures are enabled
+  touch: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  // max distance from the edge we can start touching
+  touchHandleWidth: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().number),
+  // Place the sidebar on the right
+  pullRight: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  // Enable/Disable sidebar shadow
+  shadow: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().bool),
+  // distance we have to drag the sidebar to toggle open state
+  dragToggleDistance: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().number),
+  // callback called when the overlay is clicked
+  onSetOpen: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().func),
+  // Initial sidebar width when page loads
+  defaultSidebarWidth: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().number),
+  // root component optional id
+  rootId: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  // sidebar optional id
+  sidebarId: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  // content optional id
+  contentId: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string),
+  // overlay optional id
+  overlayId: (prop_types__WEBPACK_IMPORTED_MODULE_4___default().string)
+} : 0;
+Sidebar.defaultProps = {
+  docked: false,
+  open: false,
+  transitions: true,
+  touch: true,
+  touchHandleWidth: 20,
+  pullRight: false,
+  shadow: true,
+  dragToggleDistance: 30,
+  onSetOpen: function onSetOpen() {},
+  styles: {},
+  defaultSidebarWidth: 0
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
+
+
+/***/ }),
+
 /***/ "./node_modules/react-transition-group/esm/Transition.js":
 /*!***************************************************************!*\
   !*** ./node_modules/react-transition-group/esm/Transition.js ***!
@@ -87471,6 +88077,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/js/components/sidebar/sidebar.css":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/sidebar/sidebar.css ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./sidebar.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/sidebar/sidebar.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./templates/assets/css/style.css":
 /*!****************************************!*\
   !*** ./templates/assets/css/style.css ***!
@@ -88082,6 +88718,27 @@ module.exports = tweenFunctions;
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _assertThisInitialized)
+/* harmony export */ });
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
@@ -88158,6 +88815,40 @@ function _inheritsLoose(subClass, superClass) {
   subClass.prototype = Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
   (0,_setPrototypeOf_js__WEBPACK_IMPORTED_MODULE_0__["default"])(subClass, superClass);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/objectSpread.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/objectSpread.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _objectSpread)
+/* harmony export */ });
+/* harmony import */ var _defineProperty_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defineProperty.js */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? Object(arguments[i]) : {};
+    var ownKeys = Object.keys(source);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys.push.apply(ownKeys, Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      (0,_defineProperty_js__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]);
+    });
+  }
+
+  return target;
 }
 
 /***/ }),

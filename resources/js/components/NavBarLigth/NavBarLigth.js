@@ -1,15 +1,21 @@
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
-import {useDispatch} from "react-redux"
 import {getIdToScroll} from '../store/getAnimalsList/actions'
+import {useLocation, useRef} from 'react-router-dom';
+
 import './NavBarLight.css'
 
 export const NavBarLigth = () => {
-    const dispatch = useDispatch();
+    const location = useLocation();
 
-    const getId = (id) => {
-        dispatch(getIdToScroll(id))
+    const goToRegist = () => {
+        window.location.href = '/user'
     }
 
+    const scrollToComponent = (e) => {
+        const value = e.currentTarget.getAttribute('value')
+        const element = document.getElementById(value)
+        element.scrollIntoView();
+    }
 
     return (
         <div>
@@ -22,21 +28,21 @@ export const NavBarLigth = () => {
                     <div className="navbar-content col-auto align-self-center d-flex flex-column">
                         <div className="navbar-content-container">
                             <ul className="nav flex-column flex-md-row align-content-center align-items-center">
-                                <li className="nav-item"><Link onClick={()=>window.location.href='/#about'} className='link__our' to="#">About the shelter</Link>
+                                <li className="nav-item"><Link onClick={() => window.location.href = '/#about'}
+                                                               className={location.hash.includes('/#about')?'active':''} to='/#about'>About the shelter</Link>
                                 </li>
-                                <li className="nav-item"><Link className='link__our' to="#">Our
+                                <li className="nav-item"><Link className={location.hash === ('#our_pets')||location.hash ===''?'active':''} to="#our_pets">Our
                                     pets</Link></li>
-                                <li className="nav-item"><Link onClick={()=>window.location.href='/#help'} className='link__our' to="#">Help the shelter</Link></li>
+                                <li className="nav-item"><Link onClick={() => window.location.href = '/#help'}
+                                                               className={location.hash.includes('#help')?'active':''} to="">Help the shelter</Link></li>
                                 <li className="nav-item">
-                                    <Link onClick={()=>window.location.href='/#contacts'} className='link__our' value='contacts' to="">Contacts</Link>
+                                    <Link onClick={scrollToComponent} className={location.hash.includes('#contacts')?'active':''}
+                                          value='contacts' to="#contacts">Contacts</Link>
                                 </li>
+                                <li style={{marginLeft: '35px'}}><Link onClick={goToRegist} className='link__our'
+                                                                       to=''>Register / Login</Link></li>
                             </ul>
                         </div>
-                    </div>
-                    <div className="col-auto d-flex flex-column justify-content-between navbar-burger">
-                        <div></div>
-                        <div></div>
-                        <div></div>
                     </div>
                 </div>
             </header>

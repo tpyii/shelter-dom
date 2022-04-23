@@ -16,7 +16,7 @@ export const getIdToScroll = (id)=>({
 
 export const getAnimals = (page, sortBy) => async (dispatch) => {
     axios.get(apiURL, {params: {page, sortBy}})
-        .then(resp => dispatch({type: REQUEST_ANIMALS_SUCCESS, payload: resp.data.data}))
+        .then(resp => dispatch({type: REQUEST_ANIMALS_SUCCESS, payload: resp.data}))
         .catch(err => console.warn(err))
 }
 

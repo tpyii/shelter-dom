@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
+
+    public function animals()
+    {
+        return $this->belongsToMany(Animal::class, 'users_favorites_animals');
+    }
 }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile;
+use App\Models\User;
+use App\Services\UserImageUploadService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,8 +18,12 @@ class AboutMeController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        $profile = Profile::where('user_id', $user->id)->first();
+
         return view('user_lk.aboutme.index', [
-            'userName' => Auth::user()->name
+            'user' => $user,
+            'userProfile' => $profile
         ]);
     }
 
@@ -70,9 +77,33 @@ class AboutMeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profile $profile, UserImageUploadService $upload)
     {
-        //
+        // dd( $request);
+        $userProfileData = $request->only('firstName', 'lastName', 'birthday_at', 'phone', 'address', 'description', 'profile');
+        $userData = $request->only('nickname', 'email');
+
+        $userProfileUpdate = $profile->find($userProfileData['profile'])->fill([
+            'name' => $userProfileData['firstName'],
+            'surname' => $userProfileData['lastName'],
+            'birthday_at' => $userProfileData['birthday_at'],
+            'phone'  => $userProfileData['phone'],
+            'address' => $userProfileData['address'],
+            'description' => $userProfileData['description'],
+        ])->save();
+
+        $userUpdate = $request->user()->fill([
+            'name' => $userData['nickname'],
+            'email' => $userData['email'],
+        ])->save();
+
+        if ($request->hasfile('files')) {
+            $upload->saveUploadedFile($request->file('files'), $profile->find($userProfileData['profile']));
+        }
+
+        return $userProfileUpdate && $userUpdate
+        ? redirect()->route('user.about_me.index')->with('success', 'Данные профиля сохранены')
+        : back()->withErrors('Не удалось обновить данные профиля')->withInput();
     }
 
     /**

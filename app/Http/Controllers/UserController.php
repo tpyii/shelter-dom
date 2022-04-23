@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index(Request $request, User $user)
     {
         return view('user_lk.index', [
-            'userName' => Auth::user()->name
+            'user' => Auth::user(),
         ]);
     }
 }

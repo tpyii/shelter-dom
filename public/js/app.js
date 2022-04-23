@@ -14398,7 +14398,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*  10. Navbar  */\n\n.navbar {\n    position: relative;\n    padding: 30px 0;\n    z-index: 1;\n}\n\n.navbar-burger {\n    display: none !important;\n    width: 30px;\n    height: 22px;\n    z-index: 2;\n    cursor: pointer;\n    transition: transform 0.2s ease-out;\n}\n\n.nav-item {\n    margin-left: 35px;\n}\n\n@media (max-width: 767px) {\n    .navbar.active .navbar-logo {\n        z-index: 2;\n    }\n\n    .navbar-content {\n        position: fixed;\n        top: 0;\n        left: 0;\n        transform: translateX(100%);\n        width: 100%;\n        height: 100vh;\n        padding-top: 120px;\n        z-index: 1;\n        /*background: #292929;*/\n        transition: transform 0.2s ease-out;\n    }\n\n    .navbar-content-container {\n        padding-top: 100px;\n        overflow-y: auto;\n    }\n\n    .navbar.active .navbar-content {\n        transform: translateX(0);\n    }\n\n    .nav-item {\n        margin-bottom: 50px;\n        margin-left: 0;\n        font-size: 32px;\n    }\n\n    .navbar-burger {\n        display: flex !important;\n    }\n\n    .navbar.active .navbar-burger {\n        transform: rotate(90deg);\n    }\n\n    .navbar-burger > div {\n        height: 2px;\n        background-color: #545454;\n        transition: background-color 0.2s ease-out;\n    }\n\n    .background-darkl .navbar-burger > div {\n        background-color: #FFFFFF;\n    }\n}\n\n/*  7. Links */\n\na {\n    position: relative;\n    text-decoration: none;\n    color: #545454;\n}\n\na:hover,\na.active {\n    color: #292929;\n}\n\na:active,\na:focus {\n    color: #545454;\n}\n\na:active::after,\na:focus::after,\na.active::after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: -5px;\n    width: 100%;\n    height: 3px;\n    background-color: #F1CDB3;\n}\n\n.background-darkl a {\n    color: #545454;\n}\n\n.background-darkl a:hover,\n.background-darkl a:active::after,\n.background-darkl a:focus::after,\n.background-darkl a.active {\n    color: #292929;;\n}\n\n/*6. Logo  */\n\n.logo-titlel {\n    display: inline-block;\n    margin-bottom: 10px;\n    font-family: var(--font-family-georgia);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 32px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n    /*color: #545454;*/\n    transition: color 0.2s ease-out;\n}\n\n.cozy_light{\n    color: #545454;\n}\n\n.logo-subtitlel {\n    font-family: var(--font-family-arial);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    letter-spacing: 0.1em;\n    color: #292929;\n    transition: color 0.2s ease-out;\n}\n\n.background-darkl .logo-title,\n.background-darkl .logo-title:hover {\n    color: #F1CDB3;\n}\n\n.background-darkl .logo-subtitle {\n    color: #FFFFFF;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*  10. Navbar  */\r\n\r\n.navbar {\r\n    position: relative;\r\n    padding: 30px 0;\r\n    z-index: 1;\r\n}\r\n\r\n.navbar-burger {\r\n    display: none !important;\r\n    width: 30px;\r\n    height: 22px;\r\n    z-index: 2;\r\n    cursor: pointer;\r\n    transition: transform 0.2s ease-out;\r\n}\r\n\r\n.nav-item {\r\n    margin-left: 35px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .navbar.active .navbar-logo {\r\n        z-index: 2;\r\n    }\r\n\r\n    .navbar-content {\r\n        position: fixed;\r\n        top: 0;\r\n        left: 0;\r\n        transform: translateX(100%);\r\n        width: 100%;\r\n        height: 100vh;\r\n        padding-top: 120px;\r\n        z-index: 1;\r\n        /*background: #292929;*/\r\n        transition: transform 0.2s ease-out;\r\n    }\r\n\r\n    .navbar-content-container {\r\n        padding-top: 100px;\r\n        overflow-y: auto;\r\n    }\r\n\r\n    .navbar.active .navbar-content {\r\n        transform: translateX(0);\r\n    }\r\n\r\n    .nav-item {\r\n        margin-bottom: 50px;\r\n        margin-left: 0;\r\n        font-size: 32px;\r\n    }\r\n\r\n    .navbar-burger {\r\n        display: flex !important;\r\n    }\r\n\r\n    .navbar.active .navbar-burger {\r\n        transform: rotate(90deg);\r\n    }\r\n\r\n    .navbar-burger > div {\r\n        height: 2px;\r\n        background-color: #545454;\r\n        transition: background-color 0.2s ease-out;\r\n    }\r\n\r\n    .background-darkl .navbar-burger > div {\r\n        background-color: #FFFFFF;\r\n    }\r\n}\r\n\r\n/*  7. Links */\r\n\r\na {\r\n    position: relative;\r\n    text-decoration: none;\r\n    color: #545454;\r\n}\r\n\r\na:hover,\r\na.active {\r\n    color: #292929;\r\n}\r\n\r\na:active,\r\na:focus {\r\n    color: #545454;\r\n}\r\n\r\na:active::after,\r\na:focus::after,\r\na.active::after {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    bottom: -5px;\r\n    width: 100%;\r\n    height: 3px;\r\n    background-color: #F1CDB3;\r\n}\r\n\r\n.background-darkl a {\r\n    color: #545454;\r\n}\r\n\r\n.background-darkl a:hover,\r\n.background-darkl a:active::after,\r\n.background-darkl a:focus::after,\r\n.background-darkl a.active {\r\n    color: #292929;;\r\n}\r\n\r\n/*6. Logo  */\r\n\r\n.logo-titlel {\r\n    display: inline-block;\r\n    margin-bottom: 10px;\r\n    font-family: var(--font-family-georgia);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 32px;\r\n    line-height: 110%;\r\n    letter-spacing: 0.06em;\r\n    /*color: #545454;*/\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.cozy_light{\r\n    color: #545454;\r\n}\r\n\r\n.logo-subtitlel {\r\n    font-family: var(--font-family-arial);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n    line-height: 15px;\r\n    letter-spacing: 0.1em;\r\n    color: #292929;\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.background-darkl .logo-title,\r\n.background-darkl .logo-title:hover {\r\n    color: #F1CDB3;\r\n}\r\n\r\n.background-darkl .logo-subtitle {\r\n    color: #FFFFFF;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14422,7 +14422,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal-header .btn-close {\n    margin: -4.5rem -3.5rem -0.5rem auto;\n    border: 3px solid #FDDCC4;\n    border-radius: 50px;\n    padding: 17px;\n}\n\n.modal-header .btn-close:hover {\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.rec-dot{\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.rec-dot:hover, button.rec-dot:focus{\n    box-shadow: 0 0 1px 3px rgb(253, 220, 196);\n}\n\nbutton.rec-arrow{\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.rec-arrow:hover{\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.eWjCzc:hover:enabled{\n    background-color: #eec0a5;\n    transition: all 0.2s ease-out;\n}\n\nbutton.eWjCzc:focus:enabled{\n    background-color: #eec0a5;\n}\n.item__carousel{\n    margin-top: 90px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal-header .btn-close {\r\n    margin: -4.5rem -3.5rem -0.5rem auto;\r\n    border: 3px solid #FDDCC4;\r\n    border-radius: 50px;\r\n    padding: 17px;\r\n}\r\n\r\n.modal-header .btn-close:hover {\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.rec-dot{\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.rec-dot:hover, button.rec-dot:focus{\r\n    box-shadow: 0 0 1px 3px rgb(253, 220, 196);\r\n}\r\n\r\nbutton.rec-arrow{\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.rec-arrow:hover{\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.eWjCzc:hover:enabled{\r\n    background-color: #eec0a5;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.eWjCzc:focus:enabled{\r\n    background-color: #eec0a5;\r\n}\r\n.item__carousel{\r\n    margin-top: 90px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14673,7 +14673,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Adds a CSS class to a given element.
- * 
+ *
  * @param element the element
  * @param className the CSS class name
  */
@@ -14726,7 +14726,7 @@ try {
 
 /**
  * An `addEventListener` ponyfill, supports the `once` option
- * 
+ *
  * @param node the element
  * @param eventName the event name
  * @param handle the handler
@@ -14807,7 +14807,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Checks if an element contains another given element.
- * 
+ *
  * @param context the context element
  * @param node the element to check
  */
@@ -14884,7 +14884,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Returns one or all computed style properties of an element.
- * 
+ *
  * @param node the element
  * @param psuedoElement the style property
  */
@@ -14908,7 +14908,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /**
  * Checks if a given element has a CSS class.
- * 
+ *
  * @param element the element
  * @param className the CSS class name
  */
@@ -15020,7 +15020,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /**
  * Returns the owner document of a given element.
- * 
+ *
  * @param node the element
  */
 function ownerDocument(node) {
@@ -15044,7 +15044,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /**
  * Returns the owner window of a given element.
- * 
+ *
  * @param node the element
  */
 
@@ -15069,7 +15069,7 @@ __webpack_require__.r(__webpack_exports__);
 var toArray = Function.prototype.bind.call(Function.prototype.call, [].slice);
 /**
  * Runs `querySelectorAll` on a given element.
- * 
+ *
  * @param element the element
  * @param selector the selector
  */
@@ -15096,7 +15096,7 @@ function replaceClassName(origClass, classToRemove) {
 }
 /**
  * Removes a CSS class from a given element.
- * 
+ *
  * @param element the element
  * @param className the CSS class name
  */
@@ -15127,7 +15127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /**
  * A `removeEventListener` ponyfill
- * 
+ *
  * @param node the element
  * @param eventName the event name
  * @param handle the handler
@@ -15249,7 +15249,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /**
  * Triggers an event on a given element.
- * 
+ *
  * @param node the element
  * @param eventName the event name to trigger
  * @param bubbles whether the event should bubble up
@@ -15745,7 +15745,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/credit-card.svg?b0a55b5f9acb325550a024c941c60044");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/credit-card.svg?4ba0426d2bc74b7a78f391d954a2f137");
 
 /***/ }),
 
@@ -64325,7 +64325,7 @@ function injectIntoDevTools(devToolsConfig) {
     scheduleRoot:  scheduleRoot ,
     setRefreshHandler:  setRefreshHandler ,
     // Enables DevTools to append owner stacks to error messages in DEV mode.
-    getCurrentFiber:  getCurrentFiberForDevTools 
+    getCurrentFiber:  getCurrentFiberForDevTools
   });
 }
 
@@ -67027,9 +67027,9 @@ Only.propTypes = {
   /** When true, children will rendered as is  */
   when: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().bool.isRequired),
 
-  /** Determines how "react-only-when" should hide the child element 
+  /** Determines how "react-only-when" should hide the child element
    * "withNull": Will not render the child
-   * "withDisplay": Will render the child with display:none  
+   * "withDisplay": Will render the child with display:none
    * "withVisibility": Will render the child with visibility:hidden
    * "withCss": Will render the child with a CSS class (you can pass it a custom className prop)
   */
@@ -68198,7 +68198,7 @@ var _excluded = ["pure", "areStatesEqual", "areOwnPropsEqual", "areStatePropsEqu
   selectorFactory, which has the signature:
 
     (dispatch, options) => (nextState, nextOwnProps) => nextFinalProps
-  
+
   connect passes its args to connectAdvanced as options, which will in turn pass them to
   selectorFactory each time a Connect component instance is instantiated or hot reloaded.
 
@@ -86176,13 +86176,13 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
 });
 
 // Copyright (c) 2013 Adobe Systems Incorporated. All rights reserved.
-// 
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 // http://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -86325,7 +86325,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.dblclick
      [ method ]
@@ -86342,7 +86342,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.mousedown
      [ method ]
@@ -86359,7 +86359,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.mousemove
      [ method ]
@@ -86376,7 +86376,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.mouseout
      [ method ]
@@ -86393,7 +86393,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.mouseover
      [ method ]
@@ -86410,7 +86410,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.mouseup
      [ method ]
@@ -86427,7 +86427,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.touchstart
      [ method ]
@@ -86444,7 +86444,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.touchmove
      [ method ]
@@ -86461,7 +86461,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.touchend
      [ method ]
@@ -86478,7 +86478,7 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - handler (function) handler for the event
      = (object) @Element
     \*/
-    
+
     /*\
      * Element.touchcancel
      [ method ]
@@ -86572,8 +86572,8 @@ Snap.plugin(function (Snap, Element, Paper, glob) {
      - mcontext (object) #optional context for moving handler
      - scontext (object) #optional context for drag start handler
      - econtext (object) #optional context for drag end handler
-     * Additionaly following `drag` events are triggered: `drag.start.<id>` on start, 
-     * `drag.end.<id>` on end and `drag.move.<id>` on every move. When element is dragged over another element 
+     * Additionaly following `drag` events are triggered: `drag.start.<id>` on start,
+     * `drag.end.<id>` on end and `drag.move.<id>` on every move. When element is dragged over another element
      * `drag.over.<id>` fires as well.
      *
      * Start event and start handler are called in specified context or in context of the element with following parameters:
@@ -87431,7 +87431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./NavBarLight.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/NavBarLigth/NavBarLight.css");
 
-            
+
 
 var options = {};
 
@@ -87461,7 +87461,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_modal_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./modal.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./resources/js/components/modal_window/modal.css");
 
-            
+
 
 var options = {};
 
@@ -87491,7 +87491,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_7_oneOf_1_use_2_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./style.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[7].oneOf[1].use[2]!./templates/assets/css/style.css");
 
-            
+
 
 var options = {};
 
@@ -88263,7 +88263,7 @@ function _setPrototypeOf(o, p) {
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -88277,20 +88277,20 @@ function _setPrototypeOf(o, p) {
 /******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/chunk loaded */
 /******/ 	(() => {
@@ -88323,7 +88323,7 @@ function _setPrototypeOf(o, p) {
 /******/ 			return result;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -88335,7 +88335,7 @@ function _setPrototypeOf(o, p) {
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -88347,7 +88347,7 @@ function _setPrototypeOf(o, p) {
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -88359,12 +88359,12 @@ function _setPrototypeOf(o, p) {
 /******/ 			}
 /******/ 		})();
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -88375,7 +88375,7 @@ function _setPrototypeOf(o, p) {
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/node module decorator */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nmd = (module) => {
@@ -88384,11 +88384,11 @@ function _setPrototypeOf(o, p) {
 /******/ 			return module;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
-/******/ 		
+/******/
 /******/ 		// object to store loaded and loading chunks
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
@@ -88397,19 +88397,19 @@ function _setPrototypeOf(o, p) {
 /******/ 			"css/app": 0,
 /******/ 			"css/dashboard": 0
 /******/ 		};
-/******/ 		
+/******/
 /******/ 		// no chunk on demand loading
-/******/ 		
+/******/
 /******/ 		// no prefetching
-/******/ 		
+/******/
 /******/ 		// no preloaded
-/******/ 		
+/******/
 /******/ 		// no HMR
-/******/ 		
+/******/
 /******/ 		// no HMR manifest
-/******/ 		
+/******/
 /******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
-/******/ 		
+/******/
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
 /******/ 			var [chunkIds, moreModules, runtime] = data;
@@ -88434,14 +88434,14 @@ function _setPrototypeOf(o, p) {
 /******/ 			}
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
-/******/ 		
+/******/
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
-/******/ 	
+/******/
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
@@ -88449,6 +88449,6 @@ function _setPrototypeOf(o, p) {
 /******/ 	__webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/sass/app.scss")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/dashboard"], () => (__webpack_require__("./resources/css/dashboard.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+/******/
 /******/ })()
 ;

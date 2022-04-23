@@ -14,14 +14,17 @@ class UserImageUploadService implements UploadService
      */
     public function saveUploadedFile($files, Model $model)
     {
+
         $path = implode('/', [
             'image',
             'Avatars',
             $model->id,
         ]);
+        // dd($files->store($path, 'public'));
 
         $model->update([
             'avatar' => $files->store($path, 'public'),
         ]);
+        // dd($files->store($path, 'public'));
     }
 }

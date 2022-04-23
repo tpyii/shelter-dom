@@ -1,6 +1,6 @@
 <x-userlayout>
     <x-slot name="title">
-        Привет, {{ $userName }}
+        Привет, {{ $user->name }}
     </x-slot>
     <x-slot name="toolbar">
         

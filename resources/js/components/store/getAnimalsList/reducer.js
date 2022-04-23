@@ -5,6 +5,8 @@ import {REQUEST_ANIMALS_SUCCESS, SCROLL_TO_BLOCK} from "./actions";
 export const initialState = {
     animalsList: [],
     id: '',
+    total: 0,
+    animalsPerPage: 0,
     request: {
         status: REQUEST_STATUS.IDLE,
         error: ''
@@ -16,16 +18,13 @@ export const animalsReducer = (state = initialState, {type, payload}) => {
         case REQUEST_ANIMALS_SUCCESS:
             return {
                 ...state,
-                animalsList: payload,
+                animalsList: payload.data,
+                total: payload.meta.total,
+                animalsPerPage: payload.meta.per_page,
                 request: {
                     error: '',
                     status: REQUEST_STATUS.SUCCESS
                 }
-            }
-        case SCROLL_TO_BLOCK:
-            console.log(payload)
-            return {
-                id : payload
             }
         default:
             return state

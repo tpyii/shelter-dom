@@ -14,8 +14,8 @@
                     <x-nav-link href="admin.profiles.index" route="admin.profiles.*">Профили</x-nav-link>
                 @else
                     <x-nav-link href="user.about_me.index" route="user.about_me.*">Обо мне</x-nav-link>
-                    <x-nav-link href="user.favorit_animals.index" route="user.favorit_animals.*">Понравившиеся животные</x-nav-link>
-                    <x-nav-link href="user.donations.index" route="user.donations.*">Пожертвованные средства</x-nav-link>
+                    <x-nav-link href="user.favorit_animals.index" route="user.favorit_animals.*">Мои любимчики</x-nav-link>
+                    <x-nav-link href="user.donations.index" route="user.donations.*">Пожертвования</x-nav-link>
                     <x-nav-link href="user.requests.index" route="user.requests.*">Заявки</x-nav-link>
                     <x-nav-link href="user.comments.index" route="user.comments.*">Мои комментарии</x-nav-link>
                 @endif
@@ -28,7 +28,7 @@
                 <x-nav-link href="login" route="login">{{ __('auth.login') }}</x-nav-link>
                 <x-nav-link href="register" route="register">{{ __('auth.registration') }}</x-nav-link>
             @endif
-            
+
         </ul>
     </div>
 </nav>

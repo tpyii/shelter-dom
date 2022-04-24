@@ -1,7 +1,8 @@
-<x-userlayout>
+<x-layout>
     <x-slot name="title">
         Мои любимчики
     </x-slot>
+    
     <x-table>
         <x-slot name="header">
             <th>#</th>
@@ -67,4 +68,4 @@
             </tr>
         @endforeach
     </x-table>
-</x-userlayout>
+</x-layout>

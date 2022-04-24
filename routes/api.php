@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AnimalController;
 use App\Http\Controllers\Api\DiseaseController;
 use App\Http\Controllers\Api\InoculationController;
 use App\Http\Controllers\Api\AnimalTypeController;
+use App\Http\Controllers\Api\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::apiResources([
     'diseases' => DiseaseController::class,
     'inoculations' => InoculationController::class,
     'types' => AnimalTypeController::class,
+    'users' => UsersController::class,
 ], [
     'parameters' => [
         'types' => 'animal_type',

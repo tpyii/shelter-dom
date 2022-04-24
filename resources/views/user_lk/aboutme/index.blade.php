@@ -1,5 +1,5 @@
-<x-userlayout>
+<x-layout>
     <x-slot name="title">
         Обо мне
     </x-slot>
-</x-userlayout>
+</x-layout>

@@ -1,5 +1,5 @@
-<x-userlayout>
+<x-layout>
     <x-slot name="title">
         Мои любимчики
     </x-slot>
-</x-userlayout>
+</x-layout>

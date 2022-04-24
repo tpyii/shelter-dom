@@ -26,11 +26,10 @@ export const Animals = ({animals, loading}) => {
     }
 
     return (
-        <div className=' flex-wrap mb-4 d-flex'>
+        <div className='row mb-5'>
             {animals.map(({id, name, images}) => (
-
                 <div key={id} className="col col-lg-3 mb-3">
-                    <div className="card d-flex flex-column mr-3 p-3">
+                    <div className="card d-flex flex-column mr-3">
                         <img src={`${images?.length === 0 ? placeholder : images?.length && images[0]?.path
                             .replace('public/', '')
                             .replace('\\', '/')

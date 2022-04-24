@@ -5,13 +5,22 @@ import {Provider} from "react-redux";
 import {store} from '../components/store'
 import '../../../templates/assets/css/style.css'
 import ScrollUpButton from "react-scroll-up-button";
+import {Sidebar} from '../components/sidebar/Sidebar'
 
 const App = () => {
+
+    const topScroll = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+    }
 
     return (
         <div>
             <Provider store={store}>
-                <ScrollUpButton StopPosition={0} ShowAtPosition={150} AnimationDuration={500}/>
+                <Sidebar/>
+                <p style={{position:'absolute'}} onClick={topScroll}><ScrollUpButton/></p>
                 <Routes>
                     <Route path='/' element={<Main/>}/>
                     <Route path='/our_pets' element={<OurPets/>}/>

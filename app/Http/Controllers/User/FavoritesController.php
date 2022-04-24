@@ -3,18 +3,27 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FavoritesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
-        return view('user_lk.favorit_animals.index');
+        $user_id = Auth::user()->id;
+
+        $animals = User::find($user_id)->animals()->get();
+
+        return view('user_lk.favorit_animals.index',
+        [
+            'animals' => $animals,
+        ]);
     }
 
     /**

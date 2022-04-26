@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Rules\ReCaptchaRule;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -54,6 +55,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'recaptcha_token' => ['required', new ReCaptchaRule()]
         ]);
     }
 
@@ -64,7 +66,7 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {   
+    {
         $newUser = User::create([
             'name' => $data['name'],
             'email' => $data['email'],

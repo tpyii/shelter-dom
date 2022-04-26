@@ -92,7 +92,7 @@ class FavouritesController extends Controller
     {
         $user = Auth::user();
         return $user->animals()->detach($id)
-            ? redirect()->route('user.favorit_animals.index')->with('success', 'Запись успешно удалена')
+            ? redirect()->route('user.favourite_animals.index')->with('success', 'Запись успешно удалена')
             : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

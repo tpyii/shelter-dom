@@ -1,4 +1,4 @@
-<x-userlayout>
+<x-layout>
     <x-slot name="title">
         Мои любимчики
     </x-slot>
@@ -48,7 +48,7 @@
                     <td>
                         <div class="d-flex">
                             <x-button color="outline-danger" class="showDeleteModal"
-                                      data-action="{{ route('user.favorit_animals.destroy', $animal) }}"
+                                      data-action="{{ route('user.favourite_animals.destroy', $animal) }}"
                                       data-remove="#row-{{ $animal->id }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -71,4 +71,4 @@
             <x-button color="primary" class="delete" data-bs-dismiss="modal">Удалить</x-button>
         </x-slot>
     </x-modal>
-</x-userlayout>
+</x-layout>

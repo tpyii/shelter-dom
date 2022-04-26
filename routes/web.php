@@ -11,7 +11,7 @@ use App\Http\Controllers\Admin\UserController as AdminUserController;
 
 use App\Http\Controllers\User\AboutMeController as UserAboutMeController;
 use App\Http\Controllers\User\CommentsController as UserCommentsController;
-use App\Http\Controllers\User\DonnationsController as UserDonnationsController;
+use App\Http\Controllers\User\DonationsController as UserDonationsController;
 use App\Http\Controllers\User\FavouritesController as UserFavouritesController;
 use App\Http\Controllers\User\RequestsController as UserRequestsController;
 
@@ -54,7 +54,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/', UserController::class);
         Route::resource('/about_me', UserAboutMeController::class);
         Route::resource('/favourite_animals', UserFavouritesController::class);
-        Route::resource('/donations', UserDonnationsController::class);
+        Route::resource('/donations', UserDonationsController::class);
         Route::resource('/requests', UserRequestsController::class);
         Route::resource('/comments', UserCommentsController::class);
     });

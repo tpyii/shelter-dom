@@ -3,18 +3,28 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Animal;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class DonnationsController extends Controller
+class FavouritesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return view('user_lk.donnations.index');
+        $user_id = Auth::user()->id;
+
+        $animals = User::find($user_id)->animals()->get();
+
+        return view('user_lk.favourite_animals.index',
+            [
+                'animals' => $animals,
+            ]);
     }
 
     /**
@@ -75,11 +85,14 @@ class DonnationsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        $user = Auth::user();
+        return $user->animals()->detach($id)
+            ? redirect()->route('user.favorit_animals.index')->with('success', 'Запись успешно удалена')
+            : back()->withErrors('Не удалось удалить запись')->withInput();
     }
 }

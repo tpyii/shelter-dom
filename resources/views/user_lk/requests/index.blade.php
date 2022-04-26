@@ -1,5 +1,5 @@
-<x-userlayout>
+<x-layout>
     <x-slot name="title">
         Заявки
     </x-slot>
-</x-userlayout>
+</x-layout>

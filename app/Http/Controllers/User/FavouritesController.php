@@ -7,12 +7,12 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class FavoritesController extends Controller
+class FavouritesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -20,10 +20,10 @@ class FavoritesController extends Controller
 
         $animals = User::find($user_id)->animals()->get();
 
-        return view('user_lk.favorit_animals.index',
-        [
-            'animals' => $animals,
-        ]);
+        return view('user_lk.favourite_animals.index',
+            [
+                'animals' => $animals,
+            ]);
     }
 
     /**

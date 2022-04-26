@@ -9,10 +9,10 @@ use App\Http\Controllers\Admin\ProfilesController as AdminProfilesController;
 use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 
-use App\Http\Controllers\User\AboutMeController as UserAboutmeController;
+use App\Http\Controllers\User\AboutMeController as UserAboutMeController;
 use App\Http\Controllers\User\CommentsController as UserCommentsController;
 use App\Http\Controllers\User\DonnationsController as UserDonnationsController;
-use App\Http\Controllers\User\FavoritesController as UserFavoritesController;
+use App\Http\Controllers\User\FavouritesController as UserFavouritesController;
 use App\Http\Controllers\User\RequestsController as UserRequestsController;
 
 use App\Http\Controllers\UserController;
@@ -52,8 +52,8 @@ Route::group(['middleware' => 'auth'], function() {
     });
     Route::group(['prefix' => 'user', 'as' => 'user.'], function (){
         Route::resource('/', UserController::class);
-        Route::resource('/about_me', UserAboutmeController::class);
-        Route::resource('/favorit_animals', UserFavoritesController::class);
+        Route::resource('/about_me', UserAboutMeController::class);
+        Route::resource('/favourite_animals', UserFavouritesController::class);
         Route::resource('/donations', UserDonnationsController::class);
         Route::resource('/requests', UserRequestsController::class);
         Route::resource('/comments', UserCommentsController::class);

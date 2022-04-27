@@ -34,52 +34,55 @@ class FavouritesController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function edit($id)
     {
-        //
+        $user = Auth::user();
+        return $user->animals()->syncWithoutDetaching($id)
+            ? response('animal added', 200)
+            : back()->withErrors('Не удалось добавить запись');
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -95,4 +98,5 @@ class FavouritesController extends Controller
             ? redirect()->route('user.favourite_animals.index')->with('success', 'Запись успешно удалена')
             : back()->withErrors('Не удалось удалить запись')->withInput();
     }
+
 }

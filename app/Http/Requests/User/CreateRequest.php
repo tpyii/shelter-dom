@@ -27,7 +27,7 @@ class CreateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'alpha_dash', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed', 'regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{8,}$/'],
             'is_admin' => ['required', 'in:0,1']
         ];
     }
@@ -38,6 +38,13 @@ class CreateRequest extends FormRequest
             'name' => 'Кличка',
             'password' => 'Пароль',
             'is_admin' => 'Является админом'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'regex' => 'Значение поля :attribute должно содержать не менее 10 символов, среди который должны быть заглавные и прописные буквы, цифры и спецсимволы.'
         ];
     }
 

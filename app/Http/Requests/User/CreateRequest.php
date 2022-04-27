@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\User;
 
+use App\Rules\ReCaptchaRule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -28,7 +29,8 @@ class CreateRequest extends FormRequest
             'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'alpha_dash', 'confirmed'],
-            'is_admin' => ['required', 'in:0,1']
+            'is_admin' => ['required', 'in:0,1'],
+            'recaptcha_token' => ['required', new ReCaptchaRule()]
         ];
     }
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\User;
-use App\Rules\ReCaptchaRule;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -18,7 +17,6 @@ class AuthController extends Controller
             'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed', Password::default()],
-            'recaptcha_token' => ['required', new ReCaptchaRule()]
         ]);
 
         $user = User::create([

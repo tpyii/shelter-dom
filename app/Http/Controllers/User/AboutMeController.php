@@ -21,7 +21,7 @@ class AboutMeController extends Controller
         $user = Auth::user();
         $profile = Profile::where('user_id', $user->id)->first();
 
-        return view('user_lk.aboutme.index', [
+        return view('user_lk.about_me.index', [
             'user' => $user,
             'userProfile' => $profile
         ]);

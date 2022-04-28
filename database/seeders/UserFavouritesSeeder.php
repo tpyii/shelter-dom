@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class UserFavoritesSeeder extends Seeder
+class UserFavouritesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class UserFavoritesSeeder extends Seeder
     public function run()
     {
         for ($i = 1; $i <= 10; $i++) {
-            DB::table('users_favorites_animals')->insert([
+            DB::table('users_favourites')->insert([
                     ['user_id' => $i, 'animal_id' => rand(1,10),],
                     ['user_id' => $i, 'animal_id' => rand(1,10),],
                     ['user_id' => $i, 'animal_id' => rand(1,10),],

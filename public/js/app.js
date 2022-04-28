@@ -7173,6 +7173,119 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
+/***/ "./resources/js/components/NavBarLigth/NavBarLigth.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/NavBarLigth/NavBarLigth.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NavBarLigth": () => (/* binding */ NavBarLigth)
+/* harmony export */ });
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
+/* harmony import */ var _store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/getAnimalsList/actions */ "./resources/js/components/store/getAnimalsList/actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavBarLight.css */ "./resources/js/components/NavBarLigth/NavBarLight.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+var NavBarLigth = function NavBarLigth() {
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
+
+  var goToRegist = function goToRegist() {
+    window.location.href = '/user';
+  };
+
+  var scrollToComponent = function scrollToComponent(e) {
+    var value = e.currentTarget.getAttribute('value');
+    var element = document.getElementById(value);
+    element.scrollIntoView();
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("header", {
+      className: "navbar background-darkl",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+          to: "/",
+          className: "navbar-logo col-auto",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "logo-titlel cozy_light",
+            children: "Cozy House"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "logo-subtitlel",
+            children: "Shelter for pets in Boston"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "navbar-content col-auto align-self-center d-flex flex-column",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "navbar-content-container",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+              className: "nav flex-column flex-md-row align-content-center align-items-center",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: function onClick() {
+                    return window.location.href = '/#about';
+                  },
+                  className: location.hash.includes('/#about') ? 'active' : '',
+                  to: "/#about",
+                  children: "About the shelter"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  className: location.hash === '#our_pets' || location.hash === '' ? 'active' : '',
+                  to: "#our_pets",
+                  children: "Our pets"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: function onClick() {
+                    return window.location.href = '/#help';
+                  },
+                  className: location.hash.includes('#help') ? 'active' : '',
+                  to: "",
+                  children: "Help the shelter"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                className: "nav-item",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: scrollToComponent,
+                  className: location.hash.includes('#contacts') ? 'active' : '',
+                  value: "contacts",
+                  to: "#contacts",
+                  children: "Contacts"
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+                style: {
+                  marginLeft: '35px'
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+                  onClick: goToRegist,
+                  className: "link__our",
+                  to: "",
+                  children: "Register / Login"
+                })
+              })]
+            })
+          })
+        })]
+      })
+    })
+  });
+};
+
+/***/ }),
+
 /***/ "./resources/js/components/NavBar/NavBar.js":
 /*!**************************************************!*\
   !*** ./resources/js/components/NavBar/NavBar.js ***!
@@ -7282,119 +7395,6 @@ var NavBar = function NavBar() {
           })
         })
       })]
-    })
-  });
-};
-
-/***/ }),
-
-/***/ "./resources/js/components/NavBarLigth/NavBarLigth.js":
-/*!************************************************************!*\
-  !*** ./resources/js/components/NavBarLigth/NavBarLigth.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "NavBarLigth": () => (/* binding */ NavBarLigth)
-/* harmony export */ });
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/index.js");
-/* harmony import */ var _store_getAnimalsList_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../store/getAnimalsList/actions */ "./resources/js/components/store/getAnimalsList/actions.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _NavBarLight_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavBarLight.css */ "./resources/js/components/NavBarLigth/NavBarLight.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-var NavBarLigth = function NavBarLigth() {
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)();
-
-  var goToRegist = function goToRegist() {
-    window.location.href = '/user';
-  };
-
-  var scrollToComponent = function scrollToComponent(e) {
-    var value = e.currentTarget.getAttribute('value');
-    var element = document.getElementById(value);
-    element.scrollIntoView();
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("header", {
-      className: "navbar background-darkl",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-          to: "/",
-          className: "navbar-logo col-auto",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "logo-titlel cozy_light",
-            children: "Cozy House"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "logo-subtitlel",
-            children: "Shelter for pets in Boston"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "navbar-content col-auto align-self-center d-flex flex-column",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "navbar-content-container",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
-              className: "nav flex-column flex-md-row align-content-center align-items-center",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                  onClick: function onClick() {
-                    return window.location.href = '/#about';
-                  },
-                  className: location.hash.includes('/#about') ? 'active' : '',
-                  to: "/#about",
-                  children: "About the shelter"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                  className: location.hash === '#our_pets' || location.hash === '' ? 'active' : '',
-                  to: "#our_pets",
-                  children: "Our pets"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                  onClick: function onClick() {
-                    return window.location.href = '/#help';
-                  },
-                  className: location.hash.includes('#help') ? 'active' : '',
-                  to: "",
-                  children: "Help the shelter"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                className: "nav-item",
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                  onClick: scrollToComponent,
-                  className: location.hash.includes('#contacts') ? 'active' : '',
-                  value: "contacts",
-                  to: "#contacts",
-                  children: "Contacts"
-                })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-                style: {
-                  marginLeft: '35px'
-                },
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-                  onClick: goToRegist,
-                  className: "link__our",
-                  to: "",
-                  children: "Register / Login"
-                })
-              })]
-            })
-          })
-        })]
-      })
     })
   });
 };
@@ -14515,7 +14515,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*  10. Navbar  */\n\n.navbar {\n    position: relative;\n    padding: 30px 0;\n    z-index: 1;\n}\n\n.navbar-burger {\n    display: none !important;\n    width: 30px;\n    height: 22px;\n    z-index: 2;\n    cursor: pointer;\n    transition: transform 0.2s ease-out;\n}\n\n.nav-item {\n    margin-left: 35px;\n}\n\n@media (max-width: 767px) {\n    .navbar.active .navbar-logo {\n        z-index: 2;\n    }\n\n    .navbar-content {\n        position: fixed;\n        top: 0;\n        left: 0;\n        transform: translateX(100%);\n        width: 100%;\n        height: 100vh;\n        padding-top: 120px;\n        z-index: 1;\n        /*background: #292929;*/\n        transition: transform 0.2s ease-out;\n    }\n\n    .navbar-content-container {\n        padding-top: 100px;\n        overflow-y: auto;\n    }\n\n    .navbar.active .navbar-content {\n        transform: translateX(0);\n    }\n\n    .nav-item {\n        margin-bottom: 50px;\n        margin-left: 0;\n        font-size: 32px;\n    }\n\n    .navbar-burger {\n        display: flex !important;\n    }\n\n    .navbar.active .navbar-burger {\n        transform: rotate(90deg);\n    }\n\n    .navbar-burger > div {\n        height: 2px;\n        background-color: #545454;\n        transition: background-color 0.2s ease-out;\n    }\n\n    .background-darkl .navbar-burger > div {\n        background-color: #FFFFFF;\n    }\n}\n\n/*  7. Links */\n\na {\n    position: relative;\n    text-decoration: none;\n    color: #545454;\n}\n\na:hover,\na.active {\n    color: #292929;\n}\n\na:active,\na:focus {\n    color: #545454;\n}\n\na:active::after,\na:focus::after,\na.active::after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: -5px;\n    width: 100%;\n    height: 3px;\n    background-color: #F1CDB3;\n}\n\n.background-darkl a {\n    color: #545454;\n}\n\n.background-darkl a:hover,\n.background-darkl a:active::after,\n.background-darkl a:focus::after,\n.background-darkl a.active {\n    color: #292929;;\n}\n\n/*6. Logo  */\n\n.logo-titlel {\n    display: inline-block;\n    margin-bottom: 10px;\n    font-family: var(--font-family-georgia);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 32px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n    /*color: #545454;*/\n    transition: color 0.2s ease-out;\n}\n\n.cozy_light{\n    color: #545454;\n}\n\n.logo-subtitlel {\n    font-family: var(--font-family-arial);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    letter-spacing: 0.1em;\n    color: #292929;\n    transition: color 0.2s ease-out;\n}\n\n.background-darkl .logo-title,\n.background-darkl .logo-title:hover {\n    color: #F1CDB3;\n}\n\n.background-darkl .logo-subtitle {\n    color: #FFFFFF;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*  10. Navbar  */\r\n\r\n.navbar {\r\n    position: relative;\r\n    padding: 30px 0;\r\n    z-index: 1;\r\n}\r\n\r\n.navbar-burger {\r\n    display: none !important;\r\n    width: 30px;\r\n    height: 22px;\r\n    z-index: 2;\r\n    cursor: pointer;\r\n    transition: transform 0.2s ease-out;\r\n}\r\n\r\n.nav-item {\r\n    margin-left: 35px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .navbar.active .navbar-logo {\r\n        z-index: 2;\r\n    }\r\n\r\n    .navbar-content {\r\n        position: fixed;\r\n        top: 0;\r\n        left: 0;\r\n        transform: translateX(100%);\r\n        width: 100%;\r\n        height: 100vh;\r\n        padding-top: 120px;\r\n        z-index: 1;\r\n        /*background: #292929;*/\r\n        transition: transform 0.2s ease-out;\r\n    }\r\n\r\n    .navbar-content-container {\r\n        padding-top: 100px;\r\n        overflow-y: auto;\r\n    }\r\n\r\n    .navbar.active .navbar-content {\r\n        transform: translateX(0);\r\n    }\r\n\r\n    .nav-item {\r\n        margin-bottom: 50px;\r\n        margin-left: 0;\r\n        font-size: 32px;\r\n    }\r\n\r\n    .navbar-burger {\r\n        display: flex !important;\r\n    }\r\n\r\n    .navbar.active .navbar-burger {\r\n        transform: rotate(90deg);\r\n    }\r\n\r\n    .navbar-burger > div {\r\n        height: 2px;\r\n        background-color: #545454;\r\n        transition: background-color 0.2s ease-out;\r\n    }\r\n\r\n    .background-darkl .navbar-burger > div {\r\n        background-color: #FFFFFF;\r\n    }\r\n}\r\n\r\n/*  7. Links */\r\n\r\na {\r\n    position: relative;\r\n    text-decoration: none;\r\n    color: #545454;\r\n}\r\n\r\na:hover,\r\na.active {\r\n    color: #292929;\r\n}\r\n\r\na:active,\r\na:focus {\r\n    color: #545454;\r\n}\r\n\r\na:active::after,\r\na:focus::after,\r\na.active::after {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    bottom: -5px;\r\n    width: 100%;\r\n    height: 3px;\r\n    background-color: #F1CDB3;\r\n}\r\n\r\n.background-darkl a {\r\n    color: #545454;\r\n}\r\n\r\n.background-darkl a:hover,\r\n.background-darkl a:active::after,\r\n.background-darkl a:focus::after,\r\n.background-darkl a.active {\r\n    color: #292929;;\r\n}\r\n\r\n/*6. Logo  */\r\n\r\n.logo-titlel {\r\n    display: inline-block;\r\n    margin-bottom: 10px;\r\n    font-family: var(--font-family-georgia);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 32px;\r\n    line-height: 110%;\r\n    letter-spacing: 0.06em;\r\n    /*color: #545454;*/\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.cozy_light{\r\n    color: #545454;\r\n}\r\n\r\n.logo-subtitlel {\r\n    font-family: var(--font-family-arial);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n    line-height: 15px;\r\n    letter-spacing: 0.1em;\r\n    color: #292929;\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.background-darkl .logo-title,\r\n.background-darkl .logo-title:hover {\r\n    color: #F1CDB3;\r\n}\r\n\r\n.background-darkl .logo-subtitle {\r\n    color: #FFFFFF;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14539,7 +14539,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal-header .btn-close {\n    margin: -4.5rem -3.5rem -0.5rem auto;\n    border: 3px solid #FDDCC4;\n    border-radius: 50px;\n    padding: 17px;\n}\n\n.modal-header .btn-close:hover {\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.rec-dot{\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.rec-dot:hover, button.rec-dot:focus{\n    box-shadow: 0 0 1px 3px rgb(253, 220, 196);\n}\n\nbutton.rec-arrow{\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.rec-arrow:hover{\n    background-color: #FDDCC4;\n    transition: all 0.2s ease-out;\n}\n\nbutton.eWjCzc:hover:enabled{\n    background-color: #eec0a5;\n    transition: all 0.2s ease-out;\n}\n\nbutton.eWjCzc:focus:enabled{\n    background-color: #eec0a5;\n}\n.item__carousel{\n    margin-top: 90px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal-header .btn-close {\r\n    margin: -4.5rem -3.5rem -0.5rem auto;\r\n    border: 3px solid #FDDCC4;\r\n    border-radius: 50px;\r\n    padding: 17px;\r\n}\r\n\r\n.modal-header .btn-close:hover {\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.rec-dot{\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.rec-dot:hover, button.rec-dot:focus{\r\n    box-shadow: 0 0 1px 3px rgb(253, 220, 196);\r\n}\r\n\r\nbutton.rec-arrow{\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.rec-arrow:hover{\r\n    background-color: #FDDCC4;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.eWjCzc:hover:enabled{\r\n    background-color: #eec0a5;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\nbutton.eWjCzc:focus:enabled{\r\n    background-color: #eec0a5;\r\n}\r\n.item__carousel{\r\n    margin-top: 90px;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14563,7 +14563,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.bm-item {\n    display: inline-block;\n    text-decoration: none;\n    margin-bottom: 10px;\n    color: #d1d1d1;\n    transition: color 0.2s;\n}\n\n.bm-item:hover {\n    color: white;\n}\n\n.bm-burger-button {\n    display: none;\n    position: fixed;\n    width: 36px;\n    height: 30px;\n    right: 36px;\n    top: 36px;\n}\n\n.bm-burger-bars {\n    /*background: #373a47;*/\n    background: #b8b7ad;\n}\n\n.bm-cross-button {\n    height: 24px;\n    width: 24px;\n}\n\n.bm-cross {\n    background: #bdc3c7;\n}\n\n.bm-menu {\n    background: #373a47;\n    padding: 2.5em 1.5em 0;\n    font-size: 1.15em;\n}\n\n.bm-morph-shape {\n    fill: #373a47;\n}\n\n.bm-item-list {\n    color: #b8b7ad;\n}\n\n.bm-overlay {\n    background: rgba(0, 0, 0, 0.3);\n}\n\n.dark{\n    background: #b8b7ad;\n}\n\n@media (max-width: 767px) {\n    .myMenu {\n        display: block;\n        z-index: 0;\n    }\n    .bm-burger-button{\n        display: flex;\n    }\n}\n\n.darkClass{\n    background: #545454;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n.bm-item {\r\n    display: inline-block;\r\n    text-decoration: none;\r\n    margin-bottom: 10px;\r\n    color: #d1d1d1;\r\n    transition: color 0.2s;\r\n}\r\n\r\n.bm-item:hover {\r\n    color: white;\r\n}\r\n\r\n.bm-burger-button {\r\n    display: none;\r\n    position: fixed;\r\n    width: 36px;\r\n    height: 30px;\r\n    right: 36px;\r\n    top: 36px;\r\n}\r\n\r\n.bm-burger-bars {\r\n    /*background: #373a47;*/\r\n    background: #b8b7ad;\r\n}\r\n\r\n.bm-cross-button {\r\n    height: 24px;\r\n    width: 24px;\r\n}\r\n\r\n.bm-cross {\r\n    background: #bdc3c7;\r\n}\r\n\r\n.bm-menu {\r\n    background: #373a47;\r\n    padding: 2.5em 1.5em 0;\r\n    font-size: 1.15em;\r\n}\r\n\r\n.bm-morph-shape {\r\n    fill: #373a47;\r\n}\r\n\r\n.bm-item-list {\r\n    color: #b8b7ad;\r\n}\r\n\r\n.bm-overlay {\r\n    background: rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n.dark{\r\n    background: #b8b7ad;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .myMenu {\r\n        display: block;\r\n        z-index: 0;\r\n    }\r\n    .bm-burger-button{\r\n        display: flex;\r\n    }\r\n}\r\n\r\n.darkClass{\r\n    background: #545454;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14593,7 +14593,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_patterns_noise_transparent_2x_png__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/**\n *  1. Variables\n *  2. Defaults\n *  3. Buttons\n *  4. Typography\n *  5. Lists\n *  6. Logo\n *  7. Links\n *  8. Cards\n *  9. Modal\n *  10. Navbar\n *  11. Welcome\n *  12. About\n *  13. Help\n *  14. Donate\n *  15. Footer\n *  16. Slider\n */\n\n/* 1. Variables */\n\n:root {\n    --font-family-arial: Arial, sans-serif;\n    --font-family-georgia: Georgia, serif;\n    /*--color-dark-s: #CDCDCD;*/\n    /*--color-dark-m: #B2B2B2;*/\n    /*--color-dark-l: #545454;*/\n    /*--color-dark-xl: #4C4C4C;*/\n    /*--color-dark-3xl: #292929;*/\n    /*--color-light-s: #FAFAFA;*/\n    /*--color-light-l: #F6F6F6;*/\n    /*--color-light-xl: #FFFFFF;*/\n    /*--color-primary: #F1CDB3;*/\n    /*--color-primary-light: #FDDCC4;*/\n}\n\n.swiper-wrapper {\n    display: flex;\n    justify-content: space-between;\n}\n\n.welcome__img {\n    margin-top: 120px;\n}\n\na,\nbutton {\n    outline: none;\n}\n\n/* 2. Defaults */\n\n::-moz-selection {\n    background: #F1CDB3;\n    color: #292929;\n}\n\n::selection {\n    background: #F1CDB3;\n    color: #292929;\n}\n\nbody {\n    font-family: var(--font-family-arial);\n    font-weight: 400;\n    font-size: 15px;\n    line-height: 160%;\n}\n\nimg {\n    max-width: 100%;\n}\n\n.section {\n    padding: 80px 0 100px;\n    overflow: hidden;\n}\n\n.section-light {\n    background-color: #F6F6F6;\n}\n\n@media (max-width: 767px) {\n    .section {\n        padding: 45px 0;\n    }\n}\n\n/* 3. Buttons */\n\n.button {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    margin: 10px 0px;\n    padding: 13px 43px;\n    border-width: 2px;\n    border-style: solid;\n    border-radius: 100px;\n    box-sizing: border-box;\n    font-family: var(--font-family-georgia);\n    font-size: 17px;\n    line-height: 130%;\n    letter-spacing: 0.06em;\n    color: #292929;\n    transition: all 0.2s ease-out;\n}\n\n.button:disabled,\n.button:disabled:hover {\n    border-color: #CDCDCD;\n    background-color: transparent;\n    color: #CDCDCD;\n    cursor: not-allowed;\n}\n\n.button:disabled svg * {\n    fill: #CDCDCD;\n}\n\n.button-primary:hover,\n.button.active:hover {\n    border-color: #FDDCC4;\n    background-color: #FDDCC4;\n}\n\n.button-secondary {\n    border-color: #FDDCC4;\n    background-color: transparent;\n}\n\n.button-secondary:hover {\n    background-color: #FDDCC4;\n}\n\n.button-circle {\n    padding: 0;\n    width: 52px;\n    height: 52px;\n}\n\n.button-paginator {\n    font-size: 20px;\n    line-height: 120%;\n    text-align: center;\n    padding: 0;\n}\n\n.button:active,\n.button:focus,\n.button-primary,\n.button.active {\n    border-color: #F1CDB3;\n    background-color: #F1CDB3;\n}\n\n/* 4. Typography */\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n    font-family: 'Georgia';\n    font-style: normal;\n    font-weight: 400;\n    line-height: 130%;\n    color: #545454;\n}\n\nh2 {\n    font-size: 44px;\n}\n\nh3 {\n    font-size: 35px;\n    letter-spacing: 0.06em;\n}\n\nh4 {\n    font-size: 20px;\n    line-height: 115%;\n    letter-spacing: 0.06em;\n}\n\nh5 {\n    font-size: 15px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n}\n\np {\n    color: #4C4C4C;\n}\n\nsmall {\n    font-style: italic;\n    font-weight: 400;\n    font-size: 12px;\n    line-height: 150%;\n    color: #B2B2B2;\n}\n\n/*  5. Lists  */\n\n.list {\n    padding-left: 15px;\n    list-style: none;\n    font-family: 'Georgia';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 15px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n    color: #000000;\n}\n\n.list-item {\n    position: relative;\n    margin-bottom: 6px;\n}\n\n.list-item::before {\n    content: '';\n    padding: 2px;\n    border-radius: 50%;\n    background-color: #F1CDB3;\n    position: absolute;\n    left: -15px;\n    top: 50%;\n    transform: translateY(-50%);\n}\n\n/*6. Logo  */\n\n.logo::after {\n    content: none !important;\n}\n\n.logo-title {\n    margin-bottom: 10px;\n    font-family: var(--font-family-georgia);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 32px;\n    line-height: 110%;\n    letter-spacing: 0.06em;\n    color: #F1CDB3;;\n    transition: color 0.2s ease-out;\n}\n\n.logo-subtitle {\n    font-family: var(--font-family-arial);\n    font-style: normal;\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    letter-spacing: 0.1em;\n    color: #CDCDCD;\n    transition: color 0.2s ease-out;\n}\n\n.background-dark .logo-title,\n.background-dark .logo-title:hover {\n    color: #F1CDB3;\n}\n\n.background-dark .logo-subtitle {\n    color: #FFFFFF;\n}\n\n/*!*  7. Links *!*/\n\na {\n    position: relative;\n    text-decoration: none;\n    color: #545454;\n}\n\na:hover,\na.active {\n    color: #292929;\n}\n\na:active,\na:focus {\n    color: #545454;\n}\n\na:active::after,\na:focus::after,\na.active::after {\n    content: '';\n    display: block;\n    position: absolute;\n    bottom: -5px;\n    width: 100%;\n    height: 3px;\n    background-color: #F1CDB3;\n}\n\n.background-dark a {\n    color: #CDCDCD;\n}\n\n.background-dark a:hover,\n.background-dark a:active::after,\n.background-dark a:focus::after,\n.background-dark a.active {\n    color: #FAFAFA;\n}\n\n/*  8. Cards  */\n\n.card {\n    max-width: 270px;\n    margin: 0 auto;\n    border: none;\n    border-radius: 9px;\n    overflow: hidden;\n    background: #FAFAFA;\n}\n\n.card:hover .card-content {\n    background-color: #FFFFFF;\n}\n\n.card img {\n    -o-object-fit: contain;\n       object-fit: contain;\n    width: 100%;\n    height: 270px;\n}\n\n.card-content {\n    padding: 30px;\n    transition: all 0.2s ease-out;\n}\n\n.card.active {\n    max-width: 900px;\n    max-height: 500px;\n    height: auto;\n}\n\n.card.active img {\n    max-width: 500px;\n    height: auto;\n}\n\n.card.active .card-content {\n    padding: 50px 20px 20px;\n    overflow-y: auto;\n}\n\n.card.active .card-content * {\n    color: #000000;\n}\n\n@media (max-width: 992px) {\n    .card.active img {\n        max-width: 400px;\n    }\n}\n\n@media (max-width: 768px) {\n    .card.active {\n        max-height: 350px;\n    }\n\n    .card.active img {\n        max-width: 300px;\n    }\n}\n\n@media (max-width: 575px) {\n    .card.active {\n        max-height: initial;\n        height: 90vh;\n        overflow-y: auto;\n    }\n\n    .card.active .card-content {\n        overflow-y: visible;\n    }\n\n    .card.active img {\n        max-width: 100%;\n    }\n}\n\n/*  9. Modal  */\n\n.modal-dialog {\n    max-width: 900px;\n    margin: 70px auto 20px;\n}\n\n.modal-content {\n    border-radius: 9px;\n    background: #FAFAFA;\n    height: 500px;\n    border: 0;\n}\n\n.modal-header {\n    padding: 0;\n    border: 0;\n}\n\n.modal-header .button-circle {\n    position: absolute;\n    bottom: 100%;\n    left: 100%;\n}\n\n.modal-body {\n    padding: 0;\n    overflow: hidden;\n}\n\n.modal-image {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: contain;\n       object-fit: contain;\n}\n\n.modal-text {\n    overflow-y: auto;\n}\n\n@media (max-width: 1024px) {\n    .modal-dialog {\n        margin: 70px 60px 20px;\n    }\n}\n\n@media (max-width: 575px) {\n    .modal-dialog {\n        margin: 70px 20px 20px;\n    }\n\n    .modal-content {\n        height: auto;\n    }\n\n    .modal-header .button-circle {\n        transform: translateX(-100%);\n    }\n}\n\n/*!*  10. Navbar  *!*/\n\n.navbar {\n    position: relative;\n    padding: 30px 0;\n    z-index: 2;\n}\n\n.navbar-burger {\n    display: none !important;\n    width: 30px;\n    height: 22px;\n    cursor: pointer;\n    transition: transform 0.2s ease-out;\n}\n\n.nav-item {\n    margin-left: 35px;\n}\n\n@media (max-width: 767px) {\n    .navbar.active .navbar-logo {\n        z-index: 1;\n    }\n    .navbar-content {\n        position: fixed;\n        top: 0;\n        left: 0;\n        transform: translateX(100%);\n        width: 100%;\n        height: 100vh;\n        padding-top: 120px;\n        z-index: 1;\n        background: #292929;\n        transition: transform 0.2s ease-out;\n    }\n\n    .navbar-content-container {\n        padding-top: 100px;\n        overflow-y: auto;\n    }\n\n    .navbar.active .navbar-content {\n        transform: translateX(0);\n    }\n\n    .nav-item {\n        margin-bottom: 50px;\n        margin-left: 0;\n        font-size: 32px;\n    }\n\n    .navbar-burger {\n        display: flex !important;\n    }\n\n    .navbar.active .navbar-burger {\n        transform: rotate(90deg);\n    }\n\n    .navbar-burger > div {\n        height: 2px;\n        background-color: #545454;\n        transition: background-color 0.2s ease-out;\n    }\n\n    .background-dark .navbar-burger > div {\n        background-color: #F1CDB3;\n    }\n}\n\n/*  11. Welcome  */\n\n.welcome {\n    padding-top: 120px;\n    transform: translateY(-120px);\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\n    #211F20;\n}\n\n.welcome h2 {\n    color: #FFFFFF;\n    max-width: 310px;\n    margin-bottom: 45px;\n}\n\n.welcome p {\n    color: #CDCDCD;\n    margin-bottom: 55px;\n}\n\n@media (max-width: 767px) {\n    .welcome {\n        padding-top: 135px;\n    }\n}\n\n/*  12. About  */\n\n.about {\n    max-width: 850px;\n    margin: 0 auto;\n}\n\n@media (max-width: 767px) {\n    .about {\n        text-align: justify;\n    }\n}\n\n/*  13. Help  */\n\n.help svg {\n    margin-bottom: 30px;\n}\n\n.help-item {\n    text-align: center;\n    margin-bottom: 60px;\n}\n\n/*  14. Donate  */\n\n.donate {\n    max-width: 890px;\n    margin: 0 auto;\n}\n\n.donate-content {\n    max-width: 380px;\n    margin: 0 auto;\n}\n\n/*  15. Footer  */\n\n.footer {\n    padding: 60px 0;\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\n    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\n    #211F20;\n}\n\n.footer h3 {\n    color: #FFFFFF;\n    margin-bottom: 40px;\n}\n\n.footer h4 {\n    color: #F1CDB3;\n    margin-bottom: 40px;\n}\n\n.footer h4:last-child {\n    margin-bottom: 0;\n}\n\n.footer img {\n    /*position: absolute;*/\n    right: 0;\n    bottom: 0;\n    transform: translateY(60px);\n}\n\n@media (max-width: 991px) {\n    .footer img {\n        position: static;\n    }\n}\n\n@media (max-width: 767px) {\n    .footer > .container {\n        max-width: 320px;\n    }\n}\n\n/*  16. Slider  */\n\n.slider {\n    overflow: visible;\n}\n\n.slider-button {\n    position: absolute;\n    top: 50%;\n    transform: translateY(-50%);\n    z-index: 1;\n}\n\n.slider-button-next {\n    right: 0;\n}\n\n.slider-button-prev {\n    left: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/**\r\n *  1. Variables\r\n *  2. Defaults\r\n *  3. Buttons\r\n *  4. Typography\r\n *  5. Lists\r\n *  6. Logo\r\n *  7. Links\r\n *  8. Cards\r\n *  9. Modal\r\n *  10. Navbar\r\n *  11. Welcome\r\n *  12. About\r\n *  13. Help\r\n *  14. Donate\r\n *  15. Footer\r\n *  16. Slider\r\n */\r\n\r\n/* 1. Variables */\r\n\r\n:root {\r\n    --font-family-arial: Arial, sans-serif;\r\n    --font-family-georgia: Georgia, serif;\r\n    /*--color-dark-s: #CDCDCD;*/\r\n    /*--color-dark-m: #B2B2B2;*/\r\n    /*--color-dark-l: #545454;*/\r\n    /*--color-dark-xl: #4C4C4C;*/\r\n    /*--color-dark-3xl: #292929;*/\r\n    /*--color-light-s: #FAFAFA;*/\r\n    /*--color-light-l: #F6F6F6;*/\r\n    /*--color-light-xl: #FFFFFF;*/\r\n    /*--color-primary: #F1CDB3;*/\r\n    /*--color-primary-light: #FDDCC4;*/\r\n}\r\n\r\n.swiper-wrapper {\r\n    display: flex;\r\n    justify-content: space-between;\r\n}\r\n\r\n.welcome__img {\r\n    margin-top: 120px;\r\n}\r\n\r\na,\r\nbutton {\r\n    outline: none;\r\n}\r\n\r\n/* 2. Defaults */\r\n\r\n::-moz-selection {\r\n    background: #F1CDB3;\r\n    color: #292929;\r\n}\r\n\r\n::selection {\r\n    background: #F1CDB3;\r\n    color: #292929;\r\n}\r\n\r\nbody {\r\n    font-family: var(--font-family-arial);\r\n    font-weight: 400;\r\n    font-size: 15px;\r\n    line-height: 160%;\r\n}\r\n\r\nimg {\r\n    max-width: 100%;\r\n}\r\n\r\n.section {\r\n    padding: 80px 0 100px;\r\n    overflow: hidden;\r\n}\r\n\r\n.section-light {\r\n    background-color: #F6F6F6;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .section {\r\n        padding: 45px 0;\r\n    }\r\n}\r\n\r\n/* 3. Buttons */\r\n\r\n.button {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin: 10px 0px;\r\n    padding: 13px 43px;\r\n    border-width: 2px;\r\n    border-style: solid;\r\n    border-radius: 100px;\r\n    box-sizing: border-box;\r\n    font-family: var(--font-family-georgia);\r\n    font-size: 17px;\r\n    line-height: 130%;\r\n    letter-spacing: 0.06em;\r\n    color: #292929;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\n.button:disabled,\r\n.button:disabled:hover {\r\n    border-color: #CDCDCD;\r\n    background-color: transparent;\r\n    color: #CDCDCD;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.button:disabled svg * {\r\n    fill: #CDCDCD;\r\n}\r\n\r\n.button-primary:hover,\r\n.button.active:hover {\r\n    border-color: #FDDCC4;\r\n    background-color: #FDDCC4;\r\n}\r\n\r\n.button-secondary {\r\n    border-color: #FDDCC4;\r\n    background-color: transparent;\r\n}\r\n\r\n.button-secondary:hover {\r\n    background-color: #FDDCC4;\r\n}\r\n\r\n.button-circle {\r\n    padding: 0;\r\n    width: 52px;\r\n    height: 52px;\r\n}\r\n\r\n.button-paginator {\r\n    font-size: 20px;\r\n    line-height: 120%;\r\n    text-align: center;\r\n    padding: 0;\r\n}\r\n\r\n.button:active,\r\n.button:focus,\r\n.button-primary,\r\n.button.active {\r\n    border-color: #F1CDB3;\r\n    background-color: #F1CDB3;\r\n}\r\n\r\n/* 4. Typography */\r\n\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6 {\r\n    font-family: 'Georgia';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    line-height: 130%;\r\n    color: #545454;\r\n}\r\n\r\nh2 {\r\n    font-size: 44px;\r\n}\r\n\r\nh3 {\r\n    font-size: 35px;\r\n    letter-spacing: 0.06em;\r\n}\r\n\r\nh4 {\r\n    font-size: 20px;\r\n    line-height: 115%;\r\n    letter-spacing: 0.06em;\r\n}\r\n\r\nh5 {\r\n    font-size: 15px;\r\n    line-height: 110%;\r\n    letter-spacing: 0.06em;\r\n}\r\n\r\np {\r\n    color: #4C4C4C;\r\n}\r\n\r\nsmall {\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    font-size: 12px;\r\n    line-height: 150%;\r\n    color: #B2B2B2;\r\n}\r\n\r\n/*  5. Lists  */\r\n\r\n.list {\r\n    padding-left: 15px;\r\n    list-style: none;\r\n    font-family: 'Georgia';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 15px;\r\n    line-height: 110%;\r\n    letter-spacing: 0.06em;\r\n    color: #000000;\r\n}\r\n\r\n.list-item {\r\n    position: relative;\r\n    margin-bottom: 6px;\r\n}\r\n\r\n.list-item::before {\r\n    content: '';\r\n    padding: 2px;\r\n    border-radius: 50%;\r\n    background-color: #F1CDB3;\r\n    position: absolute;\r\n    left: -15px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n}\r\n\r\n/*6. Logo  */\r\n\r\n.logo::after {\r\n    content: none !important;\r\n}\r\n\r\n.logo-title {\r\n    margin-bottom: 10px;\r\n    font-family: var(--font-family-georgia);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 32px;\r\n    line-height: 110%;\r\n    letter-spacing: 0.06em;\r\n    color: #F1CDB3;;\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.logo-subtitle {\r\n    font-family: var(--font-family-arial);\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 13px;\r\n    line-height: 15px;\r\n    letter-spacing: 0.1em;\r\n    color: #CDCDCD;\r\n    transition: color 0.2s ease-out;\r\n}\r\n\r\n.background-dark .logo-title,\r\n.background-dark .logo-title:hover {\r\n    color: #F1CDB3;\r\n}\r\n\r\n.background-dark .logo-subtitle {\r\n    color: #FFFFFF;\r\n}\r\n\r\n/*!*  7. Links *!*/\r\n\r\na {\r\n    position: relative;\r\n    text-decoration: none;\r\n    color: #545454;\r\n}\r\n\r\na:hover,\r\na.active {\r\n    color: #292929;\r\n}\r\n\r\na:active,\r\na:focus {\r\n    color: #545454;\r\n}\r\n\r\na:active::after,\r\na:focus::after,\r\na.active::after {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    bottom: -5px;\r\n    width: 100%;\r\n    height: 3px;\r\n    background-color: #F1CDB3;\r\n}\r\n\r\n.background-dark a {\r\n    color: #CDCDCD;\r\n}\r\n\r\n.background-dark a:hover,\r\n.background-dark a:active::after,\r\n.background-dark a:focus::after,\r\n.background-dark a.active {\r\n    color: #FAFAFA;\r\n}\r\n\r\n/*  8. Cards  */\r\n\r\n.card {\r\n    max-width: 270px;\r\n    margin: 0 auto;\r\n    border: none;\r\n    border-radius: 9px;\r\n    overflow: hidden;\r\n    background: #FAFAFA;\r\n}\r\n\r\n.card:hover .card-content {\r\n    background-color: #FFFFFF;\r\n}\r\n\r\n.card img {\r\n    -o-object-fit: contain;\r\n       object-fit: contain;\r\n    width: 100%;\r\n    height: 270px;\r\n}\r\n\r\n.card-content {\r\n    padding: 30px;\r\n    transition: all 0.2s ease-out;\r\n}\r\n\r\n.card.active {\r\n    max-width: 900px;\r\n    max-height: 500px;\r\n    height: auto;\r\n}\r\n\r\n.card.active img {\r\n    max-width: 500px;\r\n    height: auto;\r\n}\r\n\r\n.card.active .card-content {\r\n    padding: 50px 20px 20px;\r\n    overflow-y: auto;\r\n}\r\n\r\n.card.active .card-content * {\r\n    color: #000000;\r\n}\r\n\r\n@media (max-width: 992px) {\r\n    .card.active img {\r\n        max-width: 400px;\r\n    }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n    .card.active {\r\n        max-height: 350px;\r\n    }\r\n\r\n    .card.active img {\r\n        max-width: 300px;\r\n    }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n    .card.active {\r\n        max-height: initial;\r\n        height: 90vh;\r\n        overflow-y: auto;\r\n    }\r\n\r\n    .card.active .card-content {\r\n        overflow-y: visible;\r\n    }\r\n\r\n    .card.active img {\r\n        max-width: 100%;\r\n    }\r\n}\r\n\r\n/*  9. Modal  */\r\n\r\n.modal-dialog {\r\n    max-width: 900px;\r\n    margin: 70px auto 20px;\r\n}\r\n\r\n.modal-content {\r\n    border-radius: 9px;\r\n    background: #FAFAFA;\r\n    height: 500px;\r\n    border: 0;\r\n}\r\n\r\n.modal-header {\r\n    padding: 0;\r\n    border: 0;\r\n}\r\n\r\n.modal-header .button-circle {\r\n    position: absolute;\r\n    bottom: 100%;\r\n    left: 100%;\r\n}\r\n\r\n.modal-body {\r\n    padding: 0;\r\n    overflow: hidden;\r\n}\r\n\r\n.modal-image {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: contain;\r\n       object-fit: contain;\r\n}\r\n\r\n.modal-text {\r\n    overflow-y: auto;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n    .modal-dialog {\r\n        margin: 70px 60px 20px;\r\n    }\r\n}\r\n\r\n@media (max-width: 575px) {\r\n    .modal-dialog {\r\n        margin: 70px 20px 20px;\r\n    }\r\n\r\n    .modal-content {\r\n        height: auto;\r\n    }\r\n\r\n    .modal-header .button-circle {\r\n        transform: translateX(-100%);\r\n    }\r\n}\r\n\r\n/*!*  10. Navbar  *!*/\r\n\r\n.navbar {\r\n    position: relative;\r\n    padding: 30px 0;\r\n    z-index: 2;\r\n}\r\n\r\n.navbar-burger {\r\n    display: none !important;\r\n    width: 30px;\r\n    height: 22px;\r\n    cursor: pointer;\r\n    transition: transform 0.2s ease-out;\r\n}\r\n\r\n.nav-item {\r\n    margin-left: 35px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .navbar.active .navbar-logo {\r\n        z-index: 1;\r\n    }\r\n    .navbar-content {\r\n        position: fixed;\r\n        top: 0;\r\n        left: 0;\r\n        transform: translateX(100%);\r\n        width: 100%;\r\n        height: 100vh;\r\n        padding-top: 120px;\r\n        z-index: 1;\r\n        background: #292929;\r\n        transition: transform 0.2s ease-out;\r\n    }\r\n\r\n    .navbar-content-container {\r\n        padding-top: 100px;\r\n        overflow-y: auto;\r\n    }\r\n\r\n    .navbar.active .navbar-content {\r\n        transform: translateX(0);\r\n    }\r\n\r\n    .nav-item {\r\n        margin-bottom: 50px;\r\n        margin-left: 0;\r\n        font-size: 32px;\r\n    }\r\n\r\n    .navbar-burger {\r\n        display: flex !important;\r\n    }\r\n\r\n    .navbar.active .navbar-burger {\r\n        transform: rotate(90deg);\r\n    }\r\n\r\n    .navbar-burger > div {\r\n        height: 2px;\r\n        background-color: #545454;\r\n        transition: background-color 0.2s ease-out;\r\n    }\r\n\r\n    .background-dark .navbar-burger > div {\r\n        background-color: #F1CDB3;\r\n    }\r\n}\r\n\r\n/*  11. Welcome  */\r\n\r\n.welcome {\r\n    padding-top: 120px;\r\n    transform: translateY(-120px);\r\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),\r\n    #211F20;\r\n}\r\n\r\n.welcome h2 {\r\n    color: #FFFFFF;\r\n    max-width: 310px;\r\n    margin-bottom: 45px;\r\n}\r\n\r\n.welcome p {\r\n    color: #CDCDCD;\r\n    margin-bottom: 55px;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .welcome {\r\n        padding-top: 135px;\r\n    }\r\n}\r\n\r\n/*  12. About  */\r\n\r\n.about {\r\n    max-width: 850px;\r\n    margin: 0 auto;\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .about {\r\n        text-align: justify;\r\n    }\r\n}\r\n\r\n/*  13. Help  */\r\n\r\n.help svg {\r\n    margin-bottom: 30px;\r\n}\r\n\r\n.help-item {\r\n    text-align: center;\r\n    margin-bottom: 60px;\r\n}\r\n\r\n/*  14. Donate  */\r\n\r\n.donate {\r\n    max-width: 890px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.donate-content {\r\n    max-width: 380px;\r\n    margin: 0 auto;\r\n}\r\n\r\n/*  15. Footer  */\r\n\r\n.footer {\r\n    padding: 60px 0;\r\n    background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + "),\r\n    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),\r\n    #211F20;\r\n}\r\n\r\n.footer h3 {\r\n    color: #FFFFFF;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.footer h4 {\r\n    color: #F1CDB3;\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.footer h4:last-child {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.footer img {\r\n    /*position: absolute;*/\r\n    right: 0;\r\n    bottom: 0;\r\n    transform: translateY(60px);\r\n}\r\n\r\n@media (max-width: 991px) {\r\n    .footer img {\r\n        position: static;\r\n    }\r\n}\r\n\r\n@media (max-width: 767px) {\r\n    .footer > .container {\r\n        max-width: 320px;\r\n    }\r\n}\r\n\r\n/*  16. Slider  */\r\n\r\n.slider {\r\n    overflow: visible;\r\n}\r\n\r\n.slider-button {\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    z-index: 1;\r\n}\r\n\r\n.slider-button-next {\r\n    right: 0;\r\n}\r\n\r\n.slider-button-prev {\r\n    left: 0;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -15886,7 +15886,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/credit-card.svg?b0a55b5f9acb325550a024c941c60044");
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/credit-card.svg?4ba0426d2bc74b7a78f391d954a2f137");
 
 /***/ }),
 

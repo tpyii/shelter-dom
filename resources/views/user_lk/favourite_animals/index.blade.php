@@ -7,7 +7,7 @@
 
     <div class='row mb-5 d-flex'>
         @foreach($animals as $animal)
-            <div class="card" style="width: 18rem; margin-left: 20px; margin-top: 20px; height:100%">
+            <div id="card-{{ $animal->id }}" class="card" style="width: 18rem; margin-left: 20px; margin-top: 20px; height:100%">
                 <div id="carouselExampleControls-{{ $animal->id }}" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -89,7 +89,7 @@
                     </div>
                     <x-button color="outline-danger" class="showDeleteModal" style="width: 100%; margin-top:10px"
                         data-action="{{ route('user.favourite_animals.destroy', $animal) }}"
-                        data-remove="#row-{{ $animal->id }}">
+                        data-remove="#card-{{ $animal->id }}">
                         <div>Удалить из избранного</div>
                     </x-button>
                 </div>

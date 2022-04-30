@@ -8,6 +8,10 @@ import scarlet from '../../../../templates/assets/images/pets-scarlet.png'
 import katrine2 from '../../../../templates/assets/images/pets-katrine-2.png'
 
 export const apiURL = "/api/animals";
+export const breedsUrl = '/api/breeds'
+export const typeUrl = '/api/types'
+export const diseasesUrl = '/api/diseases'
+export const inoculationsUrl = '/api/inoculations'
 
 export const REQUEST_STATUS = {
     IDLE: 0,

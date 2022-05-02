@@ -5,9 +5,10 @@ import {useState, useEffect, useMemo} from 'react'
 import {Animals} from '../animals/Animals'
 import {NavBarLigth} from '../NavBarLigth/NavBarLigth'
 import {Pagination} from '../Pagination/Pagination'
-import {selectAnimalsList, selectPerPage, selectTotal} from '../store/getAnimalsList/selectors'
+import {selectAnimalsList, selectPerPage, selectTotal, selectBreeds,selectTypes, selectDiseases, selectInoc} from '../store/getAnimalsList/selectors'
 import {useDispatch, useSelector} from "react-redux";
-import {getAnimals} from '../store/getAnimalsList/actions'
+import {getAnimals,getBreeds, getTypes, getInoculations, getDiseases} from '../store/getAnimalsList/actions'
+import {Filter} from '../filter/Filter'
 
 export const OurPets = () => {
     const [loading, setLoading] = useState(false);
@@ -18,17 +19,28 @@ export const OurPets = () => {
     const animals = useSelector(selectAnimalsList)
     const total = useSelector(selectTotal)
     const animalsPerPage = useSelector(selectPerPage)
+    const breedsList = useSelector(selectBreeds)
+    const typesList = useSelector(selectTypes)
+    const diseasesList = useSelector(selectDiseases)
+    const inocList = useSelector(selectInoc)
 
     useEffect(() => {
         window.scrollTo({
             top: 0,
             behavior: "instant"
         });
+        dispatch(getBreeds())
+        dispatch(getTypes())
+        dispatch(getInoculations())
+        dispatch(getDiseases())
     }, [])
 
     useMemo(() => {
-        dispatch(getAnimals(currentPage, sortBy))
+        dispatch(getAnimals(currentPage, sortBy, breedsList,typesList,diseasesList,inocList))
     }, [currentPage])
+
+
+
 
 //     Get current posts
     const indexOfLastAnimal = currentPage * animalsPerPage;
@@ -53,6 +65,7 @@ export const OurPets = () => {
                 <div className="container">
                     <div className='pets'>
                         <h3 className="mb-5 text-center">Our friends who<br/>are looking for a house</h3>
+                        <Filter sort={sortBy} page={currentPage} breeds={breedsList} types={typesList} inoc={inocList} diseases={diseasesList}/>
                         <Animals animals={animals} loading={loading}/>
                         <Pagination
                             animalsPerPage={animalsPerPage}

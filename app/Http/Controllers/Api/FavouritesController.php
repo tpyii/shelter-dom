@@ -2,34 +2,36 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\AnimalStoreRequest;
-use App\Http\Resources\AnimalResource;
 use App\Models\Animal;
-use Illuminate\Http\Response;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\AnimalResource;
 
-class AnimalController extends Controller
+class FavouritesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection|Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return AnimalResource::collection(Animal::filter()->paginate(4));
+        return AnimalResource::collection(auth()->user()->animals()->get());
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\AnimalStoreRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AnimalStoreRequest $request)
+    public function store(Request $request)
     {
-        $crested_animal = Animal::create($request->validated());
-        return new AnimalResource($crested_animal);
+        $validated = $request->validate([
+            'id' => ['required', 'integer', 'numeric', 'exists:animals'],
+        ]);
+
+        return $request->user()->animals()->attach($validated);
     }
 
     /**
@@ -46,15 +48,13 @@ class AnimalController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\AnimalStoreRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function update(AnimalStoreRequest $request, Animal $animal)
+    public function update(Request $request, Animal $animal)
     {
-        $animal->update($request->validated());
-
-        return $animal;
+        //
     }
 
     /**
@@ -65,7 +65,6 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        $animal->delete();
-        return response(null, Response::HTTP_NO_CONTENT);
+        return auth()->user()->animals()->detach($animal);
     }
 }

@@ -23,7 +23,8 @@ class Animal extends Model
         'images',
         'inoculation',
         'breed',
-        'type'
+        'type',
+        'users',
     ];
 
     public function images()
@@ -49,6 +50,11 @@ class Animal extends Model
     public function type()
     {
         return $this->belongsTo(AnimalType::class);
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\DiseaseController;
 use App\Http\Controllers\Api\InoculationController;
 use App\Http\Controllers\Api\AnimalTypeController;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\FavouritesController;
 use App\Http\Controllers\Api\UsersController;
 
 /*
@@ -21,7 +22,6 @@ use App\Http\Controllers\Api\UsersController;
 */
 
 Route::apiResources([
-    'animals' => AnimalController::class,
     'breeds' => BreedController::class,
     'diseases' => DiseaseController::class,
     'inoculations' => InoculationController::class,
@@ -32,6 +32,22 @@ Route::apiResources([
         'types' => 'animal_type',
     ]
 ]);
+
+Route::middleware('checkSanctum')->group(function () {
+    Route::apiResources([
+        'animals' => AnimalController::class,
+    ]);
+});
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResources([
+        'favourites' => FavouritesController::class,
+    ], [
+        'parameters' => [
+            'favourites' => 'animal',
+        ]
+    ]);
+});
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('register', 'register');

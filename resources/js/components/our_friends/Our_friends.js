@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getAnimals} from '../store/getAnimalsList/actions'
 import LeftArrow from './assets/Arrow (2).png'
 import RightArrow from './assets/Arrow (1).png'
-
+import {Like} from '../like/Like'
 export const Our_friends = () => {
     const placeholder = 'https://placehold.co/600x400'
     const dispatch = useDispatch()
@@ -60,6 +60,7 @@ export const Our_friends = () => {
                                 <Item key={id} className='d-flex justify-content-around'>
                                     <div className="swiper-slide">
                                         <div className="card d-flex flex-column">
+                                            <Like/>
                                             <img
                                                 src={`${images?.length === 0 ? placeholder : images?.length && images[0]?.path
                                                     .replace('public/', '')

@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Rules\ReCaptchaRule;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
@@ -30,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/user/about_me';
 
     /**
      * Create a new controller instance.
@@ -51,9 +53,12 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'min:2', 'max:255', 'alpha'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed', Password::default()],
+            'recaptcha_token' => ['required', new ReCaptchaRule()]
+        ], $messages = [
+            'regex' => 'Значение поля :attribute должно содержать не менее 10 символов, среди который должны быть заглавные и прописные буквы, цифры и спецсимволы.'
         ]);
     }
 
@@ -64,7 +69,7 @@ class RegisterController extends Controller
      * @return \App\Models\User
      */
     protected function create(array $data)
-    {   
+    {
         $newUser = User::create([
             'name' => $data['name'],
             'email' => $data['email'],

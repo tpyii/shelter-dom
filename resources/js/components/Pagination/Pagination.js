@@ -22,7 +22,7 @@ export const Pagination = ({
     }
     useEffect(() => {
         lastNum(pageNumbers.length)
-    }, [pageNumbers.length])
+    }, [pageNumbers.length,totalAnimals])
 
     const lastPageNumb = pageNumbers.length
 

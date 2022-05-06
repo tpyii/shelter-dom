@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\AnimalController;
 use App\Http\Controllers\Api\DiseaseController;
 use App\Http\Controllers\Api\InoculationController;
 use App\Http\Controllers\Api\AnimalTypeController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UsersController;
 
 /*
@@ -31,3 +32,9 @@ Route::apiResources([
         'types' => 'animal_type',
     ]
 ]);
+
+Route::controller(AuthController::class)->group(function () {
+    Route::post('register', 'register');
+    Route::post('login', 'login');
+    Route::post('logout', 'logout')->middleware('auth:sanctum');
+});

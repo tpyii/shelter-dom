@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import {Modal_window} from '../modal_window/Modal_window'
-
+import {Like} from '../like/Like'
 export const Animals = ({animals, loading}) => {
     const [show, setShow] = useState(false)
     const [animalData, setAnimalData] = useState('')
@@ -30,6 +30,7 @@ export const Animals = ({animals, loading}) => {
             {animals.map(({id, name, images}) => (
                 <div key={id} className="col col-lg-3 mb-3">
                     <div className="card d-flex flex-column mr-3">
+                        <Like/>
                         <img src={`${images?.length === 0 ? placeholder : images?.length && images[0]?.path
                             .replace('public/', '')
                             .replace('\\', '/')

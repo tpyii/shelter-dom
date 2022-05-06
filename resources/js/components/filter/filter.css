@@ -1,0 +1,46 @@
+.show {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: 0.4s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.noShow{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.4s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.select{
+    text-align: center;
+}
+select{
+    text-align: center;
+    color: #292929;
+    border-radius: 5px;
+    background-color: #FDDCC4;
+}
+
+option:hover{
+    color: green;
+}
+.search{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input{
+    outline: none;
+    border-radius: 5px;
+}
+
+.btnFilter{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

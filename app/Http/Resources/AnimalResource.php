@@ -25,6 +25,7 @@ class AnimalResource extends JsonResource
             'images' => ImagesResource::collection($this->images),
             'disease' => DiseaseResource::collection($this->disease),
             'inoculation' => InoculationResource::collection($this->inoculation),
+            'favourite' => $this->when($request->user(), $this->users->contains($request->user())),
         ];
     }
 }

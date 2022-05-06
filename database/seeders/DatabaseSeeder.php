@@ -42,7 +42,7 @@ class DatabaseSeeder extends Seeder
             AnimalInoculationSeeder::class,
             AnimalDiseaseSeeder::class,
             AnimalImagesSeeder::class,
-            UserFavouritesSeeder::class,
+            AnimalUserSeeder::class,
         ]);
     }
 }

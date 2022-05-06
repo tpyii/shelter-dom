@@ -59,6 +59,6 @@ class User extends Authenticatable
 
     public function animals()
     {
-        return $this->belongsToMany(Animal::class, 'users_favourites');
+        return $this->belongsToMany(Animal::class);
     }
 }

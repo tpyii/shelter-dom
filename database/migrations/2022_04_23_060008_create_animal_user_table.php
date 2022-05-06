@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersFavouritesTable extends Migration
+class CreateAnimalUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUsersFavouritesTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_favourites', function (Blueprint $table) {
+        Schema::create('animal_user', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained();
             $table->foreignId('animal_id')->constrained();
         });
@@ -26,6 +26,6 @@ class CreateUsersFavouritesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_favourites');
+        Schema::dropIfExists('animal_user');
     }
 }

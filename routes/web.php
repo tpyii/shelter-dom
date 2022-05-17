@@ -37,8 +37,16 @@ Route::get('/', function () {
 /*
  * Тут все роуты для андминки
  */
-Route::group(['middleware' => 'auth'], function() {
-    Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'admin'], function (){
+Route::group([
+    'middleware' => 'auth',
+], function() {
+
+    Route::group([
+        'prefix' => 'admin', 
+        'as' => 'admin.', 
+        'middleware' => 'admin',
+    ], function () {
+        
         Route::view('/', 'admin.dashboard')->name('dashboard');
         Route::resource('/breeds', AdminBreedController::class);
         Route::resource('/animal_types', AdminTypeController::class);
@@ -50,10 +58,17 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/profiles', AdminProfilesController::class);
         Route::delete('/avatar/{profile}', [AdminProfilesController::class, 'avatar'])->name('avatar.destroy');
     });
-    Route::group(['prefix' => 'user', 'as' => 'user.'], function (){
+
+    Route::group([
+        'prefix' => 'user', 
+        'as' => 'user.',
+    ], function () {
+        
         Route::resource('/', UserController::class);
         Route::resource('/about_me', UserAboutMeController::class);
-        Route::resource('/favourite_animals', UserFavouritesController::class);
+        Route::resource('/favourite_animals', UserFavouritesController::class)->parameters([
+            'favourite_animals' => 'animal',
+        ]);
         Route::resource('/donations', UserDonationsController::class);
         Route::resource('/requests', UserRequestsController::class);
         Route::resource('/comments', UserCommentsController::class);

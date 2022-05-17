@@ -4,9 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Animal;
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class FavouritesController extends Controller
 {
@@ -17,14 +15,11 @@ class FavouritesController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::user()->id;
+        $animals = auth()->user()->animals()->get();
 
-        $animals = User::find($user_id)->animals()->get();
-
-        return view('user_lk.favourite_animals.index',
-            [
-                'animals' => $animals,
-            ]);
+        return view('user_lk.favourite_animals.index', [
+            'animals' => $animals,
+        ]);
     }
 
     /**
@@ -45,58 +40,58 @@ class FavouritesController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'id' => ['required', 'integer', 'numeric', 'exists:animals'],
+        ]);
 
+        return auth()->user()->animals()->attach($validated)
+            ? redirect()->route('admin.animals.index')->with('success', 'Запись успешно добавлена')
+            : back()->withErrors('Не удалось добавить запись');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param \App\Models\Animal $animal
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Animal $animal)
     {
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param \App\Models\Animal $animal
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function edit($id)
+    public function edit(Animal $animal)
     {
-        $user = Auth::user();
-        return $user->animals()->syncWithoutDetaching($id)
-            ? response('animal added', 200)
-            : back()->withErrors('Не удалось добавить запись');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  $id
+     * @param \App\Models\Animal $animal
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Animal $animal)
     {
-        $user = Auth::user();
-        return $user->animals()->detach($id)
+        return auth()->user()->animals()->detach($animal)
             ? redirect()->route('user.favourite_animals.index')->with('success', 'Запись успешно удалена')
             : back()->withErrors('Не удалось удалить запись')->withInput();
     }
-
 }

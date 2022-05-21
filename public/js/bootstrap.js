@@ -5432,6 +5432,26 @@ document.querySelectorAll('.modal-footer [type=submit]').forEach(function (eleme
 
 /***/ }),
 
+/***/ "./resources/js/password.js":
+/*!**********************************!*\
+  !*** ./resources/js/password.js ***!
+  \**********************************/
+/***/ (() => {
+
+function toggleShowPassword(e) {
+  e.preventDefault();
+  [].forEach.call(this.parentElement.children, function (element) {
+    return element.classList.toggle('d-none');
+  });
+  this.closest('.input-group').querySelector('input').type = this.classList.contains('show-password') ? 'text' : 'password';
+}
+
+document.querySelectorAll('.show-password, .hide-password').forEach(function (element) {
+  return element.addEventListener('click', toggleShowPassword.bind(element));
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.esm.js":
 /*!*********************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.esm.js ***!
@@ -27982,6 +28002,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 __webpack_require__(/*! ./form */ "./resources/js/form.js");
 
 __webpack_require__(/*! ./delete */ "./resources/js/delete.js");
+
+__webpack_require__(/*! ./password */ "./resources/js/password.js");
 })();
 
 /******/ })()

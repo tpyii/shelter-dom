@@ -1,5 +1,9 @@
 import {Main} from './main_page/Main'
 import {OurPets} from './our_pets/OurPets'
+import {Register} from './register/Register'
+import {Login} from './login/Login'
+import {Favourites} from './favourites/Favourites'
+import {Profile} from './profile/Profile'
 import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from '../components/store'
@@ -24,6 +28,10 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<Main/>}/>
                     <Route path='/our_pets' element={<OurPets/>}/>
+                    <Route path='/registration' element={<Register/>}/>
+                    <Route path='/frontLogin' element={<Login/>}/>
+                    <Route path='/favourites' element={<Favourites/>}/>
+                    <Route path='/profile' element={<Profile/>}/>
                 </Routes>
             </Provider>
         </div>

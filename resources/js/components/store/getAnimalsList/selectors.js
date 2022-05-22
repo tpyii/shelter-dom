@@ -5,3 +5,5 @@ export const selectBreeds = (state) => state.animals.breedsList
 export const selectTypes = (state) => state.animals.typesList
 export const selectInoc = (state) => state.animals.inocList
 export const selectDiseases = (state) => state.animals.diseasesList
+export const selectLogined = (state) => state.animals.logined
+export const selectFavour = (state) => state.animals.favouritesList

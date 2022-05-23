@@ -35,5 +35,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Paginator::useBootstrap();
+
+        $this->app->bind('path.public', function () {
+            return base_path(). '/../public_html' ;
+        });
     }
 }

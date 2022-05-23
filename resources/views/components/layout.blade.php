@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title }}</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard.css')}}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/dashboard.css')}}" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
@@ -35,6 +35,6 @@
 </div>
 
 <!-- Js -->
-<script src="{{ asset('js/bootstrap.js') }}"></script>
+<script src="{{ mix('js/bootstrap.js') }}"></script>
 </body>
 </html>

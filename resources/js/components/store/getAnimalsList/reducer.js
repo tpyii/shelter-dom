@@ -1,14 +1,22 @@
 import {REQUEST_STATUS} from "../../constants/Constants";
-import {REQUEST_ANIMALS_SUCCESS,REQUEST_BREEDS_SUCCESS,REQUEST_TYPES_SUCCESS,REQUEST_INOCULATIONS_SUCCESS,REQUEST_DISEASES_SUCCESS} from "./actions";
+import {store} from '../../store/index'
+import {
+    REQUEST_ANIMALS_SUCCESS,
+    REQUEST_BREEDS_SUCCESS,
+    REQUEST_TYPES_SUCCESS,
+    REQUEST_INOCULATIONS_SUCCESS,
+    REQUEST_DISEASES_SUCCESS,
+    TOGGLE_FAVOURIT,
+} from "./actions";
 
 
 export const initialState = {
     animalsList: [],
-    breedsList:[],
-    typesList:[],
-    inocList:[],
-    diseasesList:[],
-    id: '',
+    breedsList: [],
+    typesList: [],
+    inocList: [],
+    diseasesList: [],
+    favouritesList: [],
     total: 0,
     animalsPerPage: 0,
     request: {
@@ -17,14 +25,15 @@ export const initialState = {
     }
 }
 
-export const animalsReducer = (state = initialState, {type, payload}) => {
+export const animalsReducer = (state = initialState, {type, payload, favourit}) => {
     switch (type) {
         case REQUEST_ANIMALS_SUCCESS:
             return {
                 ...state,
-                animalsList: payload.data,
-                total: payload.meta.total,
-                animalsPerPage: payload.meta.per_page,
+                animalsList: payload.animals.data,
+                total: payload.animals.meta.total,
+                animalsPerPage: payload.animals.meta.per_page,
+                favouritesList: payload.fovarites || [],
                 request: {
                     error: '',
                     status: REQUEST_STATUS.SUCCESS
@@ -50,7 +59,17 @@ export const animalsReducer = (state = initialState, {type, payload}) => {
                 ...state,
                 diseasesList: payload.data
             }
+
+        case TOGGLE_FAVOURIT:
+            return {
+                ...state,
+                favouritesList: payload.newFavouritesList,
+                animalsList: payload.newAnimalsList
+
+            };
+
         default:
             return state
     }
 }
+

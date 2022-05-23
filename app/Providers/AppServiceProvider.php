@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
         $this->app->bind('path.public', function () {
-            return base_path(). '/../public_html' ;
+            return base_path(). env('PUBLIC_PATH', '/public');
         });
     }
 }

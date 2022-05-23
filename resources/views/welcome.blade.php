@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laravel</title>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <!-- React root DOM -->
 <div id="user">
 </div>
 <!-- React JS -->
-<script src="{{ mix('/js/app.js') }}"></script>
+<script src="{{ mix('js/app.js') }}" defer></script>
 </body>
 </html>

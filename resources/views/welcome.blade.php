@@ -12,10 +12,6 @@
 <div id="user">
 </div>
 <!-- React JS -->
-<<<<<<< HEAD
 <script src="{{ mix('js/app.js') }}" defer></script>
-=======
-<script src="{{ mix('/js/app.js') }}"></script>
->>>>>>> test_react_branch
 </body>
 </html>

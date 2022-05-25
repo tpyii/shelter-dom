@@ -1,0 +1,42 @@
+.modal-header .btn-close {
+    margin: -4.5rem -3.5rem -0.5rem auto;
+    border: 3px solid #FDDCC4;
+    border-radius: 50px;
+    padding: 17px;
+}
+
+.modal-header .btn-close:hover {
+    background-color: #FDDCC4;
+    transition: all 0.2s ease-out;
+}
+
+button.rec-dot{
+    background-color: #FDDCC4;
+    transition: all 0.2s ease-out;
+}
+
+button.rec-dot:hover, button.rec-dot:focus{
+    box-shadow: 0 0 1px 3px rgb(253, 220, 196);
+}
+
+button.rec-arrow{
+    background-color: #FDDCC4;
+    transition: all 0.2s ease-out;
+}
+
+button.rec-arrow:hover{
+    background-color: #FDDCC4;
+    transition: all 0.2s ease-out;
+}
+
+button.eWjCzc:hover:enabled{
+    background-color: #eec0a5;
+    transition: all 0.2s ease-out;
+}
+
+button.eWjCzc:focus:enabled{
+    background-color: #eec0a5;
+}
+.item__carousel{
+    margin-top: 90px;
+}

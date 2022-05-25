@@ -1,0 +1,643 @@
+/**
+ *  1. Variables
+ *  2. Defaults
+ *  3. Buttons
+ *  4. Typography
+ *  5. Lists
+ *  6. Logo
+ *  7. Links
+ *  8. Cards
+ *  9. Modal
+ *  10. Navbar
+ *  11. Welcome
+ *  12. About
+ *  13. Help
+ *  14. Donate
+ *  15. Footer
+ *  16. Slider
+ */
+
+/* 1. Variables */
+
+:root {
+    --font-family-arial: Arial, sans-serif;
+    --font-family-georgia: Georgia, serif;
+    /*--color-dark-s: #CDCDCD;*/
+    /*--color-dark-m: #B2B2B2;*/
+    /*--color-dark-l: #545454;*/
+    /*--color-dark-xl: #4C4C4C;*/
+    /*--color-dark-3xl: #292929;*/
+    /*--color-light-s: #FAFAFA;*/
+    /*--color-light-l: #F6F6F6;*/
+    /*--color-light-xl: #FFFFFF;*/
+    /*--color-primary: #F1CDB3;*/
+    /*--color-primary-light: #FDDCC4;*/
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome__img {
+    margin-top: 120px;
+}
+
+a,
+button {
+    outline: none;
+}
+
+/* 2. Defaults */
+
+::selection {
+    background: #F1CDB3;
+    color: #292929;
+}
+
+body {
+    font-family: var(--font-family-arial);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.section {
+    padding: 80px 0 100px;
+    overflow: hidden;
+}
+
+.section-light {
+    background-color: #F6F6F6;
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 45px 0;
+    }
+}
+
+/* 3. Buttons */
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+    padding: 13px 43px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 100px;
+    box-sizing: border-box;
+    font-family: var(--font-family-georgia);
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+    transition: all 0.2s ease-out;
+}
+
+.button:disabled,
+.button:disabled:hover {
+    border-color: #CDCDCD;
+    background-color: transparent;
+    color: #CDCDCD;
+    cursor: not-allowed;
+}
+
+.button:disabled svg * {
+    fill: #CDCDCD;
+}
+
+.button-primary:hover,
+.button.active:hover {
+    border-color: #FDDCC4;
+    background-color: #FDDCC4;
+}
+
+.button-secondary {
+    border-color: #FDDCC4;
+    background-color: transparent;
+}
+
+.button-secondary:hover {
+    background-color: #FDDCC4;
+}
+
+.button-circle {
+    padding: 0;
+    width: 52px;
+    height: 52px;
+}
+
+.button-paginator {
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    padding: 0;
+}
+
+.button:active,
+.button:focus,
+.button-primary,
+.button.active {
+    border-color: #F1CDB3;
+    background-color: #F1CDB3;
+}
+
+/* 4. Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    color: #545454;
+}
+
+h2 {
+    font-size: 44px;
+}
+
+h3 {
+    font-size: 35px;
+    letter-spacing: 0.06em;
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+h5 {
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+}
+
+p {
+    color: #4C4C4C;
+}
+
+small {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #B2B2B2;
+}
+
+/*  5. Lists  */
+
+.list {
+    padding-left: 15px;
+    list-style: none;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.list-item {
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.list-item::before {
+    content: '';
+    padding: 2px;
+    border-radius: 50%;
+    background-color: #F1CDB3;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/*6. Logo  */
+
+.logo::after {
+    content: none !important;
+}
+
+.logo-title {
+    margin-bottom: 10px;
+    font-family: var(--font-family-georgia);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;;
+    transition: color 0.2s ease-out;
+}
+
+.logo-subtitle {
+    font-family: var(--font-family-arial);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: #CDCDCD;
+    transition: color 0.2s ease-out;
+}
+
+.background-dark .logo-title,
+.background-dark .logo-title:hover {
+    color: #F1CDB3;
+}
+
+.background-dark .logo-subtitle {
+    color: #FFFFFF;
+}
+
+/*!*  7. Links *!*/
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: #545454;
+}
+
+a:hover,
+a.active {
+    color: #292929;
+}
+
+a:active,
+a:focus {
+    color: #545454;
+}
+
+a:active::after,
+a:focus::after,
+a.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: #F1CDB3;
+}
+
+.background-dark a {
+    color: #CDCDCD;
+}
+
+.background-dark a:hover,
+.background-dark a:active::after,
+.background-dark a:focus::after,
+.background-dark a.active {
+    color: #FAFAFA;
+}
+
+/*  8. Cards  */
+
+.card {
+    max-width: 270px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #FAFAFA;
+}
+
+.card:hover .card-content {
+    background-color: #FFFFFF;
+}
+
+.card img {
+    object-fit: contain;
+    width: 100%;
+    height: 270px;
+}
+
+.card-content {
+    padding: 30px;
+    transition: all 0.2s ease-out;
+}
+
+.card.active {
+    max-width: 900px;
+    max-height: 500px;
+    height: auto;
+}
+
+.card.active img {
+    max-width: 500px;
+    height: auto;
+}
+
+.card.active .card-content {
+    padding: 50px 20px 20px;
+    overflow-y: auto;
+}
+
+.card.active .card-content * {
+    color: #000000;
+}
+
+@media (max-width: 992px) {
+    .card.active img {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .card.active {
+        max-height: 350px;
+    }
+
+    .card.active img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 575px) {
+    .card.active {
+        max-height: initial;
+        height: 90vh;
+        overflow-y: auto;
+    }
+
+    .card.active .card-content {
+        overflow-y: visible;
+    }
+
+    .card.active img {
+        max-width: 100%;
+    }
+}
+
+/*  9. Modal  */
+
+.modal-dialog {
+    max-width: 900px;
+    margin: 70px auto 20px;
+}
+
+.modal-content {
+    border-radius: 9px;
+    background: #FAFAFA;
+    height: 500px;
+    border: 0;
+}
+
+.modal-header {
+    padding: 0;
+    border: 0;
+}
+
+.modal-header .button-circle {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+}
+
+.modal-body {
+    padding: 0;
+    overflow: hidden;
+}
+
+.modal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.modal-text {
+    overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+    .modal-dialog {
+        margin: 70px 60px 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .modal-dialog {
+        margin: 70px 20px 20px;
+    }
+
+    .modal-content {
+        height: auto;
+    }
+
+    .modal-header .button-circle {
+        transform: translateX(-100%);
+    }
+}
+
+/*!*  10. Navbar  *!*/
+
+.navbar {
+    position: relative;
+    padding: 30px 0;
+    z-index: 2;
+}
+
+.navbar-burger {
+    display: none !important;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+}
+
+.nav-item {
+    margin-left: 35px;
+}
+
+@media (max-width: 767px) {
+    .navbar.active .navbar-logo {
+        z-index: 1;
+    }
+    .navbar-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(100%);
+        width: 100%;
+        height: 100vh;
+        padding-top: 120px;
+        z-index: 1;
+        background: #292929;
+        transition: transform 0.2s ease-out;
+    }
+
+    .navbar-content-container {
+        padding-top: 100px;
+        overflow-y: auto;
+    }
+
+    .navbar.active .navbar-content {
+        transform: translateX(0);
+    }
+
+    .nav-item {
+        margin-bottom: 50px;
+        margin-left: 0;
+        font-size: 32px;
+    }
+
+    .navbar-burger {
+        display: flex !important;
+    }
+
+    .navbar.active .navbar-burger {
+        transform: rotate(90deg);
+    }
+
+    .navbar-burger > div {
+        height: 2px;
+        background-color: #545454;
+        transition: background-color 0.2s ease-out;
+    }
+
+    .background-dark .navbar-burger > div {
+        background-color: #F1CDB3;
+    }
+}
+
+/*  11. Welcome  */
+
+.welcome {
+    padding-top: 120px;
+    transform: translateY(-120px);
+    background: url(../patterns/noise_transparent@2x.png),
+    radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+    #211F20;
+}
+
+.welcome h2 {
+    color: #FFFFFF;
+    max-width: 310px;
+    margin-bottom: 45px;
+}
+
+.welcome p {
+    color: #CDCDCD;
+    margin-bottom: 55px;
+}
+
+@media (max-width: 767px) {
+    .welcome {
+        padding-top: 135px;
+    }
+}
+
+/*  12. About  */
+
+.about {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .about {
+        text-align: justify;
+    }
+}
+
+/*  13. Help  */
+
+.help svg {
+    margin-bottom: 30px;
+}
+
+.help-item {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/*  14. Donate  */
+
+.donate {
+    max-width: 890px;
+    margin: 0 auto;
+}
+
+.donate-content {
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/*  15. Footer  */
+
+.footer {
+    padding: 60px 0;
+    background: url(../patterns/noise_transparent@2x.png),
+    radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
+    #211F20;
+}
+
+.footer h3 {
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.footer h4 {
+    color: #F1CDB3;
+    margin-bottom: 40px;
+}
+
+.footer h4:last-child {
+    margin-bottom: 0;
+}
+
+.footer img {
+    /*position: absolute;*/
+    right: 0;
+    bottom: 0;
+    transform: translateY(60px);
+}
+
+@media (max-width: 991px) {
+    .footer img {
+        position: static;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer > .container {
+        max-width: 320px;
+    }
+}
+
+/*  16. Slider  */
+
+.slider {
+    overflow: visible;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.slider-button-next {
+    right: 0;
+}
+
+.slider-button-prev {
+    left: 0;
+}
